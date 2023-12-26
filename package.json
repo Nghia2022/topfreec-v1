@@ -1,0 +1,44 @@
+{
+  "name": "app",
+  "private": true,
+  "dependencies": {
+    "@rails/actioncable": "^6.0.0",
+    "@rails/activestorage": "^6.0.0",
+    "@rails/ujs": "^6.0.0",
+    "@types/jqueryui": "^1.12.10",
+    "@types/select2": "^4.0.54",
+    "air-datepicker": "^3.2.0",
+    "axios": "^0.19.2",
+    "esbuild": "^0.18.16",
+    "jquery": "^3.5.0",
+    "jquery-inview": "^1.1.2",
+    "jquery-ui": "^1.12.1",
+    "jsuites": "^4.9.24",
+    "materialize-css": "^1.0.0",
+    "multiple-select": "^1.5.2",
+    "select2": "^4.0.13",
+    "slick-carousel": "^1.8.1",
+    "ts-loader": "^6.2.1",
+    "turbolinks": "^5.2.0",
+    "typescript": "^3.7.5"
+  },
+  "version": "0.1.0",
+  "devDependencies": {
+    "@babel/helper-validator-identifier": "^7.10.4",
+    "@types/jest": "^25.1.1",
+    "@types/slick-carousel": "^1.6.34",
+    "html-loader-jest": "^0.2.1",
+    "jest": "^25.1.0",
+    "ts-jest": "^25.1.0",
+    "tsc-watch": "^6.0.4"
+  },
+  "scripts": {
+    "build": "node ./build.js --minify",
+    "build:dev": "node ./build.js",
+    "build:watch": "tsc-watch --noClear -p tsconfig.json --onSuccess \"yarn build:dev\"",
+    "test": "jest"
+  },
+  "engines": {
+    "node": "18.x"
+  }
+}

@@ -1,0 +1,654 @@
+/* ========================================================
+ dashboard styles
+======================================================== */
+/* alert
+-------------------------------------------------------- */
+.alert{
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: $white;
+  border: 1px solid $black192;
+  border-radius: 4px;
+  color: $black071;
+  font-size: 1em;
+  line-height: 1.4;
+  margin: 1em 0;
+  padding: 1em .5em;
+  @include mq(){
+    font-size: 1em;
+    padding: 1em;
+  }
+  i{
+    margin-right: .5em;
+    font-size: 2rem;
+    @include mq(){
+      font-size: 2.2rem;
+    }
+  }
+  a{
+    color: $black071;
+    text-decoration: underline;
+  }
+  &.multiple{
+    display: block;
+    div{
+      display: flex;
+      align-items: center;
+      &:not(:last-of-type){
+        margin-bottom: .4em;
+      }
+    }
+  }
+  &.success{
+    background: $color10;
+    border-color: $color10c;
+    color: $color10c;
+    a{
+      color: $color10c;
+    }
+  }
+  &.warning{
+    background: $color08;
+    border-color: $color08c;
+    color: $color08c;
+    a{
+      color: $color08c;
+    }
+  }
+  &.danger{
+    background: $color07;
+    border-color: $color07c;
+    color: $color07c;
+    a{
+      color: $color07c;
+    }
+  }
+  &.disabled{
+    background: $color09;
+    border-color: $color09c;
+    color: $color09c;
+    a{
+      color: $color09c;
+    }
+  }
+}
+a.alert-link{
+  .alert{
+    padding-right: 2em;
+    &::after{
+      @include m-absolute($right: -.2em, $top: 50%);
+      display: inline-block;
+      content: "\e906";
+      font-family: "#{$icomoon-font-family}";
+      font-size: 1em;
+      padding-right: .5em;
+      transform: translate(0, -50%);
+      transition: right .4s ease-in-out;
+      @include mq(){
+        right: 0
+      }
+    }
+  }
+  &:hover{
+    .alert{
+      box-shadow: 0 0 10px $black238;
+      opacity: .8;
+      &::after{
+        right: -.3em;
+      }
+    }
+  }
+}
+/* dashboard-panel
+-------------------------------------------------------- */
+.dashboard-panel{
+  position: relative;
+  display: block;
+  background: $white;
+  border: 1px solid $black221;
+  // box-shadow: 0 0 4px rgba(0, 0, 0,.1);
+  border-radius: 4px;
+  color: $black;
+  padding: 1em;
+  @include mq(){
+    padding: 2em;
+  }
+  .list-dl{
+    dt {
+      @include mq(){
+        width: 30%;
+      }
+    }
+    dd{
+      @include m-flex($justify:space-between);
+    }
+  }
+}
+.dashboard-ttl {
+  @include m-font-bold;
+  @include m-flex;
+  position: relative;
+  color: $black;
+  font-size: 2rem;
+  line-height: 1;
+  margin: 1em 0;
+  padding: .25em .5em;
+  @include mq(){
+    font-size: 2.2rem;
+  }
+  &::before{
+    color: $color01;
+    content: "\e855";
+    font-family: 'feather';
+    font-size: 1em;
+    font-weight: 100;
+    margin-right: .4em;
+  }
+}
+.dashboard-block{
+  @include m-flex($justify:center, $wrap: wrap);
+  @include mq(desktop){
+    justify-content: space-between;
+    flex-wrap: nowrap;
+  }
+  .dashboard-block-item{
+    position: relative;
+    display: block;
+    background: $white;
+    border: 1px solid $black221;
+    // box-shadow: 0 0 4px rgba(0, 0, 0,.1);
+    border-radius: 4px;
+    color: $black;
+    line-height: 1.4;
+    margin: 1em .5em;
+    padding: 1em .5em;
+    transition: box-shadow .4s ease;
+    width: 45%;
+
+    @include mq(){
+      padding: 1em;
+    }
+    @include mq(tab){
+      width: 30%;
+    }
+    @include mq(laptop){
+      width: 30%;
+    }
+    @include mq(desktop){
+      margin: 1em 0;
+      width: 18%;
+    }
+    dt,dd{
+      @include m-flex($justify:center);
+    }
+    dt{
+      @include m-font-bold;
+      font-size: 1em;
+      margin-bottom: 1em;
+      @include mq(){
+        font-size: 1.2em;
+      }
+    }
+    dd{
+      font-size: .9em;
+      height: 3rem;
+      @include mq(){
+        font-size: 1em;
+      }
+      i{
+        color: $color01;
+        font-size: 2em;
+        margin-right: 0.2em;
+      }
+      .number{
+        @include m-font1;
+        @include m-font-bold;
+        color: $color01;
+        font-size: 1.6em;
+        padding: 0 .2em;
+        @include mq(){
+
+        }
+      }
+    }
+  }
+  a.dashboard-panel-item{
+    &:hover{
+      box-shadow: 0 0 10px rgba(0, 0, 0,.2);
+    }
+  }
+}
+.dashboard-setting{
+  @include m-flex();
+}
+.dashboard-user{
+  text-align: center;
+  @include mq(sp){
+    margin-bottom: 2em;
+  }
+  @include mq(){
+    margin-right: 3em;
+    width: 25%;
+  }
+  .user-name{
+    @include m-font-bold;
+    display: block;
+    font-size: 1.1em;
+    line-height: 1.4;
+    margin: 0 auto;
+    width: 80%;
+  }
+}
+/* login-panel
+-------------------------------------------------------- */
+.login-panel{
+  @include mq{
+    @include m-flex($align: flex-start, $justify: space-between);
+    .dashboard-panel{
+      height: 360px;
+    }
+    .login-panel-item{
+      width: 48%;
+    }
+  }
+}
+/* dashboard-recommend-slider
+-------------------------------------------------------- */
+.dashboard-recommend-slider{
+  @include mq(){
+    margin: 0 -.95em;
+    padding: 0;
+  }
+  .is-none{
+    text-align: center;
+  }
+  .slick-prev,
+  .slick-next{
+    &::after{
+      font-size: 1.3rem;
+    }
+  }
+  .slick-prev {
+    left: -1.5%;
+  }
+  .slick-next {
+    right: -1.3%;
+  }
+  .slick-list {
+    overflow: hidden;
+    @include mq(sp){
+      padding: 1em 0 0!important;
+      margin-top: 1em!important;
+    }
+  }
+  .slick-slide{
+    height: auto;
+    @include mq(){
+      &:only-of-type{
+        .job-list-item{
+          width: 610px !important;
+          margin-left: -150px;
+        }
+      }
+    }
+  }
+  &.slick-dotted {
+    &.slick-slider{
+      margin-bottom: 0;
+    }
+    .slick-dots {
+      top: -1rem;
+      right: 0;
+      display: flex;
+      justify-content: flex-end;
+      height: 3rem;
+      @include mq(){
+        top: -2rem;
+        right: .5rem;
+      }
+      li{
+         button{
+           &::before{
+            color: $color01;
+            content: "◯";
+            font-size: 1.4rem;
+            opacity: 1;
+            height: 2.2rem;
+            width: 2.2rem;
+           }
+         }
+         &.slick-active{
+          button{
+            &::before{
+             content: "●";
+             opacity: 1;
+            }
+          }
+         }
+      }
+    }
+  }
+  .job-list-item{
+    display: block;
+    background: $black246;
+    color: $black;
+    margin-bottom: 1em;
+    padding: 1em;
+    overflow: hidden;
+    width: 100%;
+    transition: box-shadow .4s ease-in-out;
+
+    @include mq(sp){
+      border: 2px solid $white;
+    }
+    @include mq(){
+      box-sizing: border-box;
+      margin: 1em .95em;
+      padding: 1.5em;
+      width: 560px!important;
+    }
+    @include mq(tab){
+      width: 56vw!important;
+    }
+    @include mq(laptop){
+      width: 56vw!important;
+    }
+  }
+}
+/* requirement-panel
+-------------------------------------------------------- */
+.requirement-panel{
+  @include mq(){
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+}
+.requirement-panel-item{
+  font-size: .8em;
+  margin: .4em 0;
+  padding: 0 1em;
+  width: 100%;
+  @include mq(){
+    font-size: 1em;
+    width: 25%;
+  }
+  &.half{
+    width: 50%;
+  }
+  &.full{
+    width: 100%;
+  }
+  select[multiple="multiple"]{
+    visibility: hidden;
+  }
+  input[type="text"]{
+    &.i-search{
+      background: url("#{$v-img-path}form/search.svg") no-repeat right 10px center;
+      background-color: $white;
+      background-size: 17px;
+      width: 100%;
+    }
+  }
+  .bs-normal{
+    @include mq(){
+      margin-top: .7em;
+      padding: .8em 0;
+      height: 5rem;
+    }
+  }
+}
+.requirement-panel-ttl{
+  @include m-font-bold;
+  font-size: 1.3em;
+  margin-bottom: .4em;
+  width: 100%;
+  @include mq(){
+    font-size: 1em;
+    margin-bottom: .8em;
+  }
+}
+.requirement-panel-txt{
+  padding-bottom: 1em;
+  width: 100%;
+}
+/* workflow-table
+-------------------------------------------------------- */
+.workflow-table{
+  table{
+    border: 1px solid $black221;
+    border-collapse: collapse;
+    font-size: .9em;
+    line-height: 1.6;
+    margin-bottom: 1.5em;
+    text-align: left;
+    width: 100%;
+    @include mq(){
+      font-size: .9em;
+    }
+  }
+  th,td{
+    border: 1px solid $black221;
+    border-collapse: collapse;
+    padding: .5em;
+    text-align: center;
+    white-space: nowrap;
+    width: auto;
+    @include mq(){
+      padding: .9em 1em;
+    }
+    &.column-comment{
+      white-space: unset;
+    }
+  }
+  th{
+    @include m-font-bold;
+    position: relative;
+    background-color: $black246;
+    &.column-taskid{
+      width: 4rem;
+    }
+    &.column-type{
+      width: 4rem;
+    }
+    &.column-status{
+      width: 10rem;
+      @include mq(){
+        width: 15.5rem;
+      }
+    }
+    &.column-group{
+      width: 4rem;
+    }
+
+    &.column-category,
+    &.column-period,
+    &.column-scale,
+    &.column-position{
+      width: 10rem;
+      @include mq(){
+        width: 15.5rem;
+      }
+    }
+    &.column-update{
+      width: 10rem;
+      @include mq(){
+        width: 15.5rem;
+      }
+    }
+    &.column-confirm{
+      width: 7rem;
+      @include mq(){
+        width: 9rem;
+      }
+    }
+    &.column-comment{
+       width: 50%;
+    }
+    &.column-label{
+      width: 10rem;
+      @include mq(){
+        width: 15.5rem;
+      }
+    }
+    &.column-type{
+      width: 10rem;
+      @include mq(){
+        width: 15.5rem;
+      }
+    }
+  }
+  td{
+    &.column-comment{
+      text-align: left;
+    }
+  }
+  &.scroll-x{
+    overflow-x: auto;
+    width: 100%;
+    @include mq(sp){
+      table{
+        width: 150%;
+      }
+    }
+  }
+}
+/* workflow-dl
+-------------------------------------------------------- */
+.workflow-dl{
+  border-collapse: collapse;
+  font-size: .9em;
+  line-height: 1.6;
+  margin-bottom: 1.5em;
+  text-align: left;
+  width: 100%;
+  @include mq(){
+    display: flex;
+    font-size: .9em;
+  }
+  dl{
+    display: flex;
+    border: 1px solid $black221;
+    @include mq(){
+      flex-direction: column;
+      &.column-category,
+      &.column-period,
+      &.column-status,
+      &.column-scale{
+        width: 15.5rem;
+      }
+      &.column-date{
+        width: 20rem;
+      }
+      &.column-position,
+      &.column-btn{
+        width: 25rem;
+      }
+      &.column-description{
+        width: 64rem;
+      }
+      &.column-project{
+        width: 44rem;
+      }
+      &.column-content{
+        width: 48.5rem;
+      }
+      &:not([class]){
+        flex-grow: 1;
+      }
+    }
+    &:not(:last-of-type){
+      @include mq(sp){
+        border-bottom: 0;
+      }
+      @include mq(){
+        border-right: 0;
+      }
+    }
+  }
+  dt,dd{
+    border-collapse: collapse;
+    padding: .5em;
+    text-align: center;
+    width: auto;
+    @include mq(){
+      padding: .9em 1em;
+    }
+  }
+  dt{
+    @include m-font-bold;
+    background-color: $black246;
+    white-space: nowrap;
+    @include mq(sp){
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-right: 1px solid $black221;
+      width: 30%;
+     }
+    @include mq{
+     border-bottom: 1px solid $black221;
+    }
+  }
+  dd{
+    display: flex;
+    align-items: center;
+    align-self: center;
+    flex-grow: 1;
+    @include mq(sp){
+      justify-content: center;
+      width: 70%;
+    }
+    &.txt-left{
+      align-self: flex-start;
+      @include mq(sp){
+        align-self: center;
+      }
+    }
+    .devider{
+      &::after{
+        display: inline-block;
+        content: "-";
+        margin: 0 .2em;
+        @include mq{
+          display: block;
+          content: "│";
+        }
+      }
+    }
+  }
+}
+.work-flow-ttl{
+  @include mq(){
+    .sec-sub-ttl{
+      margin-bottom: 0;
+    }
+  }
+}
+.workflow-nav{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  @include mq(sp){
+    justify-content: center;
+  }
+  li{
+    margin-right: 1rem;
+  }
+  @include mq(sp){
+    .bs-small{
+      margin-bottom: 1em;
+      padding: .5em;
+      width: 100%;
+    }
+  }
+  @include mq(){
+    .bs-small{
+      padding: 1em;
+      width: auto;
+    }
+  }
+}

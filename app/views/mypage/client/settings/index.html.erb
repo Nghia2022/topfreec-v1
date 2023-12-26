@@ -1,0 +1,12 @@
+    <div class="form-content">
+      <h1 class="page-ttl">
+        <span class="sub-ttl">SETTINGS</span>
+        <span class="main-ttl">設定情報</span>
+      </h1>
+      <section class="sec-pb-large">
+        <div class="sec sec-min">
+          <%= cell(Mypage::Client::SettingCell).call(:show) %>
+          <%= cell(Mypage::SignOutCell, nil, sign_out_path: destroy_client_user_session_path).call(:show) %>
+        </div>
+      </section>
+    </div>

@@ -1,0 +1,6 @@
+        <div class="content-sidebar s-pt-30">
+          <div class="sec-sub-ttl">最新のプロ人材向け<br>コラム記事</div>
+          <ul class="tile-list column3 sidebar">
+            <%= cell(Content::ColumnCell, collection: model.decorate).call(:latest_column) %>
+          </ul>
+        </div>

@@ -1,0 +1,20 @@
+<%= testid('content/blogs/index') %>
+<%= content_for(:related_content) do %>
+  <%= cell(Content::MenuCell,
+           :ceo_blog,
+           title:       'BLOG',
+           subtitle:    '代表ブログ',
+           description: "みらいワークス代表 岡本祥治の「日本の“みらい”を元気にするブログ」。\n日々の思考や気づきを代表の目線からお届けいたします。"
+          ).call(:show) %>
+<% end %>
+    <hr>
+    <section>
+      <div class="sec sec-full s-pt-10 sec-pb-large">
+        <ul class="tile-list column3">
+          <%= cell(Content::BlogsCell, blogs).call(:show) %>
+        </ul>
+        <nav class="navigation pagination">
+          <%= cell(PaginatorCell, blogs, html_class_pc: 'mt45', html_class_sp: 'sp-mt40').call(:show) %>
+        </nav>
+      </div>
+    </section>

@@ -1,0 +1,33 @@
+<%= testid('mypage/fc/setting/show') %>
+          <%= general %>
+          <h2 class="dashboard-ttl">
+            <span class="main-ttl">ログイン設定</span>
+          </h2>
+          <div class="dashboard-panel">
+            <div class="list-dl column1-sp">
+              <dl>
+                <dt>メールアドレス</dt>
+                <dd>
+                  <div><%= current_fc_user.email %></div>
+                </dd>
+                <div class="list-edit-btn">
+                  <a href="<%= edit_mypage_fc_email_path %>" class="btn btn-theme-02 bs-small jsModalOpen" data-target="form-login">
+                    編集する
+                  </a>
+                </div>
+              </dl>
+            </div>
+            <div class="list-dl column1-sp">
+              <dl>
+                <dt>パスワード</dt>
+                <dd>
+                  <div>●●●●●●●</div>
+                </dd>
+                <div class="list-edit-btn">
+                  <a href="<%= edit_mypage_fc_password_path %>" class="btn btn-theme-02 bs-small jsModalOpen" data-target="form-password">
+                    編集する
+                  </a>
+                </div>
+              </dl>
+            </div>
+          </div>

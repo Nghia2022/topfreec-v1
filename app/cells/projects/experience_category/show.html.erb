@@ -1,0 +1,23 @@
+<%= testid('projects/experience_category/show')  %>
+          <li class="tile-list-item">
+            <%# TODO: #3440 FeatureSwitchの分岐を削除 %>
+            <% if FeatureSwitch.enabled?(:new_project_category_meta) %>
+            <a href="<%= slug_projects_path(slug) %>">
+              <div class="tile-list-img">
+                <div class="tile-list-img-inner">
+                  <img src="<%= category_image_url %>" class="img" alt="<%= category_name %>" width="280" height="150" loading="lazy">
+                </div>
+              </div>
+              <div class="list-link"><%= category_name %></div>
+            </a>
+            <% else %>
+            <a href="<%= projects_path(categories: [model.value]) %>">
+              <div class="tile-list-img">
+                <div class="tile-list-img-inner">
+                  <img src="<%= category_image_url %>" class="img" alt="<%= category_name %>" width="280" height="150" loading="lazy">
+                </div>
+              </div>
+              <div class="list-link"><%= category_name %></div>
+            </a>
+            <% end %>
+          </li>

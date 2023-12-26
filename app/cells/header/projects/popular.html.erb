@@ -1,0 +1,18 @@
+                <div class="sub-group">
+                  <span class="sub-group-ttl">人気業種から見つける</span>
+                  <ul class="bordered">
+                    <%# TODO: #3440 FeatureSwitchの分岐を削除 %>
+                    <% if FeatureSwitch.enabled?(:new_project_category_meta) %>
+                    <li><a href="<%= slug_projects_path('it-project-management') %>">IT PM/PMO</a></li>
+                    <li><a href="<%= slug_projects_path('project-management') %>">PM/PMO</a></li>
+                    <li><a href="<%= slug_projects_path('business-improvement') %>">BPR/RPA/BPO</a></li>
+                    <li><a href="<%= slug_projects_path('system-design-system') %>">システム設計/開発/導入</a></li>
+                    <li><a href="<%= slug_projects_path('sap') %>">SAP</a></li>
+                    <% else %>
+                    <li><a href="<%= projects_path(categories: ['ITプロジェクト管理']) %>">IT PM/PMO</a></li>
+                    <li><a href="<%= projects_path(categories: ['プロジェクト管理']) %>">PM/PMO</a></li>
+                    <li><a href="<%= projects_path(categories: ['業務改善(BPR/RPA/BPO)']) %>">BPR/RPA/BPO</a></li>
+                    <li><a href="<%= projects_path(categories: ['システム設計・開発・導入（システム）', 'システム設計・開発・導入（工程・手法）']) %>">システム設計/開発/導入</a></li>
+                    <% end %>
+                  </ul>
+                </div>

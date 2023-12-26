@@ -1,0 +1,138 @@
+          <h2 class="dashboard-ttl">
+            <span class="main-ttl">
+              案件紹介リクエスト
+              <span class="s-sp" tooltip="弊社からの案件紹介時
+に参考にさせていただく情報
+です。適切なご紹介のため
+都度更新いただくことを
+推奨いたします。" flow="up">
+                <i class="feather icon-help-circle"></i>
+              </span>
+              <span class="s-pc" tooltip="弊社からの案件紹介時に参考にさせていただく情報です。
+適切なご紹介のため都度更新いただくことを推奨いたします。" flow="up">
+                <i class="feather icon-help-circle"></i>
+              </span>
+            </span>
+          </h2>
+          <div class="dashboard-panel">
+            <div class="list-dl column1-sp">
+              <dl>
+                <dt>
+                  参画可能予定日
+                  <span class="s-sp" tooltip="案件に参画したい日にち
+を入力してください。
+即日でお探しの場合は
+当日の日にちを入力
+してください。" flow="up">
+                  <i class="feather icon-help-circle"></i>
+                  </span>
+                  <span class="s-pc" tooltip="案件に参画したい日にちを入力してください。
+即日でお探しの場合は当日の日にちを入力してください。" flow="up">
+                  <i class="feather icon-help-circle"></i>
+                  </span>
+                </dt>
+                <dd>
+                  <div><%= start_timing_date %></div>
+                </dd>
+              </dl>
+              <dl>
+                <dt>
+                  報酬金額
+                  <span class="s-sp" tooltip="案件の月間報酬額について、
+ご検討可能な最低額とご希望額
+を入力してください。
+週5日(稼働率100%)とした際の
+額をご入力いただくとスムーズ
+です。" flow="up">
+                  <i class="feather icon-help-circle"></i>
+                  </span>
+                  <span class="s-pc" tooltip="案件の月間報酬額について、ご検討可能な最低額とご希望額を入力してください。
+週5日(稼働率100%)とした際の額をご入力いただくとスムーズです。" flow="up">
+                  <i class="feather icon-help-circle"></i>
+                  </span>
+                </dt>
+                <dd>
+                  <div>
+                    <span class="s-fw-b">
+                      検討可能額
+                      <span class="s-sp" tooltip="週5日(稼働率100%)とした
+際の、検討可能な最低月間
+報酬額を入力してください。" flow="up">
+                    <i class="feather icon-help-circle"></i>
+                      </span>
+                      <span class="s-pc" tooltip="週5日(稼働率100%)とした際の、
+検討可能な最低月間報酬額を入力
+してください。" flow="up">
+                      <i class="feather icon-help-circle"></i>
+                      </span>
+                      ：
+                    </span>
+                    <%= minimum_reward %><br>
+                    <span class="s-fw-b">
+                      希望額
+                      <span class="s-sp" tooltip="週5日(稼働率100%)とした
+際の、ご希望の月間報酬額
+を入力してください。" flow="up">
+                    <i class="feather icon-help-circle"></i>
+                    </span>
+                    <span class="s-pc" tooltip="週5日(稼働率100%)とした際の、
+ご希望の月間報酬額を入力してください。" flow="up">
+                    <i class="feather icon-help-circle"></i>
+                    </span>
+                      ：
+                    </span>
+                    <%= desired_reward %>
+                  </div>
+                </dd>
+              </dl>
+              <dl>
+                <dt>
+                  希望稼働日数(稼働率)
+                  <span class="s-sp" tooltip="週5日間勤務を稼働率100%
+とした際のご希望の稼働日数
+を入力してください。
+詳しいご希望があれば設定情報
+ページ「その他希望事項」で
+補足いただくことが可能です。" flow="up">
+                  <i class="feather icon-help-circle"></i>
+                  </span>
+                  <span class="s-pc" tooltip="週5日間勤務を稼働率100%とした際のご希望の稼働日数を入力してください。
+詳しいご希望があれば設定情報ページ「その他希望事項」で補足いただくことが可能です。" flow="up">
+                  <i class="feather icon-help-circle"></i>
+                  </span>
+                </dt>
+                <dd>
+                  <div><%= occupancy_rate %></div>
+                </dd>
+              </dl>
+              <dl>
+                <dt>
+                  その他希望事項
+                  <span class="s-sp" tooltip="詳しいご希望事項や
+働き方等をご記入ください。
+記載例1：
+1日4時間週4日ほど
+稼働可能です。
+記載例2：
+3月までは稼働率30％程度
+ですが、4月から100％に
+なります。" flow="up">
+                  <i class="feather icon-help-circle"></i>
+                  </span>
+                  <span class="s-pc" tooltip="詳しいご希望事項や働き方等をご記入ください。
+記載例1：1日4時間 週4日ほど稼働可能です。
+記載例2：3月までは稼働率30％程度ですが、4月から100％になります。" flow="up">
+                  <i class="feather icon-help-circle"></i>
+                  </span>
+                </dt>
+                <dd>
+                  <div><%= requests %></div>
+                </dd>
+              </dl>
+            </div>
+            <div class="list-edit-btn">
+              <a href="<%= edit_mypage_fc_settings_project_request_path %>" class="btn btn-theme-02 bs-small jsModalOpen" data-target="form-request">
+                編集する
+              </a>
+            </div>
+          </div>

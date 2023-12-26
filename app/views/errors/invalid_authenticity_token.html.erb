@@ -1,0 +1,18 @@
+<%= testid('errors/csrf') %>
+<main class="top-page mb-neg20 sp-mb-neg39">
+  <div class="bg-white">
+    <div class="g-width">
+     <h1 class="main-title c-red mt150 t-center sp-mt48-7 sp-fs40">
+         CSRF検証エラー
+      </h1>
+      <p class="fs-20 mt45 sp-mt45 t-center noto-bold light-black">
+       画面を再読み込みしてから<br class="sp-only">再度操作を行ってください。
+      </p>
+      <p class="t-center mt75 sp-mt32">
+        <a class="btn btn-type03 fs-14 bg-red c-white w-260" href="<%= root_path %>">
+          <span>トップページへ戻る</span>
+        </a>
+      </p>
+    </div>
+  </div>
+</main>

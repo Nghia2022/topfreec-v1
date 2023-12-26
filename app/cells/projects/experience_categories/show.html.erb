@@ -1,0 +1,7 @@
+<%= testid('projects/experience_categories/show')%>
+        <%= cell(Projects::ExperienceCategoryCell, collection: experience_categories[0..7]).call(:show) %>
+        <div class="jsAccordion">
+          <ul class="tile-list column4 js-fadein">
+            <%= cell(Projects::ExperienceCategoryCell, collection: experience_categories[8..]).call(:show) %>
+          </ul>
+        </div>

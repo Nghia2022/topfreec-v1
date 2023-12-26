@@ -1,0 +1,27 @@
+ja:
+  activemodel:
+    errors:
+      models:
+        landing_pages/registration_form:
+          format: "%{message}"
+          attributes:
+            email:
+              blank: メールアドレスを入力してください
+              taken: メールアドレスが利用できません
+            last_name:
+              blank: お名前（姓）を入力してください
+            first_name:
+              blank: お名前（名）を入力してください
+            last_name_kana:
+              blank: お名前（姓カナ）を入力してください
+            first_name_kana:
+              blank: お名前（名カナ）を入力してください
+            phone:
+              blank: 電話番号を入力してください
+              invalid: 電話番号は不正な値です
+            work_area1:
+              blank: 第一希望を選択してください
+            work_area2:
+              present: 第二希望を選択しないでださい
+            work_area3:
+              present: 第三希望を選択しないでださい

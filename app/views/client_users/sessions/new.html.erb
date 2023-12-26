@@ -1,0 +1,66 @@
+    <section>
+      <div class="sec sec-full sec-pb-large sec-pt-medium">
+        <%= form_with(model: @client_user, scope: resource_name, url: session_path(resource_name), local: true, html: { id: 'login_form' }) do |f| %>
+          <div class="form-content login-panel">
+            <div class="login-panel-item">
+              <div class="s-txt-center">
+                <h1 class="dashboard-ttl">お取引企業様 ログイン</h1>
+              </div>
+              <div class="dashboard-panel">
+                <div class="s-fw-b s-mb-20">パスワードをご登録済みの方はこちら</div>
+                <div class="form-error">
+                  <%= render 'flash_messages', mt_height: 'mt5', key: :alert %>
+                </div>
+                <div class="s-mt-20">
+                  <div class="form-row wrap fullwidth">
+                    <span class="form-sub-ttl"><%= f.label :email %></span>
+                    <label class="label-input form-full">
+                      <%= f.text_field :email %>
+                    </label>
+                    <span class="form-sub-ttl"><%= f.label :password %></span>
+                    <label class="label-input form-full">
+                      <%= f.password_field :password %>
+                    </label>
+                  </div>
+                </div>
+                <%= hidden_field_tag 'g-recaptcha-response-data[login]', '' %>
+              </div>
+              <div class="s-txt-center s-mt-20 s-mb-20">
+                <a href="<%= mirai_works_policy_url %>" target="_blank">利用規約</a>に同意の上、ご利用ください。<br>
+                  <%= f.submit '同意してログイン', class: 'btn bs-normal btn-theme-02 s-mt-20' %>
+                  <label class="label-check label-center s-mt-20 s-mb-20">
+                    <%= f.check_box :remember_me %><span><%= f.label :remember_me, '次回から自動でログイン' %></span>
+                  </label>
+                <a href="<%= new_client_user_password_path %>" class="txt-link">パスワードをお忘れの方はこちら</a>
+              </div>
+            </div>
+            <div class="login-panel-item">
+              <div class="s-txt-center">
+                <h2 class="dashboard-ttl">はじめてログインされる方</h2>
+              </div>
+              <div class="dashboard-panel">
+                <div class="s-fw-b s-mb-20">お取引企業様マイページについて</div>
+                <div class="sec-txt">
+                  本ページは当社お取引企業様専用のマイページになります。<br>
+                  コンサルタントの方は <a href="<%= new_fc_user_session_path %>" class="c-red link-border-bottom">こちらのログイン画面</a>
+                  からログインを<br>
+                  お願い致します。
+                </div>
+                <div class="sec-txt">
+                  本ページをご利用いただくには、パスワードが必要になります。<br>
+                  はじめてご利用いただく際には下記の「パスワード設定」ボタン<br>
+                  からパスワードを設定してください。
+                </div>
+              </div>
+              <div class="s-sp s-txt-center">
+                <a href="<%= new_client_user_password_path %>" class="btn bs-normal btn-theme-02 s-mt-20">パスワード設定</a>
+              </div>
+              <div class="s-pc s-txt-center s-mt-20 s-mb-20 s-pt-15">
+                <a href="<%= new_client_user_password_path %>" class="btn bs-normal btn-theme-02 s-mt-20">パスワード設定</a>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </section>
+  <%= render 'recaptcha' %>

@@ -1,0 +1,24 @@
+ja:
+  activemodel:
+    tasks:
+      tasks/request_confirmation_to_client_task:
+        subject: "「%{project_name}」%{direction_month} 分の業務責任者活動を開始"
+        description: "%{client_fullname} へ 「%{project_name}」%{direction_month} 分 の業務指示確認依頼を送信"
+      tasks/approved_by_client_task:
+        subject: "[CL]%{direction_month} 分の業務指示内容の確認完了"
+        description: "%{approver_of_cl}が「%{project_name}」%{direction_month} 分業務指示内容の確認を完了しました。"
+      tasks/auto_approved_by_client_task:
+        subject: "[CL]業務指示内容の自動確認"
+        description: "「%{project_name}」%{direction_month} 分の業務指示内容が自動確認されました。"
+      tasks/rejected_by_client_task:
+        subject: "[CL]業務指示内容の修正依頼"
+        description: "%{approver_of_cl}から「%{project_name}」%{direction_month} 分業務内容の修正依頼がありました。修正内容は業務責任者オブジェクトをご確認ください。"
+      tasks/approved_by_fc_task: 
+        subject: "[FC]%{direction_month} 分の業務指示内容の確認完了"
+        description: "%{approver_of_fc}が「%{project_name}」%{direction_month} 分業務指示内容の確認を完了しました。"
+      tasks/auto_approved_by_fc_task:
+        subject: "[FC]業務指示内容の自動確認"
+        description: "「%{project_name}」%{direction_month} 分の業務指示内容が自動確認されました。"
+      tasks/rejected_by_fc_task:
+        subject: "[FC]業務指示内容の保留連絡"
+        description: "%{approver_of_fc}から「%{project_name}」%{direction_month} 分業務内容の保留連絡がありました。FCからのコメントは業務責任者オブジェクトをご確認ください。"

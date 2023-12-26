@@ -1,0 +1,37 @@
+<%= testid('mypage/fc/entry/item/row') %>
+        <div class="workflow-dl">
+          <dl class="column-status">
+            <dt>応募状況</dt>
+            <dd>
+              <div>
+                <span class="<%= status_colour %> s-fw-b"><%= selection_status %></span><br>
+              </div>
+            </dd>
+          </dl>
+          <dl class="column-date">
+            <dt>応募日</dt>
+            <dd>
+              <div><%= application_date %></div>
+            </dd>
+          </dl>
+          <dl class="column-description">
+            <dt>案件名</dt>
+            <dd class="txt-left">
+              <div><a href="<%= project_path(project) %>"><%= project_name %></a></div>
+            </dd>
+          </dl>
+          <dl class="column-scale">
+            <dt>報酬</dt>
+            <dd>
+              <div><%= compensations_for_details %></div>
+            </dd>
+          </dl>
+          <dl class="column-btn">
+            <dt>&nbsp;</dt>
+            <dd>
+              <div>
+                <%= decline_button %>
+              </div>
+            </dd>
+          </dl>
+        </div>

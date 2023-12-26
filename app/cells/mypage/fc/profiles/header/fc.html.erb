@@ -1,0 +1,29 @@
+      <nav class="header-flex">
+        <ul class="global-nav s-pc">
+          <li>
+            <a href="<%= mypage_root_path %>">
+              <span class="main-ttl">マイページ</span>
+              <span class="sub-ttl">MY PAGE</span>
+            </a>
+          </li>
+          <%= cell(Header::ProjectsCell).call(:show) %>
+          <%= menu_fc %>
+        </ul>
+        <ul class="header-btn-block">
+          <li>
+            <a href="<%= mypage_root_path %>" class="user" title="<%= current_fc_profile&.full_name %>">
+              <div class="user-img header">
+                <img src="<%= decorated_fc_user&.transformed_profile_image %>" class="user-img-inner">
+              </div>
+              <span><%= current_fc_profile&.full_name %></span>
+            </a>
+          </li>
+        </ul>
+        <div class="s-sp menu-trigger-box jsSlideMenu">
+          <button class="menu-trigger" id="menu02">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </nav>

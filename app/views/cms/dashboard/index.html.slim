@@ -1,0 +1,17 @@
+table.table-type01
+  thead
+    tr
+      th 投稿タイプ
+      th ステータス
+      th タイトル
+  - drafts.each do |post|
+    tr
+      td
+        = post.post_type
+      td
+        = post.post_status
+      td
+        - if post.to_param.present?
+          = link_to post.post_title, post
+        - else
+          = link_to post.post_title, '#', onclick: 'alert("post_nameが設定されていないためプレビューできません。")'

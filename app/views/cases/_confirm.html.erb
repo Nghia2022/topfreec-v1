@@ -1,0 +1,63 @@
+<%= f.hidden_field :confirming %>
+<% form.class.permitted_attributes.each do |key| %>
+  <%= f.hidden_field key %>
+<% end %>
+
+      <div class="step-progress mt60 sp-mt40">
+        <div class="line">
+          <div class="line-progress-50per active"></div>
+          <div class="line-progress-50per"></div>
+        </div>
+        <div class="circle-bar active">
+          <p class="fs-14 c-white noto-bold">入力</p>
+        </div>
+        <div class="circle-bar active">
+          <p class="fs-14 c-white noto-bold">確認</p>
+        </div>
+        <div class="circle-bar">
+          <p class="fs-14 c-white noto-bold">完了</p>
+        </div>
+      </div>
+      <div class="g-width-700 mt30 sp-mt40">
+        <div class="box-gray-3">
+          <ul class="list-type05 sp-ltr-space-0-7 ul-flex-li-a-center li-last-no-border contact-li">
+              <li>
+                <dd>名前</dd>
+                <dt>
+                  <div class="profile-data">
+                    <p class="fs-14 noto-l d-inline-block "><%= form.last_name_kana %></p>
+                    <p class="fs-22 noto-bold c-red d-inline-block"><%= form.last_name %></p>
+                  </div>
+                  <div class="profile-data ml30">
+                    <p class="fs-14 noto-l d-inline-block"><%= form.first_name_kana %></p>
+                    <p class="fs-22 noto-bold c-red d-inline-block"><%= form.first_name %></p>
+                  </div>
+                </dt>
+              </li>
+              <li>
+                <dd>メールアドレス</dd>
+                <dt class="sp-ls-neg-1"><%= form.email %></dt>
+              </li>
+              <li>
+                <dd>電話番号</dd>
+                <dt><%= form.phone %></dt>
+              </li>
+              <li>
+                <dd>お問い合わせの種類</dd>
+                <dt >
+                  <%= form.case_type %>
+                </dt>
+              </li>
+              <li>
+                <dd>お問い合わせ内容</dd>
+                <dt>
+                  <%= simple_format(form.description) %>
+                </dt>
+              </li>
+            </ul>
+        </div>
+        <div class="btn-wrapper-2 mt60 sp-mt40">
+          <button name="back" class="btn btn-type03 bg-gray c-white">戻る</button>
+          <%= f.submit 'この内容でお問い合わせをする', class: 'btn btn-type03 bg-red c-white' %>
+        </div>
+      </div>

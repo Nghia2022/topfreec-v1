@@ -1,0 +1,2033 @@
+@charset "UTF-8";
+@import url("anime.css");
+
+/*===== CSSリセット =====*/
+html, body {color: #252828; font-family: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", sans-serif;}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre,a, abbr, acronym, address, big, cite, code,del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var,b, u, i, center, dl, dt, dd, ol, ul, li,fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed,figure, figcaption, footer, header, hgroup,menu, nav, output, ruby, section, summary,time, mark, audio, video {margin: 0; padding: 0; border: 0; font-style: normal; font-weight: normal; font-size: 14px; vertical-align: baseline; list-style-type: none;}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {display: block;}
+html{ overflow-y: scroll;}
+blockquote, q {quotes: none;}
+blockquote:before, blockquote:after, q:before, q:after {content: ''; content: none;}
+input, textarea {margin: 0; padding: 0;}
+ol, ul {list-style:none;}
+table {border-collapse: collapse; border-spacing: 0;}
+caption, th {text-align: left;}
+a:focus {outline:none;}
+.clearfix:after {content: "."; display: block; clear: both; height: 0; visibility: hidden;}
+.clearfix {min-height: 1px;}
+* html .clearfix {height: 1px;}
+.both{clear:both;}
+.inline_block {display: inline-block; *display: inline; *zoom: 1;}
+th {font-weight: normal; vertical-align: baseline;}
+.error {color:#f80a1b;}
+.required {color: #FFFFFF; font-size: 0.85em; background-color: #DC4639; padding-top: 1px; padding-right: 2px; padding-bottom: 1px; padding-left: 2px; margin-left: 2px;}
+a {text-decoration: underline; color: #0577E1;}
+a:hover {text-decoration: none; color: #00BBE4;}
+a, a img {transition: 0.3s;}
+a, a img {transition: 0.3s;}
+a:hover img {opacity: calc(0.6);}
+p, li, dt, dd {text-justify: inter-ideograph; line-height: 1.9;}
+ul {list-style-type: none;}
+th,td,p,li,dt,dd,address {}
+textarea, input[type="text"],.updated.inputpassword{border:1px solid #bdc7d8; font-size: 14px; -webkit-appearance:none; -webkit-border-radius:0; margin:0; background-color: #fff; padding-top: 5px; padding-right: 3px; padding-bottom: 5px; padding-left: 3px;}
+
+
+/*===== ページ共通 =====*/
+small {
+    font-size: 12px;
+    line-height: 1.6;
+    margin-left: 1rem;
+    margin-bottom: 0;
+    display: block;
+}
+small::before {
+    content: "※";
+    margin-left: -1rem;
+}
+/*改行*/
+br.pc-view {display: block;}
+@media screen and (max-width:820px) {
+    br.pc-view {display: none;}
+}
+br.sp-view {display: none;}
+@media screen and (max-width:820px) {
+    br.sp-view {display: block;}
+}
+/*コンテンツブロック*/
+.anchor-link-area-sp,
+.background-block,
+.message-block,
+.flow-block,
+.project-block,
+.contact-block,
+footer {
+	position: relative;
+    background-color: #fff;
+	z-index: 2;
+}
+/*h2見出し*/
+.heading-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.heading-area h2 {
+    margin-top: 100px;
+    margin-bottom: 70px;
+    color: #0067AB;
+    font-family: "游明朝体", YuMincho, "游明朝", "Yu Mincho", serif;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 1.35;
+    text-align: center;
+    position: relative;
+}
+.heading-area h2 span {
+    padding: 0 20px;
+    color: #252828;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 44px;
+    text-align: center;
+    background: #EEF1F4;
+    border-radius: 22px;
+    height: 44px;
+    display: inline-block;
+}
+.heading-area h2 span::before {
+    content: "";
+    margin: 0 auto;
+    display: block;
+    width: 1px;
+    height: 106px;
+    background: #EEF1F4;
+    position: absolute;
+    top: -106px;
+    left: 50%;
+}
+.heading-area h2 strong {
+    margin-top: 20px;
+    font-weight: 800;
+    font-size: 32px;
+    line-height: 1.35;
+    display: block;
+}
+@media screen and (max-width:800px) {
+    .heading-area h2 {
+        margin-bottom: 30px;
+    }
+    .heading-area h2 strong {
+        font-size: 24px;
+    }
+}
+@media screen and (max-width:428px) {
+    .heading-area h2 strong {
+        font-size: 20px;
+    }
+}
+/*h3見出し*/
+h3.headline {
+    margin-bottom: 50px;
+    font-family: "游明朝体", YuMincho, "游明朝", "Yu Mincho", serif;
+    font-weight: 600;
+    font-size: 24px;
+    text-align: center;
+    line-height: 1.5;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    position: relative;
+}
+h3.headline::after {
+    content: "";
+    background-color: #D4D6DB;
+    display: block;
+    width: 100%;
+    height: 1px;
+    position: absolute;
+    top: 50%;
+}
+h3.headline span {
+    padding: 0 15px;
+    font-size: 18px;
+    font-weight: 700;
+    text-align: center;
+    background: #fff;
+    z-index: 1;
+}
+@media screen and (max-width : 960px) {
+    h3.headline {
+        font-size: 18px;
+    }
+}
+@media screen and (max-width : 820px) {
+    h3.headline {
+        margin-bottom: 30px;
+        font-size: 16px;
+        text-align: left;
+    }
+}
+/*会員登録ボタン*/
+p.btn-area {
+    width: 500px;
+    height: 100px;
+    background: linear-gradient(109.36deg, #0578E2 20.11%, #02BCE5 84.45%);
+    box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.15);
+    transition: 0.3s;
+}
+p.btn-area:hover {
+    opacity: calc(0.8);
+    filter: drop-shadow(0px 0px 20px rgba(0, 187, 228, 0.3));
+}
+p.btn-area a,
+p.btn-area button {
+    padding-left: 30px;
+    color: #fff;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    width: 470px;
+    height: 100px;
+    position: relative;
+    background-image: url("../img/ic-arrow.svg");
+    background-position: right 30px center;
+    background-repeat: no-repeat;
+    background-size: 21px;
+    border-radius: 8px;
+}
+p.btn-area a:hover {
+    background-position: right 20px center;
+}
+p.btn-area a::after {
+    content: "";
+    display: block;
+    border: 1px solid #fff;
+    border-radius: 23px;
+    height: 46px;
+    width: 46px;
+    position: absolute;
+    right: 17px;
+    top: 27px;
+}
+p.btn-area button {
+    padding-left: 0;
+    font-size: 18px;
+    font-weight: 700;
+    border: none;
+    background: none;
+    cursor: pointer;
+    align-items: center;
+}
+p.btn-area a span {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1;
+}
+p.btn-area a span::before {
+    content: url("../img/ic-registration.svg");
+    margin-right: 5px;
+    vertical-align: middle;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    position: relative;
+    top: -2px;
+}
+.registration-area-sp {
+    display: none;
+}
+@media screen and (max-width:820px) {
+    p.btn-area a {
+        padding-left: 30px;
+        background-position: right 40px center;
+    }
+    p.btn-area a::after {
+        right: 27px;
+    }
+    p.btn-area a:hover {
+        background-position: right 30px center;
+    }
+    .registration-area-sp {
+        display: block;
+        position: fixed;
+        bottom: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100px;
+        z-index: 3;
+    }
+    .registration-area-sp p.btn-area {
+        width: 100%;
+        height: 100px;
+        border-radius: 0px;
+    }
+    .registration-area-sp p.btn-area a {
+        width: 100%;
+        height: 100px;
+        border-radius: 0px;
+        padding-left: 50px;
+        background-position: right 80px center;
+    }
+    .registration-area-sp p.btn-area a::after {
+        right: 67px;
+    }
+    .registration-area-sp p.btn-area:hover {
+        opacity: calc(1);
+    }
+}
+@media screen and (max-width:730px) {
+    p.btn-area {
+        margin: 0 auto;
+        width: 80%;
+        height: 80px;
+    }
+    p.btn-area:hover {
+        opacity: calc(0.8);
+        filter: drop-shadow(0px 0px 20px rgba(0, 187, 228, 0.3));
+    }
+    p.btn-area a {
+        padding-left: 5%;
+        width: 95%;
+        height: 80px;
+        background-position: right 23px center;
+    }
+    p.btn-area a:hover {
+        background-position: right 13px center;
+    }
+    p.btn-area a::after {
+        right: 10px;
+        top: 17px;
+    }
+    .registration-area-sp p.btn-area a {
+        height: 100px;
+    }
+    .registration-area-sp p.btn-area a:hover {
+        background-position: right 70px center;
+    }
+    .registration-area-sp p.btn-area a::after {
+        top: 27px;
+    }
+}
+@media screen and (max-width:428px) {
+    p.btn-area {
+        width: 90%;
+    }
+    p.btn-area a::after {
+        right: 10px;
+    }
+    p.btn-area a span {
+        font-size: 16px;
+    }
+    p.btn-area a:hover {
+        background-position: right 13px center;
+    }
+    .registration-area-sp {
+        height: 80px;
+    }
+    .registration-area-sp p.btn-area {
+        height: 80px;
+    }
+    .registration-area-sp p.btn-area a {
+        height: 80px;
+    }
+    .registration-area-sp p.btn-area:hover {
+        opacity: calc(1);
+    }
+    .registration-area-sp p.btn-area a:hover {
+        background-position: right 70px center;
+    }
+    .registration-area-sp p.btn-area a::after {
+        top: 17px;
+    }
+}
+/*会員登録エリア*/
+.registration-block {
+    margin: 0 100px;
+    max-width: 1400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.registration-block ul {
+    margin-bottom: 25px;
+    text-align: center;
+}
+.registration-block ul li {
+    margin-bottom: 5px;
+    font-weight: 700;
+}
+@media screen and (min-width:1600px) {
+    .registration-block {
+        margin: 0 auto;
+    }
+}
+@media screen and (max-width:730px) {
+    .registration-block {
+        margin: 0 20px;
+    }
+    .registration-area {
+        width: 100%;
+    }
+}
+/*こんな方を…*/
+.want-area {
+    margin: 0 100px 50px;
+    background: no-repeat left top #EEF1F4;
+    background-size: 38%;
+    max-width: 1400px;
+    position: relative;
+}
+.want-area::after {
+    content: url(../img/ic-triangle.svg);
+    width: 60px;
+    height: 30px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    bottom: -20px;
+}
+.want-area h3 {
+    padding: 50px 50px 30px 45%;
+    color: #0067AB;
+    font-family: "游明朝体", YuMincho, "游明朝", "Yu Mincho", serif;
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 1;
+}
+.want-area h3::before {
+    content: url(../img/ic-person-search.svg);
+    width: 32px;
+    height: 32px;
+    display: inline-block;
+    position: relative;
+    top: 4px;
+}
+.want-area ul {
+    padding: 0 50px 50px 45%;
+}
+.want-area ul li {
+    margin-bottom: 15px;
+    font-weight: 600;
+    font-size: 17px;
+    position: relative;
+    margin-left: 25px;
+}
+.want-area ul li::before {
+    content: url(../img/ic-num01.svg);
+    margin-right: 7px;
+    display: inline;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 3px;
+    left: -25px;
+}
+.want-area ul li:nth-child(2)::before {
+    content: url(../img/ic-num02.svg);
+}
+.want-area ul li:nth-child(3)::before {
+    content: url(../img/ic-num03.svg);
+}
+.want-area ul li:nth-child(4)::before {
+    content: url(../img/ic-num04.svg);
+}
+@media screen and (min-width:1600px) {
+    .want-area {
+        margin: 0 auto 50px;
+    }
+}
+@media screen and (max-width:1160px) {
+    .want-area h3 {
+        padding: 30px 50px 20px 45%;
+        font-size: 24px;
+    }
+    .want-area ul {
+        padding: 0 50px 30px 45%;
+    }
+    .want-area ul li {
+        margin-bottom: 12px;
+        font-size: 16px;
+    }
+}
+@media screen and (max-width:1060px) {
+    .want-area {
+        background-size: 36%;
+    }
+    .want-area h3 {
+        padding: 30px 30px 20px 42%;
+        font-size: 20px;
+    }
+    .want-area h3::before {
+        width: 32px;
+        height: 28px;
+    }
+    .want-area ul {
+        padding: 0 30px 30px 42%;
+    }
+    .want-area ul li {
+        margin-bottom: 10px;
+        font-size: 15px;
+    }
+    .want-area ul li::before {
+        margin-right: 5px;
+        width: 18px;
+        height: 18px;
+    }
+}
+@media screen and (max-width:960px) {
+    .want-area {
+        margin: 0 50px 50px;
+    }
+}
+@media screen and (max-width:820px) {
+    .want-area h3 {
+        padding: 30px 30px 20px 42%;
+        font-size: 20px;
+    }
+    .want-area ul {
+        padding: 0 30px 30px 42%;
+    }
+}
+@media screen and (max-width:820px) {
+    .want-area {
+    }
+}
+@media screen and (max-width:730px) {
+    .want-area {
+        margin: 0 20px 50px;
+        background-size: 100%;
+    }
+    .want-area h3 {
+        padding: 68% 20px 20px 20px;
+    }
+    .want-area ul {
+        padding: 0 20px 30px 20px;
+    }
+}
+
+
+/*===== ヘッダー =====*/
+header {
+    line-height: 1;
+    position: fixed;
+    width: 100%;
+    height: 70px;
+    background: #fff;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    z-index: 3;
+}
+header nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 70px;
+}
+header nav p.logo-area {
+    padding-left: 50px;
+    width: 245px;
+}
+header nav p.logo-area img {
+    width: 100%;
+}
+header nav ul {
+    margin-right: 230px;
+    margin-left: 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    gap: 30px;
+}
+header nav ul li a {
+    transition: 0.3s;
+    text-decoration: none;
+}
+header nav ul li a::before {
+    content: url(../img/ic-anchor.svg);
+    margin-right: 3px;
+    display: inline-block;
+    height: 14px;
+    width: 17px;
+    position: relative;
+    top: 1px;
+    transition: 0.3s;
+}
+header nav ul li a:hover {
+    opacity: calc(0.65);
+}
+header nav ul li:hover a::before {
+    top: 3px;
+}
+header nav ul li.registration-area {
+    position: absolute;
+    height: 80px;
+    right: 0;
+    top: 0;
+}
+header nav ul li.registration-area a {
+    color: #fff;
+    line-height: 1;
+    background: linear-gradient(109.36deg, #0578E2 20.11%, #02BCE5 84.45%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 80px;
+}
+header nav ul li.registration-area a::before {
+    content: "";
+    display: none;
+}
+header nav ul li.registration-area a:hover {
+    opacity: calc(0.7);
+    filter: drop-shadow(0px 0px 20px rgba(0, 187, 228, 0.3));
+}
+header nav ul li.registration-area a span {
+    font-weight: 700;
+}
+header nav ul li.registration-area a span::before {
+    content: "";
+    margin-right: 5px;
+    vertical-align: middle;
+    display: inline-block;
+    background-image: url("../img/ic-registration.svg");
+    background-repeat: no-repeat;
+    background-position: left center;
+    width: 20px;
+    height: 20px;
+    position: relative;
+    top: -2px
+}
+@media screen and (max-width : 1000px) {
+    header nav ul {
+        margin-right: 180px;
+        gap: 20px;
+    }
+    header nav ul li::before {
+        top: 2px;
+    }
+    header nav ul li.registration-area a {
+        width: 150px;
+    }
+}
+@media screen and (max-width : 920px) {
+    header nav ul li a {
+        font-size: 12px;
+    }
+    header nav ul {
+        margin-right: 150px;
+        gap: 12px;
+    }
+    header nav ul li::before {
+        top: 2px;
+    }
+    header nav ul li a::before {
+        width: 14px;
+    }
+    header nav ul li.registration-area a {
+        width: 130px;
+    }
+    header nav ul li.registration-area a span {
+        font-size: 12px;
+    }
+}
+@media screen and (max-width : 820px) {
+    header {
+        height: 60px;
+    }
+    header nav {
+        height: 60px;
+    }
+    header nav ul {
+        display: none;
+    }
+    header nav p.logo-area {
+        padding-left: 20px;
+        width: 200px;
+    }
+}
+
+
+/*===== SPアンカーリンク =====*/
+.anchor-link-area-sp {
+    display: none;
+}
+@media screen and (max-width:820px) {
+    .anchor-link-area-sp {
+        background-color: #fff;
+        display: block;
+        padding-bottom: 120px;
+    }
+    .anchor-link-area-sp ul {
+        display: grid;
+        grid-template-columns: 50% 50%;
+    }
+    .anchor-link-area-sp ul li {
+        border-right: 1px solid #D9D9D9;
+        border-bottom: 1px solid #D9D9D9;
+
+    }
+    .anchor-link-area-sp ul li:nth-child(2),
+    .anchor-link-area-sp ul li:nth-child(4) {
+        border-right: none;
+
+    }
+    .anchor-link-area-sp ul li a {
+        color: #0067AB;
+        display: block;
+        padding: 15px 0;
+        text-align: center;
+    }
+    .anchor-link-area-sp ul li a:hover {
+        opacity: calc(0.7);
+    }
+    .anchor-link-area-sp ul li a span {
+        font-size: 13px;
+    }
+    .anchor-link-area-sp ul li a span::before {
+        content: url(../img/ic-anchor.svg);
+        display: inline-block;
+        height: 12px;
+        width: 17px;
+        position: relative;
+        top: 1px;
+        transition: 0.2s;
+    }
+    .anchor-link-area-sp ul li a:hover span::before {
+        top: 3px;
+    }
+}
+
+/*===== メインビジュアル =====*/
+.main-visual-block {
+    margin: 0 auto 120px;
+    padding: 0;
+    width: 100%;
+	position: relative;
+	width: 100%;
+	height: auto;
+	overflow: hidden;
+}
+.main-visual-area {
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	width: 100%;
+	height: 675px;
+	background: url("../img/img-main-visual.jpg") no-repeat top center;
+	background-size: cover;
+	transform-origin: center;
+}
+.main-visual-block .main-txt-area {
+    margin: 0 100px;
+    max-width: 1400px;
+    position: relative;
+    z-index: 2;
+}
+.main-visual-block .main-txt-area ul {
+    margin-bottom: 30px;
+    padding-top: 120px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 30px;
+}
+.main-visual-block .main-txt-area ul li {
+    width: 240px;
+}
+.main-visual-block .main-txt-area ul li img {
+    width: 100%;
+}
+.main-visual-block .main-txt-area h1 {
+    margin-bottom: 20px;
+    font-family: "游明朝体", YuMincho, "游明朝", "Yu Mincho", serif;
+    line-height: 1.7;
+}
+.main-visual-block .main-txt-area h1 span {
+    margin-bottom: 10px;
+    color: #0067AB;
+    font-weight: 600;
+    font-size: 19px;
+    display: block;
+}
+.main-visual-block .main-txt-area h1 span a {
+    font-size: 19px;
+}
+.main-visual-block .main-txt-area h1 em {
+    margin-bottom: 10px;
+    color: #0067AB;
+    font-weight: 800;
+    font-size: 50px;
+    line-height: 1.35;
+    display: block;
+}
+.main-visual-block .main-txt-area h1 em b {
+    font-weight: 800;
+    font-size: 40px;
+}
+.main-visual-block .main-txt-area p {
+    margin-bottom: 40px;
+    font-weight: 700;
+    font-size: 14px;
+}
+.main-visual-block .main-txt-area p.attention-area {
+    color: #947102;
+    font-family: "游明朝体", YuMincho, "游明朝", "Yu Mincho", serif;
+    font-weight: 800;
+    font-size: 26px;
+    line-height: 1.35;
+    background-image: url("../img/bg-recruiting.png");
+    background-size: 240px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    position: absolute;
+    left: 720px;
+    top: 150px;
+    width: 240px;
+    height: 240px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+@media screen and (min-width:1600px) {
+    .main-visual-block .main-txt-area {
+        margin: 0 auto;
+    }
+    .main-visual-area{
+        height: 745px;
+    }
+    .main-visual-block .main-txt-area h1 span {
+        margin-bottom: 20px;
+        font-size: 23px;
+    }
+    .main-visual-block .main-txt-area h1 span a {
+        font-size: 23px;
+    }
+    .main-visual-block .main-txt-area h1 em {
+        font-size: 60px;
+    }
+    .main-visual-block .main-txt-area h1 em b {
+        font-size: 50px;
+    }
+    .main-visual-block .main-txt-area p {
+        margin-bottom: 50px;
+        font-size: 16px;
+    }
+    .main-visual-block .main-txt-area p.attention-area {
+        background-size: 280px;
+        left: 870px;
+        width: 280px;
+        height: 280px;
+    }
+}
+@media screen and (max-width:1130px) {
+    .main-visual-block .main-txt-area h1 span {
+        margin-bottom: 20px;
+        font-size: 16px;
+    }
+    .main-visual-block .main-txt-area h1 span a {
+        font-size: 16px;
+    }
+    .main-visual-block .main-txt-area h1 em {
+        font-size: 40px;
+    }
+    .main-visual-block .main-txt-area h1 em b {
+        font-size: 30px;
+    }
+    .main-visual-block .main-txt-area p {
+        font-size: 14px;
+    }
+    .main-visual-block .main-txt-area p.attention-area {
+        left: 560px;
+    }
+}
+@media screen and (max-width:960px) {
+    .main-visual-block .main-txt-area {
+        margin: 0 50px;
+    }
+    .main-visual-block .main-txt-area ul {
+        padding-top: 110px;
+    }
+    .main-visual-block .main-txt-area ul li {
+        width: 200px;
+    }
+    .main-visual-block .main-txt-area h1 span {
+        margin-bottom: 20px;
+        font-size: 14px;
+    }
+    .main-visual-block .main-txt-area h1 span a {
+        font-size: 14px;
+    }
+    .main-visual-block .main-txt-area h1 em {
+        font-size: 30px;
+    }
+    .main-visual-block .main-txt-area h1 em b {
+        font-size: 20px;
+    }
+    .main-visual-block .main-txt-area p {
+        font-size: 14px;
+    }
+    .main-visual-block .main-txt-area p.attention-area {
+        left: 410px;
+        top: 100px;
+    }
+}
+@media screen and (max-width:820px) {
+    .main-visual-block {
+        margin: 0 auto;
+    }
+    .main-visual-area {
+        height: 585px;
+    }
+    .main-visual-block .main-txt-area .registration-area {
+        display: none;
+    }
+    .main-visual-block .main-txt-area h1 span br.pc-view {
+        display: block;
+    }
+}
+@media screen and (max-width:730px) {
+    .main-visual-area {
+        background-image: url("../img/img-main-visual-sp.jpg");
+        background-position: top -80px right -200px;
+        background-size: 150%;
+        height: 690px;
+    }
+    .main-visual-block .main-txt-area {
+        margin: 0 20px;
+    }
+    .main-visual-block .main-txt-area h1 span br.pc-view {
+        display: none;
+    }
+    .main-visual-block .main-txt-area p {
+        font-size: 13px;
+        font-weight: 400;
+    }
+    .main-visual-block .main-txt-area ul {
+        margin-bottom: 40px;
+        padding-top: 165px;
+        width: 210px;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+    .main-visual-block .main-txt-area ul li {
+        width: 170px;
+    }
+    .main-visual-block .main-txt-area p.attention-area {
+        font-size: 20px;
+        background-size: 180px;
+        left: 240px;
+        width: 180px;
+        height: 180px;
+    }
+}
+@media screen and (max-width:560px) {
+    .main-visual-area {
+        background-size: 180%;
+        height: 715px;
+    }
+}
+@media screen and (max-width:480px) {
+    .main-visual-block {
+        background-color: #F5F5F5;
+    }
+    .main-visual-area {
+        background: url("../img/img-main-visual-sp.jpg") no-repeat top center;
+        background-size: 155%;
+    }
+    .main-visual-block .main-txt-area ul {
+        width: 170px;
+    }
+    .main-visual-block .main-txt-area p.attention-area {
+        left: 170px;
+    }
+    .main-visual-block .main-txt-area h1 {
+        margin-bottom: 20px;
+    }
+    .main-visual-block .main-txt-area h1 span {
+        margin-bottom: 15px;
+        font-size: 13px;
+    }
+    .main-visual-block .main-txt-area h1 span a {
+        font-size: 13px;
+    }
+    .main-visual-block .main-txt-area h1 em {
+        font-size: 24px;
+    }
+    .main-visual-block .main-txt-area h1 em b {
+        font-size: 16px;
+    }
+    .main-visual-block .main-txt-area p {
+        margin-bottom: 30px;
+        font-size: 12px;
+    }
+}
+
+
+/*===== 背景 =====*/
+.background-block {
+    margin: 0 auto;
+    padding-bottom: 120px;
+}
+.background-block .background-area {
+    margin: 0 100px 100px;
+    position: relative;
+    min-height: 400px;
+    max-width: 1400px;
+}
+.background-block .background-area p {
+    margin-bottom: 20px;
+    margin-right: 450px;
+}
+.background-block .background-area p.img-area {
+    margin: 0;
+    padding: 0 0 100px 0;
+    width: 400px;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.background-block .background-area p.img-area::after {
+    content: "";
+    margin: 0;
+    background-color:#EEF1F4;
+    width: 400px;
+    height: 300px;
+    position: absolute;
+    right: -100px;
+    top: 100px;
+    z-index: -1;
+}
+.background-block .background-area p.img-area span {
+    display: block;
+    line-height: 0;
+}
+.background-block .background-area p.img-area img {
+    width: 100%;
+}
+.background-block .outline-area {
+    margin: 0 100px 100px;
+    max-width: 1400px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 50px;
+}
+.background-block .outline-area .company-area {
+    width: 50%;
+}
+.background-block .outline-area .company-area h3 {
+    margin-bottom: 20px;
+    color: #0067AB;
+    font-family: "游明朝体", YuMincho, "游明朝", "Yu Mincho", serif;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 1.35;
+}
+.background-block .outline-area .company-area h3::before {
+    content: url(../img/ic-corp.svg);
+    width: 28px;
+    height: 24px;
+    display: inline-block;
+    position: relative;
+    top: 1px;
+}
+.background-block .outline-area .company-area dl {
+    display: grid;
+    grid-template-columns: 25% 75%;
+}
+.background-block .outline-area .company-area dl dt {
+    padding: 15px 10px;
+    font-weight: 700;
+    border-bottom: 1px solid #0067AB;
+}
+.background-block .outline-area .company-area dl dd {
+    padding: 15px 10px;
+    border-bottom: 1px solid #EAEAEA;
+}
+.background-block .outline-area .company-area dl dt:first-child {
+    border-top: 1px solid #0067AB;
+}
+.background-block .outline-area .company-area dl dd:nth-child(2) {
+    border-top: 1px solid #EAEAEA;
+}
+.background-block .want-area {
+    background-image: url(../img/img-photo02.jpg);
+}
+@media screen and (min-width:1600px) {
+    .background-block .background-area {
+        margin: 0 auto 100px;
+    }
+    .background-block .outline-area {
+        margin: 0 auto 100px;
+    }
+}
+@media screen and (max-width:1060px) {
+    .background-block .background-area {
+        min-height: 300px;
+    }
+    .background-block .background-area p {
+        margin-right: 350px;
+    }
+    .background-block .background-area p.img-area {
+        width: 300px;
+    }
+    .background-block .background-area p.img-area::after {
+        width: 300px;
+        height: 225px;
+        top: 70px;
+    }
+    .background-block .outline-area .company-area h3 {
+        font-size: 17px;
+    }
+    .background-block .outline-area .company-area h3::before {
+        position: relative;
+        top: 2px;
+    }
+}
+@media screen and (max-width:960px) {
+    .background-block .background-area {
+        margin: 0 50px 100px;
+    }
+    .background-block .background-area p.img-area::after {
+        right: -50px;
+        top: 50px;
+    }
+    .background-block .outline-area {
+        margin: 0 50px 100px;
+    }
+    .background-block .outline-area .company-area h3 {
+        font-size: 16px;
+    }
+    .background-block .outline-area .company-area h3::before {
+        position: relative;
+        top: 3px;
+    }
+}
+@media screen and (max-width:820px) {
+    .background-block .outline-area {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .background-block .outline-area .company-area {
+        width: 100%;
+    }
+}
+@media screen and (max-width:730px) {
+    .background-block .background-area {
+        margin: 0 20px 150px;
+        padding-bottom: 245px;
+    }
+    .background-block .background-area p {
+        margin-right: 0;
+    }
+    .background-block .background-area p.img-area {
+        padding: 0;
+        right: 30px;
+        top: auto;
+        bottom: 0;
+    }
+    .background-block .background-area p.img-area::after {
+        right: -50px;
+    }
+    .background-block .outline-area {
+        margin: 0 20px 100px;
+    }
+    .background-block .want-area {
+        background-image: url(../img/img-photo02-sp.jpg);
+    }
+}
+
+
+/*===== メッセージ =====*/
+.message-block {
+    margin: 0 auto;
+    padding-bottom: 120px;
+}
+.message-block .about-block {
+    margin: 0 100px 50px;
+    text-align: center;
+    max-width: 1400px;
+}
+.message-block .about-block h4 {
+    margin: 30px auto;
+    padding: 0 45px;
+    color: #0067AB;
+    font-family: "游明朝体", YuMincho, "游明朝", "Yu Mincho", serif;
+    display: inline-block;
+    width: auto;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1.5;
+    text-align: center;
+    position: relative;
+}
+.message-block .about-block h4::before,
+.message-block .about-block h4::after {
+    content: url(../img/ic-circle.svg);
+    line-height: 0;
+    display: block;
+    position: absolute;
+    top: 38%;
+    left: 0;
+}
+.message-block .about-block h4::after {
+    left: auto;
+    right: 0;
+}
+.message-block .about-block p {
+    margin-bottom: 20px;
+}
+.message-block .about-block p.strategy-area {
+    margin: 50px auto;
+    width: 80%;
+}
+.message-block .about-block p.strategy-area img {
+    width: 100%;
+}
+.message-block .about-block p.public-promise {
+    margin-top: 0;
+}
+.message-block .strategy-area-sp {
+    display: none;
+}
+.message-block .want-area {
+    background-image: url(../img/img-photo03.jpg);
+}
+
+.message-block .about-block .case-block {
+}
+.message-block .about-block .case-block ul {
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    gap: 3%;
+}
+.message-block .about-block .case-block ul li {
+    padding: 30px;
+    border-top: 5px solid #0577E1;
+    width: 30%;
+    background: #FFFFFF;
+    box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.1);
+}
+.message-block .about-block .case-block ul li h3 {
+    margin-bottom: 20px;
+    margin-left: 30px;
+    color: #0067AB;
+    font-family: "游明朝体", YuMincho, "游明朝", "Yu Mincho", serif;
+    font-weight: 800;
+    font-size: 20px;
+    text-align: left;
+    line-height: 1.5;
+    border-bottom: none;
+    position: relative;
+}
+.message-block .about-block .case-block ul li h3::before {
+    content: url(../img/ic-forum.svg);
+    display: block;
+    margin-right: 7px;
+    height: 24px;
+    width: 24px;
+    position: absolute;
+    top: 4px;
+    left: -30px;
+}
+.message-block .about-block .case-block ul li p {
+    margin-bottom: 0;
+    text-align: left;
+}
+@media screen and (min-width:1600px) {
+    .message-block .about-block {
+        margin: 0 auto 50px;
+    }
+    .message-block .about-block .case-block {
+        margin: 0 auto;
+    }
+}
+@media screen and (max-width : 1160px) {
+    .message-block .about-block .case-block ul li h3 {
+        font-size: 18px;
+    }
+}
+@media screen and (max-width : 960px) {
+    .message-block .about-block {
+        margin: 0 50px 50px;
+    }
+    .message-block .about-block h4 {
+        font-size: 18px;
+    }
+    .message-block .about-block p.strategy-area {
+        width: 85%;
+    }
+    .message-block .about-block .case-block {
+        margin: 0;
+    }
+    .message-block .about-block .case-block ul {
+        flex-direction: column;
+        gap: 30px;
+    }
+    .message-block .about-block .case-block ul li {
+        padding: 30px 5%;
+        width: 90%;
+    }
+    .message-block .about-block .case-block ul li h3::before {
+        top: 1px;
+    }
+}
+@media screen and (max-width : 820px) {
+    .message-block .about-block h4 {
+        font-size: 16px;
+    }
+    .message-block .about-block p {
+        text-align: left;
+    }
+    .message-block .about-block p.strategy-area {
+        width: 100%;
+    }
+    .message-block .about-block .case-block {
+        margin: 0;
+    }
+    .message-block .about-block .case-block ul li h3 {
+        margin-right: 0;
+    }
+}
+@media screen and (max-width:730px) {
+    .message-block .about-block {
+        margin: 0 20px 50px;
+    }
+    .message-block .want-area {
+        background-image: url(../img/img-photo03-sp.jpg);
+    }
+}
+@media screen and (max-width:480px) {
+    .message-block .about-block p.strategy-area {
+        display: none;
+    }
+    .message-block .about-block p.strategy-area-sp {
+        margin: 50px auto;
+        display: block;
+        width: 70%;
+    }
+    .message-block .about-block p.public-promise {
+        width: 95%;
+    }
+    .message-block .about-block p.strategy-area-sp img {
+        width: 100%;
+    }
+}
+
+
+/*===== 利用までの流れ =====*/
+.flow-block {
+    padding-bottom: 120px;
+    background: #EEF1F4;
+}
+.flow-block .heading-area h2 span {
+    background: #fff;
+}
+.flow-block .heading-area h2 span::before {
+    background: #fff;
+}
+.flow-block .step-area {
+    margin: 0 100px 50px;
+    max-width: 1400px;
+}
+.flow-block .step-area ol {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+.flow-block .step-area ol li {
+    padding: 0 80px 0 0;
+    background: #fff;
+    border-radius: 90px;
+    min-height: 180px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 40px;
+}
+.flow-block .step-area ol li::after {
+    content: url(../img/ic-triangle-white.svg);
+    width: 60px;
+    height: 30px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    bottom: -20px;
+}
+.flow-block .step-area ol li p.image-area {
+    margin-bottom: 0;
+    height: 180px;
+}
+.flow-block .step-area ol li p.image-area img {
+    height: 100%;
+}
+.flow-block .step-area ol li div h3 {
+    margin-bottom: 10px;
+    font-family: "游明朝体", YuMincho, "游明朝", "Yu Mincho", serif;
+    color: #0067AB;
+    font-weight: 800;
+    font-size: 20px;
+}
+.flow-block .step-area ol li div p {
+    margin-bottom: 10px;
+    text-align: left;
+}
+@media screen and (min-width:1600px) {
+    .flow-block .step-area {
+        margin: 0 auto 50px;
+    }
+}
+@media screen and (max-width : 960px) {
+    .flow-block .step-area {
+        margin: 0 50px 50px;
+    }
+    .flow-block .step-area ol {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+    .flow-block .step-area ol li {
+        padding: 0 50px 0 0;
+        border-radius: 60px;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+    .flow-block .step-area ol li p.image-area {
+        margin-bottom: 0;
+        height: 120px;
+    }
+    .flow-block .step-area ol li div {
+        padding: 20px 0;
+    }
+}
+@media screen and (max-width : 820px) {
+    .flow-block p {
+        text-align: left;
+    }
+    .flow-block .step-area ol li {
+        padding: 0 30px 0 0;
+        border-radius: 50px;
+        gap: 20px;
+    }
+    .flow-block .step-area ol li p.image-area {
+        margin: 0;
+        height: 100px;
+    }
+    .flow-block .step-area ol li div h3 {
+        font-size: 18px;
+    }
+    .flow-block .step-area ol li div p {
+        margin-right: 0;
+        margin-left: 0;
+    }
+}
+@media screen and (max-width : 730px) {
+    .flow-block .step-area {
+        margin: 0 20px 50px;
+    }
+}
+@media screen and (max-width : 428px) {
+    .flow-block .step-area ol li {
+        padding: 0 20px 0 0;
+        border-radius: 40px;
+    }
+    .flow-block .step-area ol li p.image-area {
+        margin: 0;
+        height: 80px;
+    }
+    .flow-block .step-area ol li div h3 {
+        font-size: 16px;
+    }
+}
+
+
+/*===== 募集職種 =====*/
+.project-block {
+    margin: 0 auto;
+    padding-bottom: 120px;
+}
+.project-block .case-block {
+    margin: 0 100px;
+    max-width: 1400px;
+}
+.project-block .case-block ul {
+    margin-bottom: 50px;
+    display: grid;
+    grid-template-columns: 48.5% 48.5%;
+    gap: 3%;
+}
+.project-block .case-block ul li {
+    padding: 30px;
+    background: #FFFFFF;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.07);
+}
+.project-block .case-block ul li h3 {
+    margin: 0 0 30px 33px;
+    color: #0067AB;
+    font-family: "游明朝体", YuMincho, "游明朝", "Yu Mincho", serif;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1.5;
+    text-align: left;
+    border-bottom: none;
+    max-width: 100%;
+    position: relative;
+}
+.project-block .case-block ul li h3::before {
+    content: url(../img/ic-recruit.svg);
+    margin-right: 7px;
+    display: inline-block;
+    width: 28px;
+    height: 32px;
+    position: absolute;
+    left: -33px;
+}
+.project-block .case-block ul li dl {
+    display: grid;
+    grid-template-columns: 30% 70%;
+}
+.project-block .case-block ul li dl dt {
+    padding: 15px 10px;
+    font-weight: 700;
+    border-top: 1px solid #0067AB;
+}
+.project-block .case-block ul li dl dd {
+    padding: 15px 10px;
+    border-top: 1px solid #EAEAEA;
+}
+.project-block .case-block ul li h4 {
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+.project-block .case-block ul li p {
+    margin-bottom: 0;
+    text-align: left;
+}
+.project-block .bnr-area-pc {
+    margin:  100px auto 0;
+    width: 800px;
+}
+.project-block .bnr-area-sp {
+    margin:  100px auto 0;
+    width: 80%;
+    display: none;
+}
+.project-block .bnr-area-pc img,
+.project-block .bnr-area-sp img {
+    width: 100%;
+}
+@media screen and (min-width:1600px) {
+    .project-block .case-block {
+        margin: 0 auto;
+    }
+}
+@media screen and (max-width : 1060px) {
+    .project-block .bnr-area-pc {
+        margin:  100px auto 0;
+        width: 700px;
+    }
+}
+@media screen and (max-width : 960px) {
+    .project-block .case-block {
+        margin: 0 50px;
+    }
+    .project-block .case-block ul {
+        flex-direction: column;
+        gap: 30px;
+    }
+    .project-block .case-block ul li {
+        padding: 30px 5%;
+        width: 90%;
+    }
+    .project-block .bnr-area-pc {
+        margin:  100px auto 0;
+        width: 600px;
+    }
+}
+@media screen and (max-width : 820px) {
+    .project-block .case-block ul {
+        margin-bottom: 50px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 30px;
+    }
+    .project-block p {
+        margin-right: 20px;
+        margin-left: 20px;
+        text-align: left;
+    }
+    .project-block .bnr-area-pc {
+        margin:  100px auto 0;
+        width: 540px;
+    }
+}
+@media screen and (max-width : 730px) {
+    .project-block .case-block {
+        margin: 0 20px;
+    }
+    .project-block .case-block ul li h3 {
+        font-size: 16px;
+    }
+    .project-block .case-block ul li h3::before {
+        top: -3px;
+    }
+}
+@media screen and (max-width : 580px) {
+    .project-block .bnr-area-pc {
+        display: none;
+    }
+    .project-block .bnr-area-sp {
+        display: block;
+    }
+}
+
+
+/*===== 会員登録 =====*/
+.contact-block {
+    padding: 0 0 120px;
+    margin-bottom: 0;
+    background: #EEF1F4;
+}
+.contact-block .heading-area h2 span {
+    background: #fff;
+}
+.contact-block .heading-area h2 span::before {
+    background: #fff;
+}
+.contact-block p {
+    margin-bottom: 15px;
+    text-align: center;
+}
+.contact-block ul.notes {
+    margin-bottom: 50px;
+}
+.contact-block ul.notes li {
+    margin-bottom: 3px;
+    text-align: center;
+}
+.contact-block ul.notes li small a {
+    font-size: 12px;
+    text-decoration: underline;
+}
+.contact-block ul.notes li small a:hover {
+    text-decoration: none;
+    opacity: calc(0.6);
+}
+.contact-block form {
+    margin: 0 100px;
+    max-width: 1400px;
+}
+.contact-block table.form_table {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 800px;
+}
+.contact-block table.form_table th {
+    padding: 0;
+    font-weight: 700;
+    font-size: 14px;
+    text-align: right;
+    width: 20%;
+    white-space: nowrap;
+}
+.contact-block table.form_table th span.area {
+    opacity: calc(0);
+}
+.contact-block table.form_table span.required {
+    padding: 4px 5px;
+    margin: 0 10px;
+    font-weight: 700;
+    font-size: 10px;
+    line-height: 1;
+    background: #BC0900;
+    border-radius: 4px;
+    display: inline-block;
+}
+.contact-block table.form_table span.any {
+    background-color: #949494;
+}
+.contact-block table.form_table td {
+    padding: 0 0 20px;
+}
+.contact-block table.form_table td input[type="text"] {
+    margin: 0 1% 0 0;
+    padding: 12px 0;
+    text-indent: 0.5rem;
+    background: #fff;
+    border: 1px solid #a9afc4;
+    border-radius: 2px;
+    width: 48%;
+}
+.contact-block table.form_table td input#fc_user_phone[type="text"],
+.contact-block table.form_table td input#fc_user_email[type="text"] {
+    width: 97%;
+}
+.contact-block table.form_table td table.workplace {
+    width: 100%;
+}
+.contact-block table.form_table td table.workplace th {
+    text-align: left;
+    width: 20%;
+}
+.contact-block table.form_table td table.workplace td {
+}
+.contact-block table.form_table td table.workplace td select {
+    margin: 0;
+    padding: 12px 0;
+    text-indent: 0.5rem;
+    background: #fff;
+    border: 1px solid #a9afc4;
+    border-radius: 2px;
+    width: 96.5%;
+}
+.form-group {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  padding: 20px;
+  align-items: center;
+  text-align: center;
+}
+.s-fc-01 {
+  color: red;
+}
+.contact-block p.rules-area {
+    margin: 0 auto 30px;
+    width: 100%;
+    max-width: 780px;
+}
+.contact-block p.personal-data {
+}
+.contact-block p.rules-area textarea {
+    padding: 12px 3%;
+    border: 1px solid #a9afc4;
+    border-radius: 2px;
+    width: 92%;
+    height: 200px;
+}
+.contact-block p.btn-area {
+    margin: 0 auto;
+    width: 515px;
+    height: 100px;
+}
+.contact-block p.btn-area button {
+    width: 515px;
+    height: 100px;
+    background-position: right center;
+    background-repeat: no-repeat;
+    background-size: 20px;
+    border-radius: 8px;
+}
+@media screen and (min-width:1600px) {
+    .contact-block form {
+        margin: 0 auto;
+    }
+}
+@media screen and (max-width : 960px) {
+    .contact-block form {
+        margin: 0 50px;
+    }
+    .contact-block p {
+        margin-right: 50px;
+        margin-left: 50px;
+    }
+    .contact-block ul.notes {
+        margin-right: 50px;
+        margin-left: 50px;
+    }
+}
+@media screen and (max-width : 820px) {
+    .contact-block ul.notes li {
+        text-align: left;
+    }
+    .contact-block p.personal-data {
+        text-align: center;
+    }
+    .contact-block p {
+        text-align: left;
+    }
+}
+@media screen and (max-width : 730px) {
+    .contact-block form {
+        margin: 0 20px;
+    }
+    .contact-block p {
+        margin-right: 20px;
+        margin-left: 20px;
+    }
+    .contact-block ul.notes {
+        margin-right: 20px;
+        margin-left: 20px;
+    }
+    .contact-block ul.notes li {
+        text-align: left;
+    }
+    .contact-block p.personal-data {
+        text-align: center;
+    }
+}
+@media screen and (max-width : 620px) {
+    .contact-block table.form_table tr {
+        display: grid;
+        flex-direction: column;
+    }
+    .contact-block table.form_table th {
+        margin-bottom: 7px;
+        text-align: left;
+        width: 100%;
+    }
+    .contact-block table.form_table td {
+        width: 100%;
+    }
+    .contact-block p.rules-area {
+        width: 100%;
+    }
+    .contact-block p.rules-area textarea {
+        width: 90%;
+    }
+    .contact-block p.personal-data {
+        font-size: 12px;
+    }
+    .contact-block p.btn-area {
+        width: 315px;
+        height: 80px;
+    }
+    .contact-block p.btn-area button {
+        width: 315px;
+        height: 80px;
+    }
+}
+
+
+/*===== フッター =====*/
+footer {
+    padding: 25px 0 30px;
+    background-color: #252828;
+}
+footer div {
+    margin: 0 100px 30px;
+    max-width: 1400px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 60px;
+    position: relative;
+}
+footer div p.logo-mark {
+}
+footer div p.jpx {
+    width: 48px;
+    position: absolute;
+    right: 50px;
+    top: 0;
+}
+footer div ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 30px;
+}
+footer div ul li {
+    color: #fff;
+}
+footer div ul li a:link,
+footer div ul li a:visited,
+footer div ul li a:active {
+    color: #fff;
+    text-decoration: none;
+}
+footer div ul li a:hover {
+    color: #fff;
+    opacity: calc(0.6);
+}
+footer p.copyright {
+    color: #fff;
+    text-align: center;
+}
+footer p.copyright {
+    color: #fff;
+    text-align: center;
+}
+footer p.copyright small::before {
+    content: "";
+}
+@media screen and (min-width:1600px) {
+    footer div {
+        margin: 0 auto 30px;
+    }
+}
+@media screen and (max-width : 1180px) {
+    footer div {
+        margin: 0 50px 30px;
+        gap: 30px;
+    }
+    footer div p.jpx {
+        right: 30px;
+    }
+}
+@media screen and (max-width : 800px) {
+    footer div {
+        margin: 0 30px 30px;
+        flex-direction: column;
+    }
+    footer div p.jpx {
+        right: 0px;
+    }
+}
+@media screen and (max-width : 620px) {
+    footer div {
+        align-items: flex-start;
+    }
+    footer div p.logo-mark img {
+        width: 200px;
+    }
+    footer div p.jpx {
+        right: -10px;
+        top: -15px;
+    }
+    footer div ul {
+        gap: 20px;
+    }
+}
+
+
+/*説明会ボタン表示
+p.seminar {
+    background: linear-gradient(94.81deg, #00BB1E 30.44%, #45E41D 82.01%);
+}
+p.seminar:hover {
+    filter: drop-shadow(2px 2px 30px rgba(14, 222, 10, 0.3));
+}
+p.seminar a span {
+    line-height: 1.35;
+}
+p.seminar a span::before {
+    content: "";
+    display: none;
+}
+.main-visual-block .main-txt-area .registration-area,
+.message-block .registration-area,
+.background-block .registration-area,
+.message-block .registration-area,
+.flow-block .registration-area {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 20px;
+}
+.main-visual-block .main-txt-area .registration-area p.btn-area,
+.message-block .registration-area p.btn-area,
+.background-block .registration-area p.btn-area,
+.message-block .registration-area p.btn-area,
+.flow-block .registration-area p.btn-area {
+    width: 380px;
+}
+.main-visual-block .main-txt-area .registration-area p.btn-area a,
+.message-block .registration-area p.btn-area a,
+.background-block .registration-area p.btn-area a,
+.message-block .registration-area p.btn-area a,
+.flow-block .registration-area p.btn-area a {
+    width: 350px;
+}
+@media screen and (max-width : 920px) {
+    .main-visual-block .main-txt-area .registration-area,
+    .message-block .registration-area,
+    .background-block .registration-area,
+    .message-block .registration-area,
+    .flow-block .registration-area {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+    .main-visual-block .main-txt-area .registration-area p.btn-area,
+    .message-block .registration-area p.btn-area,
+    .background-block .registration-area p.btn-area,
+    .message-block .registration-area p.btn-area,
+    .flow-block .registration-area p.btn-area {
+        width: 500px;
+    }
+    .main-visual-block .main-txt-area .registration-area p.btn-area a,
+    .message-block .registration-area p.btn-area a,
+    .background-block .registration-area p.btn-area a,
+    .message-block .registration-area p.btn-area a,
+    .flow-block .registration-area p.btn-area a {
+        width: 470px;
+    }
+    .main-visual-block .main-txt-area .registration-area p.btn-area {
+        margin-bottom: 0;
+    }
+}
+@media screen and (max-width : 820px) {
+    .main-visual-block .main-txt-area .registration-area {
+        display: none;
+    }
+}
+@media screen and (max-width : 720px) {
+    .main-visual-block .main-txt-area .registration-area p.btn-area,
+    .message-block .registration-area p.btn-area,
+    .background-block .registration-area p.btn-area,
+    .message-block .registration-area p.btn-area,
+    .flow-block .registration-area p.btn-area {
+        margin: 0 auto;
+        width: 80%;
+        height: 80px;
+    }
+    .main-visual-block .main-txt-area .registration-area p.btn-area a,
+    .message-block .registration-area p.btn-area a,
+    .background-block .registration-area p.btn-area a,
+    .message-block .registration-area p.btn-area a,
+    .flow-block .registration-area p.btn-area a {
+        padding-left: 5%;
+        width: 95%;
+        height: 80px;
+        background-position: right 23px center;
+    }
+}
+@media screen and (max-width:428px) {
+    .main-visual-block .main-txt-area .registration-area p.btn-area,
+    .message-block .registration-area p.btn-area,
+    .background-block .registration-area p.btn-area,
+    .message-block .registration-area p.btn-area,
+    .flow-block .registration-area p.btn-area {
+        width: 90%;
+    }
+    .main-visual-block .main-txt-area .registration-area p.btn-area a,
+    .message-block .registration-area p.btn-area a,
+    .background-block .registration-area p.btn-area a,
+    .message-block .registration-area p.btn-area a,
+    .flow-block .registration-area p.btn-area a {
+    }
+}
+*/
+
+/*説明会ボタン非表示*/
+p.seminar {
+    display: none;
+}
+.project-block .bnr-area-pc {
+    display: none;
+}
+.project-block .bnr-area-sp {
+    display: none;
+}

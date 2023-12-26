@@ -1,0 +1,36 @@
+<header class="page-header" role="banner">
+  <h1><%= t('.title') %></h1>
+</header>
+
+<main role="main">
+  <p>
+    <%== t('.prompt', client_name: link_to('https://mirai-works.commmune.com/view/knowledgebase/post/7907', class: 'text-info', target: '_blank', rel: 'noopener noreferrer') { @pre_auth.client.name }) %>
+  </p>
+
+  <div class="actions">
+    <%= form_tag oauth_authorization_path, method: :post do %>
+      <%= hidden_field_tag :client_id, @pre_auth.client.uid, id: nil %>
+      <%= hidden_field_tag :redirect_uri, @pre_auth.redirect_uri, id: nil %>
+      <%= hidden_field_tag :state, @pre_auth.state, id: nil %>
+      <%= hidden_field_tag :response_type, @pre_auth.response_type, id: nil %>
+      <%= hidden_field_tag :response_mode, @pre_auth.response_mode, id: nil %>
+      <%= hidden_field_tag :scope, @pre_auth.scope, id: nil %>
+      <%= hidden_field_tag :nonce, @pre_auth.nonce %>
+      <%= hidden_field_tag :code_challenge, @pre_auth.code_challenge, id: nil %>
+      <%= hidden_field_tag :code_challenge_method, @pre_auth.code_challenge_method, id: nil %>
+      <%= submit_tag t('doorkeeper.authorizations.buttons.authorize'), class: 'btn btn-authorize btn-lg btn-block' %>
+    <% end %>
+    <%= form_tag oauth_authorization_path, method: :delete do %>
+      <%= hidden_field_tag :client_id, @pre_auth.client.uid, id: nil %>
+      <%= hidden_field_tag :redirect_uri, @pre_auth.redirect_uri, id: nil %>
+      <%= hidden_field_tag :state, @pre_auth.state, id: nil %>
+      <%= hidden_field_tag :response_type, @pre_auth.response_type, id: nil %>
+      <%= hidden_field_tag :response_mode, @pre_auth.response_mode, id: nil %>
+      <%= hidden_field_tag :scope, @pre_auth.scope, id: nil %>
+      <%= hidden_field_tag :nonce, @pre_auth.nonce %>
+      <%= hidden_field_tag :code_challenge, @pre_auth.code_challenge, id: nil %>
+      <%= hidden_field_tag :code_challenge_method, @pre_auth.code_challenge_method, id: nil %>
+      <%= submit_tag t('doorkeeper.authorizations.buttons.deny'), class: 'btn btn-cancel btn-lg btn-block' %>
+    <% end %>
+  </div>
+</main>

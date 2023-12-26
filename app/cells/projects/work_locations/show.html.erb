@@ -1,0 +1,18 @@
+    <section>
+      <div class="sec sec-full sec-pt-large">
+        <h2 class="sec-ttl js-fadein">
+          <span class="main-ttl">勤務地から探す</span>
+          <span class="sub-ttl">WORK LOCATION</span>
+        </h2>
+        <ul class="tile-list column4 location js-fadein">
+          <% work_locations.each do |location| %>
+          <li class="tile-list-item">
+            <a href="<%= projects_path(work_locations: [location]) %>">
+              <div class="list-link"><%= I18n.t(location, scope: 'enumerize.desired_condition.work_location') %></div>
+            </a>
+          </li>
+          <% end %>
+        </ul>
+      </div>
+    </section>
+

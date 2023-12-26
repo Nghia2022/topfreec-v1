@@ -1,0 +1,38 @@
+<% content_for(:modal_content) do %>
+  <%= form_with model: client_user, scope: :client_user, url: mypage_client_password_path, method: :put, local: true, builder: AppFormBuilder do |f| %>
+    <div class="modal-panel">
+        <a href="javascript:void(0)" class="modal-close-btn jsModalClose">
+          <i class="feather icon-x"></i>
+        </a>
+        <div class="modal-ttl">
+          パスワード変更
+        </div>
+        <div class="modal-txt">
+          <div class="form-content form-modal">
+            <%= render 'error_messages', resource: client_user %>
+            <div class="form-row">
+              <label class="label-input form-full">
+                <span class="form-sub-ttl">現在のパスワード</span>
+                <%= f.password_field :current_password, autocomplete: 'new-password' %>
+              </label>
+            </div>
+            <div class="form-row">
+              <label class="label-input form-full">
+                <span class="form-sub-ttl">新しいパスワード</span>
+                <%= f.password_field :password, autocomplete: 'new-password' %>
+              </label>
+            </div>
+            <div class="form-row">
+              <label class="label-input form-full">
+                <span class="form-sub-ttl">新しいパスワード（確認）</span>
+                <%= f.password_field :password_confirmation %>
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer s-flex-center">
+          <%= f.submit '保存する', class: 'btn btn-theme-02 bs-normal' %>
+        </div>
+      </div>
+  <% end %>
+<% end %>

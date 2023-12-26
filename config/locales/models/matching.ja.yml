@@ -1,0 +1,26 @@
+ja:
+  activerecord:
+    errors:
+      models:
+        matching:
+          attributes:
+            base:
+              limit_exceeded: '同時に%{entry_limit}件以上の案件に応募することは出来ません。'
+            opportunity__c:
+              taken: 'には一度しか応募できません。'
+    attributes:
+      matching:
+        ng_reason: 辞退理由
+        opportunity__c: 案件
+        start_timing: 参画可能予定日
+        reward_min: 報酬金額
+        occupancy_rate: 希望稼働率
+  enumerize:
+    matching:
+      selection_status_for_fc:
+        entry: 応募中
+        declined: 辞退
+        proposed: 提案中
+        win: アサイン
+        closed: クローズ
+        declining: 辞退手続中

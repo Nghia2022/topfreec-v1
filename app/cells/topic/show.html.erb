@@ -1,0 +1,8 @@
+<%= testid('cells/topic/show') %>
+        <section class="" id="news">
+          <div class="sec sec-full">
+            <div class="news-list page">
+              <%= cell(Topic::ItemCell, collection: model).call(:row) %>
+            </div>
+          </div>
+        </section>

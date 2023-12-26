@@ -1,0 +1,37 @@
+<% content_for(:modal_content) do %>
+  <%= testid('mypage/fc/settings/resumes') %>
+  <%= form_with model: form, scope: :resume, url: mypage_fc_settings_resumes_path, local: true do |f| %>
+        <div class="modal-panel">
+          <a href="javascript:void(0)" class="modal-close-btn jsModalClose">
+            <i class="feather icon-x"></i>
+          </a>
+          <div class="modal-ttl">
+            レジュメ登録
+          </div>
+          <div class="modal-txt">
+            <div class="form-content form-modal">
+              <%= render 'error_messages', resource: form %>
+              <p class="s-d-hidden error-413 s-fc-01 s-mb-30">
+                <%= form.class.human_attribute_name :document %>
+                <%= t('activemodel.errors.models.fc/edit_profile/resume_form.attributes.document.size_limit_exceeded', limit: form.class::SIZE_LIMIT_MB) %>
+              </p>
+              <div class="form-row jsUploadFileContainer">
+                <label class="label-input label-file">
+                  <%= f.file_field :document, class: 'jsUploadFile', accept: form.class.accepts %>ファイルを選択
+                </label>
+                <div class="form-file-txt jsUploadFileName">選択されていません</div>
+              </div>
+              <ul class="s-fs-14">
+                <li>最大アップロードサイズ：2MB</li>
+                <li>ファイル形式：Word、Excel、PowerPoint（編集可能な形式）</li>
+                <li>※弊社から企業へレジュメ（職務経歴）を提示する際に個人情報のマスキングや弊社ロゴ添付を実施させていただくため、編集可能なファイル形式でのアップロードへご協力をお願いいたします。</li>
+                <li> ※圧縮ファイルやパスワード付ファイルのアップロードはエラーとなりますためご遠慮ください。</li>
+              </ul>
+            </div>
+          </div>
+          <div class="modal-footer s-flex-center">
+            <%= f.submit 'アップロード', class: 'btn btn-theme-02 bs-normal' %>
+          </div>
+        </div>
+  <% end %>
+<% end %>

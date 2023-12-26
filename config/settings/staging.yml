@@ -1,0 +1,7 @@
+mailer:
+  direction:
+    bcc:
+      - pj-fcweb@mirai-works.co.jp
+  matching:
+    cc:
+      - pj-fcweb@mirai-works.co.jp

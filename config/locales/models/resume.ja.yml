@@ -1,0 +1,13 @@
+ja:
+  activemodel:
+    attributes:
+      fc/edit_profile/resume_form:
+        document: レジュメ
+    errors:
+      models:
+        fc/edit_profile/resume_form:
+          attributes:
+            document:
+              blank: を選択してください
+              disallowed: は許可されていないファイルです
+              size_limit_exceeded: "のサイズが大きすぎます（%{limit}MBまで）"

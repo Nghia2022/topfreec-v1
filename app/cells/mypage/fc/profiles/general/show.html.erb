@@ -1,0 +1,50 @@
+<%= testid('mypage/fc/profiles/general/show') %>
+          <h2 class="dashboard-ttl">
+            <span class="main-ttl">基本情報</span>
+          </h2>
+          <div class="dashboard-panel">
+            <div class="s-flex-start only-pc s-mb-30">
+              <div class="dashboard-user">
+                <div class="user-img dashboard">
+                  <div class="user-img-inner jsModalOpen" data-target="form-user-img" style="background-image:url(<%= transformed_profile_image %>)"></div>
+                </div>
+                <a class="txt-link jsModalOpen" data-target="form-user-img" href="<%= edit_mypage_fc_profile_profile_image_path %>">画像をアップロード</a>
+              </div>
+              <div>
+                <table>
+                  <tr>
+                    <td class="s-pr-30 s-pb-10"><%= last_name_kana %></td>
+                    <td class="s-pb-10"><%= first_name_kana %></td>
+                  </tr>
+                  <tr class="s-fc-01 s-fs-30 s-fw-b">
+                    <td><%= last_name %></td>
+                    <td><%= first_name %></td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+            <hr>
+            <div class="list-dl column1-sp">
+              <dl>
+                <dt>住所</dt>
+                <dd>
+                  <div>〒<%= zipcode %>　<%= address %><%= building %></div>
+                </dd>
+              </dl>
+              <dl>
+                <dt>電話番号(携帯番号)</dt>
+                <dd>
+                  <div><%= phone %></div>
+                </dd>
+              </dl>
+              <dl>
+                <dt>電話番号(固定電話)</dt>
+                <dd>
+                  <div><%= phone2 %></div>
+                </dd>
+              </dl>
+            </div>
+            <div class="list-edit-btn">
+              <%= edit_button %>
+            </div>
+          </div>

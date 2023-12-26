@@ -1,0 +1,61 @@
+# DO NOT MODIFY THIS FILE, it was auto-generated.
+#
+# Date: 2020-12-21 05:15:23 +0000
+# Seeding Salesforce::PicklistValue
+# Written with the command:
+#
+#   ./bin/rails seed:picklist:dumpMODEL=Contact::WorkPrefecture3
+#
+Salesforce::PicklistValue.seed(:sobject, :field, :label,
+  {"sobject"=>"Contact", "field"=>"Work_Prefecture3__c", "slug"=>"S1dhQ_otJ8lWarRC", "label"=>"北海道", "value"=>"北海道", "active"=>true, "default_value"=>false, "valid_for"=>nil, "position"=>1},
+  {"sobject"=>"Contact", "field"=>"Work_Prefecture3__c", "slug"=>"7h0-5pqfMwVnK5GC", "label"=>"青森県", "value"=>"青森県", "active"=>true, "default_value"=>false, "valid_for"=>nil, "position"=>2},
+  {"sobject"=>"Contact", "field"=>"Work_Prefecture3__c", "slug"=>"IvC4f5NRhapIKV9H", "label"=>"岩手県", "value"=>"岩手県", "active"=>true, "default_value"=>false, "valid_for"=>nil, "position"=>3},
+  {"sobject"=>"Contact", "field"=>"Work_Prefecture3__c", "slug"=>"vuvsGPoxNXW0i9de", "label"=>"宮城県", "value"=>"宮城県", "active"=>true, "default_value"=>false, "valid_for"=>nil, "position"=>4},
+  {"sobject"=>"Contact", "field"=>"Work_Prefecture3__c", "slug"=>"HcpQeMQH2Hp4BaFc", "label"=>"秋田県", "value"=>"秋田県", "active"=>true, "default_value"=>false, "valid_for"=>nil, "position"=>5},
+  {"sobject"=>"Contact", "field"=>"Work_Prefecture3__c", "slug"=>"AB_rXNJ-cFtGqQIX", "label"=>"山形県", "value"=>"山形県", "active"=>true, "default_value"=>false, "valid_for"=>nil, "position"=>6},
+  {"sobject"=>"Contact", "field"=>"Work_Prefecture3__c", "slug"=>"G5PBcTM4pSTcsWki", "label"=>"福島県", "value"=>"福島県", "active"=>true, "default_value"=>false, "valid_for"=>nil, "position"=>7},
+  {"sobject"=>"Contact", "field"=>"Work_Prefecture3__c", "slug"=>"69ZutT3NxFyzgMVe", "label"=>"茨城県", "value"=>"茨城県", "active"=>true, "default_value"=>false, "valid_for"=>nil, "position"=>8},
+  {"sobject"=>"Contact", "field"=>"Work_Prefecture3__c", "slug"=>"LwvGiIyLO-4BXzeJ", "label"=>"栃木県", "value"=>"栃木県", "active"=>true, "default_value"=>false, "valid_for"=>nil, "position"=>9},
+  {"sobject"=>"Contact", "field"=>"Work_Prefecture3__c", "slug"=>"c1jXT2t6De7QsdAu", "label"=>"群馬県", "value"=>"群馬県", "active"=>true, "default_value"=>false, "valid_for"=>nil, "position"=>10},
+  {"sobject"=>"Contact", "field"=>"Work_Prefecture3__c", "slug"=>"qGwTaWnrsB74TsNj", "label"=>"東京都23区内", "value"=>"東京都23区内", "active"=>true, "default_value"=>false, "valid_for"=>nil, "position"=>11},
+  {"sobject"=>"Contact", "field"=>"Work_Prefecture3__c", "slug"=>"fOhUnRq-FerTOsLq", "label"=>"東京都23区外", "value"=>"東京都23区外", "active"=>true, "default_value"=>false, "valid_for"=>nil, "position"=>12},
+  {"sobject"=>"Contact", "field"=>"Work_Prefecture3__c", "slug"=>"ivK8I6wt2gDKtrs1", "label"=>"埼玉県", "value"=>"埼玉県", "active"=>true, "default_value"=>false, "valid_for"=>nil, "position"=>13},
+  {"sobject"=>"Contact", "field"=>"Work_Prefecture3__c", "slug"=>"Xg04exXBe4Mb2lub", "label"=>"千葉県", "value"=>"千葉県", "active"=>true, "default_value"=>false, "valid_for"=>nil, "position"=>14},
+  {"sobject"=>"Contact", "field"=>"Work_Prefecture3__c", "slug"=>"913F9GopnFL_Bbkb", "label"=>"神奈川県", "value"=>"神奈川県", "active"=>true, "default_value"=>false, "valid_for"=>nil, "position"=>15},
+  {"sobject"=>"Contact", "field"=>"Work_Prefecture3__c", "slug"=>"x9JK8sRsak3mKim0", "label"=>"新潟県", "value"=>"新潟県", "active"=>true, "default_value"=>false, "valid_for"=>nil, "position"=>16},
+  {"sobject"=>"Contact", "field"=>"Work_Prefecture3__c", "slug"=>"a8x09Sz4eqjB4mG5", "label"=>"富山県", "value"=>"富山県", "active"=>true, "default_value"=>false, "valid_for"=>nil, "position"=>17},
+  {"sobject"=>"Contact", "field"=>"Work_Prefecture3__c", "slug"=>"kVvjfjXDSefk6sVi", "label"=>"石川県", "value"=>"石川県", "active"=>true, "default_value"=>false, "valid_for"=>nil, "position"=>18},
+  {"sobject"=>"Contact", "field"=>"Work_Prefecture3__c", "slug"=>"6o5wWBi2NMKPdrHQ", "label"=>"福井県", "value"=>"福井県", "active"=>true, "default_value"=>false, "valid_for"=>nil, "position"=>19},
+  {"sobject"=>"Contact", "field"=>"Work_Prefecture3__c", "slug"=>"mYbYuMTt0NsosTuo", "label"=>"山梨県", "value"=>"山梨県", "active"=>true, "default_value"=>false, "valid_for"=>nil, "position"=>20},
+  {"sobject"=>"Contact", "field"=>"Work_Prefecture3__c", "slug"=>"HYyxE2Zjf8-p5-uN", "label"=>"長野県", "value"=>"長野県", "active"=>true, "default_value"=>false, "valid_for"=>nil, "position"=>21},
+  {"sobject"=>"Contact", "field"=>"Work_Prefecture3__c", "slug"=>"PwNn922UfT0dDowj", "label"=>"岐阜県", "value"=>"岐阜県", "active"=>true, "default_value"=>false, "valid_for"=>nil, "position"=>22},
+  {"sobject"=>"Contact", "field"=>"Work_Prefecture3__c", "slug"=>"2sRJDKYQwkBOVu0l", "label"=>"静岡県", "value"=>"静岡県", "active"=>true, "default_value"=>false, "valid_for"=>nil, "position"=>23},
+  {"sobject"=>"Contact", "field"=>"Work_Prefecture3__c", "slug"=>"bV6z_b5_liWiQVMv", "label"=>"愛知県", "value"=>"愛知県", "active"=>true, "default_value"=>false, "valid_for"=>nil, "position"=>24},
+  {"sobject"=>"Contact", "field"=>"Work_Prefecture3__c", "slug"=>"KEc68g1d4JQS9Gsc", "label"=>"大阪府", "value"=>"大阪府", "active"=>true, "default_value"=>false, "valid_for"=>nil, "position"=>25},
+  {"sobject"=>"Contact", "field"=>"Work_Prefecture3__c", "slug"=>"dD95adB-qqUbJ0b3", "label"=>"京都府", "value"=>"京都府", "active"=>true, "default_value"=>false, "valid_for"=>nil, "position"=>26},
+  {"sobject"=>"Contact", "field"=>"Work_Prefecture3__c", "slug"=>"244JtC-nH4HL88up", "label"=>"兵庫県", "value"=>"兵庫県", "active"=>true, "default_value"=>false, "valid_for"=>nil, "position"=>27},
+  {"sobject"=>"Contact", "field"=>"Work_Prefecture3__c", "slug"=>"4kATaKfBBeYjicUO", "label"=>"滋賀県", "value"=>"滋賀県", "active"=>true, "default_value"=>false, "valid_for"=>nil, "position"=>28},
+  {"sobject"=>"Contact", "field"=>"Work_Prefecture3__c", "slug"=>"kRhUhacM1wKDLii0", "label"=>"奈良県", "value"=>"奈良県", "active"=>true, "default_value"=>false, "valid_for"=>nil, "position"=>29},
+  {"sobject"=>"Contact", "field"=>"Work_Prefecture3__c", "slug"=>"s3yCVa_IERYVpuOv", "label"=>"三重県", "value"=>"三重県", "active"=>true, "default_value"=>false, "valid_for"=>nil, "position"=>30},
+  {"sobject"=>"Contact", "field"=>"Work_Prefecture3__c", "slug"=>"xxGKvpKaayjEbKw0", "label"=>"和歌山県", "value"=>"和歌山県", "active"=>true, "default_value"=>false, "valid_for"=>nil, "position"=>31},
+  {"sobject"=>"Contact", "field"=>"Work_Prefecture3__c", "slug"=>"_8sTx5PX3CS3DK0V", "label"=>"鳥取県", "value"=>"鳥取県", "active"=>true, "default_value"=>false, "valid_for"=>nil, "position"=>32},
+  {"sobject"=>"Contact", "field"=>"Work_Prefecture3__c", "slug"=>"sGVt0jatqfmRu0jO", "label"=>"島根県", "value"=>"島根県", "active"=>true, "default_value"=>false, "valid_for"=>nil, "position"=>33},
+  {"sobject"=>"Contact", "field"=>"Work_Prefecture3__c", "slug"=>"9qjDE-ZATPhzxhAD", "label"=>"岡山県", "value"=>"岡山県", "active"=>true, "default_value"=>false, "valid_for"=>nil, "position"=>34},
+  {"sobject"=>"Contact", "field"=>"Work_Prefecture3__c", "slug"=>"nlKoJri0uPWmvtT7", "label"=>"広島県", "value"=>"広島県", "active"=>true, "default_value"=>false, "valid_for"=>nil, "position"=>35},
+  {"sobject"=>"Contact", "field"=>"Work_Prefecture3__c", "slug"=>"RppFLFLEcYI2k9rF", "label"=>"山口県", "value"=>"山口県", "active"=>true, "default_value"=>false, "valid_for"=>nil, "position"=>36},
+  {"sobject"=>"Contact", "field"=>"Work_Prefecture3__c", "slug"=>"n0sa3-fTv4OFrtFY", "label"=>"徳島県", "value"=>"徳島県", "active"=>true, "default_value"=>false, "valid_for"=>nil, "position"=>37},
+  {"sobject"=>"Contact", "field"=>"Work_Prefecture3__c", "slug"=>"trXGeWShNlrGsBBG", "label"=>"香川県", "value"=>"香川県", "active"=>true, "default_value"=>false, "valid_for"=>nil, "position"=>38},
+  {"sobject"=>"Contact", "field"=>"Work_Prefecture3__c", "slug"=>"Cu7IBNA_83l7Dfbz", "label"=>"愛媛県", "value"=>"愛媛県", "active"=>true, "default_value"=>false, "valid_for"=>nil, "position"=>39},
+  {"sobject"=>"Contact", "field"=>"Work_Prefecture3__c", "slug"=>"ws8eo5GO10JeO_wL", "label"=>"高知県", "value"=>"高知県", "active"=>true, "default_value"=>false, "valid_for"=>nil, "position"=>40},
+  {"sobject"=>"Contact", "field"=>"Work_Prefecture3__c", "slug"=>"rSTaxFqvl4DEGbKm", "label"=>"福岡県", "value"=>"福岡県", "active"=>true, "default_value"=>false, "valid_for"=>nil, "position"=>41},
+  {"sobject"=>"Contact", "field"=>"Work_Prefecture3__c", "slug"=>"5FJxQ5cOqWjsslsq", "label"=>"佐賀県", "value"=>"佐賀県", "active"=>true, "default_value"=>false, "valid_for"=>nil, "position"=>42},
+  {"sobject"=>"Contact", "field"=>"Work_Prefecture3__c", "slug"=>"8WhS7eMUPBAfGQeG", "label"=>"長崎県", "value"=>"長崎県", "active"=>true, "default_value"=>false, "valid_for"=>nil, "position"=>43},
+  {"sobject"=>"Contact", "field"=>"Work_Prefecture3__c", "slug"=>"m8hCfSBCYiZGq2RQ", "label"=>"熊本県", "value"=>"熊本県", "active"=>true, "default_value"=>false, "valid_for"=>nil, "position"=>44},
+  {"sobject"=>"Contact", "field"=>"Work_Prefecture3__c", "slug"=>"rc-Z6Lo8-B3F69Rg", "label"=>"大分県", "value"=>"大分県", "active"=>true, "default_value"=>false, "valid_for"=>nil, "position"=>45},
+  {"sobject"=>"Contact", "field"=>"Work_Prefecture3__c", "slug"=>"9NSB-QJnYIH0c7Cr", "label"=>"宮崎県", "value"=>"宮崎県", "active"=>true, "default_value"=>false, "valid_for"=>nil, "position"=>46},
+  {"sobject"=>"Contact", "field"=>"Work_Prefecture3__c", "slug"=>"maSSFNkA3Ml9aFHB", "label"=>"鹿児島県", "value"=>"鹿児島県", "active"=>true, "default_value"=>false, "valid_for"=>nil, "position"=>47},
+  {"sobject"=>"Contact", "field"=>"Work_Prefecture3__c", "slug"=>"ZRulo1b7_-7fLBz-", "label"=>"沖縄県", "value"=>"沖縄県", "active"=>true, "default_value"=>false, "valid_for"=>nil, "position"=>48},
+  {"sobject"=>"Contact", "field"=>"Work_Prefecture3__c", "slug"=>"xzw3EATLz2JUPThJ", "label"=>"日本全国", "value"=>"日本全国", "active"=>true, "default_value"=>false, "valid_for"=>nil, "position"=>49},
+  {"sobject"=>"Contact", "field"=>"Work_Prefecture3__c", "slug"=>"jv2du7QbMqAJWDfi", "label"=>"海外", "value"=>"海外", "active"=>true, "default_value"=>false, "valid_for"=>nil, "position"=>50}
+)
+# End auto-generated file.

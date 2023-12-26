@@ -1,0 +1,13 @@
+= form_with model: wp_user,
+            scope: :wp_user,
+            url: wp_user_session_path,
+            local: true,
+            method: :post do |f|
+  .form-wrapper
+    = f.label :user_login
+    = f.text_field :user_login
+  .row
+    = f.label :password, classl: 'label-form'
+    = f.password_field :password
+  .row
+    = f.submit 'Log in'

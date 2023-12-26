@@ -1,0 +1,380 @@
+/* ========================================================
+search.css
+======================================================== */
+/* setting
+-------------------------------------------------------- */
+.searchbox {
+  padding: 1em 0;
+}
+
+/* search-btn-box
+-------------------------------------------------------- */
+.search-btn-box {
+  .btn {
+    font-size: 1em;
+    @include mq() {
+      font-size: 1.2em;
+    }
+    i {
+      font-size: 1.8em;
+    }
+  }
+}
+/* searchbox
+-------------------------------------------------------- */
+/* sp */
+@include mq(sp) {
+  /* magnific-popup  */
+  .mfp-content {
+    border-radius: 4px;
+    background: $white;
+    h3 {
+      margin: 0;
+      padding-top: 1.4rem;
+      padding-bottom: 1.4rem;
+      border: none;
+      background: $color01;
+      color: $white;
+      border-radius: 4px 4px 0 0;
+      text-align: center;
+    }
+    .bs-full {
+      width: 90%;
+    }
+    ul {
+      min-height: 200px;
+      max-height: 300px;
+      overflow-y: scroll;
+      overflow-x: hidden;
+      -webkit-overflow-scrolling: touch;
+      border-bottom: 2px solid $black192;
+      &::-webkit-scrollbar {
+        /* スクロールバー本体 */
+        width: 4px;
+        background: $black242;
+      }
+      &::-webkit-scrollbar-thumb {
+        /* スクロールバーの動く部分 */
+        background: #c0c0c0;
+        border-radius: 0;
+      }
+      &::-webkit-scrollbar-track-piece:start {
+        /* スクロールバーの動く部分の前 */
+        background: $black242;
+      }
+      &::-webkit-scrollbar-track-piece:end {
+        /* スクロールバーの動く部分の後ろ */
+        background: $black242;
+      }
+      &::-webkit-scrollbar-corner {
+        /* スクロールバー角 */
+        background: transparent;
+      }
+      li {
+        label {
+          display: flex;
+          align-items: center;
+          margin: 0.4em;
+        }
+        input[type="radio"] {
+          position: relative;
+          background: $white;
+          border: 1px solid $black221;
+          border-radius: 50px;
+          margin: 0 .4em 0 0;
+          width: 2.2rem;
+          height: 2.2rem;
+          -webkit-appearance: none;
+          appearance: none;
+          &:checked {
+            background: url("#{$v-img-path}form/radio.svg") no-repeat center center;
+            background-size: 100%;
+          }
+        }
+        input[type="checkbox"] {
+          position: relative;
+          background: $white;
+          border: 1px solid $black221;
+          border-radius: 4px;
+          margin: 0 .4em 0 0;
+          width: 2.2rem;
+          height: 2.2rem;
+          -webkit-appearance: none;
+          appearance: none;
+          &:checked {
+            background: url("#{$v-img-path}form/check.svg") no-repeat center center;
+            background-size: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  .serchbox-select {
+    padding: 2rem 0 1rem;
+    .searchbox-panel-item {
+      padding: 0;
+    }
+  }
+  .searchbox-item {
+    display: table;
+    margin-bottom: 1.2rem;
+    width: 100%;
+    height: 40px;
+    table-layout: fixed;
+  }
+  .searchbox-item-ttl {
+    background: $white;
+    color: $black033;
+    display: table-cell;
+    padding: 0.4rem 1.4rem;
+    width: 100%;
+    border: 1px solid $black221;
+    border-right: none;
+    border-radius: 4px 0 0 4px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    vertical-align: middle;
+  }
+  .searchbox-item-ttl span {
+    text-overflow: ellipsis;
+  }
+  .searchbox-disable {
+    color: $black033;
+  }
+  .searchbox-item-btn {
+    background-image: url("#{$v-img-path}form/select_down.svg");
+    background-position: right center;
+    background-repeat: no-repeat;
+    background-size: 1.4rem;
+    border-radius: 0 4px 4px 0;
+    width: 1.4rem;
+    display: table-cell;
+    border: 1px solid $black221;
+    border-left: none;
+    line-height: 1.5rem;
+    vertical-align: middle;
+  }
+  .searchbox-disable-btn {
+    background: $black153;
+  }
+  .searchbox-item-btn {
+    text-align: center;
+  }
+  .searchbox-item-btn>input {
+    display: none;
+  }
+  .searchbox-item input[type="text"] {
+    padding: 0.4rem 1.4rem;
+    display: table-cell;
+    width: 100%;
+    height: 4.4rem;
+    box-sizing: border-box;
+    font-size: 1em;
+  }
+  .searchbox-item-hidden {
+    //	visibility: hidden;
+    display: none;
+  }
+}
+/* pc */
+@include mq() {
+  .jspContainer {
+    overflow: hidden;
+    position: relative;
+  }
+  .jspPane {
+    position: absolute;
+  }
+  .jspVerticalBar {
+    position: absolute;
+    top: 0;
+    right: 1px;
+    width: 3px;
+    height: 100%;
+    background: $white;
+  }
+  .jspHorizontalBar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 16px;
+    background: red;
+  }
+  .jspVerticalBar *,
+  .jspHorizontalBar * {
+    margin: 0;
+    padding: 0;
+  }
+  .jspCap {
+    display: none;
+  }
+  .jspHorizontalBar .jspCap {
+    float: left;
+  }
+  .jspTrack {
+    background: $black242;
+    position: relative;
+  }
+  .jspDrag {
+    background: $color01;
+    position: relative;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+  }
+  .jspHorizontalBar .jspTrack,
+  .jspHorizontalBar .jspDrag {
+    float: left;
+    height: 100%;
+  }
+  .searchbox {
+    h3 {
+      margin: 1rem 0 0.6rem 0;
+    }
+    .toggle {
+      background: $black242;
+    }
+    .selected {
+      background-color: $color01;
+      color: $white;
+    }
+    input[type="text"] {
+      font-size: 1em;
+      margin: 0 0 4rem 0;
+      padding: 1rem;
+      width: 100%;
+    }
+  }
+  .searchbox-select {
+    display: flex;
+    justify-content: space-between;
+  }
+  .searchbox-select label {
+    display: inline-block;
+    font-weight: 400;
+    margin: 0;
+    width: 100%;
+  }
+  .searchbox-select-item {
+    box-sizing: border-box;
+    &.search-category {
+      width: 20%;
+    }
+    &.search-job {
+      width: 35%;
+    }
+    &.search-area {
+      width: 20%;
+    }
+    &.search-style {
+      width: 20%;
+    }
+  }
+  .searchbox-select-inside {
+    background: $white;
+    color: $black033;
+    padding: 1rem;
+  }
+  .searchbox-select-inside .scrl {
+    height: 14rem;
+    overflow: auto;
+  }
+  .searchbox-select-inside .scrl li {
+    padding: 0.6rem;
+  }
+  .searchbox-select-inside-first.toggle {
+    background: $white;
+  }
+  .searchbox input[type="radio"],
+  .searchbox input[type="checkbox"] {
+    display: none;
+  }
+  .search-income select {
+    background: transparent;
+    border-radius: 0;
+    font-size: 1.6rem;
+    padding: 1rem 5rem 1rem 1rem;
+    position: relative;
+    width: 100%;
+    z-index: 1;
+  }
+  .search-incomeselect::-ms-expand {
+    display: none;
+  }
+  .search-income label {
+    background: $white;
+    position: relative;
+    display: inline-block;
+  }
+  .search-income label:after {
+    @include m-absolute();
+    top: 0;
+    right: 0;
+    background: $black242;
+    box-sizing: border-box;
+    color: $black033;
+    content: "\e904";
+    font-family: "#{$icomoon-font-family}";
+    font-size: 1em;
+    padding: 1em 0.2em 0;
+    text-align: center;
+    height: 100%;
+  }
+}
+
+/* searchbox-panel
+-------------------------------------------------------- */
+.searchbox-panel {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+.searchbox-panel-item {
+  font-size: .8em;
+  margin: 0;
+  padding: 0 1em;
+  width: 50%;
+  @include mq() {
+    font-size: 1em;
+    width: 25%;
+  }
+  &.half {
+    width: 50%;
+  }
+  &.full {
+    width: 100%;
+  }
+  // select[multiple="multiple"] {
+  //   visibility: hidden;
+  // }
+  input[type="text"] {
+    &.i-search {
+      background: url("#{$v-img-path}form/search.svg") no-repeat right 10px center;
+      background-color: $white;
+      background-size: 17px;
+      width: 100%;
+      @include mq(sp) {
+        font-size: 1.6rem;
+      }
+    }
+  }
+}
+.searchbox-panel-ttl {
+  @include m-font-bold;
+  margin-bottom: .4em;
+  width: 100%;
+  @include mq() {
+    margin-bottom: .4em;
+  }
+}
+.searchbox-panel-txt {
+  padding-bottom: 1em;
+  width: 100%;
+}
+.jsSearchTable{
+  margin-top: -5em;
+}

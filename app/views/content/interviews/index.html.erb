@@ -1,0 +1,22 @@
+<main class="no-padbot-imp">
+  <div class="g-width">
+    <%= render_breadcrumbs builder: Breadcrumbs::CustomBuilder %>
+    <div class="mt40">
+
+      <h1 class="title mt55 fs-40-imp sp-mt60"><span class="c-red">Interview</span></h1>
+
+      <div class="head-type02 mt15">
+        <p class="c-gray">活用事例 - フリーランスのプロフェッショナル人材・コンサルタント</p>
+      </div>
+
+      <div class="mt40">
+        <div class="case-study">
+          <%= cell(Content::InterviewsCell, interviews).call(:show) %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="btn-back-to-top-wrapper">
+    <div class="back-to-top sp-mt70"></div>
+  </div>
+</main>

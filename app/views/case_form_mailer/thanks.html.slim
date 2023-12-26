@@ -1,0 +1,26 @@
+p
+  | #{form.last_name} 様
+
+p
+  | この度は、お問い合わせフォームのご入力ありがとうございます。<br>
+  | 担当者より改めてご連絡をさせていただきます。<br>
+  | 今しばらくお待ちくださいませ。
+
+p
+  | 【ご入力内容】<br>
+  | 名前：#{form.last_name} #{form.first_name}<br>
+  | フリガナ：#{form.last_name_kana} #{form.first_name_kana}<br>
+  | メールアドレス：#{form.email}<br>
+  | 電話番号：#{form.phone}<br>
+  | お問い合わせの種類：#{form.case_type}<br>
+  | お問い合わせ内容：<br>
+  = formatted_description
+
+p
+  | 株式会社 みらいワークス（証券コード：6563）（https://mirai-works.co.jp）<br>
+  | 〒105-0021 東京都港区東新橋二丁目8番1号 パラッツォアステック７階<br>
+  | TEL：03-5680-1835 / FAX：03-5860-1839<br>
+  | ～運営サービス～<br>
+  | フリーランスのプロ人材に特化したマッチングサービス https://freeconsultant.jp<br>
+  | プロ人材に特化した転職支援サービス https://professional-career.jp<br>
+  | 地方中小企業と都心部副業・兼業人材のマッチングサービス https://www.skill-shift.com/

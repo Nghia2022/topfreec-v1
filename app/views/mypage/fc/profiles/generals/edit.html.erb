@@ -1,0 +1,21 @@
+<% content_for(:modal_content) do %>
+  <%= form_with model: form, scope: :general, url: mypage_fc_profile_general_path, method: :patch, local: true, builder: AppFormBuilder do |f| %>
+        <div class="modal-panel">
+          <a href="javascript:void(0)" class="modal-close-btn jsModalClose">
+            <i class="feather icon-x"></i>
+          </a>
+          <div class="modal-ttl">
+            基本情報を入力してください。
+          </div>
+          <div class="modal-txt">
+            <div class="form-content form-modal">
+              <%= render 'error_messages', resource: form %>
+              <%= render 'form', f:, form: %>
+            </div>
+          </div>
+          <div class="modal-footer s-flex-center">
+            <%= f.submit '保存する', class: 'btn btn-theme-02 bs-normal' %>
+          </div>
+        </div>
+  <% end %>
+<% end %>

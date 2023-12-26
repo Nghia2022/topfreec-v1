@@ -1,0 +1,33 @@
+<%= testid('mypage/fc/entry/show') %>
+    <section>
+      <div class="sec sec-full sec-pb-large">
+        <div class="pagination-box">
+          <div class="page-count-box">
+            <%= message %>
+          </div>
+        </div>
+        <div class="s-txt-right s-mt-40 s-mb-20">
+          <span class="s-fw-b">応募状況の見方</span>
+          <span class="s-sp jsNolink" tooltip="応募中 … 案件に応募済みの状態
+辞退手続中 … 案件への応募辞退
+申し込みをしている状態
+辞退 … 案件への応募辞退が完了
+した状態
+提案中 … 参画先企業へ提案中の状態
+クローズ … 参画お見送りの状態
+アサイン …案件への参画が確定
+している状態" flow="left">
+          <i class="feather icon-help-circle"></i>
+          </span>
+          <span class="s-pc jsNolink" tooltip="応募中 … 案件に応募済みの状態
+辞退手続中 … 案件への応募辞退申し込みをしている状態
+辞退 … 案件への応募辞退が完了した状態
+提案中 … 参画先企業へ提案中の状態
+クローズ … 参画お見送りの状態
+アサイン … 案件への参画が確定している状態" flow="left">
+          <i class="feather icon-help-circle"></i>
+          </span>
+        </div>
+        <%= cell(Mypage::Fc::Entry::ItemCell, collection: model).call(:row) %>
+      </div>
+    </section>

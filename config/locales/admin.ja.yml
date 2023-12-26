@@ -1,0 +1,9 @@
+ja:
+  admin:
+    scopes:
+      contact:
+        of_fc: FC
+        of_client: Client
+    help:
+      fc_user:
+        confirmed_at: '時刻をセットすると<em>Eメール確認済み</em>の状態になります'

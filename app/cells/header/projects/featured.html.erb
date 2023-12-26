@@ -1,0 +1,10 @@
+                <div class="sub-group">
+                  <span class="sub-group-ttl">注目条件から見つける</span>
+                  <ul>
+                    <li><a href="<%= projects_url(compensation_ids: [5]) %>">高単価案件</a></li>
+                    <li><a href="<%= projects_url(work_options: ['完全リモート', '原則/基本リモート']) %>">リモート案件</a></li>
+                    <li><a href="<%= projects_url(occupancy_rate_mins: [100]) %>">100%稼働案件</a></li>
+                    <li><a href="<%= projects_url(occupancy_rate_maxs: [50]) %>">低稼働案件</a></li>
+                    <li><a href="<%= projects_url(sort: :createddate) %>">新着案件</a></li>
+                  </ul>
+                </div>

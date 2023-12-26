@@ -1,0 +1,42 @@
+            <div class="job-list-item">
+              <h2 class="list-panel-ttl">
+                <% if new? %>
+                <span class="label label-new">NEW</span>
+                <% end %>
+                <span class="txt"><%= project_name %></span>
+                <%#
+                <input type="checkbox" name="#" value="" class="list-check label-id">
+                <label class="label-for"></label>
+                %>
+              </h2>
+              <div class="list-dl">
+                <dl>
+                  <dt>月間単価</dt>
+                  <dd>
+                    <div><span class="s-fc-01 s-f-strong"><%= compensations_for_abstract %></span> / 月</div>
+                  </dd>
+                </dl>
+                <dl>
+                  <dt><span>勤務地<br>勤務形態</span></dt>
+                  <dd>
+                    <%= work_location %>
+                  </dd>
+                </dl>
+                <dl>
+                  <dt><span>稼働率</span></dt>
+                  <dd>
+                    <%= operating_rates %>
+                  </dd>
+                </dl>
+                <ul class="list-tag">
+                  <% experience_categories.each do |category| %>
+                    <%= tag.li category %>
+                  <% end %>
+                </ul>
+              </div>
+              <div class="s-flex-center">
+                <a href="<%= project_path(model) %>" class="btn btn-theme-02 bs-normal">
+                  案件詳細を見る
+                </a>
+              </div>
+            </div>

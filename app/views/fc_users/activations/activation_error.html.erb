@@ -1,0 +1,18 @@
+<%= testid('fc_users/activations/activation_error') %>
+<main class="top-page mb-neg20 sp-mb-neg48-7">
+  <div class="bg-white">
+    <div class="g-width">
+      <p class="fs-20 mt45 sp-mt50 t-center noto-bold light-black">
+        無効なURLか、すでに本人確認処理が完了しています。
+      </p>
+      <p class="fs-14 mt32 t-center ls-neg-04 light-black sp-mt30">
+        本人確認処理がお済みの方は、<%= link_to 'ログインページ', new_fc_user_session_path %>からマイページへログインしてください。
+      </p>
+      <p class="t-center mt55 sp-mt58">
+        <a class="btn btn-type03 fs-14 bg-red c-white w-260" href="<%= root_path %>">
+          <span>トップページへ戻る</span>
+        </a>
+      </p>
+    </div>
+  </div>
+</main>

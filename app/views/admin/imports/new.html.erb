@@ -1,0 +1,9 @@
+<%= form_with url: admin_import_path, method: :post, local: true do |f| %>
+  <div class="form-group">
+    <%= f.label :csv %>
+    <%= f.file_field :csv %>
+  </div>
+  <div class="form-group">
+    <%= f.submit %>
+  </div>
+<% end %>

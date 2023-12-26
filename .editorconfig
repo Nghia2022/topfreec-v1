@@ -1,0 +1,46 @@
+root = true
+
+[*]
+end_of_lin = lf
+indent_size = 4
+indent_style = tab
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = false
+
+[.editorconfig]
+insert_final_newline = true
+
+[{*.{rb,rake,haml,slim,erb,jbuilder},Gemfile,Dockerfile}]
+indent_style = space
+indent_size = 2
+insert_final_newline = true
+
+[*.{js,json,ts,tsx}]
+indent_style = space
+indent_size = 2
+insert_final_newline = true
+
+[*.css]
+indent_style = space
+indent_size = 4
+insert_final_newline = true
+
+[*.scss]
+indent_style = space
+indent_size = 2
+insert_final_newline = true
+
+[*.yml]
+indent_style = space
+indent_size = 2
+trim_trailing_whitespace = false
+insert_final_newline = true
+
+[*.md]
+trim_trailing_whitespace = false
+insert_final_newline = true
+
+[.editorconfig]
+trim_trailing_whitespace = true
+insert_final_newline = true

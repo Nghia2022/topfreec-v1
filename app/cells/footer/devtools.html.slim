@@ -1,0 +1,21 @@
+    .row
+      .col.l6.s12
+        .devtools-collapse
+          h6.-title
+            | 開発用ツール
+          ul.-list.hide
+            li
+              = link_to rails_admin_path, class: 'grey-text text-lighten-3', target: '_new' do
+                | Rails Admin
+            - if %w[staging review].include?(::Rails.env)
+              li
+                = link_to mailtrap_invite_url, class: 'grey-text text-lighten-3', target: '_new' do
+                  | Mailtrap共有URL
+            - elsif ::Rails.env.development?
+              li
+                = link_to letter_opener_web_path, class: 'grey-text text-lighten-3', target: '_new' do
+                  | メール（開発用）
+            li
+              p.grey-text.text-lighten-4
+                |ユーザー切替
+              = switch_user_select class: 'browser-default'

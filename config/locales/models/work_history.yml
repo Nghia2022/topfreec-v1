@@ -1,0 +1,23 @@
+ja:
+  enumerize:
+    work_history:
+      status__c:
+        employed: 現職中
+        unemployed: 退職
+        in_planning: 退職予定
+  activemodel:
+    models:
+      fc/edit_profile/work_history_form: 職歴
+    attributes:
+      fc/edit_profile/work_history_form:
+        company: 会社名
+        joined: 入社年月
+        left: 退社年月
+        status: ステータス
+        position: 最終職位
+        left_year: 退職年
+        left_month: 退職月
+    errors:
+      models:
+        fc/edit_profile/work_history_form:
+          start_end_date: "は%{start}以降で入力してください"

@@ -1,0 +1,46 @@
+<%= testid('v2022/fc_users/passwords') %>
+  <main class="content">
+    <h1 class="page-ttl">
+      <span class="main-ttl">お取引企業様 パスワード発行</span>
+    </h1>
+    <section>
+      <div class="sec sec-min sec-pb-large sec-pt-medium">
+        <%= form_with(model: resource, scope: resource_name, url: password_path(resource_name), method: :post, local: true, builder: AppFormBuilder) do |f| %>
+          <%= render 'error_messages', resource: %>
+          <div class="form-content">
+            <div class="sec-txt">
+              メールアドレスを入力してください。
+            </div>
+            <div class="sec-txt">
+              <span class="s-fc-01">
+                ※こちらはお取引企業様アカウント用のページです。<br>
+                コンサルタント様用のアカウントをお持ちの方は<a href="<%= new_fc_user_session_path %>" class="link-border-bottom c-red">こちら</a>。
+              </span>
+            </div>
+            <div class="dashboard-panel">
+              <div class="s-lh-16 s-fs-14">
+                <span>
+                  メールアドレス宛にパスワード設定用のURLが送信されます。<br>
+                  パスワード設定用のURLから、パスワードを設定してください。
+                </span>
+              </div>
+              <div class="s-mt-20">
+                <div class="form-row wrap fullwidth">
+                  <span class="form-sub-ttl">会員ID (メールアドレス)</span>
+                  <label class="label-input form-full">
+                    <%= f.email_field :email, placeholder: '' %>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="s-txt-center s-mt-20 s-mb-20">
+              <%= f.submit 'メールを送信する', class: 'btn bs-long btn-theme-02 s-mt-20' %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </section>
+  </main>
+  <a href="#page-top" class="pagetop jsPageTop">
+    <i class="bicon-chevron-t"></i>
+  </a>

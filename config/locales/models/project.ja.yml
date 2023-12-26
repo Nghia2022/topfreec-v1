@@ -1,0 +1,8 @@
+ja:
+  enumerize:
+    project:
+      shouryuu__c:
+        primary: 1次
+        secondary: 2次
+        third: 3次
+        other: その他・不明

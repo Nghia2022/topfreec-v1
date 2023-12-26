@@ -1,0 +1,21 @@
+<%= content_for(:related_content) do %>
+  <%= cell(Content::MenuCell,
+           :column,
+           title:       'Business Column',
+           subtitle:    'ビジネスコラム',
+           description: 'プロフェッショナル人材の活用で経営課題解決にスピードを。'
+          ).call(:corp) %>
+<% end %>
+<main>
+  <div class="g-width">
+    <div class="content-wrapper sp-mt15">
+      <div class="flex-j-end-wrapper sp-flex-j-start">
+        <%= cell(Content::BusinessColumns::TagsCell, tag_param, column_tags:).call(:show) %>
+      </div>
+      <ul class="pagerize_page_element flex flex-type01 sp-type01 reverse column-list a-hover mt40 img-fit-fill">
+        <%= cell(Content::BusinessColumnsCell, business_columns).call(:show) %>
+      </ul>
+      <%= cell(PaginatorCell, business_columns, html_class_pc: 'mt45', html_class_sp: 'mt40').call(:show) %>
+    </div>
+  </div>
+</main>

@@ -1,0 +1,25 @@
+<% content_for(:modal_content) do %>
+  <%= form_with model: direction, url: mypage_client_direction_reject_path(direction), method: :post, local: true, builder: AppFormBuilder do |f| %>
+        <div class="modal-panel">
+          <a href="javascript:void(0)" class="modal-close-btn jsModalClose">
+            <i class="feather icon-x"></i>
+          </a>
+          <div class="modal-ttl">
+            修正申請の理由を記載してください。
+          </div>
+          <div class="modal-txt">
+            <div class="form-content form-modal">
+              <%= render 'error_messages', resource: direction %>
+              <%= render 'form', f: %>
+            </div>
+          </div>
+          <div class="modal-footer s-flex-center">
+            <%= f.submit '送信', class: 'btn btn-theme-02 bs-normal' %>
+          </div>
+        </div>
+      </div>
+      <div class="btn-wrapper mt30">
+        <%= f.submit '送信', class: 'btn btn-type05 bg-red c-white' %>
+      </div>
+  <% end %>
+<% end %>

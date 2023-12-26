@@ -1,0 +1,22 @@
+<?php include 'header-corp.php'; ?>
+<main class="no-padbot-imp">
+  <div class="g-width">
+    <%= render_breadcrumbs builder: Breadcrumbs::CustomBuilder %>
+    <%= cell(Content::InterviewCell, interview).call(:detail) %>
+  </div>
+  <div class="btn-back-to-top-wrapper"><div class="back-to-top mt40"></div></div>
+</main>
+<?php include 'footer.php'; ?>
+<script type="text/javascript">
+  /*===================== Back to Top Scripts ======================*/
+  $(".back-to-top").click(function() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  });
+  var items = $(".list-wrapper .list-item");
+  var numItems = items.length;
+  var perPage = 4;
+  items.slice(perPage).hide();
+</script>
+
+<% content_for(:extra_css) { Settings.assets.wordpress_extra_css } %>

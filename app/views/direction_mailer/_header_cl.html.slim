@@ -1,0 +1,6 @@
+p
+  = presenter.client_name
+  br
+  | #{presenter.main_cl_contact_fullname} 様<br>
+  - if presenter.sub_cl_contact?
+    | (CC：#{presenter.sub_cl_contact_fullname} 様)<br>

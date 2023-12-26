@@ -1,0 +1,23 @@
+= render 'header_fc', presenter: presenter
+
+p
+  | 下記の内容で業務指示内容の修正ご依頼をたまわりました。<br>
+  | 追って、修正後の内容にて再度ご確認依頼を送信させていただきます。<br>
+
+p
+  | 【業務名称】<br>
+  = presenter.business_title
+  br
+
+p
+  | 【修正業務指示内容】<br>
+  == presenter.comment_from_fc
+  br
+
+p
+  | 【修正ご指示担当者 様】<br>
+  == presenter.modification_requester_of_fc_full_name
+  br
+  br
+
+= render 'footer', presenter: presenter

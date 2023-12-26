@@ -1,0 +1,63 @@
+<footer class="footer">
+    <div class="g-width">
+        <div class="footer-wrapper">
+          <div class="flex mt-neg15">
+            <div class="w-50per">
+              <ul class="flex list-type03 li-mt15 red-hover">
+                <li><a href="<%= terms_page_path %>">サービス利用規約</a></li>
+                <li><a href="<%= terms_page_path(anchor: 'disclaimer') %>">免責事項</a></li>
+                <li>
+                  <a href="<%= mirai_works_privacy_entry_url %>">個人情報の取扱いについて</a>
+                </li>
+                <li>
+                  <a href="<%= mirai_works_privacy_entry_url %>" target="_blank">各種基本方針<i class="i-new-tab"></i></a>
+                </li>
+                <li>
+                  <a href="<%= company_info_url %>" target="_blank">会社情報<i class="i-new-tab"></i></a>
+                </li>
+                <li><a href="<%= contact_url %>">お問い合わせ</a></li>
+                <li class="mt15">
+                  <a href="<%= corp_root_path %>" target="_blank">プロフェッショナル人材をお探しの法人様<i class="i-new-tab"></i></a>
+                </li>
+              </ul>
+            </div>
+            <div class="w-50per sp-mt40 pad-l33 sp-pad-l0 safari-pad-l28 safari-pad-l0">
+              <p class="fs-12 noto-m mt15 sp-mt0">関連サービス</p>
+              <ul class="flex sp-flex-column list-type03 li-mt14 sp-mt0 red-hover">
+                <li>
+                  <a href="<%= intern_url %>" target="_blank">大人のインターン<i class="i-new-tab"></i></a>
+                </li>
+                <li>
+                  <a href="<%= skill_shift_url %>" target="_blank">Skill Shift<i class="i-new-tab"></i></a>
+                </li>
+                <li>
+                  <a href="<%= career_url %>" target="_blank">プロフェッショナルキャリア<i class="i-new-tab"></i></a>
+                </li>
+              </ul>
+              <ul class="flex sp-flex-column list-type03 li-mt14 sp-mt0 red-hover">
+                <li>
+                  <a href="<%= find_careers_url %>" target="_blank">FIND CAREERS<i class="i-new-tab"></i></a>
+                </li>
+                <li>
+                  <a href="<%= career_knock_url %>" target="_blank">CAREER Knock<i class="i-new-tab"></i></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+            <div class="flex flex-a-end flex-j-space-between mt30 sp-mt40">
+              <div class="flex flex-a-end left">
+                <a href="<%= root_path %>" class="logo w-300-imp">
+                  <img src="images/Freeconsultant-logo.png" class="w-220">
+                </a>
+                <a href="<%= mirai_works_url %>" class="provided-by" target="_blank" rel="nofollow noopener">
+                  <img src="images/provided-by.png">
+                </a>
+              </div>
+              <div class="copyright-wrapper sp-mt35">
+                <p class="copyright noto-m">©️Mirai Works Inc. All Rights Reserved.</p>
+              </div>
+            </div>
+        </div>
+        <%= render 'footer_devtools' unless Rails.env.production? %>
+    </div>
+</footer>

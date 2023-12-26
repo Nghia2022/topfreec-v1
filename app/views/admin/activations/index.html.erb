@@ -1,0 +1,23 @@
+<table class="table-type01">
+  <thead>
+    <tr>
+      <th>登録日</th>
+      <th>申込者No</th>
+      <th>メールアドレス</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+  <% unactivated_users.each do |fc_user| %>
+    <tr>
+      <td><%= I18n.l fc_user.created_at %></td>
+      <td><%= fc_user.lead_no %></td>
+      <td><%= fc_user.email %></td>
+      <td><%= link_to 'アクティベーション', edit_admin_activation_path(fc_user) %></td>
+    </tr>
+  <% end %>
+  <tbody>
+</table>
+<div class="mt10">
+  <%= paginate unactivated_users, theme: 'default' %>
+</div>

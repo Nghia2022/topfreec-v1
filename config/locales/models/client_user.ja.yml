@@ -1,0 +1,24 @@
+ja:
+  activerecord:
+    models:
+      client_user: CL
+    attributes:
+      client_user:
+        email: メールアドレス
+        current_password: 現在のパスワード
+        password: パスワード
+        password_confirmation: パスワード（確認用）
+    errors:
+      models:
+        client/reset_password/client_user:
+          format: "%{message}"
+          attributes:
+            password:
+              blank: パスワードを入力してください
+              too_short: パスワードが短すぎます。
+              too_long: パスワードは%{count}文字以内で入力してください。
+              equal_to_email: 'パスワードはメールアドレスと異なる必要があります。'
+              equal_to_current_password: 'パスワードは現在のパスワードと異なるものである必要があります。'
+            password_confirmation:
+              blank: パスワードを入力してください
+              confirmation: 新しいパスワード（確認）が一致しません

@@ -1,0 +1,21 @@
+<%= testid("content/columns/#{tag_param_name}")%>
+<%= content_for(:related_content) do %>
+  <%= cell(Content::MenuCell,
+           :column,
+           title:       'COLUMN',
+           subtitle:    tag_param_name,
+           description: '独立・起業を考えているコンサルタントの方、既にフリーランスのプロフェッショナル人材として活躍している方に、<br>「起業・独立」「お金」「ビジネススキル」「最新IT」「時代の先取り」に特化したコラムを提供します。'
+          ).call(:show) %>
+<% end %>
+    <hr>
+    <section>
+      <div class="sec sec-full s-pt-10 sec-pb-large">
+        <ul class="workflow-nav">
+          <%= cell(Content::Columns::TagsCell, tag_param, column_tags:).call(:show) %>
+        </ul>
+        <ul class="tile-list column3">
+          <%= cell(Content::ColumnsCell, columns).call(:show) %>
+        </ul>
+        <%= cell(PaginatorCell, columns, html_class_pc: 'mt5 mt45', html_class_sp: 'sp-mt40').call(:show) %>
+      </div>
+    </section>

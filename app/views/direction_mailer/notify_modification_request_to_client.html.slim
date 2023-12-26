@@ -1,0 +1,25 @@
+= render 'header_cl', presenter: presenter
+
+p
+  | 下記の内容で業務指示内容の修正ご依頼をたまわりました。<br>
+  | 追って、修正後の内容にて再度ご確認依頼を送信させていただきます。<br>
+
+p
+  | 【業務名称】<br>
+  = presenter.business_title
+  br
+
+p
+  | 【修正業務指示内容】<br>
+  == presenter.new_direction_detail
+  br
+
+p
+  | 【修正ご指示担当者 様】<br>
+  = presenter.authorizer_of_client_full_name
+  br
+  br
+
+p
+  | 株式会社みらいワークス<br>
+  | 担当 #{presenter.sub_mws_user_fullname}

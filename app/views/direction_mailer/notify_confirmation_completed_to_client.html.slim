@@ -1,0 +1,27 @@
+= render 'header_cl', presenter: presenter
+
+p
+  | 下記の内容で業務指示内容をご確認いただきました。<br>
+
+p
+  | 【確認完了日時】<br>
+  | 確認日時 #{presenter.approved_date_by_cl}
+  br
+
+p
+  | 【確認者】<br>
+  = presenter.approver_of_cl
+  br
+
+p
+  | 【業務名称】<br>
+  = presenter.business_title
+  br
+
+p
+  | 【業務指示内容】<br>
+  == presenter.direction_detail
+  br
+  br
+
+= render 'footer', presenter: presenter

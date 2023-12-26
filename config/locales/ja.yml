@@ -1,0 +1,47 @@
+ja:
+  time:
+    formats:
+      date_month: ! '%Y/%m'
+      date: ! '%Y/%m/%d'
+      default: '%Y-%m-%d %H:%M'
+      long: '%Y-%m-%d %H:%M'
+      short: '%m-%d %H:%M'
+      date_with_day: '%Y年%-m月%-d日（%a）'
+      date_with_day_half: '%Y年%-m月%-d日(%a)'
+      date_by_period: '%Y.%m.%d'
+      localized_datetime: '%Y年%m月%d日 %H時%M分'
+  date:
+    formats:
+      default: '%Y-%m-%d'
+      long: '%Y年%-m月%-d日'
+      without_year: '%-m月%-d日'
+      without_date: '%Y年%-m月'
+      date_with_day: '%Y年%-m月%-d日（%a）'
+      date_with_day_half: '%Y年%-m月%-d日(%a)'
+  helpers:
+    label:
+      general:
+        last_name: 姓
+        first_name: 名
+        last_name_kana: セイ
+        first_name_kana: カナ
+        zipcode: 郵便番号
+    page_entries_info:
+      one_page:
+        display_entries:
+          zero: "%{count}件中 %{count}件"
+          one: "%{count}件中 %{count}件"
+          other: "%{count}件中 %{count}件"
+      more_pages:
+        display_entries: "%{total}件中 %{first}-%{last}件"
+  views:
+    pagination:
+      truncate: ...
+  activerecord:
+    errors:
+      messages:
+        password_complexity:
+          digit: 最低%{count}つの数字を含む必要があります。
+          lower: 最低%{count}つの小文字英字を含む必要があります。
+          symbol: 最低%{count}つの記号を含む必要があります。
+          upper: 最低%{count}つの大文字英字を含む必要があります。

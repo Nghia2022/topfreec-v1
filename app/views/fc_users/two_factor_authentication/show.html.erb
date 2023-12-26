@@ -1,0 +1,33 @@
+<main class="login">
+  <div class="bg-white">
+    <div class="g-width">
+      <%= render_breadcrumbs builder: Breadcrumbs::CustomBuilder %>
+      <div class="f-container">
+        <%= form_with(url: [resource_name, :two_factor_authentication], method: :put, local: true) do |f| %>
+          <div class="flex flex-j-center f-wrapper">
+            <div class="w-100per">
+              <div class="g-width-700">
+                <h1 class="t-left">二段階認証</h1>
+                <%= render 'flash_messages', mt_height: 'mt15', key: :notice %>
+                <%= render 'flash_messages', mt_height: 'mt15', key: :alert %>
+              </div>
+            </div>
+            <div class="f-box mt20">
+              <p class="mt-m5 noto-l">コードを記載したテキストメッセージが次の電話番号に送信されました。</p>
+              <div class="f-group mt25 sp-mt15">
+                <label><%= user.phone_masked %></label>
+                <%= f.text_field :code, placeholder: 'コードを入力', class: 'f-input' %>
+              </div>
+            </div>
+          </div>
+          <div class="t-center mt15 sp-mt20">
+            <p class="noto-l">コードが届かない場合<a href="<%= resend_code_fc_user_two_factor_authentication_path %>" class="c-red link-border-bottom">コードを再送信</a></p>
+            <div class="btn-wrapper mt50 sp-mt35">
+              <%= f.submit '確認', class: 'btn btn-type03 bg-red c-white w-260' %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</main>

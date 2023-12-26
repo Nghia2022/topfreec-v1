@@ -1,0 +1,35 @@
+<%= testid('v2022/fc_users/passwords') %>
+    <h1 class="page-ttl">
+      <span class="main-ttl">パスワード設定</span>
+    </h1>
+    <section>
+      <div class="sec sec-min sec-pb-large sec-pt-medium">
+        <%= form_with(model: resource, scope: resource_name, url: password_path(resource_name), method: :put, local: true, builder: AppFormBuilder) do |f| %>
+          <%= render 'error_messages', resource: %>
+          <%= f.hidden_field :reset_password_token %>
+          <div class="form-content">
+            <div class="sec-txt">
+              新しいパスワードを入力してください。
+            </div>
+            <div class="sec-txt"><%= t('help_text', scope: 'devise.passwords.edit') %></div>
+            <div class="dashboard-panel">
+              <div class="s-mt-20">
+                <div class="form-row wrap fullwidth">
+                  <span class="form-sub-ttl">新しいパスワード</span>
+                  <label class="label-input form-full">
+                    <%= f.password_field :password, autofocus: true, autocomplete: 'new-password' %>
+                  </label>
+                  <span class="form-sub-ttl">新しいパスワード(確認)</span>
+                  <label class="label-input form-full">
+                    <%= f.password_field :password_confirmation, autocomplete: 'new-password' %>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="s-txt-center s-mt-20 s-mb-20">
+              <%= f.submit '設定する', class: 'btn bs-long btn-theme-02 s-mt-20' %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </section>

@@ -1,0 +1,8 @@
+<%= testid('mypage/client/directions/index') %>
+    <h1 class="page-ttl">
+      <span class="sub-ttl">CONFIRMATION</span>
+      <span class="main-ttl">業務指示確認</span>
+    </h1>
+    <section>
+      <%= cell(Mypage::Client::DirectionCell, directions, filter: params[:status]).call(:show) %>
+    </section>

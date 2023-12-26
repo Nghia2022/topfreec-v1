@@ -1,0 +1,25 @@
+.container
+  .row
+    h1 閲覧履歴
+    p Find me in app/views/mypage/client/histories/index.html.slim
+
+  .row
+    table
+      thead
+        th
+          | 案件名
+        th
+          | 閲覧日時
+      - if @histories.empty?
+        tr
+          td colspan="2"
+            | 表示する案件がありません
+      - else
+        - @histories.each do |history|
+          tr
+            td
+              = link_to '#' do
+                = history[:project_name]
+            td
+              = history[:created_at]
+    = paginate @histories

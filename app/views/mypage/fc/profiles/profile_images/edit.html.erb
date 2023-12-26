@@ -1,0 +1,27 @@
+<% content_for(:modal_content) do %>
+  <%= form_with scope: :fc_user, url: mypage_fc_profile_profile_image_path, method: :put, local: true, builder: AppFormBuilder do |f| %>
+        <div class="modal-panel cloudinary-uploader">
+          <a href="javascript:void(0)" class="modal-close-btn jsModalClose">
+            <i class="feather icon-x"></i>
+          </a>
+          <div class="modal-ttl">
+            プロフィール画像を変更する
+          </div>
+          <div class="modal-txt">
+            <%= f.hidden_field :profile_image, class: 'cloudinary-uploader-value' %>
+            <div class="form-content form-modal">
+              <div class="form-row jsUploadFileContainer">
+                <label class="label-input label-file">
+                  <input type="file" accept=".png,.jpg,.jpeg,.gif" name="#" class="jsUploadFile cloudinary-uploader-input">ファイルを選択
+                </label>
+                <div class="form-file-txt jsUploadFileName">選択されていません</div>
+              </div>
+              <div class="cloudinary-uploader-error s-fc-01"></div>
+            </div>
+          </div>
+          <div class="modal-footer s-flex-center">
+            <%= f.submit 'アップロード', class: 'btn btn-theme-disabled bs-normal cloudinary-uploader-submit', disabled: true %>
+          </div>
+        </div>
+  <% end %>
+<% end %>

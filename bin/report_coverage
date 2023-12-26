@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+set -euxo pipefail
+
+curl -s -H "Circle-Token: $CIRCLE_API_TOKEN" "https://circleci.com/api/v1.1/project/github/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME/$CIRCLE_BUILD_NUM/artifacts" > tmp/.artifacts.json
+
+COV_URL=`cat tmp/.artifacts.json | jq -r 'map(select(.["path"] == "coverage/index.html")) | .[].url'`
+PERCENTAGE_LINE=`cat coverage/.last_run.json | jq '.result.line'`
+PERCENTAGE_BRANCH=`cat coverage/.last_run.json | jq '.result.branch'`
+COV_DESC="$PERCENTAGE_LINE% covered (branch: $PERCENTAGE_BRANCH%)"
+
+THRESHOLD=100
+
+[ $PERCENTAGE_LINE -ge $THRESHOLD ] && STATE=success || STATE=pending
+POST_BODY_COVERAGE="{\"state\": \"$STATE\", \"target_url\": \"$COV_URL\", \"description\": \"$COV_DESC\", \"context\": \"coverage\"}"
+
+curl -XPOST \
+  -H "Authorization: token $GITHUB_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d "$POST_BODY_COVERAGE" \
+  https://api.github.com/repos/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME/statuses/$CIRCLE_SHA1

@@ -1,0 +1,73 @@
+/* ========================================================
+breadcrumb
+======================================================== */
+.breadcrumb {
+  background: transparent;
+	border-bottom: 1px solid $black246;
+	box-sizing: border-box;
+	font-size: .7em;
+	letter-spacing: .1em;
+	line-height: 1.4em;
+	@include mq(){
+    background-size: 100%;
+  }
+}
+.breadcrumb-list {
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+	@include mq(sp){
+		padding: .4em 0;
+		overflow-x: auto;
+		-webkit-overflow-scrolling: touch;
+		white-space: nowrap;
+		width: 94%;
+		&::-webkit-scrollbar {
+			display:none;
+		}
+	}
+	@include mq(){
+		padding: .6em 0;
+	}
+	@include mq(tab){
+		width: 97.5%;
+	}
+	@include mq(laptop){
+		width: 98%;
+	}
+	@include mq(desktop){
+		margin-left: 2rem;
+	}
+	li{
+		&:after {
+			color: $black155;
+			content: ">";
+			margin: 0 .6rem;
+		}
+		a{
+			color: $black155;
+			text-decoration: none;
+		}
+		&:last-child{
+			@include mq(){
+				overflow-x: scroll;
+				-ms-overflow-style: none;
+				scrollbar-width: none;
+				white-space: nowrap;
+				padding-right: 1.4rem;
+				max-width: 800px;
+			}
+			&::-webkit-scrollbar {
+				display:none;
+			}
+			span{
+				@include m-font-bold;
+				display: inline-block;
+				color: $black112;
+			}
+			&:after {
+				content: "";
+			}
+		}
+	}
+}

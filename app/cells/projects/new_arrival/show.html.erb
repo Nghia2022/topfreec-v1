@@ -1,0 +1,26 @@
+    <section>
+      <div class="sec sec-full sec-pt-large">
+        <h2 class="sec-ttl js-fadein">
+          <span class="main-ttl">新着案件</span>
+          <span class="sub-ttl">NEW PROJECTS</span>
+        </h2>
+        <div class="new-count">
+          <span class="s-fc-01"><span class="count-num"><%= Projects::NewArrivalCell.total %></span>件</span>
+          <span class="count-date"><%= last_updated_at %></span>更新
+        </div>
+        <div class="job-list-new">
+          <% items.each do |item| %>
+            <a href="<%= project_path(item) %>" class="job-list-item">
+            <div class="job-list-ttl">
+              <%= item.project_name %>
+            </div>
+          </a>
+          <% end %>
+        </div>
+        <div class="s-txt-center">
+          <a href="<%= projects_path %>" class="btn btn-theme-02 bs-normal">
+            新着案件をもっと見る
+          </a>
+        </div>
+      </div>
+    </section>

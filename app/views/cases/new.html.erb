@@ -1,0 +1,8 @@
+<%= form_with model: form, url: cases_path, method: :post, local: true, builder: AppFormBuilder do |f| %>
+  <%= render 'error_messages', resource: form %>
+  <% if form.confirming? %>
+    <%= render 'confirm', f:, form: %>
+  <% else %>
+    <%= render 'form', f: %>
+  <% end %>
+<% end %>

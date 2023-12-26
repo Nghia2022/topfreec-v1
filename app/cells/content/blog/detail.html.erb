@@ -1,0 +1,43 @@
+          <article>
+            <div class="article-content">
+              <div class="list-panel">
+                <div class="article-ttl">
+                  <h1><%= model.post_title %></h1>
+                </div>
+                <img src="<%= thumbnail %>" alt="" class="align-center">
+                <div class="list-meta">
+                  <span><i class="feather icon-clock"></i>作成日：<%= blog_date %></span><br class="s-sp">
+                  <span><i class="feather icon-rotate-cw"></i>更新日：<%= blog_modified%></span>
+                </div>
+                <section class="dynamic-article-content">
+                  <%= post_content %>
+                </section>
+                <hr>
+                <div class="btn-list sec-pt-medium sec-mb-40">
+                  <a href="<%= service_page_path %>" class="btn btn-theme-02 bs-full">
+                    <span>フリーコンサルタント.jpを詳しく知る</span>
+                  </a>
+                  <a href="<%= projects_path %>" class="btn btn-theme-02 bs-full">
+                    <span>高品質のコンサルタント案件を探す</span>
+                  </a>
+                </div>
+                <div class="btn-list btn-list-sns s-mt-20 s-mb-40">
+                  <a href="<%= facebook_share_url %>" class="btn btn-sns-facebook" target="_blank" rel="noopener noreferrer">
+                    <i class="i-fb img"></i>
+                    <span>シェアする</span>
+                  </a>
+                  <a href="<%= twitter_share_url %>" class="btn btn-sns-twitter" target="_blank" rel="noopener noreferrer">
+                    <i class="i-twitter img"></i>
+                    <span>ツイートする</span>
+                  </a>
+                  <a href="<%= hatena_share_url %>" class="btn btn-sns-hatebu" target="_blank" rel="noopener noreferrer">
+                    <i class="i-buzz img"></i>
+                    <span>はてブする</span>
+                  </a>
+                </div>
+                <nav class="nav-link">
+                  <%= cell(Content::ListCell, model).call(:show) %>
+                </nav>
+              </div>
+            </div>
+          </article>

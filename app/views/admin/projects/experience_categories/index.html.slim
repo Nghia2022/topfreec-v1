@@ -1,0 +1,27 @@
+table.table-type01
+  thead
+    tr
+      th
+        | ラベル
+      th
+        | 値
+      th
+        | ポジション
+      th
+        | Slug
+      th
+        | アップロード
+  tbody
+    - experience_categories.each do |experience_category|
+      tr
+        td
+          = experience_category.label
+        td
+          = experience_category.value
+        td
+          = experience_category.position
+        td
+          = experience_category.slug
+        td
+          button.media-library-trigger data-folder=experience_category.cloudinary_folder
+            | アップロード

@@ -1,0 +1,12 @@
+ja:
+  notifications:
+    projects/entry/matching:
+      subject:
+        remaining: 残り%{remaining}/7件応募可能です
+        limit_exceeded: 同時にご応募可能な上限7件に達しております
+
+    direction:
+      subject:
+        ready_for_confirmation: 業務指示内容のご確認をお願いいたします。
+        finalized: 業務指示内容が確定しました。
+        ready_for_reconfirmation: 保留中の業務指示内容が修正されました。再度確認をお願いいたします。

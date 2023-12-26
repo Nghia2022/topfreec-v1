@@ -1,0 +1,10 @@
+trigger FCWebActivationTrigger on Account (after insert, after update) {
+  List<Account> newAccounts = Trigger.new;
+  Map<Id, Account> oldAccounts = Trigger.oldMap;
+
+  if (Trigger.isInsert) {
+    FCWebActivation.activateForInsert(newAccounts);
+  } else {
+    FCWebActivation.activateForUpdate(newAccounts, oldAccounts);
+  }
+}

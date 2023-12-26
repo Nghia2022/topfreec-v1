@@ -1,0 +1,21 @@
+<%= testid('mypage/fc/settings/resume/show') %>
+              <div class="list-dl column1-sp">
+                <dl>
+                  <dt>レジュメ登録</dt>
+                  <dd>
+                    <div>
+                      <% with_notice do |notice| %>
+                        <p class="s-fc-01">
+                          <%= notice %>
+                        </p>
+                      <% end %>
+                      <%= last_uploaded_at %>
+                    </div>
+                  </dd>
+                  <div class="list-edit-btn">
+                    <a href="<%= new_mypage_fc_settings_resumes_path %>" class="btn btn-theme-02 bs-small jsModalOpen" data-target="form-license">
+                      アップロード
+                    </a>
+                  </div>
+                </dl>
+              </div>

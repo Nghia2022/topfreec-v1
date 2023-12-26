@@ -1,0 +1,16 @@
+<% content_for(:modal_content) do %>
+  <%= form_with model: direction, url: mypage_client_direction_approve_path(direction), method: :post, local: true, builder: AppFormBuilder do |f| %>
+        <div class="modal-panel">
+          <a href="javascript:void(0)" class="modal-close-btn jsModalClose">
+            <i class="feather icon-x"></i>
+          </a>
+          <div class="modal-ttl">
+            一度選択すると変更はできませんがよろしいですか？
+          </div>
+          <div class="modal-footer s-flex-center">
+            <%= f.submit '確認完了', class: 'btn btn-theme-02 bs-normal' %>
+          </div>
+        </div>
+      </div>
+  <% end %>
+<% end %>

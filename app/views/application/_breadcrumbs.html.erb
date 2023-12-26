@@ -1,0 +1,14 @@
+<% if elements.present? %>
+    <nav class="breadcrumb">
+      <ul class="breadcrumb-list" itemprop="Breadcrumb" itemscope="" itemtype="http://data-vocabulary.org/BreadcrumbList">
+        <% elements.each.with_index(1) do |element, index| %>
+        <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+          <%= link_to_block_if element.path.present?, element.path, itemprop: 'item' do %>
+            <%= tag.span element.name, itemprop: 'name' %>
+          <% end %>
+          <meta itemprop="position" content="<%= index %>">
+        </li>
+        <% end %>
+      </ul>
+    </nav>
+<% end %>

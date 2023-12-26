@@ -1,0 +1,577 @@
+      <section class="sec-pt-medium sec-pb-ex">
+        <div class="sec sec-full s-pc">
+           <!-- searchbox_pc -->
+           <div class="s-pc s-pb-40 js-fadein" id="searchbox-pc">
+            <div class="sec-ttl">
+              <span class="main-ttl">案件検索</span>
+              <span class="sub-ttl">PROJECT SEARCH</span>
+            </div>
+            <%= form_with model: form, scope: '', url: projects_path, method: :get, local: true, class: 'form-content s-pt-10', id: 'search-form' do |f| %>
+              <div class="searchbox-panel">
+                <div class="searchbox-panel-item">
+                  <div class="searchbox-panel-ttl">
+                    <span>業務領域</span> <span class="s-fs-12">※複数選択可</span>
+                  </div>
+                  <div class="searchbox-panel-txt">
+                    <label class="label-select form-long">
+                      <%= f.collection_select :categories, Project::ExperienceCategory.all, :value, :label, {}, { multiple: true, data: { behavior: 'multiple-select', placeholder: '選択してください' } } %>
+                    </label>
+                  </div>
+                </div>
+                <div class="searchbox-panel-item">
+                  <div class="searchbox-panel-ttl">
+                    <span>勤務地</span> <span class="s-fs-12">※複数選択可</span>
+                  </div>
+                  <div class="searchbox-panel-txt">
+                    <label class="label-select form-long">
+                      <%= f.select :work_locations, DesiredCondition.work_location1.options, {}, { multiple: true, data: { behavior: 'multiple-select', placeholder: '選択してください' } } %>
+                    </label>
+                  </div>
+                </div>
+                <div class="searchbox-panel-item">
+                  <div class="searchbox-panel-ttl">
+                    <span>報酬金額</span>
+                  </div>
+                  <div class="searchbox-panel-txt">
+                    <label class="label-select form-long">
+                      <%= f.collection_select :compensation_ids, Compensation.all, :id, :title, {}, { multiple: true, data: { behavior: 'single-select', target: 'compensation_ids[]', single: true, placeholder: '選択してください', 'maximum-selection-length': 1 } } %>
+                    </label>
+                  </div>
+                </div>
+                <div class="searchbox-panel-item">
+                  <div class="searchbox-panel-ttl">
+                    <span>勤務形態</span> <span class="s-fs-12">※複数選択可</span>
+                  </div>
+                  <div class="searchbox-panel-txt">
+                    <label class="label-select form-long">
+                      <%= f.collection_select :work_options, Project::WorkOption.all, :value, :label, {}, { multiple: true, data: { behavior: 'multiple-select', placeholder: '選択してください' } } %>
+                    </label>
+                  </div>
+                </div>
+                <div class="searchbox-panel-item">
+                  <div class="searchbox-panel-ttl">
+                    <span>稼働率（下限）</span>
+                  </div>
+                  <div class="searchbox-panel-txt">
+                    <label class="label-select form-long">
+                      <%= f.collection_select :occupancy_rate_mins,
+                        Project::OccupancyRateMin.all,
+                        :value, :label_with_percent,
+                        { include_blank: '選択してください' },
+                        {
+                          multiple: true,
+                          data: {
+                            single: true,
+                            placeholder: '選択してください',
+                            behavior: 'single-select'
+                          }
+                        } %>
+                    </label>
+                  </div>
+                </div>
+                <div class="searchbox-panel-item">
+                  <div class="searchbox-panel-ttl">
+                    <span>稼働率（上限）</span>
+                  </div>
+                  <div class="searchbox-panel-txt">
+                    <label class="label-select form-long">
+                      <%= f.collection_select :occupancy_rate_maxs,
+                        Project::OccupancyRateMin.all,
+                        :value, :label_with_percent,
+                        { include_blank: '選択してください' },
+                        {
+                          multiple: true,
+                          data: {
+                            single: true,
+                            placeholder: '選択してください',
+                            behavior: 'single-select'
+                          }
+                        } %>
+                    </label>
+                  </div>
+                </div>
+                <div class="searchbox-panel-item">
+                  <div class="searchbox-panel-ttl">
+                    <span>参画開始月</span>
+                  </div>
+                  <div class="searchbox-panel-txt">
+                    <%= f.text_field :period_from, class: 'monthpicker-start',
+                      autocomplete: :off,
+                      data: {
+                        behavior: 'datepicker',
+                        datepicker: { view: 'months', minView: 'months', dateFormat: 'yyyy-MM'
+                        }
+                      } %>
+                  </div>
+                </div>
+                <div class="searchbox-panel-item">
+                  <div class="searchbox-panel-ttl">
+                    <span>参画終了月</span>
+                  </div>
+                  <div class="searchbox-panel-txt">
+                    <%= f.text_field :period_to, class: 'monthpicker-end',
+                      autocomplete: :off,
+                      data: {
+                        behavior: 'datepicker',
+                        datepicker: { view: 'months', minView: 'months', dateFormat: 'yyyy-MM'
+                        }
+                      } %>
+                  </div>
+                </div>
+                <div class="searchbox-panel-item half">
+                  <div class="searchbox-panel-txt">
+                    <%= f.text_field :keyword, placeholder: '検索キーワードを入力', class: 'f-input keyword i-search' %>
+                  </div>
+                </div>
+                <div class="searchbox-panel-item">
+                  <div class="searchbox-panel-txt">
+                    <div class="form-content">
+                      <label class="label-check label-nowrap">
+                        <%= f.check_box :recruiting %>
+                        <span>募集中のみを表示</span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="s-txt-center">
+                <button class="btn btn-theme-02 bs-normal">
+                  検索する
+                </button>
+              </div>
+            <% end %>
+          </div>
+        </div>
+        <div class="sec sec-full s-sp">
+          <div class="s-pt-20 s-pb-20 s-txt-center jsSearchTableOpen">
+            <a href="javascript:void(0);" class="btn btn-theme-02-outline bs-normal" data-toggle="collapse">
+              <i class="bicon-open"></i>
+              検索条件を変更する
+            </a>
+          </div>
+          <div class="sec sec-full s-pt-50 jsSearchTable">
+            <!-- searchbox_sp -->
+            <div class="s-sp s-pt-30 js-fadein" id="searchbox-sp">
+              <div class="sec-ttl">
+                <span class="main-ttl">案件検索</span>
+                <span class="sub-ttl">PROJECT SEARCH</span>
+              </div>
+              <%= form_with model: form, scope: '', url: projects_path, method: :get, local: true, class: 'form-content searchbox-sp' do |f| %>
+                <!-- serchbox-select  -->
+                <div class="serchbox-select sec sec-full">
+                  <div class="searchbox-item" data-toggle="modal" data-target="modal_categories">
+                      <div class="searchbox-item-ttl">
+                        <span id="label_categories">業務領域を選択する</span>
+                      </div>
+                      <div class="searchbox-item-btn"></div>
+                  </div>
+                  <div class="searchbox-item" data-toggle="modal" data-target="modal_work_locations">
+                    <div class="searchbox-item-ttl">
+                      <span id="label_work_locations">勤務地を選択する</span>
+                    </div>
+                    <div class="searchbox-item-btn"></div>
+                  </div>
+                  <div class="searchbox-item" data-toggle="modal" data-target="modal_compensation_ids">
+                    <div class="searchbox-item-ttl">
+                      <span id="label_compensation_ids">報酬金額</span>
+                    </div>
+                    <div class="searchbox-item-btn"></div>
+                  </div>
+                  <div class="searchbox-item" data-toggle="modal" data-target="modal_work_options">
+                    <div class="searchbox-item-ttl">
+                      <span id="label_work_options">勤務形態</span>
+                    </div>
+                    <div class="searchbox-item-btn"></div>
+                  </div>
+                  <div class="searchbox-item" data-toggle="modal" data-target="modal_occupancy_rate_mins">
+                    <div class="searchbox-item-ttl">
+                      <span id="label_occupancy_rate_mins">稼働率（下限）</span>
+                    </div>
+                    <div class="searchbox-item-btn"></div>
+                  </div>
+                  <div class="searchbox-item" data-toggle="modal" data-target="modal_occupancy_rate_maxs">
+                    <div class="searchbox-item-ttl">
+                      <span id="label_occupancy_rate_maxs">稼働率（上限）</span>
+                    </div>
+                    <div class="searchbox-item-btn"></div>
+                  </div>
+                  <div class="searchbox-item">
+                    <%= text_field nil, :period_from, class: 'monthpicker-start-sp', placeholder: '参加開始月',
+                      autocomplete: :off,
+                      value: form.period_from,
+                      data: {
+                        behavior: 'datepicker',
+                        datepicker: {
+                          view: 'months', minView: 'months', dateFormat: 'yyyy-MM', isMobile: true
+                        }
+                      } %>
+                  </div>
+                  <div class="searchbox-item">
+                    <%= text_field nil, :period_to, class: 'monthpicker-end-sp', placeholder: '参加終了月',
+                      autocomplete: :off,
+                      value: form.period_to,
+                      data: {
+                        behavior: 'datepicker',
+                        datepicker: {
+                          view: 'months', minView: 'months', dateFormat: 'yyyy-MM', isMobile: true
+                        }
+                      } %>
+                  </div>
+                  <div class="searchbox-panel-item full">
+                    <div class="searchbox-item">
+                      <%= text_field nil, :keyword, id: 'keyword_sp', placeholder: '検索キーワードを入力', class: 'f-input keyword i-search', value: form.keyword %>
+                    </div>
+                  </div>
+                  <div class="searchbox-panel-item full">
+                    <div class="form-content">
+                      <label class="label-check label-nowrap">
+                        <%= check_box nil, :recruiting, id: 'recruiting_sp', value: 1, checked: form.recruiting %>
+                        <span>募集中のみを表示</span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="s-txt-center s-pt-20">
+                    <button type="submit" class="btn btn-theme-02 bs-normal">
+                      この条件で検索
+                    </button>
+                  </div>
+                </div>
+                <!-- ./serchbox-select  -->
+
+                <div id="modal_categories" class="modal jsModal">
+                  <div class="modal-bg" data-dismiss="modal"></div>
+                  <div class="modal-content">
+                    <div class="modal-panel">
+                      <a href="javascript:void(0)" class="modal-close-btn" data-dismiss="modal" data-target="modal_categories">
+                        <i class="feather icon-x"></i>
+                      </a>
+                      <div class="modal-ttl">
+                        業務領域を選択してください
+                      </div>
+                      <div class="modal-txt">
+                        <div class="form-content form-modal">
+                          <div class="form-group">
+                            <div class="form-row wrap fullwidth">
+                              <%= collection_check_boxes(nil, :categories,
+                                                         Project::ExperienceCategory.all,
+                                                         :value, :label,
+                                                         { checked: form.categories },
+                                                         { data: { placeholder: '業務領域' } }) do |c| %>
+                                <%= c.label do %>
+                                  <%= c.check_box %>
+                                  <span><%= c.text %></span>
+                                <% end %>
+                              <% end %>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="modal-footer s-flex-center">
+                        <input type="submit" value="検索する" form="search-form" class="btn btn-theme-02 bs-normal">
+                        <a href="javascript:void(0)" class="btn btn-theme-02-outline bs-normal set_categories_item" data-dismiss="modal" data-target="modal_categories">
+                          閉じる
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div id="modal_work_locations" class="modal jsModal">
+                  <div class="modal-bg" data-dismiss="modal"></div>
+                  <div class="modal-content">
+                    <div class="modal-panel">
+                      <a href="javascript:void(0)" class="modal-close-btn" data-dismiss="modal" data-target="modal_work_locations">
+                        <i class="feather icon-x"></i>
+                      </a>
+                      <div class="modal-ttl">
+                        勤務地を選択してください
+                      </div>
+                      <div class="modal-txt">
+                        <div class="form-content form-modal">
+                          <div class="form-group">
+                            <div class="form-row wrap fullwidth">
+                              <%= collection_check_boxes(nil, :work_locations,
+                                                         DesiredCondition.work_location1.options,
+                                                         :last, :first,
+                                                         { checked: form.work_locations },
+                                                         { data: { placeholder: '勤務地' } }) do |c| %>
+                                <%= c.label do %>
+                                  <%= c.check_box %>
+                                  <span><%= c.text %></span>
+                                <% end %>
+                              <% end %>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="modal-footer s-flex-center">
+                        <input type="submit" value="検索する" form="search-form" class="btn btn-theme-02 bs-normal">
+                        <a href="javascript:void(0)" class="btn btn-theme-02-outline bs-normal set_work_locations_item" data-dismiss="modal" data-target="modal_work_locations">
+                          閉じる
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div id="modal_compensation_ids" class="modal jsModal">
+                  <div class="modal-bg" data-dismiss="modal"></div>
+                  <div class="modal-content">
+                    <div class="modal-panel">
+                      <a href="javascript:void(0)" class="modal-close-btn" data-dismiss="modal" data-target="modal_compensation_ids">
+                        <i class="feather icon-x"></i>
+                      </a>
+                      <div class="modal-ttl">
+                        報酬金額を選択してください
+                      </div>
+                      <div class="modal-txt">
+                        <div class="form-content form-modal">
+                          <div class="form-group">
+                            <div class="form-row wrap fullwidth">
+                              <%= collection_radio_buttons(nil, :compensation_ids,
+                                                           Compensation.all,
+                                                           :id, :title,
+                                                           { checked: form.compensation_ids, include_hidden: false },
+                                                           { multiple: true, data: { placeholder: '報酬金額' } }) do |c| %>
+                                <%= c.label do %>
+                                  <%= c.radio_button %>
+                                  <span><%= c.text %></span>
+                                <% end %>
+                              <% end %>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="modal-footer s-flex-center">
+                        <input type="submit" value="検索する" form="search-form" class="btn btn-theme-02 bs-normal">
+                        <a href="javascript:void(0)" class="btn btn-theme-02-outline bs-normal set_compensation_ids_item" data-dismiss="modal" data-target="modal_compensation_ids">
+                          閉じる
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div id="modal_work_options" class="modal jsModal">
+                  <div class="modal-bg" data-dismiss="modal"></div>
+                  <div class="modal-content">
+                    <div class="modal-panel">
+                      <a href="javascript:void(0)" class="modal-close-btn" data-dismiss="modal" data-target="modal_work_options">
+                        <i class="feather icon-x"></i>
+                      </a>
+                      <div class="modal-ttl">
+                        勤務形態を選択してください
+                      </div>
+                      <div class="modal-txt">
+                        <div class="form-content form-modal">
+                          <div class="form-group">
+                            <div class="form-row wrap fullwidth">
+                              <%= collection_check_boxes(nil, :work_options,
+                                                         Project::WorkOption.all,
+                                                         :value, :label,
+                                                         { checked: form.work_options },
+                                                         { data: { placeholder: '勤務形態' } }) do |c| %>
+                                <%= c.label do %>
+                                  <%= c.check_box %>
+                                  <span><%= c.text %></span>
+                                <% end %>
+                              <% end %>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="modal-footer s-flex-center">
+                        <input type="submit" value="検索する" form="search-form" class="btn btn-theme-02 bs-normal">
+                        <a href="javascript:void(0)" class="btn btn-theme-02-outline bs-normal set_work_options_item" data-dismiss="modal" data-target="modal_work_options">
+                          閉じる
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div id="modal_occupancy_rate_mins" class="modal jsModal">
+                  <div class="modal-bg" data-dismiss="modal"></div>
+                  <div class="modal-content">
+                    <div class="modal-panel">
+                      <a href="javascript:void(0)" class="modal-close-btn" data-dismiss="modal" data-target="modal_occupancy_rate_mins">
+                        <i class="feather icon-x"></i>
+                      </a>
+                      <div class="modal-ttl">
+                        稼働率（下限）を選択してください
+                      </div>
+                      <div class="modal-txt">
+                        <div class="form-content form-modal">
+                          <div class="form-group">
+                            <div class="form-row wrap fullwidth">
+                              <%= collection_radio_buttons(nil, :occupancy_rate_mins,
+                                                           Project::OccupancyRateMin.all,
+                                                           :value, :label_with_percent,
+                                                           { checked: form.occupancy_rate_mins, include_hidden: false },
+                                                           {
+                                                             multiple: true,
+                                                             data: { placeholder: '稼働率（下限）'
+                                                             }
+                                                           }) do |c| %>
+                                <%= c.label do %>
+                                  <%= c.radio_button %>
+                                  <span><%= c.text %></span>
+                                <% end %>
+                              <% end %>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="modal-footer s-flex-center">
+                        <input type="submit" value="検索する" form="search-form" class="btn btn-theme-02 bs-normal">
+                        <a href="javascript:void(0)" class="btn btn-theme-02-outline bs-normal set_occupancy_rate_mins_item" data-dismiss="modal" data-target="modal_occupancy_rate_mins">
+                          閉じる
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div id="modal_occupancy_rate_maxs" class="modal jsModal">
+                  <div class="modal-bg" data-dismiss="modal"></div>
+                  <div class="modal-content">
+                    <div class="modal-panel">
+                      <a href="javascript:void(0)" class="modal-close-btn" data-dismiss="modal" data-target="modal_occupancy_rate_maxs">
+                        <i class="feather icon-x"></i>
+                      </a>
+                      <div class="modal-ttl">
+                        稼働率（上限）を選択してください
+                      </div>
+                      <div class="modal-txt">
+                        <div class="form-content form-modal">
+                          <div class="form-group">
+                            <div class="form-row wrap fullwidth">
+                              <%= collection_radio_buttons(nil, :occupancy_rate_maxs,
+                                                           Project::OccupancyRateMin.all,
+                                                           :value, :label_with_percent,
+                                                           { checked: form.occupancy_rate_maxs, include_hidden: false },
+                                                           {
+                                                             multiple: true,
+                                                             data: { placeholder: '稼働率（上限）'
+                                                             }
+                                                           }) do |c| %>
+                                <%= c.label do %>
+                                  <%= c.radio_button %>
+                                  <span><%= c.text %></span>
+                                <% end %>
+                              <% end %>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="modal-footer s-flex-center">
+                        <input type="submit" value="検索する" form="search-form" class="btn btn-theme-02 bs-normal">
+                        <a href="javascript:void(0)" class="btn btn-theme-02-outline bs-normal set_occupancy_rate_maxs_item" data-dismiss="modal" data-target="modal_occupancy_rate_maxs">
+                          閉じる
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              <% end %>
+
+              <!-- script for sp searchbox ------------------------------  -->
+              <script>
+                jQuery(function ($) {
+                  $('.set_categories_item').click(function () {
+                    SetCategoriesItem();
+                  });
+                  $('.set_work_locations_item').click(function () {
+                    SetWorkLocationsItem();
+                  });
+                  $('.set_compensation_ids_item').click(function () {
+                    SetCompensationIdsItem();
+                  });
+                  $('.set_work_options_item').click(function () {
+                    SetWorkOptionsItem();
+                  });
+                  $('.set_occupancy_rate_mins_item').click(function () {
+                    SetOccupancyRateMinsItem();
+                  });
+                  $('.set_occupancy_rate_maxs_item').click(function () {
+                    SetOccupancyRateMaxsItem();
+                  });
+                  // 業務領域セット
+                  function SetCategoriesItem() {
+                    category_name = $('[name="categories[]"]:checked').map(function () {
+                      return $(this).next().text();
+                    }).get().join('、');
+                    if (category_name != '') {
+                      $('#label_categories').html(category_name);
+                    } else {
+                      $('#label_categories').html('業務領域');
+                    }
+                  }
+                  // 勤務地セット
+                  function SetWorkLocationsItem() {
+                    work_locations_name = $('[name="work_locations[]"]:checked').map(function () {
+                      return $(this).next().text();
+                    }).get().join('、');
+                    if (work_locations_name != '') {
+                      $('#label_work_locations').html(work_locations_name);
+                    } else {
+                      $('#label_work_locations').html('勤務地');
+                    }
+                  }
+                  // 報酬金額セット
+                  function SetCompensationIdsItem() {
+                    compensation_ids_name = $('[name="compensation_ids[]"]:checked').map(function () {
+                      return $(this).next().text();
+                    }).get().join('、');
+                    if (compensation_ids_name != '') {
+                      $('#label_compensation_ids').html(compensation_ids_name);
+                    } else {
+                      $('#label_compensation_ids').html('報酬金額');
+                    }
+                  }
+                  // 勤務形態セット
+                  function SetWorkOptionsItem() {
+                    work_options_name = $('[name="work_options[]"]:checked').map(function () {
+                      return $(this).next().text();
+                    }).get().join('、');
+                    if (work_options_name != '') {
+                      $('#label_work_options').html(work_options_name);
+                    } else {
+                      $('#label_work_options').html('勤務形態');
+                    }
+                  }
+                  // 稼働率(下限)セット
+                  function SetOccupancyRateMinsItem() {
+                    occupancy_rate_mins_name = $('[name="occupancy_rate_mins[]"]:checked').map(function () {
+                      return $(this).next().text();
+                    }).get().join('、');
+                    if (occupancy_rate_mins_name != '') {
+                      $('#label_occupancy_rate_mins').html(occupancy_rate_mins_name);
+                    } else {
+                      $('#label_occupancy_rate_mins').html('稼働率(下限)');
+                    }
+                  }
+                  // 稼働率(上限)セット
+                  function SetOccupancyRateMaxsItem() {
+                    occupancy_rate_maxs_name = $('[name="occupancy_rate_maxs[]"]:checked').map(function () {
+                      return $(this).next().text();
+                    }).get().join('、');
+                    if (occupancy_rate_maxs_name != '') {
+                      $('#label_occupancy_rate_maxs').html(occupancy_rate_maxs_name);
+                    } else {
+                      $('#label_occupancy_rate_maxs').html('稼働率(上限)');
+                    }
+                  }
+                  SetCategoriesItem();
+                  SetWorkLocationsItem();
+                  SetCompensationIdsItem();
+                  SetWorkOptionsItem();
+                  SetOccupancyRateMinsItem();
+                  SetOccupancyRateMaxsItem();
+                });
+              </script>
+            </div>
+          </div>
+          <div class="s-pb-20 s-txt-center s-d-hidden jsSearchTableClose">
+            <a href="javascript:void(0);" class="btn btn-theme-02-outline bs-normal" data-toggle="collapse">
+              <i class="bicon-close"></i>
+              検索画面を閉じる
+            </a>
+          </div>
+        </div>
+      </section>

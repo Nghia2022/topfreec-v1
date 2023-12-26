@@ -1,0 +1,3 @@
+email,password,is_fc,is_cl,sfdcid
+test1@mirai-works.co.jp,pbkdf2_sha256$180000$qIGcAVQRka3E$cYp5Rw2IFS27bXHgxmZdLT3PilxFyZItiaaap4lOsiQ=,1,0,0032t000003Oyx2AAC
+test2@mirai-works.co.jp,pbkdf2_sha256$180000$eTsctfOVBCV6$DgeAa/nTtSFH9svcsJ3DDKgaf/h3d/UWaHRKn15uZWs=,0,1,0032t000003PBlgAAG

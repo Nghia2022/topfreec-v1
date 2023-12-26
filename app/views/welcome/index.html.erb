@@ -1,0 +1,79 @@
+    <%= render 'hero' %>
+    <%= cell(:search_box).call(:show) %>
+    <%= cell(Projects::FeaturedCell, projects_featured).call(:home) %>
+    <%= cell(Projects::NewArrivalCell, projects_new_arrivals).call(:show) %>
+    <%= render 'strengths' %>
+    <%= cell(Projects::ExperienceCategoriesCell, categories).call(:show) %>
+    <%= cell(Projects::WorkLocationsCell, work_locations).call(:show) %>
+    <section>
+      <div class="sec sec-full sec-pt-large">
+        <h2 class="sec-ttl js-fadein">
+          <span class="main-ttl">コンテンツ</span>
+          <span class="sub-ttl">CONTENTS</span>
+        </h2>
+        <ul class="tile-list column3 js-fadein">
+          <li class="tile-list-item">
+            <a href="<%= content_columns_path %>">
+              <div class="tile-list-img">
+                <div class="tile-list-img-inner">
+                  <img src="/assets/images/top/contents_img1.jpg" class="img" alt="●●●" width="370" height="250" loading="lazy">
+                </div>
+                <div class="tile-list-category">01. COLUMN</div>
+              </div>
+              <div class="list-link">
+                <h3 class="tile-list-ttl">
+                  プロ人材向けコラム
+                </h3>
+                起業・独立、お金、ビジネススキル<br>最新ITなどに特化
+              </div>
+            </a>
+          </li>
+          <li class="tile-list-item">
+            <a href="<%= content_workstyles_path %>">
+              <div class="tile-list-img">
+                <div class="tile-list-img-inner">
+                  <img src="/assets/images/top/contents_img2.jpg" class="img" alt="●●●" width="370" height="250" loading="lazy">
+                </div>
+                <div class="tile-list-category">02. INTERVIEW</div>
+              </div>
+              <div class="list-link">
+                <h3 class="tile-list-ttl">
+                  プロ人材インタビュー
+                </h3>
+                フリーランスで活躍する独立コンサルタントや<br>プロフェッショナル人材へのインタビュー
+              </div>
+            </a>
+          </li>
+          <li class="tile-list-item">
+            <a href="<%= content_blogs_path %>">
+              <div class="tile-list-img">
+                <div class="tile-list-img-inner">
+                  <img src="/assets/images/top/contents_img3.jpg" class="img" alt="●●●" width="370" height="250" loading="lazy">
+                </div>
+                <div class="tile-list-category">03. BLOG</div>
+              </div>
+              <div class="list-link">
+                <h3 class="tile-list-ttl">
+                  代表ブログ
+                </h3>
+                みらいワークス代表 岡本祥治の<br>「日本の“みらい”を元気にするブログ」
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section class="sec-theme-03 sec-mt-large">
+      <div class="sec sec-full sec-p-large">
+        <h2 class="sec-ttl js-fadein">
+          <span class="main-ttl">お知らせ</span>
+          <span class="sub-ttl">NEWS</span>
+        </h2>
+        <%= cell('topic', topics).call(:show_without_pagination) %>
+        <div class="s-txt-center">
+          <a href="<%= content_topics_path %>" class="btn btn-theme-02 bs-normal">
+            お知らせをもっと見る
+          </a>
+        </div>
+      </div>
+    </section>

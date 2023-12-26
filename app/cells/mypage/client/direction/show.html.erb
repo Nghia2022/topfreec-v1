@@ -1,0 +1,10 @@
+      <div class="sec sec-full sec-pb-large">
+        <ul class="workflow-nav s-mb-30 s-mt-50">
+          <% tabs.each do |tab| %>
+          <li>
+            <a href="<%= mypage_client_directions_path(status: tab) %>" class="<%= tab_class(tab) %>"><%= tab_label(tab) %></a>
+          </li>
+          <% end %>
+        </ul>
+        <%= cell(Mypage::Client::Direction::ItemCell, collection: model).call(:row) %>
+      </div>

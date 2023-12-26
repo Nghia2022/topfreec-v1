@@ -1,0 +1,15 @@
+<%= testid('content/workstyles/show')%>
+    <div class="sec sec-full">
+      <div class="content-wrapper">
+        <div class="content-main">
+          <%= cell(Content::WorkstyleCell, workstyle).call(:detail) %>
+        </div>
+        <div class="content-sidebar s-pt-30">
+          <%= cell(Content::WorkstylesCell, latest_contents).call(:latest_workstyle) %>
+        </div>
+      </div>
+      <section class="sec-theme-03 sec-mt-medium">
+        <%= cell(Content::ProjectsCell, recruiting_projects).call(:show) %>
+      </section>
+    </div>
+<% content_for(:extra_css) { Settings.assets.wordpress_extra_css } %>

@@ -1,0 +1,31 @@
+ja:
+  activemodel:
+    attributes:
+      fc/main_registration/registration_form:
+        prefecture: 都道府県
+        city: 市区町村・番地
+        building: 建物名
+        zipcode: 郵便番号
+        start_timing: 参画可能予定日
+        experienced_works: 得意領域
+        experienced_works_sub: 得意領域
+        desired_works: 興味がある（今後経験したい）領域
+        desired_works_sub: 希望領域
+        company_sizes: 企業規模
+        work_location1: 第一希望
+        work_location2: 第二希望
+        work_location3: 第三希望
+        reward_min: 報酬金額
+        occupancy_rate: 希望稼働率
+        business_form: 可能な業務形態
+        requests: その他希望事項
+    errors:
+      models: 
+        fc/main_registration/registration_form:
+          attributes:
+            experienced_works_sub:
+              format: "%{message}"
+              too_long: "選択できる得意領域数は%{count}件を上限としております。"
+            desired_works_sub:
+              format: "%{message}"
+              too_long: "選択できる希望領域数は%{count}件を上限としております。"

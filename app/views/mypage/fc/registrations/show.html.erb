@@ -1,0 +1,24 @@
+<%= testid('mypage/fc/registrations') %>
+  <main class="content">
+    <%= render_breadcrumbs builder: Breadcrumbs::CustomBuilder %>
+    <h1 class="page-ttl">
+      <span class="main-ttl">会員情報確認</span>
+    </h1>
+    <div class="sec sec-min sec-pb-large">
+        <div class="alert danger">
+          <i class="feather icon-alert-triangle"></i>サービスご利用開始にあたり、利用開始情報の登録をお願いいたします。<br>
+          ※会員登録完了後、全て機能をご利用いただけます。
+        </div>
+        <%= render 'show_profile_basic', profile:, fc_user: %>
+        <%= render 'error_messages', resource: form %>
+        <%= form_with model: form, scope: :fc_user, url: mypage_fc_registration_path, method: :post, local: true, builder: AppFormBuilder do |f| %>
+        <%= render 'form', f:, form: %>
+      <div class="s-txt-center s-mb-20">
+        <%= f.submit '会員登録する', class: 'btn bs-long btn-theme-02 s-mt-20' %>
+      </div>
+        <% end %>
+    </div>
+  </main>
+  <a href="#page-top" class="pagetop jsPageTop">
+    <i class="bicon-chevron-t"></i>
+  </a>

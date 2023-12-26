@@ -1,0 +1,3 @@
+trigger FCWebToolingExampleTrigger on Account (after update) {
+  FCWebToolingExample.hello();
+}

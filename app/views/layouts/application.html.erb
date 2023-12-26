@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <%= render 'head' %>
+</head>
+<body id="page-top" class="<%= yield(:body_class) %>">
+  <!-- Google Tag Manager (noscript) -->
+  <!-- End Google Tag Manager (noscript) -->
+  <%= cell(HeaderCell, current_user, header_options).call(:show) %>
+  <%= content_for?(:content) ? yield(:content) : yield %>
+  <%= cell(FooterCell).call(:show) %>
+  <%= cell(ConversionCell).call(:show) %>
+  <div id="jsModal" class="modal jsModal remote-modal-container">
+  </div>
+</body>
+</html>

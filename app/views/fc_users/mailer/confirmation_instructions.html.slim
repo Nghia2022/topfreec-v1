@@ -1,0 +1,6 @@
+p
+  = t('greeting', scope: @i18n_scope, recipient: @email)
+p
+  = t('instruction', scope: @i18n_scope)
+p
+  = link_to t('action', scope: @i18n_scope), confirmation_url(@resource, confirmation_token: @token)

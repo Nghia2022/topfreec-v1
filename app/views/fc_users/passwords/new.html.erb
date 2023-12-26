@@ -1,0 +1,43 @@
+<%= testid('fc_users/passwords') %>
+    <h1 class="page-ttl">
+      <span class="main-ttl">パスワード発行</span>
+    </h1>
+    <section>
+      <div class="sec sec-min sec-pb-large sec-pt-medium">
+        <%= form_with(model: resource, scope: resource_name, url: password_path(resource_name), method: :post, local: true, builder: AppFormBuilder) do |f| %>
+          <%= render 'error_messages', resource: %>
+          <div class="form-content">
+            <div class="sec-txt">
+              <span class="s-fc-01">
+                ※パスワード発行には、会員IDが必要です。<br>
+                ※会員ID(メールアドレス)は、弊社担当者とのご面談（本登録）を完了された方に発行しております。<br>
+                また、案件の状況により、すべての方と面談をさせていただくわけではございません。
+              </span>
+            </div>
+            <div class="sec-txt">
+              会員情報入力から稼働までの流れについては <a href="<%= help_registration_url %>" target="_blank" rel="noopener noreferrer">こちら</a>
+            </div>
+            <div class="dashboard-panel">
+              <div class="s-lh-16 s-fs-14">
+                <span>
+                  会員ID(メールアドレス)を入力後、「メールを送信する」を押してください。<br>
+                  メールアドレス宛にパスワード設定用のURLが送信されます。<br>
+                  パスワード設定用のURLから、パスワードを設定してください。
+                </span>
+              </div>
+              <div class="s-mt-20">
+                <div class="form-row wrap fullwidth">
+                  <span class="form-sub-ttl">会員ID (メールアドレス)</span>
+                  <label class="label-input form-full">
+                    <%= f.email_field :email, placeholder: '' %>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="s-txt-center s-mt-20 s-mb-20">
+              <%= f.submit 'メールを送信する', class: 'btn bs-long btn-theme-02 s-mt-20' %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </section>

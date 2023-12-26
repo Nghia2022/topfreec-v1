@@ -1,0 +1,51 @@
+        <div class="content-main">
+          <article>
+            <div class="article-content">
+              <div class="list-panel">
+                <div class="article-ttl">
+                  <h1><%= model.post_title %></h1>
+                  <div class="sec-ttl-meta s-fs-16">
+                    <%= cell(Content::ColumnCell, model).call(:tags) %>
+                  </div>
+                </div>
+                <img src="<%= thumbnail %>" alt="" class="align-center">
+                <% FeatureSwitch.enabled? :temporary_disabled, :article_date do %>
+                <div class="list-meta">
+                  <span><i class="feather icon-clock"></i>作成日：<%= column_date %></span><br class="s-sp">
+                  <span><i class="feather icon-rotate-cw"></i>更新日：<%= model.column_modified %></span>
+                </div>
+                <% end %>
+                <section class="dynamic-article-content">
+                  <%= paragraph_body %>
+                  <%= cell(Content::ColumnCell, model).call(:recommended) %>
+                </section>
+                <hr>
+                <div class="btn-list sec-pt-medium sec-mb-40">
+                  <a href="<%= service_page_path %>" class="btn btn-theme-02 bs-full">
+                    <span>フリーコンサルタント.jpを詳しく知る</span>
+                  </a>
+                  <a href="<%= projects_path %>" class="btn btn-theme-02 bs-full">
+                    <span>高品質のコンサルタント案件を探す</span>
+                  </a>
+                </div>
+                <div class="btn-list btn-list-sns s-mt-20 s-mb-40">
+                  <a href="<%= facebook_share_url %>" class="btn btn-sns-facebook" target="_blank" rel="noopener noreferrer">
+                    <img src="/assets/images/icon/icon_facebook.svg" class="img" alt="" width="60" height="60" loading="lazy">
+                    <span>シェアする</span>
+                  </a>
+                  <a href="<%= twitter_share_url %>" class="btn btn-sns-twitter" target="_blank" rel="noopener noreferrer">
+                    <img src="/assets/images/icon/icon_twitter.svg" class="img" alt="" width="60" height="60" loading="lazy">
+                    <span>ツイートする</span>
+                  </a>
+                  <a href="<%= hatena_share_url %>" class="btn btn-sns-hatebu" target="_blank" rel="noopener noreferrer">
+                    <img src="/assets/images/icon/icon_hatebu2.svg" class="img" alt="" width="60" height="60" loading="lazy">
+                    <span>はてブする</span>
+                  </a>
+                </div>
+                <nav class="nav-link">
+                  <%= cell(Content::ListCell, model).call(:show) %>
+                </nav>
+              </div>
+            </div>
+          </article>
+        </div>

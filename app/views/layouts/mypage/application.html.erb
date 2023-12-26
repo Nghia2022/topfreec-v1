@@ -1,0 +1,15 @@
+<% content_for(:content) do %>
+  <!-- ===============  main content ============== -->
+  <main class="content">
+    <%= render_breadcrumbs builder: Breadcrumbs::CustomBuilder %>
+    <%= yield %>
+  </main>
+  <!-- =============== footer ============== -->
+  <a href="#page-top" class="pagetop jsPageTop">
+    <i class="bicon-chevron-t"></i>
+  </a>
+  <%= cell(Mypage::Fc::TutorialCell).call(:show, cookies) %>
+  <div class="modal jsModal">
+  </div>
+<% end %>
+<%= render template: 'layouts/application' %>

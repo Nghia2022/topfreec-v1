@@ -1,0 +1,14 @@
+<% content_for(:modal_content) do %>
+  <%= testid('v2022/mypage/fc/profiles/qualifications') %>
+  <%= form_with model: form, scope: :qualification, url: mypage_fc_profile_qualification_path, method: :put, local: true, builder: AppFormBuilder do |f| %>
+        <div class="modal-panel">
+          <a href="javascript:void(0)" class="modal-close-btn jsModalClose">
+            <i class="feather icon-x"></i>
+          </a>
+          <div class="modal-ttl">
+            保有資格を入力してください。<br class="s-sp">（500文字以内）
+          </div>
+          <%= render 'form', f: %>
+        </div>
+  <% end %>
+<% end %>

@@ -1,0 +1,5 @@
+<% if flash[key].present? %>
+  <div class="<%= class_names('f-w-500', mt_height, 'c-red': key == :alert) %>">
+    <%= flash[key] %>
+  </div>
+<% end %>

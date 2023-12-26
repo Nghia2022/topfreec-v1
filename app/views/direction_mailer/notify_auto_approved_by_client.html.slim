@@ -1,0 +1,34 @@
+= render 'header_cl', presenter: presenter
+
+p
+  | 平素より大変お世話になっております。<br>
+
+p
+  | #{presenter.request_datetime}にメールにてご案内をさせていただいております<br>
+  | #{presenter.fc_fullname}氏の業務指示につきまして、<br>
+  | ご確認期限となりましたので指示内容を確認完了させていただきました。<br>
+  | ※確定内容につきましては引き続き下記サイトにてご確認いただけます。<br>
+
+p
+  | 【お取引先様専用サイト】<br>
+  = link_to mypage_client_root_url, mypage_client_root_url
+  br
+  | ※ログインが必要です。<br>
+  | ※はじめてご利用の際は、下記のパスワード設定画面からパスワードを設定してください。<br>
+  | ※本メールをお送りしているメールアドレスがログインIDとなっております。<br>
+
+p
+  | 【パスワード設定画面】<br>
+  = link_to new_client_user_password_url, new_client_user_password_url
+  br
+
+p
+  | 【ご利用マニュアル】<br>
+  = link_to direction_cl_manual_url, direction_cl_manual_url, target: :_blank
+  br
+
+p
+  | 今後ともどうぞよろしくお願い申し上げます。<br>
+  br
+
+= render 'footer', presenter: presenter

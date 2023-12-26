@@ -1,0 +1,311 @@
+/* ========================================================
+ styles for front page
+======================================================== */
+/* mainvisual
+-------------------------------------------------------- */
+.mainvisual {
+  position: relative;
+  overflow: hidden;
+  @include mq(laptop_pc) {
+    height: 475px;
+  }
+}
+/* slider-top
+-------------------------------------------------------- */
+.slider-top {
+  position: relative;
+  background: $white;
+  margin: 0 auto;
+  padding: 0;
+  @include mq(laptop_pc) {
+    width: 1200px;
+    height: 475px;
+  }
+  .slider-top-item {
+    position: relative;
+    display: none;
+  }
+  .slick-slide {
+    position: relative;
+    #{$v-img} {
+      width: 100%;
+      height: auto;
+      @include mq(laptop_pc) {
+        width: 1200px!important;
+        height: 475px!important;
+      }
+    }
+    @include mq() {
+      opacity: .8;
+    }
+    &.slick-current {
+      @include mq(laptop_pc) {
+        opacity: 1;
+        overflow: hidden;
+        width: 1200px!important;
+        height: 475px!important;
+      }
+    }
+  }
+  .slick-prev {
+    left: -2%;
+  }
+  .slick-next {
+    right: -2%;
+  }
+  &.slick-dotted {
+    &.slick-slider{
+      margin-bottom: 0;
+    }
+    .slick-dots {
+      bottom: 2rem;
+      li{
+         button{
+           &::before{
+            color: $white;
+            content: "◯";
+            font-size: 1.4rem;
+            opacity: 1;
+            height: 2.2rem;
+            width: 2.2rem;
+           }
+         }
+         &.slick-active{
+          button{
+            &::before{
+             content: "●";
+             opacity: 1;
+            }
+          }
+         }
+      }
+    }
+  }
+}
+/* top-search-box
+-------------------------------------------------------- */
+.top-search-box{
+  padding: 1em 0;
+  .form-row {
+    input[type="text"],
+    input[type="date"],
+    input[type="tel"],
+    input[type="number"],
+    input[type="password"],
+    select,
+    textarea {
+      margin-right: 0;
+      width: 100%;
+      @include mq(sp){
+        margin-bottom: .5em;
+      }
+      @include mq(tab){
+        width: 14vw;
+      }
+      @include mq(laptop){
+        width: 16vw;
+      }
+      @include mq(desktop){
+        width: 24rem;
+      }
+    }
+    label{
+      margin-right: 0;
+      @include mq(sp){
+        width: 100%;
+      }
+    }
+    input[type="text"]{
+      &.i-search{
+        background: url("#{$v-img-path}form/search.svg") no-repeat right 10px center;
+        background-color: $white;
+        background-size: 17px;
+        width: 100%;
+        @include mq(){
+          width: 30rem;
+        }
+      }
+    }
+    @include mq(sp){
+      flex-wrap: wrap;
+    }
+    @include mq{
+      justify-content: space-between;
+    }
+  }
+  .bs-search{
+    font-size: 1.6rem;
+    letter-spacing: 0;
+    width: 100%;
+    @include mq{
+      padding-top: 3em;
+      width: 8rem;
+      height: 8rem;
+    }
+    i{
+      font-size: 2.5rem;
+      @include mq{
+        top: 10%;
+        left: 50%;
+        right: initial;
+        font-size: 3rem;
+        transform: translate(-50%, 0);
+        }
+    }
+  }
+}
+/* job-list-new
+-------------------------------------------------------- */
+.job-list-new{
+  margin: 1em 0 2em;
+  @include mq(){
+    @include m-flex($wrap: wrap, $justify: space-between);
+  }
+  .job-list-item{
+    position: relative;
+    display: block;
+    background: $black246;
+    cursor: pointer;
+    margin-bottom: .5em;
+    padding: 1.4em;
+    width: 100%;
+    transition: .4s ease-in-out;
+    &::before {
+      @include m-centering(false, true);
+      right: 1.2rem;
+      font-family: "#{$icomoon-font-family}";
+      color: $color01;
+      content: "\e906";
+      // content: "\e90f";
+      font-size: 2rem;
+      font-weight: 700;
+      transition: .4s ease-in-out;
+    }
+    @include mq(){
+      width: 49%;
+    }
+    &:hover{
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      &::before {
+        right: .25rem;
+      }
+    }
+  }
+  .job-list-ttl{
+    color: $black;
+    cursor: pointer;
+    font-size: 1.4rem;
+    line-height: 1.4;
+    width: 90%;
+    @include mq(){
+      @include m-ellipsis();
+    }
+  }
+}
+.new-count{
+  text-align: right;
+  font-size: 1.3rem;
+  @include mq(sp){
+    margin-top: -2.5em;
+  }
+  .count-num{
+    @include m-font1;
+    @include m-font-bold;
+    font-size: 2.2rem;
+  }
+}
+/* strength-box
+-------------------------------------------------------- */
+.sec-strength{
+  position: relative;
+  @include mq(){
+    margin-bottom: 30rem;
+    height: 100rem;
+  }
+  @include mq(laptop_sp){
+    padding-bottom: 3rem;
+  }
+}
+.strength-box{
+  @include mq(){
+   @include m-absolute($top: 20rem, $left: 0);
+  }
+  .strength-item{
+    background-position: 60% 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom: 1em;
+    padding: 0 2em;
+    @include mq(laptop_sp){
+      padding: 2em;
+      text-align: center;
+      width: 100%;
+      .s-pc{
+        display: none;
+        visibility: hidden;
+      }
+      .s-sp{
+        display: block;
+        visibility: visible;
+      }
+    }
+    @include mq(laptop_pc){
+      @include m-flex($justify: space-around);
+      background-position: 100% 100%;
+      width: 130rem;
+      height: 35.5rem;
+    }
+     &.strength1{
+      background-image: url("#{$v-img-path}top/strength_img1.jpg");
+     }
+     &.strength2{
+      background-image: url("#{$v-img-path}top/strength_img2.jpg");
+     }
+     &.strength3{
+      background-image: url("#{$v-img-path}top/strength_img3.jpg");
+     }
+  }
+  .strength-content{
+    width: 100%;
+    @include mq(laptop_sp){
+      margin-bottom: 1em;
+    }
+    @include mq(laptop_pc){
+      width: 58%;
+    }
+  }
+  .strength-catch{
+    @include m-font1;
+    @include m-font-bold;
+    font-size: 1.4rem;
+    @include mq(laptop_sp){
+      text-align: left
+    }
+  }
+  .strength-ttl{
+    @include m-font-bold;
+    font-size: 2.2rem;
+    margin-top: .5em;
+    line-height: 1.4;
+    @include mq(){
+      font-size: 2.6rem;
+    }
+    @include mq(laptop_sp){
+      text-align: left
+    }
+  }
+  .strength-txt{
+    margin-top: 1em;
+    line-height: 1.8;
+    text-align: justify;
+  }
+}
+.jsAccordion{
+  .tile-list{
+    margin-top: -1.2em;
+    margin-bottom: 3em;
+    @include mq{
+      margin-top: -3.5em;
+    }
+  }
+}

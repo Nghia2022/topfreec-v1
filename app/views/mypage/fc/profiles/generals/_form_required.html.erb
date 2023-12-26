@@ -1,0 +1,23 @@
+        <p class="fs-14 noto-m mt60 sp-mt40">基本情報を入力</p>
+        <table class="table-registration td-fs-14 mt15">
+          <tr>
+            <td>
+              住所
+              <br class="sp-only">
+              <label class="td-badge-red">必須</label>
+            </td>
+            <td>
+              <div class="flex flex-j-space-between">
+                <label>郵便番号</label>
+                <a href="https://www.post.japanpost.jp/zipcode/" target="_blank" class="c-red fs-14 link-border-bottom h-20">郵便番号を調べる(日本郵便)</a>
+              </div>
+              <%= f.text_field :zipcode, class: 'f-input mt10', placeholder: '1234567' %>
+              <p class="fs-14 noto-m mt15">都道府県</p>
+              <%= f.collection_select :prefecture, JpPrefecture::Prefecture.all, :name, :name, { prompt: '都道府県' }, { class: 'f-input select mt10' } %>
+              <p class="fs-14 noto-m mt15">市区町村・番地</p>
+              <%= f.text_field :city, class: 'f-input mt10' %>
+              <p class="fs-14 noto-m mt15">建物名</p>
+              <%= f.text_field :building, class: 'f-input mt10' %>
+            </td>
+          </tr>
+        </table>

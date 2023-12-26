@@ -1,0 +1,13 @@
+.container
+  .row
+    h1 お気に入り
+    p Find me in app/views/mypage/fc/bookmarks/index.html.slim
+
+  .row
+    ul
+      - @bookmarks.each do |bookmark|
+        li
+          = link_to '#' do
+            = bookmark[:project_name]
+
+    = paginate @bookmarks

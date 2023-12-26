@@ -1,0 +1,11 @@
+        <ul class="s-flex-center">
+          <li>
+            <a href="<%= projects_path_sort_by(:createddate) %>" class="<%= link_class(:createddate) %>" data-type="new">新着順</a>
+          </li>
+          <li style="display: none;">
+            <a href="#" class="btn btn-theme-02 bs-small" data-type="popular">人気順</a>
+          </li>
+          <li>
+            <a href="<%= projects_path_sort_by(:compensation) %>" class="<%= link_class(:compensation) %>" data-type="compensation">報酬順</a>
+          </li>
+        </ul>

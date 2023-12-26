@@ -1,0 +1,159 @@
+<%= testid('pages/support') %>
+<% content_for(:body_class, 'page-support') %>
+    <h1 class="page-ttl">
+      <span class="sub-ttl">SUPPORT</span>
+      <span class="main-ttl">プロ人材サポート</span>
+    </h1>
+    <section>
+      <div class="sec sec-min sec-pt-medium">
+        <div class="dashboard-panel">
+          <div class="s-lh-16">
+            <div class="s-fw-b">
+              『FreeConsultant.jp』は、登録いただいたプロ人材の方を全面サポートしています。<br>『起業・独立のご支援』『キャリアのご支援』『イベント・セミナー開催のご案内』など、フリーランスの方にとって役に立つサービスをご用意しています。
+            </div>
+            <div class="s-mt-20">
+              ※サポートサービスは、弊社コーディネーターとの面談が終了した方のみ利用可能です。<br>※『こんなサポートが欲しい』といったご意見もお伺いしています。
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="anchor" id="freenance">
+      <div class="sec sec-min sec-p-medium">
+        <h2 class="sec-ttl">
+          <span class="main-ttl">フリーランスの収納代行サービス<br class="s-sp">「FREENANCE(フリーナンス)」</span>
+        </h2>
+        <div class="sec-txt">
+          フリーランスの方がお持ちの資金繰りのお悩みを解決するため、みらいワークスでは「FREENANCE（収納代行サービス）」をご提供しています。稼働後の報酬金額の受け取りまでにかかっていた時間を大幅に短縮でき、最短申請から即日で受け取ることができるサービスです。また、報酬金額の受け取りが早くなるというメリットだけでなく、フリーランス特有の事故に対する補償も付くサービスです。
+        </div>
+        <div class="s-mt-20">
+          <h3 class="box-ttl">「FREENANCE」の<br class="s-sp">利用メリット</h3>
+          <div class="content-box reverse">
+            <img src="/assets/images/service/img_support_freenance_001.png" alt="" class="img" width="364" height="714" loading="lazy">
+            <div class="txt-box s-mt-20">
+              <dl class="general-dl">
+                <dt class="s-fc-01">01. 入会費・月額費が無料</dt>
+                <dt class="s-mt-10 s-fc-01">02. 稼働後の報酬金額の受け取りが<br class="s-sp">最短即日に<br class="s-pc"><span class="s-fs-14">（※図の上段を参照）</span></dt>
+                <dd>
+                  みらいワークスからの報酬金額（入金期日前）を、<br class="s-pc">最短即日であなたの銀行口座に振り込むサービスです。
+                  <div class="general-panel s-mt-20">
+                    <div>
+                      <span class="s-fw-b s-lh-16">［みらいワークス経由でのサービス利用メリット］</span><br>請求金額（報酬金額）に対してサービス手数料が発生します。<br>みらいワークス経由でのご利用の場合は、通常よりも低い手数料でご利用いただけます。
+                    </div>
+                  </div>
+                </dd>
+                <dt class="s-mt-20 s-fc-01">03. フリーランス特有の事故に対する補償<br><span class="s-fs-14">（※図の中・下段を参照）</span></dt>
+                <dd>お仕事中の事故や納品物の欠陥などによる事故への補償（最大5,000万円）と、<br class="s-pc">情報漏えいや著作権侵害、やむを得ない理由での納期延期などによる事故への補償を行います。</dd>
+              </dl>
+              <div class="s-mt-30">
+                <a href="/images/support/%E3%80%90%E3%81%94%E6%A1%88%E5%86%85%E3%80%91%E3%81%BF%E3%82%89%E3%81%84%E3%83%AF%E3%83%BC%E3%82%AF%E3%82%B9%C3%97FREENANCE.pdf" class="txt-link" target="_blank" rel="noopener noreferrer">本サービスの詳細はコチラからご確認ください。</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="anchor" id="ideco">
+      <div class="sec sec-min sec-p-medium">
+        <h2 class="sec-ttl">
+          <span class="main-ttl">個人型確定拠出年金<br class="s-sp">『野村證券のiDeCo』をご紹介</span>
+        </h2>
+        <div class="sec-txt s-mb-20">
+          そもそも『iDeCo(個人型確定拠出年金)』とは(説明動画もご覧ください)<br>加入者が月々の掛金を積み立てして用意された金融商品で運用し、60歳以降に年金または一時金で受け取れる制度です。<br>※みらいワークスは野村證券と提携し、フリーランスの方の資産形成サポートを目的として本サービスをご案内しています。
+        </div>
+        <div class="s-txt-center s-mt-20 s-mb-40">
+          <% if FeatureSwitch.enabled?(:new_ideco) %>
+          <form action="<%= nomura_ideco_url %>" method="post">
+          <% else %>
+          <form action="<%= old_nomura_ideco_url %>" method="post">
+          <% end %>
+            <input type="hidden" name="trcode" value="E1zW8HfBFgI1QsCX5a1vqUGUlc=">
+            <button class="btn btn-theme-02 bs-long">
+              <span>『野村證券のiDeCo』への<br class="s-sp">お申し込みはこちら</span>
+            </button>
+          </form>
+          <div class="sec-caption">
+            ※外部サイトへ遷移します
+          </div>
+        </div>
+        <h3 class="box-ttl">『iDeCo』の税制メリット</h3>
+        <div class="s-mt-20">
+          <dl class="general-dl">
+              <dt class="s-fc-01">01. 掛金が全額所得控除の対象</dt>
+              <dd>掛金にすることで所得税・住民税が軽減されることになります。</dd>
+              <dt class="s-mt-10 s-fc-01">02. 掛金の運用益が非課税</dt>
+              <dd>通常の金融商品は利息などに税金（源泉分離課税20％）がかかりますが、iDeCoでは運用益は非課税対象です。<br class="s-pc">税金で引かれるはずの金額も運用に充てられます。</dd>
+              <dt class="s-mt-10 s-fc-01">03. 受取時も節税メリット</dt>
+              <dd>時金として受け取る場合は『退職所得控除』、年金として受け取る場合は『公的年金控除』が適用されます。<br class="s-pc">（一定額まで税金がかかりません）</dd>
+          </dl>
+        </div>
+      </div>
+    </section>
+    <section class="anchor" id="sparkdojo">
+      <div class="sec sec-min sec-pb-medium">
+        <h2 class="sec-ttl">
+          <span class="main-ttl">ビジネスで活用できる英語力がUP！<br>入会金33,000円が無料<br class="s-sp">［英語道場『SPARKDOJO』］</span>
+        </h2>
+        <div class="content-box reverse s-mt-20">
+          <img src="/assets/images/service/img_support_01_new-100.jpg" alt="" class="img" width="363" height="277" loading="lazy">
+          <div class="txt-box">
+              ビジネス上だけでなく、コンサルタントがプロジェクトで活用できる英語力が学べる英語道場『SPARKDOJO』。元大手外資系コンサルティングファーム出身者が運営する英語レッスンのため、実用的な英語力を身に付けることができます。ご希望の際には、お気軽に担当コーディネーターにお問い合わせください。
+            <div class="general-panel s-mt-20">
+              みらいワークス経由でのお申込みの場合、以下の2点の特典があります。
+              <ol class="general-list">
+                <li><span>(1)</span> 英語力UPトレーニングの体験レッスン参加費が無料</li>
+                <li><span>(2)</span> 入会時の入会金33,000円が無料</li>
+              </ol>
+              <div class="sec-caption">
+                ※入会金はキャンペーンの実施などで変更の可能性があります。詳しくは公式サイトをご確認ください。<br>※本サービスは、ワンドロップス株式会社と株式会社みらいワークスが共同で行っています。皆さまへのサービス提供目的の中で、いただいた個人情報を共同で管理・使用する場合がございます。あらかじめご了承下さい。
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="anchor" id="accountant">
+      <div class="sec sec-min sec-pb-medium">
+        <h2 class="sec-ttl">
+          <span class="main-ttl">税務に関するアドバイザーとして<br>信頼のおける税理士を無料でご紹介</span>
+        </h2>
+        <div class="content-box reverse s-mt-20">
+          <img src="/assets/images/service/img_support_05-100.jpg" alt="" class="img" width="363" height="277" loading="lazy">
+          <div class="txt-box">
+             フリーランスのコンサルタントとして活動すると、多くの方が抱えるお悩みとして、毎年の確定申告などの税金・納税の手続きがあります。みらいワークスでは、このようなお悩みを解決するため、プロフェッショナルな税理士を無料でご紹介しています。ご希望の際には、お気軽に担当コーディネーターにお問い合わせください。
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="sec sec-min sec-pb-medium">
+        <h2 class="sec-ttl">
+          <span class="main-ttl">法人設立時のアドバイザーとして<br class="s-sp">司法書士・<br class="s-pc">税理士・会計士・<br class="s-sp">弁護士を無料でご紹介</span>
+        </h2>
+        <div class="content-box reverse s-mt-20">
+          <img src="/assets/images/service/img_support_06-100.jpg" alt="" class="img" width="363" height="277" loading="lazy">
+          <div class="txt-box">
+            フリーランスのコンサルタントとして活動する場合、個人事業主になるか法人化して会社を設立するかの選択肢があり、いずれもメリット・デメリットがあります。みらいワークスでは、各メリット・デメリットをご説明しながら、ご意向に合った選択肢をアドバイスしています。その上で、必要な手続きについては、この分野に強い司法書士・税理士・会計士・弁護士を無料でご紹介しています。ご希望の際には、お気軽に担当コーディネーターにお問い合わせください。
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="sec sec-min sec-pb-medium">
+        <h2 class="sec-ttl">
+          <span class="main-ttl">フリーランスとの<br class="s-sp">ネットワーク構築に役立つ！<br>定期開催のイベントへご招待</span>
+        </h2>
+        <div class="content-box reverse s-mt-20">
+          <img src="/assets/images/service/img_support_04_new-100.jpg" alt="" class="img" width="363" height="277" loading="lazy">
+          <div class="txt-box">
+            みらいワークスでは、フリーランスの方同士で交流を深めていただくため、または特定の知識を深めていただくためのイベント・セミナーを定期開催しています。 異分野・異業種の考え方や、新しい考え方に触れる機会を通じて、次のビジネスチャンスの創造やフリーランスとしての活動に活かしていただくことを目的としています。<br>
+            ※イベント・セミナーの開催情報は適宜メール等でご案内しています。
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="s-txt-center sec-pt-medium sec-pb-ex">
+      <a href="<%= new_fc_user_registration_path %>" class="btn btn-theme-02 bs-long">
+        今すぐフリーコンサルタント.jpに<br class="s-sp">会員登録する
+      </a>
+    </div>

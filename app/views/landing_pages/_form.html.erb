@@ -1,0 +1,81 @@
+<%= form_with(model: form, scope: :fc_user, url: landing_page_path(landing_page, anchor: 'regist'), method: :put, local: true, builder: AppFormBuilder, id: 'regist') do |f| %>
+  <%= render 'error_messages', resource: form %>
+<table class="form_table">
+<tr>
+<th>お名前<span class="required">必須</span></th>
+<td class="name_area">
+  <%= f.text_field :last_name, placeholder: 'お名前（姓）', required: true %>
+  <%= f.text_field :first_name, placeholder: 'お名前（名）', required: true %>
+</td>
+</tr>
+<tr>
+<th>お名前（カナ）<span class="required">必須</span></th>
+<td class="name_area">
+  <%= f.text_field :last_name_kana, placeholder: 'お名前（姓カナ）', required: true %>
+  <%= f.text_field :first_name_kana, placeholder: 'お名前（名カナ）', required: true %>
+</td>
+</tr>
+<tr>
+<th>電話番号<span class="required">必須</span></th>
+<td class="telephone_area">
+  <%= f.text_field :phone, placeholder: '電話番号', required: true %>
+</td>
+</tr>
+<tr>
+<th>メールアドレス<span class="required">必須</span></th>
+<td class="email_area">
+  <%= f.text_field :email, placeholder: '半角英数字で入力してください', required: true %>
+</td>
+</tr>
+
+<tr>
+<th>希望稼働エリア</th>
+<td class="email_area">
+
+<table id="workplace">
+<tr>
+<td class="col1"><b>第一希望</b></td><td class="col2"><span class="required">必須</span></td><td class="area1_area col3">
+  <?php if(isset($param['errors']['area1'])){ echo $param['errors']['area1']; } ?>
+  <%= f.select :work_area1, DesiredCondition.work_area_options, { selected: f.object.work_area1_text, include_blank: '選択して下さい', required: true } %>
+</td>
+</tr>
+<tr>
+<td class="col1"><b>第ニ希望</b></td><td class="col2"><span class="required" style="background-color:gray">任意</span></td><td class="col3">
+  <%= f.select :work_area2, DesiredCondition.work_area_options, { selected: f.object.work_area2_text, include_blank: '選択して下さい', required: true } %>
+</td>
+</tr>
+<tr>
+<td class="col1"><b>第三希望</b></td><td class="col2"><span class="required" style="background-color:gray">任意</span></td><td class="col3">
+  <%= f.select :work_area3, DesiredCondition.work_area_options, { selected: f.object.work_area3_text, include_blank: '選択して下さい', required: true } %>
+</td>
+</tr>
+</table>
+
+
+</td>
+</tr>
+
+<tr>
+<td colspan="2">
+  <textarea readonly style="width:100%;height:200px"><%= render 'terms_and_policy_text' %></textarea>
+</td>
+</tr>
+
+<tr>
+<td colspan="2" style="text-align:center;letter-spacing:normal">上記サービス利用規約と『<%= link_to '個人情報の取り扱い', mirai_works_privacy_entry_url, target: :_blank, rel: 'noopener noreferrer' %>』 に</td>
+</tr>
+
+<tr>
+<td colspan="2" class="btn_area">
+  <%= f.button :submit do %>
+    同意して登録する
+  <% end %>
+</td>
+</tr>
+</table>
+<% end %>
+<script>
+$(document).on('submit', '#regist', function() {
+  $("[type=submit]").prop('disabled', 'true');
+});
+</script>

@@ -1,0 +1,103 @@
+<script>
+  $('html').addClass('fixed');
+</script>
+<div class="modal active noClosable">
+  <div class="modal-container center-modal animate">
+    <div class="modal-body pad-bt40 pad-lr40 sp-pad-lr32-5">
+      <div class="modal-content border-none">
+        <div class="steps active mt5">
+          <h3 class="steps-title">◆Tutorial (チュートリアル)◆</h3>
+          <div class="steps-progress display-none">
+            <div class="line-progress ie-only">
+              <div class="progress"></div>
+              <div class="progress"></div>
+              <div class="progress"></div>
+              <div class="progress"></div>
+            </div>
+            <div class="steps-wrapper mt20">
+              <div class="line-progress ie-hide">
+                <div class="progress"></div>
+                <div class="progress"></div>
+                <div class="progress"></div>
+                <div class="progress"></div>
+              </div>
+              <div class="circle active">1</div>
+              <div class="circle">2</div>
+              <div class="circle">3</div>
+              <div class="circle">4</div>
+              <div class="circle">5</div>
+            </div>
+          </div>
+          <div class="steps-details active">
+            <div class="wrapper-text mt17">
+              <div class="abstract">
+                ～案件への応募（エントリー）～<br>
+                掲載中の案件に応募ができます
+              </div>
+            </div>
+            <div class="box-steps mt20">
+              <img src="<%= asset_path('steps/img_step00.png') %>" class="img-steps0">
+            </div>
+            <div class="wrapper-text mt17">
+              <p class="text">※サイトに掲載されていない『非公開案件』も多数<br>
+              『プロフィールを編集』から『希望条件／参画可能予定日』を入力・更新すると<br class="pc-only">
+              案件紹介を受けやすくなります。</p>
+            </div>
+          </div>
+          <div class="steps-details">
+            <div class="display-none steps-title-text">Step <span>01　案件を探す</span></div>
+            <div class="box-steps mt20">
+              <img src="<%= asset_path('steps/img_step01.png') %>" class="img-steps1">
+            </div>
+            <div class="wrapper-text mt17">
+              <p class="text">『案件を探す』から希望条件を入力・設定して案件を探しましょう。</p>
+            </div>
+          </div>
+          <div class="steps-details">
+            <div class="display-none steps-title-text">Step <span>02　案件に応募する</span></div>
+            <div class="box-steps mt20">
+              <img src="<%= asset_path('steps/img_step02.png') %>" class="img-steps2">
+            </div>
+            <div class="wrapper-text mt17">
+              <p class="text">気になる案件が見つかったら『この案件に応募する』ボタンを押してください。<br>
+              応募した案件は『応募履歴』から確認しましょう。</p>
+            </div>
+          </div>
+          <div class="steps-details">
+            <div class="display-none steps-title-text">Step <span>03　応募先企業へ提案</span></div>
+            <div class="box-steps mt20">
+              <img src="<%= asset_path('steps/img_step03.png') %>" class="img-steps3">
+            </div>
+            <div class="wrapper-text mt17">
+              <p class="text">弊社案件担当が確認して、応募先企業へ提案を行ないます。<br>
+              ※お持ちのスキル・経験のマッチ度を確認します<br>
+              ※再度レジュメのご提出をお願いする場合があります。</p>
+            </div>
+          </div>
+          <div class="steps-details">
+            <div class="display-none steps-title-text">Step <span>04　3者間打ち合わせ</span></div>
+            <div class="box-steps mt20">
+              <img src="<%= asset_path('steps/img_step04.png') %>" class="img-steps4">
+            </div>
+            <div class="wrapper-text mt17">
+              <p class="text">応募先企業との打ち合わせ（顔合わせ）の日程を、弊社営業担当と調整しましょう。</p>
+            </div>
+          </div>
+          <div class="steps-details">
+            <div class="display-none steps-title-text">Step <span>05　案件に参画する</span></div>
+            <div class="box-steps mt20">
+              <img src="<%= asset_path('steps/img_step05.png') %>" class="img-steps5">
+            </div>
+            <div class="wrapper-text mt17">
+              <p class="text">応募先企業との打ち合わせ（顔合わせ）でお互いの希望が合えば、<br class="pc-only">
+              契約締結後に参画開始になります。</p>
+            </div>
+          </div>
+          <div class="t-right mt27">
+            <a class="link-type01 link t-left next">次へ進む</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

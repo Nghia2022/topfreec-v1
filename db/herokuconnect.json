@@ -1,0 +1,643 @@
+{
+  "mappings": [
+    {
+      "object_name": "Account",
+      "config": {
+        "access": "read_write",
+        "sf_notify_enabled": true,
+        "sf_polling_seconds": 600,
+        "sf_max_daily_api_calls": 30000,
+        "fields": {
+          "Kado_Ritsu__c": {
+          },
+          "Release_Yotei_Kakudo__c": {
+          },
+          "FCweb_release__c": {
+          },
+          "PersonContactId": {
+          },
+          "RecordTypeId": {
+          },
+          "ClientCompanyName__c": {
+          },
+          "PersonEmail": {
+          },
+          "NG_Company__c": {
+          },
+          "WEB_FCweb_available__c": {
+          },
+          "ClientName__c": {
+          },
+          "FCWEB_NewEntryDatetime__c": {
+          },
+          "IsPersonAccount": {
+          },
+          "Kibo_Hosyu__c": {
+          },
+          "IsDeleted": {
+          },
+          "Kakunin_bi__c": {
+          },
+          "SystemModstamp": {
+          },
+          "Client_Category__c": {
+          },
+          "CreatedDate": {
+          },
+          "Release_Yotei__c": {
+          },
+          "RefuseCompany__c": {
+          },
+          "Id": {
+          },
+          "Saitei_Hosyu__c": {
+          },
+          "ConsulMasterID__c": {
+          }
+        },
+        "indexes": {
+          "SystemModstamp": {
+            "unique": false
+          },
+          "Id": {
+            "unique": true
+          },
+          "RecordTypeId": {
+            "unique": false
+          },
+          "IsPersonAccount": {
+            "unique": false
+          },
+          "PersonContactId": {
+            "unique": false
+          }
+        },
+        "applied_at": "2022-07-01T07:12:16.355971Z"
+      }
+    },
+    {
+      "object_name": "Contact",
+      "config": {
+        "access": "read_write",
+        "sf_notify_enabled": true,
+        "sf_polling_seconds": 600,
+        "sf_max_daily_api_calls": 30000,
+        "fields": {
+          "license__c": {
+          },
+          "ML_Reject__c": {
+          },
+          "Web_LoginEmail__c": {
+          },
+          "Experienced_works_sub__c": {
+          },
+          "desired_works_sub__c": {
+          },
+          "Experienced_works__c": {
+          },
+          "desired_works__c": {
+          },
+          "FCWEB_LoginDatetime__c": {
+          },
+          "AccountId": {
+          },
+          "Experienced_works_main__c": {
+          },
+          "desired_works_main__c": {
+          },
+          "Commmune_LastLoginDateTime__c": {
+          },
+          "FCweb_kibou_memo__c": {
+          },
+          "RecordTypeName__c": {
+          },
+          "IsDeleted": {
+          },
+          "SystemModstamp": {
+          },
+          "Work_Prefecture3__c": {
+          },
+          "Work_Options__c": {
+          },
+          "Work_Prefecture2__c": {
+          },
+          "Work_Prefecture1__c": {
+          },
+          "CreatedDate": {
+          },
+          "Experienced_company_size__c": {
+          },
+          "Id": {
+          },
+          "Commmune_FirstLoginDateTime__c": {
+          },
+          "Email": {
+          },
+          "existsInHeroku__c": {
+          }
+        },
+        "indexes": {
+          "SystemModstamp": {
+            "unique": false
+          },
+          "Id": {
+            "unique": true
+          },
+          "AccountId": {
+            "unique": false
+          },
+          "Web_LoginEmail__c": {
+            "unique": false
+          }
+        },
+        "applied_at": "2023-06-25T20:00:26.169201Z"
+      }
+    },
+    {
+      "object_name": "Direction__c",
+      "config": {
+        "access": "read_write",
+        "sf_notify_enabled": true,
+        "sf_polling_seconds": 600,
+        "sf_max_daily_api_calls": 30000,
+        "fields": {
+          "AutoApprInterval_CL__c": {
+          },
+          "IsApprovedByCL__c": {
+          },
+          "DirectionMonth__c": {
+          },
+          "ChangedHistories__c": {
+          },
+          "FC__c": {
+          },
+          "AutoApprovedDatetime_FC__c": {
+          },
+          "FirstCheckDateByFC__c": {
+          },
+          "ApproverOfFC__c": {
+          },
+          "ApprovedDateByFC__c": {
+          },
+          "Name": {
+          },
+          "AutoApprInterval_FC__c": {
+          },
+          "IsApprovedByFC__c": {
+          },
+          "IsDeleted": {
+          },
+          "Opportunity__c": {
+          },
+          "SystemModstamp": {
+          },
+          "Status__c": {
+          },
+          "AutoApprSchedule_CL__c": {
+          },
+          "DirectionDetail__c": {
+          },
+          "IsMailQueue__c": {
+          },
+          "NewDirectionDetail__c": {
+          },
+          "DirectionMonthDate__c": {
+          },
+          "CreatedDate": {
+          },
+          "RequestDateTime__c": {
+          },
+          "Id": {
+          },
+          "AutoApprovedDatetime_CL__c": {
+          },
+          "CommentFromFC__c": {
+          },
+          "FirstCheckDateByCL__c": {
+          },
+          "ApproverOfCL__c": {
+          },
+          "ApprovedDateByCL__c": {
+          },
+          "AutoApprSchedule_FC__c": {
+          }
+        },
+        "indexes": {
+          "SystemModstamp": {
+            "unique": false
+          },
+          "Id": {
+            "unique": true
+          }
+        },
+        "applied_at": "2021-09-15T02:15:06.775641Z"
+      }
+    },
+    {
+      "object_name": "ExperienceSubCatergory__c",
+      "config": {
+        "access": "read_only",
+        "sf_notify_enabled": true,
+        "sf_polling_seconds": 600,
+        "sf_max_daily_api_calls": 30000,
+        "fields": {
+          "CreatedDate": {
+          },
+          "Id": {
+          },
+          "IsDeleted": {
+          },
+          "Name": {
+          },
+          "SystemModstamp": {
+          },
+          "ExperienceMainCatergory__c": {
+          },
+          "ExperienceSubCatergory__c": {
+          }
+        },
+        "indexes": {
+          "Id": {
+            "unique": true
+          },
+          "SystemModstamp": {
+            "unique": false
+          }
+        },
+        "applied_at": "2023-04-04T21:20:40.625105Z"
+      }
+    },
+    {
+      "object_name": "Experience__c",
+      "config": {
+        "access": "read_only",
+        "sf_notify_enabled": true,
+        "sf_polling_seconds": 600,
+        "sf_max_daily_api_calls": 30000,
+        "fields": {
+          "Who__c": {
+          },
+          "RecordTypeId": {
+          },
+          "member_amount__c": {
+          },
+          "detail_MWS__c": {
+          },
+          "Name": {
+          },
+          "OpenFlag__c": {
+          },
+          "IsDeleted": {
+          },
+          "Opportunity__c": {
+          },
+          "SystemModstamp": {
+          },
+          "Organization__c": {
+          },
+          "End_date__c": {
+          },
+          "activeflag__c": {
+          },
+          "CreatedDate": {
+          },
+          "Start_date__c": {
+          },
+          "details_self__c": {
+          },
+          "position__c": {
+          },
+          "Id": {
+          }
+        },
+        "indexes": {
+          "SystemModstamp": {
+            "unique": false
+          },
+          "Id": {
+            "unique": true
+          }
+        },
+        "applied_at": "2021-01-19T10:23:27.286628Z"
+      }
+    },
+    {
+      "object_name": "Matching__c",
+      "config": {
+        "indexes": {
+          "ReferToMatching__c": {
+            "unique": false
+          },
+          "MatchingKeyID__c": {
+            "unique": true
+          },
+          "SystemModstamp": {
+            "unique": false
+          },
+          "Id": {
+            "unique": true
+          },
+          "Opportunity__c": {
+            "unique": false
+          },
+          "RecordTypeId": {
+            "unique": false
+          },
+          "FC__c": {
+            "unique": false
+          },
+          "IsActiveWebEntry__c": {
+            "unique": false
+          }
+        },
+        "sf_max_daily_api_calls": 30000,
+        "access": "read_write",
+        "upsert_field": "MatchingKeyID__c",
+        "applied_at": "2023-03-07T12:31:22.731913Z",
+        "sf_polling_seconds": 600,
+        "sf_notify_enabled": true,
+        "fields": {
+          "ReferToMatching__r__MatchingKeyID__c": {
+          },
+          "root__c": {
+          },
+          "Client_MTG_Date__c": {
+          },
+          "ReferFromModifier__c": {
+          },
+          "MatchingKeyID__c": {
+          },
+          "RecordTypeId": {
+          },
+          "FC__c": {
+          },
+          "ReferFromMatchingStatus__c": {
+          },
+          "Datelog_ResumeApply__c": {
+          },
+          "ReferToMatching__c": {
+          },
+          "Name": {
+          },
+          "ReferFromEntryDate__c": {
+          },
+          "matching_Status__c": {
+          },
+          "IsDeleted": {
+          },
+          "Opportunity__c": {
+          },
+          "SystemModstamp": {
+          },
+          "Datelog_EntryOffer__c": {
+          },
+          "Datelog_CLFCMTG__c": {
+          },
+          "NG_reoson_text__c": {
+          },
+          "IsActiveWebEntry__c": {
+          },
+          "komento__c": {
+          },
+          "CreatedDate": {
+          },
+          "ReferFromRoot__c": {
+          },
+          "CreatedById": {
+          },
+          "Id": {
+          },
+          "ReferFromMatching__c": {
+          },
+          "ReferFromRejumeSentDate__c": {
+          },
+          "IsStopStatusChangeMail__c": {
+          }
+        }
+      }
+    },
+    {
+      "object_name": "Opportunity",
+      "config": {
+        "access": "read_only",
+        "sf_notify_enabled": true,
+        "sf_polling_seconds": 600,
+        "sf_max_daily_api_calls": 30000,
+        "fields": {
+          "shouryuu__c": {
+          },
+          "FC_Gyomusekinin_sub_new__c": {
+          },
+          "FCweb_pic__c": {
+          },
+          "Web_Schema_BaseSalary_Min__c": {
+          },
+          "Web_ClientName__c": {
+          },
+          "Web_OpenFlag__c": {
+          },
+          "Web_PublishDateTime__c": {
+          },
+          "Web_Reward_Max__c": {
+          },
+          "Web_Kado_Min__c": {
+          },
+          "Web_Period_from__c": {
+          },
+          "RecordTypeId": {
+          },
+          "FC__c": {
+          },
+          "Web_Status__c": {
+          },
+          "ExperienceSubCatergory__c": {
+          },
+          "AccountId": {
+          },
+          "Web_ProjectName__c": {
+          },
+          "MWS_Gyomusekinin_sub_c__c": {
+          },
+          "CL_Gyomusekinin_sub_c__c": {
+          },
+          "Web_Background__c": {
+          },
+          "FC_Gyomusekinin_main_new__c": {
+          },
+          "Name": {
+          },
+          "Web_WorkEnvironment__c": {
+          },
+          "Web_Reward_Note__c": {
+          },
+          "LastModifiedDate": {
+          },
+          "Web_Place_Note__c": {
+          },
+          "OwnerId": {
+          },
+          "Web_ProjectOutline__c": {
+          },
+          "IsDeleted": {
+          },
+          "Web_Comment__c": {
+          },
+          "Web_SchemaQuantitativeUnitText__c": {
+          },
+          "Web_Picture__c": {
+          },
+          "Web_Schema_BaseSalary_Max__c": {
+          },
+          "SystemModstamp": {
+          },
+          "Web_Owner_PictureFlag__c": {
+          },
+          "kaishiyoteibi_Input__c": {
+          },
+          "JobPosting_JobLocationType__c": {
+          },
+          "Web_Kado_Max__c": {
+          },
+          "isClosedWebReception__c": {
+          },
+          "AnkenId2__c": {
+          },
+          "Work_Prefectures__c": {
+          },
+          "Web_JobOutline__c": {
+          },
+          "Work_Options__c": {
+          },
+          "Web_Schema_EmpType__c": {
+          },
+          "reward__c": {
+          },
+          "Gyomu_tytle__c": {
+          },
+          "Web_Period_to__c": {
+          },
+          "Web_Reward_Min__c": {
+          },
+          "CreatedDate": {
+          },
+          "Web_Human_Resource_Main__c": {
+          },
+          "Web_Human_Resource_Sub__c": {
+          },
+          "Owner__User_Name__c": {
+          },
+          "Web_Period__c": {
+          },
+          "JobPosting_isActive__c": {
+          },
+          "Web_WorkSection__c": {
+          },
+          "Web_Schema_Description__c": {
+          },
+          "Type": {
+          },
+          "Id": {
+          },
+          "CL_Gyomusekinin_main_c__c": {
+          },
+          "ExperienceCatergory__c": {
+          },
+          "MWS_Gyomusekinin_main_c__c": {
+          },
+          "Web_Schema_Region__c": {
+          },
+          "Web_Photo__c": {
+          },
+          "Web_Kado_Note__c": {
+          },
+          "Web_Schema_Title__c": {
+          },
+          "Web_ExpireDateTime__c": {
+          }
+        },
+        "indexes": {
+          "SystemModstamp": {
+            "unique": false
+          },
+          "AnkenId2__c": {
+            "unique": true
+          },
+          "OwnerId": {
+            "unique": false
+          },
+          "Id": {
+            "unique": true
+          },
+          "Web_OpenFlag__c": {
+            "unique": false
+          },
+          "ExperienceSubCatergory__c": {
+            "unique": false
+          },
+          "AccountId": {
+            "unique": false
+          },
+          "LastModifiedDate": {
+            "unique": false
+          },
+          "isClosedWebReception__c": {
+            "unique": false
+          },
+          "Web_Reward_Min__c": {
+            "unique": false
+          },
+          "ExperienceCatergory__c": {
+            "unique": false
+          }
+        },
+        "applied_at": "2023-04-28T16:41:51.476130Z"
+      }
+    },
+    {
+      "object_name": "Work_history__c",
+      "config": {
+        "access": "read_only",
+        "sf_notify_enabled": true,
+        "sf_polling_seconds": 600,
+        "sf_max_daily_api_calls": 30000,
+        "fields": {
+          "Name": {
+          },
+          "person__c": {
+          },
+          "IsDeleted": {
+          },
+          "SystemModstamp": {
+          },
+          "End_date__c": {
+          },
+          "Status__c": {
+          },
+          "company_name__c": {
+          },
+          "CreatedDate": {
+          },
+          "Start_date__c": {
+          },
+          "position__c": {
+          },
+          "Id": {
+          }
+        },
+        "indexes": {
+          "SystemModstamp": {
+            "unique": false
+          },
+          "Id": {
+            "unique": true
+          },
+          "Start_date__c": {
+            "unique": false
+          }
+        },
+        "applied_at": "2021-01-19T10:23:34.252760Z"
+      }
+    }
+  ],
+  "version": 1
+}

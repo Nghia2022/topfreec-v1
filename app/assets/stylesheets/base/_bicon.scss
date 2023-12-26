@@ -1,0 +1,187 @@
+$icomoon-font-family: "Bicon"!default;
+$icomoon-font-path: "fonts/v2022/bicon"!default;
+$bicon_arrow2_b: "\e90d";
+$bicon_arrow2_l: "\e90e";
+$bicon_arrow2_r: "\e90f";
+$bicon_arrow2_t: "\e910";
+$bicon-arrow-b: "\e900";
+$bicon-arrow-l: "\e901";
+$bicon-arrow-r: "\e902";
+$bicon-arrow-t: "\e903";
+$bicon-chevron-b: "\e904";
+$bicon-chevron-l: "\e905";
+$bicon-chevron-r: "\e906";
+$bicon-chevron-t: "\e907";
+$bicon-baloon-b: "\e908";
+$bicon-baloon-l: "\e909";
+$bicon-baloon-r: "\e90a";
+$bicon-baloon-t: "\e90b";
+$bicon-search-2: "\e90c";
+$bicon-close: "\e912";
+$bicon-open: "\e913";
+$bicon-check: "\e914";
+$bicon-error: "\e915";
+$bicon-triangle-b: "\e916";
+$bicon-triangle-l: "\e917";
+$bicon-triangle-r: "\e918";
+$bicon-triangle-t: "\e919";
+$bicon_minus: "\e911";
+$bicon_plus: "\e91a";
+@font-face {
+  font-family: "#{$icomoon-font-family}";
+  src:
+    font-url("#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?l2uwqd") format("truetype"),
+    font-url("#{$icomoon-font-path}/#{$icomoon-font-family}.woff?l2uwqd") format("woff"),
+    font-url("#{$icomoon-font-path}/#{$icomoon-font-family}.svg?l2uwqd##{$icomoon-font-family}") format("svg");
+  font-weight: 400;
+  font-style: normal;
+  font-display: block;
+}
+i {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: '#{$icomoon-font-family}' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.bicon_arrow2_b {
+  &:before {
+    content: $bicon_arrow2_b;
+  }
+}
+.bicon_arrow2_l {
+  &:before {
+    content: $bicon_arrow2_l;
+  }
+}
+.bicon_arrow2_r {
+  &:before {
+    content: $bicon_arrow2_r;
+  }
+}
+.bicon_arrow2_t {
+  &:before {
+    content: $bicon_arrow2_t;
+  }
+}
+.bicon-arrow-b {
+  &:before {
+    content: $bicon-arrow-b;
+  }
+}
+.bicon-arrow-l {
+  &:before {
+    content: $bicon-arrow-l;
+  }
+}
+.bicon-arrow-r {
+  &:before {
+    content: $bicon-arrow-r;
+  }
+}
+.bicon-arrow-t {
+  &:before {
+    content: $bicon-arrow-t;
+  }
+}
+.bicon-chevron-b {
+  &:before {
+    content: $bicon-chevron-b;
+  }
+}
+.bicon-chevron-l {
+  &:before {
+    content: $bicon-chevron-l;
+  }
+}
+.bicon-chevron-r {
+  &:before {
+    content: $bicon-chevron-r;
+  }
+}
+.bicon-chevron-t {
+  &:before {
+    content: $bicon-chevron-t;
+  }
+}
+.bicon-baloon-b {
+  &:before {
+    content: $bicon-baloon-b;
+  }
+}
+.bicon-baloon-l {
+  &:before {
+    content: $bicon-baloon-l;
+  }
+}
+.bicon-baloon-r {
+  &:before {
+    content: $bicon-baloon-r;
+  }
+}
+.bicon-baloon-t {
+  &:before {
+    content: $bicon-baloon-t;
+  }
+}
+.bicon-search-2 {
+  &:before {
+    content: $bicon-search-2;
+  }
+}
+.bicon-close {
+  &:before {
+    content: $bicon-close;
+  }
+}
+.bicon-open {
+  &:before {
+    content: $bicon-open;
+  }
+}
+.bicon-check {
+  &:before {
+    content: $bicon-check;
+  }
+}
+.bicon-error {
+  &:before {
+    content: $bicon-error;
+  }
+}
+.bicon-triangle-b {
+  &:before {
+    content: $bicon-triangle-b;
+  }
+}
+.bicon-triangle-l {
+  &:before {
+    content: $bicon-triangle-l;
+  }
+}
+.bicon-triangle-r {
+  &:before {
+    content: $bicon-triangle-r;
+  }
+}
+.bicon-triangle-t {
+  &:before {
+    content: $bicon-triangle-t;
+  }
+}
+.bicon_minus {
+  &:before {
+    content: $bicon_minus;
+  }
+}
+.bicon_plus {
+  &:before {
+    content: $bicon_plus;
+  }
+}

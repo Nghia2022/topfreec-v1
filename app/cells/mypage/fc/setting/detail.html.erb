@@ -1,0 +1,15 @@
+          <%# TODO: #3353 分岐の削除 %>
+          <% if Flipper.enabled? :new_work_category %>
+          <%= cell(Mypage::Fc::Settings::DesiredConditionCell, person, edit_modal: true).call(:new_show) %>
+          <% else %>
+          <%= cell(Mypage::Fc::Settings::DesiredConditionCell, person, edit_modal: true) %>
+          <% end %>
+          <%= cell(Mypage::Fc::Settings::ProjectRequestCell, project_request, edit_modal: true) %>
+
+          <h2 class="dashboard-ttl">
+            <span class="main-ttl">資格・レジュメ</span>
+          </h2>
+          <div class="dashboard-panel">
+            <%= cell(Mypage::Fc::Settings::ResumeCell, nil, last_uploaded_at: last_resume_uploaded_at, notice: notice_for_resume).call(:show) %>
+            <%= cell(Mypage::Fc::Profiles::QualificationCell, qualification, edit_modal: true) %>
+          </div>

@@ -1,0 +1,176 @@
+/* ========================================================
+content.css
+======================================================== */
+/* content, section
+-------------------------------------------------------- */
+.sec {
+  position: relative;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+/* sp */
+@include mq(sp) {
+  .content {
+    padding-top: $header-height-sp;
+  }
+  .sec-full {
+    width: 94%;
+  }
+  .sec-med {
+    width: 94%;
+  }
+  .sec-min {
+    width: 94%;
+  }
+  .sec-theme-inner{
+    position: relative;
+    padding: 1em;
+  }
+}
+/* tab */
+@include mq(tab) {
+  .content {
+    padding-top: $header-height-sp;
+  }
+  .sec-full {
+    width: 94%;
+  }
+  .sec-med {
+    width: 94%;
+  }
+  .sec-min {
+    width: 94%;
+  }
+  .sec-theme-inner{
+    position: relative;
+    padding: 1em;
+  }
+}
+/* laptop */
+@include mq(laptop) {
+  .content {
+    padding-top: $header-height-sp;
+  }
+  .sec-full {
+    width: 96%;
+  }
+  .sec-med {
+    width: 110rem;
+  }
+  .sec-min {
+    width: 103rem;
+  }
+  .sec-theme-inner{
+    position: relative;
+    padding: 3em;
+  }
+}
+/* pc */
+@include mq(desktop) {
+  .content {
+    padding-top: $header-height-pc;
+  }
+  .sec-full {
+    width: 120rem;
+  }
+  .sec-med {
+    width: 110rem;
+  }
+  .sec-min {
+    width: 103rem;
+  }
+  .sec-theme-inner{
+    position: relative;
+    padding: 3em;
+  }
+}
+/* content, section theme
+-------------------------------------------------------- */
+.sec-theme-01 {
+  background: $black024;
+  color: $white;
+}
+.sec-theme-02 {
+  background-color: $white;
+}
+.sec-theme-03 {
+  background-color: $black246;
+}
+/* page content
+-------------------------------------------------------- */
+.content-wrapper {
+  @include m-flex($align:flex-start,$justify:space-between,$wrap:wrap);
+}
+.content-main {
+  width: 100%;
+  @include mq(laptop_pc){
+    width: 90rem;
+  }
+}
+.content-sidebar {
+  width: 100%;
+  @include mq(sp){
+    border-bottom: 4px double $black221;
+    margin-bottom: 4em;
+    padding-bottom: 4em;
+  }
+  @include mq(tab){
+    width: 100%;
+  }
+  @include mq(laptop){
+    width: 100%;
+  }
+  @include mq(desktop){
+    width: 28rem;
+  }
+}
+/* padding, margin
+-------------------------------------------------------- */
+.sec-pt-large{
+  padding-top: 5rem;
+  @include mq() {
+    padding-top: 8rem;
+  }
+}
+.sec-pb-large{
+  padding-bottom: 5rem;
+  @include mq() {
+    padding-bottom: 8rem;
+  }
+}
+.sec-pb-ex{
+  padding-bottom: 10rem;
+  @include mq() {
+    padding-bottom: 15rem;
+  }
+}
+.sec-p-large{
+  padding: 5rem 0;
+  @include mq() {
+    padding: 8rem 0;
+  }
+}
+.sec-pt-medium{
+  padding-top: 3rem;
+  @include mq() {
+    padding-top: 5rem;
+  }
+}
+.sec-pb-medium{
+  padding-bottom: 3rem;
+  @include mq() {
+    padding-bottom: 5rem;
+  }
+}
+.sec-p-medium{
+  padding: 3rem 0;
+  @include mq() {
+    padding: 5rem 0;
+  }
+}
+.sec-mt-large{
+  margin-top: 5rem;
+  @include mq() {
+    margin-top: 8rem;
+  }
+}

@@ -1,0 +1,63 @@
+    <div class="sec sec-full">
+      <h1 class="page-ttl">
+        <span class="sub-ttl"><%= title %></span>
+        <span class="main-ttl"><%= subtitle %></span>
+      </h1>
+      <div class="page-caption">
+        <%= description %>
+      </div>
+    </div>
+    <section>
+      <div class="sec sec-full">
+        <ul class="tile-list column3">
+          <li class="tile-list-item <%= class_names('is-active': column?)%>">
+            <%= link_to content_columns_path do %>
+              <div class="tile-list-img">
+                <div class="tile-list-img-inner">
+                  <img src="/assets/images/top/contents_img1.jpg" class="img" alt="" width="370" height="250" loading="lazy">
+                </div>
+                <div class="tile-list-category">01. COLUMN</div>
+              </div>
+              <div class="list-link">
+                <h2 class="tile-list-ttl">
+                  プロ人材向けコラム
+                </h2>
+                起業・独立、お金、ビジネススキル<br>最新ITなどに特化
+              </div>
+            <% end %>
+          </li>
+          <li class="tile-list-item <%= class_names('is-active': workstyle?)%>">
+            <%= link_to content_workstyles_path do %>
+              <div class="tile-list-img">
+                <div class="tile-list-img-inner">
+                  <img src="/assets/images/top/contents_img2.jpg" class="img" alt="" width="370" height="250" loading="lazy">
+                </div>
+                <div class="tile-list-category">02. INTERVIEW</div>
+              </div>
+              <div class="list-link">
+                <h2 class="tile-list-ttl">
+                  プロ人材インタビュー
+                </h2>
+                フリーランスで活躍する独立コンサルタントや<br>プロフェッショナル人材へのインタビュー
+              </div>
+            <% end %>
+          </li>
+          <li class="tile-list-item <%= class_names('is-active': ceo_blog?)%>">
+            <%= link_to content_blogs_path do %>
+              <div class="tile-list-img">
+                <div class="tile-list-img-inner">
+                  <img src="/assets/images/top/contents_img3.jpg" class="img" alt="" width="370" height="250" loading="lazy">
+                </div>
+                <div class="tile-list-category">03. BLOG</div>
+              </div>
+              <div class="list-link">
+                <h2 class="tile-list-ttl">
+                  代表ブログ
+                </h2>
+                みらいワークス代表 岡本祥治の<br>「日本の“みらい”を元気にするブログ」
+              </div>
+            <% end %>
+          </li>
+        </ul>
+      </div>
+    </section>

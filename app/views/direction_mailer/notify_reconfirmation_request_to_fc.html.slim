@@ -1,0 +1,34 @@
+= render 'header_fc', presenter: presenter
+
+p
+  | 平素より大変お世話になっております。<br>
+
+p
+  | 保留となっておりとなっておりました#{presenter.fc_fullname} 様 の業務指示内容につきまして、下記URLより再度ご確認をお願い申し上げます。<br>
+
+p
+  | 期限日：#{presenter.auto_approve_schedule_fc}<br>
+  | ※期限日内にログインいただき保留等の操作をいただいておりません場合は、ご確認いただけたものとさせていただきます。<br>
+  | ※委託業務を円滑に進めていたけますよう早めの確定処理にご協力をお願い申し上げます。<br>
+
+p
+  |【お取引先様専用サイト】
+  = link_to mypage_fc_root_url, mypage_fc_root_url
+  br
+  | ※ログインが必要です。<br>
+  | はじめてご利用の際は、下記のパスワード設定画面からログインパスワードを設定してください。<br>
+
+p
+  | 【パスワード設定画面】
+  = link_to new_fc_user_password_url, new_fc_user_password_url
+  br
+
+p
+  | 【業務指示内容確認ページ】 （ログイン後にアクセスいただけます）<br>
+  = link_to mypage_fc_directions_url, mypage_fc_directions_url
+  br
+
+p
+  | ※指示内容をご確認のうえ、相違ございませんでしたら「確認完了」ボタンを押してください。<br>
+
+= render 'footer', presente: presenter

@@ -1,0 +1,89 @@
+inherit_from: .rubocop_todo.yml
+
+require:
+  - rubocop-rails
+AllCops:
+  NewCops: enable
+  Exclude:
+    - "bin/**/*"
+    - "node_modules/**/*"
+    - "db/schema.rb"
+    - "db/fixtures/test/**/*"
+    - "db/migrate/*"
+    - "lib/tasks/auto_annotate_models.rake"
+    - "vendor/**/*"
+    - "tmp/**/*"
+ 
+Metrics/BlockLength:
+  Enabled: false
+
+Layout/LineLength:
+  Enabled: false
+
+Metrics/ClassLength:
+  Max: 200
+
+Metrics/MethodLength:
+  Max: 15
+  CountAsOne:
+    - "array"
+    - "hash"
+    - "heredoc"
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Style/AsciiComments:
+  Enabled: false
+
+Layout/MultilineMethodCallIndentation:
+  Exclude:
+    - "spec/**/*"
+
+Layout/HashAlignment:
+  EnforcedColonStyle: table
+
+Style/AndOr:
+  EnforcedStyle: conditionals
+
+Rails/UnknownEnv:
+  Environments:
+    - production
+    - development
+    - test
+    - staging
+
+# from 0.80
+Style/HashEachMethods:
+  Enabled: true
+
+Style/HashTransformKeys:
+  Enabled: true
+
+Style/HashTransformValues:
+  Enabled: true
+
+# from 0.81
+Lint/RaiseException:
+  Enabled: true
+
+Lint/StructNewOverride:
+  Enabled: true
+
+Style/BlockDelimiters:
+  AllowedMethods:
+    - lambda
+    - proc
+
+Rails/OutputSafety:
+  Exclude:
+    - app/views/kaminari/default/_first_page.html.erb
+    - app/views/kaminari/default/_last_page.html.erb
+    - app/views/kaminari/v2022/_first_page.html.erb
+    - app/views/kaminari/v2022/_last_page.html.erb
+
+Rails/I18nLocaleTexts:
+  Enabled: false

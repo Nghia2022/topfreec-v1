@@ -1,0 +1,7 @@
+            <% if no_entry? %>
+              <p class="page-count"><%= entry_limit %>件までご応募可能です</p>
+            <% elsif reached_limit? %>
+              <p class="page-count">同時にご応募可能な上限<%= entry_limit %>件に達しております</p>
+            <% else %>
+              <span class="page-count">残り</span><span class="page-number"><%= remaining_count %>/<%= entry_limit %></span><span class="page-count">件ご応募可能です</span>
+            <% end %>

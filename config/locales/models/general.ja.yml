@@ -1,0 +1,13 @@
+ja:
+  activemodel:
+    models:
+      fc/edit_profile/general_form: 基本情報
+    attributes:
+      fc/edit_profile/general_form:
+        last_name: 名前（姓）
+        first_name: 名前（名）
+        last_name_kana: 名前（セイ）
+        first_name_kana: 名前（メイ）
+        phone: 携帯番号
+        phone2: 固定電話
+        zipcode: 郵便番号

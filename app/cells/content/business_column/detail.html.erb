@@ -1,0 +1,53 @@
+        <p class="blog-header-title"><%= model.post_title %></p>
+        <div class="blog-sub-header mt23">
+          <%= cell(Content::BusinessColumnCell, model).call(:tags) %>
+          <% FeatureSwitch.enabled? :temporary_disabled, :article_date do %>
+          <div class="label-wrapper">
+            <table class="gray-label-10 sp-inline-tr">
+              <tr>
+                <td>最終更新日</td>
+                <td><%= model.column_modified %></td>
+              </tr>
+              <tr>
+                <td>作成日</td>
+                <td><%= model.column_date %></td>
+              </tr>
+            </table>
+          </div>
+          <% end %>
+        </div>
+        <div class="fs-14 noto-l l-h-1-71 t-justify ls-neg-05 mt40 sp-mt30">
+          <img src="<%= thumbnail %>" class="blog-image">
+          <div class="wp-content wp-business-column-paragraph">
+            <%= post_content %>
+          </div>
+        </div>
+        <%= cell(Content::BusinessColumnCell, model).call(:recommended) %>
+        <div class="btn-flex-wrapper mt80 sp-mt25">
+          <a href="<%= service_page_path %>" class="btn btn-type03 bg-red c-white w-320 ls-neg-1-3">フリーコンサルタント.jpを詳しく知る</a>
+          <a href="<%= projects_path %>" class="btn btn-type03 bg-red c-white w-320 ls-neg-1-3">高品質のコンサルタント案件を探す</a>
+        </div>
+        <div class="btn-flex-wrapper jc-space-between mt40">
+          <a class="btn btn-type03 bg-facebook c-white w-206 sp-btn-social ls-neg-1-3"
+            href="<%= facebook_share_url %>" rel="nofollow
+            noopener" target="_blank">
+            <i class="i-fb"></i>
+            シェアする
+          </a>
+          <a class="btn btn-type03 bg-twitter c-white w-206 sp-btn-social  ls-neg-1-3"
+            href="<%= twitter_share_url %>" rel="nofollow noopener" target="_blank">
+            <i class="i-twitter"></i>
+            ツイートする
+          </a>
+          <a class="btn btn-type03 bg-buzz c-white w-206 sp-btn-social  ls-neg-1-3"
+            href="<%= hatena_share_url %>" rel="nofollow
+            noopener" target="_blank">
+            <i class="i-buzz"></i>
+            はてブする
+          </a>
+        </div>
+        <div class="slider-wrapper mt60">
+          <div class="slider-text">
+          <%= cell(Content::ListCell, model).call(:show) %>
+          </div>
+        </div>

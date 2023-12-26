@@ -1,0 +1,64 @@
+<%= testid('fc_users/sessions/new')%>
+    <section>
+      <div class="sec sec-full sec-pb-large sec-pt-medium">
+        <%= form_with(model: @fc_user, scope: resource_name,
+                url: session_path(resource_name),
+                local: true, html: { id: 'login_form' }) do |f| %>
+          <div class="form-content login-panel">
+            <div class="login-panel-item">
+              <div class="s-txt-center">
+                <h1 class="dashboard-ttl">ログイン</h1>
+              </div>
+              <div class="dashboard-panel">
+                <div class="s-fw-b s-mb-20">会員IDをお持ちの方はこちら</div>
+                <div class="form-error">
+                  <%= render 'flash_messages', mt_height: 'mt5', key: :alert %>
+                </div>
+                <div class="s-mt-20">
+                  <div class="form-row wrap fullwidth">
+                    <span class="form-sub-ttl"><%= f.label :email %></span>
+                    <label class="label-input form-full">
+                      <%= f.text_field :email %>
+                    </label>
+                    <span class="form-sub-ttl"><%= f.label :password %></span>
+                    <label class="label-input form-full">
+                      <%= f.password_field :password %>
+                    </label>
+                  </div>
+                </div>
+                <%= hidden_field_tag 'g-recaptcha-response-data[login]', '' %>
+              </div>
+              <div class="s-txt-center s-mt-20 s-mb-20">
+                <a href="<%= terms_page_path %>">利用規約</a>に同意の上、ご利用ください。<br>
+                  <%= f.submit '同意してログイン', class: 'btn bs-normal btn-theme-02 s-mt-20' %>
+                  <label class="label-check label-center s-mt-20 s-mb-20">
+                    <%= f.check_box :remember_me %><span><%= f.label :remember_me, '次回から自動でログイン' %></span>
+                  </label>
+                <a href="<%= new_fc_user_password_path %>" class="txt-link">パスワードをお忘れの方はこちら</a>
+              </div>
+            </div>
+            <div class="login-panel-item">
+              <div class="s-txt-center">
+                <h2 class="dashboard-ttl">会員登録がまだの方はこちら</h2>
+              </div>
+              <div class="dashboard-panel">
+                <div class="s-fw-b s-mb-20">会員登録のメリット</div>
+                <div class="sec-txt">
+                  <span class="s-fc-01">サポートメニューが充実！</span><br><span class="s-fs-14">会員限定のサポートメニューが無料でご利用いただけます｡<br>あなたの今後のキャリアプランに合わせてメニューをお選びください｡<br>サポートメニューについて詳しくは<a href="<%= support_page_path %>">こちら</a></span>
+                </div>
+                <div class="sec-txt">
+                  <span class="s-fs-14">メールにてマイページのご案内メールをお送りさせていただいた方は<br class="s-pc"><a href="<%= new_fc_user_password_path %>">パスワード設定画面</a>からログインパスワードの設定後に<br class="s-pc">ログインいただけます。</span>
+                </div>
+              </div>
+              <div class="s-sp s-txt-center">
+                <a href="<%= new_fc_user_registration_path %>" class="btn bs-normal btn-theme-02 s-mt-20">会員登録（無料）</a>
+              </div>
+              <div class="s-pc s-txt-center s-mt-20 s-mb-20 s-pt-15">
+                <a href="<%= new_fc_user_registration_path %>" class="btn bs-normal btn-theme-02 s-mt-20">会員登録（無料）</a>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </section>
+  <%= render 'recaptcha' %>

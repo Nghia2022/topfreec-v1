@@ -1,0 +1,15 @@
+  <%= cell(TrackingCell).call(:head) %>
+  <meta charset="utf-8">
+  <%= render 'job_posting' %>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="theme-color" content="#ce002e">
+  <%= display_meta_tags %>
+  <link rel="icon" type="image/png" href="/assets/images/shared/favicon.ico">
+  <%= csrf_meta_tags %>
+  <%= stylesheet_link_tag 'share', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_link_tag 'dev', media: 'all', 'data-turbolinks-track': 'reload' unless Rails.env.production? %>
+  <%= content_for(:stylesheets) %>
+  <%= render 'cloudinary_credentials' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>

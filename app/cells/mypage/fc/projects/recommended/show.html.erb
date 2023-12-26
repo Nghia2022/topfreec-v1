@@ -1,0 +1,25 @@
+    <section>
+      <div class="sec sec-full sec-pb-medium">
+        <h2 class="dashboard-ttl js-fadein">
+          <span class="main-ttl"><%= full_name %>さんに<br class="s-sp">おすすめの案件
+            <span class="s-sp" tooltip="スキル・ご経験をもとに、
+みらいワークスが厳選した
+おすすめ案件です。
+マッチした案件ご選出のた
+めに、設定情報の随時更新
+をご推奨いたします。" flow="up">
+            <i class="feather icon-help-circle"></i>
+            </span>
+            <span class="s-pc" tooltip="スキル・ご経験をもとに、みらいワークスが厳選したおすすめ案件です。
+マッチした案件ご選出のために、設定情報の随時更新をご推奨いたします。" flow="up">
+            <i class="feather icon-help-circle"></i>
+            </span>
+          </span>
+        </h2>
+        <div class="dashboard-panel">
+          <div class="dashboard-recommend-slider jsSliderItem2" data-slick='<%= slick_options %>'>
+            <%= render_projects %>
+          </div>
+        </div>
+      </div>
+    </section>

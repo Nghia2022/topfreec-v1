@@ -1,0 +1,36 @@
+@charset "UTF-8";
+/* =======================================================
+*  share.css
+* ======================================================= */
+/* import
+-------------------------------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@500;700&family=Noto+Sans+JP:wght@400;700&display=swap');
+@import "base/config";
+@import "base/base";
+@import "base/general";
+@import "base/bicon";
+@import "library/slick";
+@import "library/iconfont";
+@import "library/air-datepicker";
+@import "library/multiselect";
+@import "layout/content";
+@import "layout/header";
+@import "layout/footer";
+@import "module/breadcrumb";
+@import "module/pagenation";
+@import "module/scroll";
+@import "module/drawer";
+@import "module/modal";
+@import "module/form";
+@import "module/part";
+@import "page/top";
+@import "page/service";
+@import "page/search";
+@import "page/dashboard";
+@import "page/sitemap";
+@import "botchan";
+
+.invalid-feedback {
+  display: block;
+  word-break: keep-all;
+}

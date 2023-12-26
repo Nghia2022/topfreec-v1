@@ -1,0 +1,76 @@
+ja:
+  activerecord:
+    models:
+      fc_user: FC
+    attributes:
+      fc_user:
+        confirmation_sent_at: パスワード確認送信時刻
+        confirmation_token: パスワード確認用トークン
+        confirmed_at: Eメール確認時刻
+        created_at: 作成日
+        current_password: 現在のパスワード
+        current_sign_in_at: 現在のログイン時刻
+        current_sign_in_ip: 現在のログインIPアドレス
+        email: メールアドレス
+        email_confirmation: 確認用Eメール
+        encrypted_password: 暗号化パスワード
+        failed_attempts: 失敗したログイン試行回数
+        last_sign_in_at: 最終ログイン時刻
+        last_sign_in_ip: 最終ログインIPアドレス
+        locked_at: ロック時刻
+        password: パスワード
+        password_confirmation: パスワード（確認用）
+        remember_created_at: ログイン記憶時刻
+        remember_me: ログインを記憶する
+        reset_password_sent_at: パスワードリセット送信時刻
+        reset_password_token: パスワードリセット用トークン
+        sign_in_count: ログイン回数
+        unconfirmed_email: 未確認Eメール
+        unlock_token: ロック解除用トークン
+        updated_at: 更新日
+    errors:
+      models:
+        fc_user:
+          format: "%{message}"
+          attributes:
+            base:
+              already_activated: ユーザはアクティーベーション済です。
+            email:
+              blank: メールアドレスを入力してください
+              taken: メールアドレスが利用できません。
+            current_password:
+              blank: 現在のパスワードを入力してください
+              invalid: 現在のパスワードが一致しません
+            password:
+              blank: パスワードを入力してください
+              too_short: パスワードが短すぎます。
+              too_long: パスワードは%{count}文字以内で入力してください。
+              equal_to_email: 'パスワードはメールアドレスと異なる必要があります。'
+              equal_to_current_password: 'パスワードは現在のパスワードと異なるものである必要があります。'
+            password_confirmation:
+              blank: パスワードを入力してください
+              confirmation: 新しいパスワード（確認）が一致しません
+        fc/edit_email/fc_user:
+          attributes:
+            email:
+              blank: メールアドレスの入力は必須です
+              taken: メールアドレスは既に登録済みです
+              not_changed: 現在のメールアドレスと同じです
+            email_confirmation:
+              confirmation: メールアドレスが一致しません
+        fc/user_registration/fc_user:
+          format: "%{message}"
+          attributes:
+            last_name:
+              blank: 姓を入力してください
+            first_name:
+              blank: 名を入力してください
+            last_name_kana:
+              blank: 姓カナを入力してください
+            first_name_kana:
+              blank: 名カナを入力してください
+            phone:
+              blank: 携帯番号を入力してください
+              invalid: 携帯番号は不正な値です
+            work_location1:
+              blank: 第一希望を選択してください

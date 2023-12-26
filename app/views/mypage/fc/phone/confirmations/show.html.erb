@@ -1,0 +1,36 @@
+<%= testid('mypage/fc/passwords/new') %> 
+<h1 class="page-ttl">
+  <span class="main-ttl">二段階認証</span>
+</h1>
+<section>
+  <div class="sec sec-min sec-pb-large sec-pt-medium">
+    <%= form_with(url: mypage_fc_phone_confirmation_path, method: :post, local: true) do |f| %>
+      <%= render 'flash_messages', mt_height: 'mt15', key: :notice %>
+      <%= render 'flash_messages', mt_height: 'mt15', key: :alert %>
+      <div class="form-content">
+        <div class="dashboard-panel">
+          <div class="s-mt-20">
+            <div class="form-row wrap fullwidth">
+              <span class="form-sub-ttl">コードを記載したテキストメッセージが次の電話番号に送信されました。</span>
+              <span class="form-sub-ttl"><%= fc_user.phone_masked %></span>
+              <label class="label-input form-full">
+                <%= f.text_field :code, placeholder: 'コードを入力' %>
+              </label>
+              <div class="sec-txt">
+                <p>コードが届かない場合</p>
+                <p>
+                <%= link_to resend_code_mypage_fc_phone_confirmation_path, method: :put, class: 'c-red link-border-bottom' do %>
+                  コードを再送信
+                <% end %>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="s-txt-center s-mt-20 s-mb-20">
+          <%= f.submit '確認', class: 'btn bs-long btn-theme-02 s-mt-20' %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</section>

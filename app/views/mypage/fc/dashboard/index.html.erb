@@ -1,0 +1,55 @@
+<%= testid('fc/dashboard') %>
+    <h1 class="page-ttl js-fadein">
+      <span class="sub-ttl">MY PAGE</span>
+      <span class="main-ttl">マイページ</span>
+    </h1>
+    <section>
+      <div class="sec sec-full">
+        <% FeatureSwitch.enabled? :notification do %>
+        <%= cell(Mypage::NotificationCell, receipts).call(:show) %>
+        <% end %>
+        <a href="<%= commmune_signin_url %>" class="alert-link" target="_blank" rel="noopener noreferrer">
+          <div class="alert success">
+            <i class="feather icon-info"></i>みらコミュへのログインはこちら
+          </div>
+        </a>
+        <a href="<%= "#{contact_ja_url}/articles/4404313313551"%>" class="alert-link" target="_blank" rel="noopener noreferrer">
+          <div class="alert success">
+            <i class="feather icon-info"></i>マイページの簡単ガイドについて
+          </div>
+        </a>
+      </div>
+    </section>
+    <%= cell(Mypage::Fc::DashboardCell, account,
+             pending_directions_count:).call(:show) %>
+    <section>
+      <div class="sec sec-full sec-pb-medium">
+        <h2 class="dashboard-ttl js-fadein">
+          <span class="main-ttl">
+            案件紹介リクエスト
+            <span class="s-sp" tooltip="弊社からの案件紹介時
+に参考にさせていただく情報
+です。適切なご紹介のため
+都度更新いただくことを
+推奨いたします。" flow="up">
+              <i class="feather icon-help-circle"></i>
+            </span>
+            <span class="s-pc" tooltip="弊社からの案件紹介時に参考にさせていただく情報です。
+適切なご紹介のため都度更新いただくことを推奨いたします。" flow="up">
+              <i class="feather icon-help-circle"></i>
+            </span>
+          </span>
+        </h2>
+        <div class="dashboard-panel">
+          <div data-behavior="remote-form" data-href="<%= edit_mypage_fc_project_request_path %>"></div>
+          <div class="s-flex-end s-mt-20">
+            <a href="<%= mypage_fc_settings_path %>" class="txt-link">より詳しい情報の更新は、<br class="s-sp">設定情報ページへ</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <%= cell(Mypage::Fc::Projects::RecommendedCell, recommended_projects).call(:show) %>
+    <!-- search box -->
+    <div class="sec-theme-03">
+      <%= render 'projects/search_nav', form: search_form %>
+    </div>

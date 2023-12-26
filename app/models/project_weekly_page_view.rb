@@ -1,0 +1,22 @@
+# frozen_string_literal: true
+
+class ProjectWeeklyPageView < ApplicationRecord
+  belongs_to :project
+
+  include Materializable
+
+  self.primary_key = :project_id
+end
+
+# == Schema Information
+#
+# Table name: project_weekly_page_views
+#
+#  pv         :bigint
+#  project_id :integer          primary key
+#
+# Indexes
+#
+#  index_project_weekly_page_views_on_project_id  (project_id) UNIQUE
+#  index_project_weekly_page_views_on_pv          (pv)
+#

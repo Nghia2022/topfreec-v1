@@ -1,0 +1,44 @@
+.wp-img-auto-fit {
+  img {
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+.wp-content {
+  h2 {
+    vertical-align: baseline;
+    line-height: 1.5;
+    font-size: 20px;
+    margin-top: 38px;
+    margin-bottom: 1em;
+  }
+
+  h3 {
+    font-weight: 400;
+    margin-top: 1em;
+    font-size: 1.05em;
+  }
+
+  @extend .wp-img-auto-fit;
+}
+
+.wp-business-column-paragraph {
+  p {
+    margin-bottom: 2em;
+  }
+}
+
+.wp-interview-post-content a {
+  color: #0070c0;
+  text-decoration: underline;
+}
+
+.darken-image-container {
+    background-color: #000;
+}
+
+.darken-image {
+    opacity: .6;
+}

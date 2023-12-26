@@ -1,0 +1,8 @@
+          <div class="case-study-item">
+            <%= link_to corp_interview_path(model) do %>
+              <img class="case-study-image" src="<%= thumbnail %>" alt="<%= post_title %>">
+            <% end %>
+            <div class="case-study-content">
+              <h3 class="l-h-1-63"><%= link_to post_title, corp_interview_path(model) %></h3>
+            </div>
+          </div>

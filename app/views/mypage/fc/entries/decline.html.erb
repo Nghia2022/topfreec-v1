@@ -1,0 +1,21 @@
+<% content_for(:modal_content) do %>
+  <%= testid('mypage/fc/entries') %>
+  <%= form_with model: form, url: mypage_fc_entry_path, method: :delete, local: true, builder: AppFormBuilder do |f| %>
+        <div class="modal-panel">
+          <a href="javascript:void(0)" class="modal-close-btn jsModalClose">
+            <i class="feather icon-x"></i>
+          </a>
+          <div class="modal-ttl">
+            辞退手続き
+          </div>
+          <% if form.can_decline_immediately? %>
+            <%= render 'decline_immediately' %>
+          <% elsif form.can_decline_with_reason?  %>
+            <%= render 'decline_with_reason', f: %>
+          <% end %>
+          <div class="modal-footer s-flex-center">
+            <%= f.submit '辞退手続きをする', class: 'btn btn-theme-02 bs-normal' %>
+          </div>
+        </div>
+  <% end %>
+<% end %>

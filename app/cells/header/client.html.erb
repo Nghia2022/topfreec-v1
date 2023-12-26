@@ -1,0 +1,38 @@
+<%= testid('header/show') %>
+  <!-- ===============  header ============== -->
+  <header class="header-theme js-fadein">
+    <div class="header-info">
+      <div class="header-flex">
+        <div class="header-logo">
+          <div class="site-logo">
+            <a href="<%= root_path %>"><span>フリーコンサルタント登録数日本最大級 Free Consultant.jp</span></a>
+          </div>
+          <div class="company-logo-header">
+            <a href="<%= mirai_works_url %>" target="_blank" rel="noopener noreferrer"><span>MIRAI WORKS</span></a>
+          </div>
+        </div>
+
+      </div>
+      <%= cell(Mypage::Client::Profiles::HeaderCell, model).call(:show) %>
+    </div>
+  </header>
+  <!-- ./header -->
+  <!-- slide-menu -->
+  <div class="header-slide jsSlideMenuOpen s-sp">
+    <nav class="header-slide-inner">
+      <ul class="global-nav">
+        <li>
+          <a href="https://contact.freeconsultant.jp/hc/ja" target="_blank" rel="noopener noreferrer">
+            <span class="main-ttl">よくある質問</span>
+            <span class="sub-ttl">FAQ</span>
+          </a>
+        </li>
+        <li class="no-line">
+          <a href="<%= mypage_client_settings_path %>">
+            <span class="main-ttl">設定情報</span>
+            <span class="sub-ttl">SETTINGS</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>

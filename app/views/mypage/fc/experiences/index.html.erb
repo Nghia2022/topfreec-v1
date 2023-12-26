@@ -1,0 +1,13 @@
+    <h1 class="page-ttl">
+      <span class="sub-ttl">OPERATION RESULTS</span>
+      <span class="main-ttl">稼働実績</span>
+    </h1>
+    <section>
+      <div class="sec sec-full sec-pb-large">
+        <% if experiences.empty? %>
+          表示する案件がありません
+        <% else %>
+          <%= cell(Mypage::Fc::ExperienceCell, collection: experiences).call(:row) %>
+        <% end %>
+      </div>
+    </section>

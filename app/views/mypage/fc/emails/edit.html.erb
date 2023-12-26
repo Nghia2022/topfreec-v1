@@ -1,0 +1,35 @@
+<% content_for(:modal_content) do %>
+  <%= form_with model: @fc_user, scope: :fc_user, url: mypage_fc_email_path, method: :put, local: true, builder: AppFormBuilder do |f| %>
+      <div class="modal-panel">
+        <a href="javascript:void(0)" class="modal-close-btn jsModalClose">
+          <i class="feather icon-x"></i>
+        </a>
+        <div class="modal-ttl">
+          会員ID（メールアドレス）の変更
+        </div>
+        <div class="modal-txt">
+          <div class="form-content form-modal">
+            <%= render 'error_messages', resource: @fc_user %>
+            <div class="form-row">
+              <label class="label-input form-full">
+                <span class="form-sub-ttl">新しいメールアドレス</span>
+                <%= f.text_field :email, placeholder: '例:info@domain.co.jp' %>
+              </label>
+            </div>
+            <div class="form-row">
+              <label class="label-input form-full">
+                <span class="form-sub-ttl">新しいメールアドレス（確認）</span>
+                <%= f.text_field :email_confirmation, autocomplete: 'new-email', placeholder: '例:info@domain.co.jp' %>
+              </label>
+            </div>
+            <div class="form-notice">
+              ※今後、弊社担当からお送りする個別のご案内メール等のメールアドレスも同時に変更させていただきます。<br>・「保存する」をクリックすると、変更後のアドレスに確認用URLを記載したメールを送信します。<br>・会員ID（メールアドレス）の変更は、メール記載の確認用URLへのアクセス完了後に行われます。
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer s-flex-center">
+          <%= f.submit '保存する', class: 'btn btn-theme-02 bs-normal' %>
+        </div>
+      </div>
+  <% end %>
+<% end %>

@@ -1,0 +1,18 @@
+= render 'header', presenter: presenter
+
+p
+  | ご応募をいただいていた案件の辞退のご依頼を受付いたしました。<br>
+
+p
+  | 他にご興味のある案件がございましたらご応募お待ちしております。<br>
+  | また、ご応募いただきました案件以外でおすすめの案件がある際には<br>
+  | 案件担当より随時ご連絡いたしますので、是非ご検討お願いいたします。<br>
+
+p
+  | なお、ご状況の変化（ご参画プロジェクトが決まった等）がございましたら、<br>
+  | 設定情報ページよりご状況の更新をお願いいたします。<br>
+  | #{link_to mypage_fc_settings_url, mypage_fc_settings_url}<br>
+
+= render 'project', presenter: presenter
+
+= render 'footer', presenter: presenter

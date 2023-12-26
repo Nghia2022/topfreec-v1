@@ -1,0 +1,43 @@
+<%slick_options = {
+    centerMode: true,
+    centerPadding: '3vw',
+    focusOnSelect: true,
+    infinite: true,
+    touchMove: true,
+    variableWidth: false,
+    responsive: [
+      {
+        breakpoint: 1200,
+        settings: {
+          arrows: false,
+          centerMode: false
+        }
+      }
+    ]
+  }
+%>
+    <div class="mainvisual">
+      <ul class="slider-top" data-slick='<%= slick_options.to_json %>'>
+        <li class="slider-top-item">
+          <a href="<%= campaign_url %>" target="_blank" rel="noopener noreferrer"><img src="/assets/images/top/mainvisual_pc-friend.png" alt="お友達紹介キャンペーン" width="1200" height="475" loading="lazy">
+          </a>
+        </li>
+        <li class="slider-top-item">
+          <a href="<%= commmune_what_url %>" target="_blank" rel="noopener noreferrer"><img src="/assets/images/top/mainvisual_pc-miracommu.png" alt="みらコミュ" width="1200" height="475" loading="lazy">
+          </a>
+        </li>
+        <li class="slider-top-item">
+          <a href="<%= slug_projects_path('project-management') %>"><img src="/assets/images/top/mainvisual_pc-itpmo.png" alt="PM・PMOコンサルタント案件特集" width="1200" height="475" loading="lazy">
+          </a>
+        </li>
+        <li class="slider-top-item">
+          <a href="<%= slug_projects_path('sap') %>"><img src="/assets/images/top/mainvisual_pc-sap.png" alt="SAPコンサルタント案件特集" width="1200" height="475" loading="lazy">
+          </a>
+        </li>
+        <li class="slider-top-item">
+          <a href="<%= projects_path(params: { 'compensation_ids[]' => 5 }) %>"><img src="/assets/images/top/mainvisual_pc-highpriced.png" alt="高単価案件特集" width="1200" height="475" loading="lazy">
+          </a>
+        </li>
+      </ul>
+    </div>
+

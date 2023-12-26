@@ -1,0 +1,14 @@
+<%= form_with model: fc_user, url: admin_activation_path(fc_user), method: :patch, local: true do |f| %>
+  <%= render 'error_messages', resource: fc_user %>
+  <div class="form-group">
+    <%= f.label :contact_sfid %>
+    <%= f.text_field :contact_sfid %>
+  </div>
+  <div class="form-group">
+    <%= f.label :lead_no %>
+    <%= f.text_field :lead_no, readonly: true %>
+  </div>
+  <div class="form-group">
+    <%= f.submit %>
+  </div>
+<% end %>

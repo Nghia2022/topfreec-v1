@@ -1,0 +1,13 @@
+<% content_for(:modal_content) do %>
+  <%= form_with model: form, scope: :desired_condition, url: mypage_fc_settings_desired_condition_path, method: :put, local: true, builder: AppFormBuilder do |f| %>
+        <div class="modal-panel">
+          <a href="javascript:void(0)" class="modal-close-btn jsModalClose">
+            <i class="feather icon-x"></i>
+          </a>
+          <div class="modal-ttl">
+            希望条件を選択してください。
+          </div>
+          <%= render 'form', f: %>
+        </div>
+  <% end %>
+<% end %>

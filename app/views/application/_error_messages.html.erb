@@ -1,0 +1,12 @@
+<% if resource.errors.any? %>
+  <div class="form-group s-fc-01">
+    <%== I18n.t('errors.messages.not_correctly_html') %>
+    <% if resource.errors.has_key?(:base) %>
+      <ul class="form-row invalid-feedback">
+        <% resource.errors.full_messages_for(:base).each do |error| %>
+          <li><%= error %></li>
+        <% end %>
+      </ul>
+    <% end %>
+  </div>
+<% end %>

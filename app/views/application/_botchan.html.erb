@@ -1,0 +1,3 @@
+<% if !user_signed_in? && !FeatureSwitch.enabled?(:disable_botchan) %>
+<script src="https://app2.blob.core.windows.net/botchan/js/efoapp.js" onload="efoInit('5c6a1b67a24a613f8500fda3')"></script>
+<% end %>

@@ -1,0 +1,295 @@
+/* ========================================================
+ styles for front service, flow, support
+======================================================== */
+.page-service{
+  /* mainvisual */
+  .service-mainvisual{
+    background-image: linear-gradient(0deg, rgba(29,28,29,0.3), rgba(0,0,0,0.3)),url("#{$v-img-path}service/main-banner.png");
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: cover;
+    @include mq(sp){
+      margin-bottom: 1em;
+      padding: 2em 0;
+    }
+    @include mq{
+      padding-bottom: 8em;
+      height: 500px;
+    }
+
+    .page-ttl{
+      color: $white;
+      margin: 0;
+      padding: 1.7em 0 0;
+      &::before{
+        display: none;
+      }
+      .main-ttl{
+        font-size: 2.4rem;
+      }
+      @include mq(){
+        .main-ttl{
+          font-size: 3em;
+        }
+        .sub-ttl{
+          font-size: 1.5em;
+        }
+      }
+    }
+    .page-caption{
+      @include m-font-bold;
+      @include mq(){
+        font-size: 1.2em;
+      }
+    }
+  }
+  .sec-movie{
+    @include mq{
+      margin-top: -10em;
+    }
+  }
+  /* card-list */
+  .card-list {
+    &.profile{
+      .card-list-item{
+        @include mq(sp){
+          .card-list-img{
+            margin: 0 auto;
+            width: 40%;
+            height: auto;
+          }
+        }
+        @include mq{
+          .card-list-img{
+            width: 35%;
+            height: 270px;
+          }
+          .card-list-ttl{
+            margin-top: 0;
+          }
+          .card-list-info{
+            display: flex;
+            flex-flow: column;
+            justify-content: space-between;
+            padding-left: 1em;
+            width: 65%;
+          }
+        }
+      }
+      .profile-alphabet,
+      .profile-position{
+        display: block;
+        font-size: .6em;
+      }
+      .profile-alphabet{
+        @include m-font1;
+        color: $black139;
+      }
+    }
+    &.about{
+      .card-list-item{
+        @include mq(sp){
+          font-size: 1.4rem;
+        }
+        .card-list-img{
+          border: 1px solid $black229;
+          overflow: hidden;
+          height: 22rem;
+          @include mq(){
+            height: 24rem;
+          }
+        }
+      }
+    }
+    .flow-img{
+      margin-bottom: 1em;
+      width: 15rem;
+    }
+  }
+  /* tile-list */
+  .tile-list{
+    &.related{
+      .tile-list-item{
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        padding: 1em;
+        a:not(.btn){
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          height: 100%;
+        }
+        a:not(.btn):hover .tile-list-img img {
+          width: 100%;
+        }
+      }
+      .tile-list-ttl{
+        font-size: 1.8rem;
+      }
+      .tile-list-img {
+        height: 15rem;
+      }
+      .related-content{
+        flex-grow: 1;
+        margin-bottom: 1em;
+      }
+    }
+  }
+  /* content-box */
+  .content-box{
+    &.staff{
+      .sec-ttl{
+        padding-top: 0;
+        padding-bottom: 1.5em;
+        @include mq(sp){
+          .sub-ttl{
+            top: 2.5em;
+          }
+        }
+      }
+      .txt-box{
+        dd{
+          font-size: .9em;
+          line-height: 1.8;
+          text-align: justify;
+        }
+      }
+    }
+  }
+  .dashboard-ttl{
+    margin: 0 0 1em 0;
+    padding: 0;
+  }
+  .general-panel{
+    dd{
+      line-height: 1.8;
+      text-align: justify;
+      @include mq(){
+        padding: 0 1em 1em;
+      }
+    }
+  }
+  .btn{
+    @include mq(sp){
+      line-height: 1.4;
+    }
+  }
+}
+.page-support{
+  .sec-ttl{
+    @include mq(sp){
+      font-size: 1.4em;
+    }
+  }
+  .box-ttl{
+    @include mq(sp){
+      line-height: 1.4;
+    }
+  }
+  .btn{
+    @include mq(sp){
+      line-height: 1.4;
+    }
+  }
+}
+.page-flow{
+  .card-list{
+    &.flow{
+      margin: 0;
+      &.flow-full{
+        .card-list-item{
+          width: 92%;
+        }
+      }
+      .card-list-item{
+        box-shadow: 0 0 20px 2px #efefef;
+        border-radius: 6px;
+        padding: 1em;
+        width: 100%;
+        @include mq(sp){
+         }
+        @include mq{
+          width: 46%;
+          margin-bottom: 1em;
+          padding: 1em 2em 1em 0;
+          align-items: center;
+        }
+      }
+      .card-list-num{
+        @include mq(sp){
+          top: 50%;
+          left: 0;
+          transform: translateY(-50%);
+        }
+        @include mq(){
+          top: -0.7em;
+          left: -.25em;
+        }
+      }
+      .card-list-content {
+        @include mq(){
+          width: 65%;
+        }
+      }
+      .card-list-ttl{
+        @include mq(sp){
+          font-size: 1.2em;
+          text-align: center;
+        }
+      }
+      .card-list-img{
+        @include mq(sp){
+          overflow: hidden;
+          margin: 0 auto;
+          width: 30rem;
+          height: 10rem;
+          img{
+            margin-top: -2em;
+            width: 15rem;
+          }
+        }
+        @include mq(){
+          width: 20rem;
+        }
+      }
+    }
+  }
+  .img-path{
+    margin: .5em 0 1em 0;
+    width: 60%;
+    height: auto;
+    @include mq{
+      width: 50%;
+    }
+  }
+  /* tab */
+  .tab-box{
+    display: flex;
+    justify-content: center;
+  }
+  .tab-label{
+    @include m-font-bold;
+    flex-grow: 1;
+    border-bottom: 4px solid $color01;
+    background: $white;
+    cursor:pointer;
+    font-size: .9em;
+    line-height: 1.4;
+    padding: 1em 0;
+    text-align:center;
+    width: 50%;
+    @include mq{
+      font-size: 1.1em;
+    }
+  }
+  .tab-content{
+    display:none;
+  }
+  .tab-label.is-active{
+    background:$color01;
+    color:$white;
+    transition: all .2s ease-out;
+  }
+  .tab-content.is-show{
+    display:block;
+  }
+}

@@ -1,0 +1,4 @@
+p
+  | #{presenter.main_fc_contact_fullname} 様<br>
+  - if presenter.sub_fc_contact?
+    | (CC：#{presenter.sub_fc_contact_fullname} 様)<br>

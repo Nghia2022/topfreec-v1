@@ -1,0 +1,5 @@
+# :set syntax=ruby
+eval_gemfile 'Gemfile'
+
+gem 'ruby-debug-ide'
+gem 'debase'

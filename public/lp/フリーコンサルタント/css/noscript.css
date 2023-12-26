@@ -1,0 +1,7 @@
+@charset "UTF-8";
+/*=========================================================
+ * javascriptが動作しない場合に設定するCSS
+ */
+#fade-window{
+    display: none !important;
+}

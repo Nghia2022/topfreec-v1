@@ -1,0 +1,12 @@
+@startuml
+
+package Wordpress << 現行サイト >> {
+    database WordpressDB
+}
+
+cloud Salesforce
+
+Rails -- WordpressDB
+
+
+@enduml

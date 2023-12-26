@@ -1,0 +1,4 @@
+<%= testid('mypage/fc/settings/services/show') %>
+          <div class="dashboard-panel">
+            <%= cell(Mypage::Fc::Settings::MlRejectCell, contact).call(:show) if can_ml_reject? %>
+          </div>

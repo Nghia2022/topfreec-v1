@@ -1,0 +1,53 @@
+= render 'header_fc', presenter: presenter
+
+p
+  | 平素より大変お世話になっております。<br>
+
+p
+  | 弊社との準委任契約における法令順守のため、<br>
+  | 毎月事前に翌月の業務内容確認を実施させていただいております。<br>
+  | (確認時期により当月分の確認を含む場合があります)<br>
+
+p
+  | ※準委任契約におけます業務指示に関する法令の規定:<br>
+  |　ご参画先企業の責任者⇒弊社業務責任者⇒業務従事者(法人の場合は業務責任者)<br>
+p
+  | #{presenter.fc_fullname} 様 の業務指示内容につきまして、下記URLよりご確認をお願い申し上げます。<br>
+
+p
+  | 期限日：#{presenter.auto_approve_schedule_fc}正午(昼12時)<br>
+  | ※期限日内にログインいただきボタン操作をされていらっしゃらない場合は、<br>
+  |　ご確認いただけたものとさせていただきます。<br>
+  | ※委託業務を円滑に進めていただけますよう早めの確定処理にご協力をお願い申し上げます。<br>
+
+p
+  | 【お取引先様専用サイト】<br>
+  = link_to mypage_fc_root_url, mypage_fc_root_url
+  br
+  | ※ログインが必要です。<br>
+  | ※はじめてご利用の際は、下記のパスワード設定画面からパスワードを設定してください。<br>
+  | ※本メールをお送りしているメールアドレスがログインIDとなっております。<br>
+
+p
+  | 【パスワード設定画面】<br>
+  = link_to new_fc_user_password_url, new_fc_user_password_url
+  br
+
+p
+  | 【業務指示内容確認ページ】(ログイン後にアクセスいただけます）<br>
+  = link_to mypage_fc_directions_url, mypage_fc_directions_url
+  br
+
+p
+ | 【ご利用マニュアル】<br>
+ = link_to direction_fc_manual_url, direction_fc_manual_url, target: :_blank
+ br
+
+p
+  | ※指示内容をご確認のうえ、相違ございませんでしたら「確認」ボタンを<br>
+  |　押してください。(確認事項(保留)がない場合、コメントの記入は不要です)<br>
+
+p
+  | 以上、ご確認のほどよろしくお願いいたします。<br>
+  br
+= render 'footer', presenter: presenter

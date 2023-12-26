@@ -1,0 +1,9 @@
+<hr class="mt30 mb30">
+<ul>
+  <li class="mt10 mb10"><%= link_to '管理画面トップ', :admin_root %></li>
+  <% if admin_signed_in? %>
+  <li class="mt10 mb10"><%= link_to 'ログアウト', :oauth_session, method: :delete %></li>
+  <% else %>
+    <li class="mt10 mb10"><%= link_to 'ログイン', '/auth/salesforce', method: :post %></li>
+  <% end %>
+</ul>

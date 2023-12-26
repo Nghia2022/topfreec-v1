@@ -1,0 +1,31 @@
+<%= testid('fc_users/registrations') %>
+  <main class="content">
+    <%= render_breadcrumbs builder: Breadcrumbs::CustomBuilder %>
+    <section>
+      <h1 class="page-ttl js-fadein">
+        <span class="main-ttl">会員情報の入力を<br class="s-sp">完了いたしました</span>
+      </h1>
+      <div class="sec sec-full sec-pb-large">
+        <div class="sec-txt s-txt-center">
+          メールアドレス宛に今後の流れについて<br class="s-sp">ご連絡させていただきます。<br>案件の状況により、すべての方と<br class="s-sp">面談させていただくわけではございません。<br
+            class="s-sp">予めご了承ください。
+        </div>
+        <div class="s-txt-center s-mt-10">
+          <a href="<%= help_registration_url %>" class="txt-link">会員情報入力から稼働までの<br class="s-sp">流れについてはこちら</a>
+        </div>
+        <div class="s-txt-center s-mt-20">
+          <a href="<%= "#{resume_upload_url}?id=#{registered_lead_sfid}" %>" class="btn btn-theme-02 bs-normal">
+            レジュメを送信する
+          </a>
+        </div>
+        <div class="s-txt-center s-mt-20">
+          <a href="<%= root_path %>" class="btn btn-theme-02-outline bs-normal">
+            トップページに戻る
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <a href="#page-top" class="pagetop jsPageTop">
+    <i class="bicon-chevron-t"></i>
+  </a>

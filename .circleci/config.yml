@@ -1,0 +1,189 @@
+# Ruby CircleCI 2.0 configuration file
+#
+# Check https://circleci.com/docs/2.0/language-ruby/ for more details
+#
+version: 2.1
+
+orbs:
+  ruby: circleci/ruby@1.2.0
+  node: circleci/node@4.9.0
+  browser-tools: circleci/browser-tools@1.4.6
+  octokit: pedrotroller/octokit@1.0.2
+
+  references:
+    container_config: &container_config
+      docker:
+        # specify the version you desire here
+        - image: cimg/ruby:3.2.2-browsers
+          environment:
+            RAILS_ENV: test
+            PGHOST: localhost
+            PGUSER: root
+            WP_DB_HOST: 127.0.0.1
+            WP_DB_DATABASE: wp_test
+            WP_DB_USERNAME: root
+            WP_DB_PASSWORD: ""
+
+        # Specify service dependencies here if necessary
+        # CircleCI maintains a library of pre-built images
+        # documented at https://circleci.com/docs/2.0/circleci-images/
+        - image: circleci/postgres:12.5-ram
+          environment:
+            POSTGRES_DB: freeconsultant_test
+            POSTGRES_USER: root
+            POSTGRES_PASSWORD: password
+
+        - image: circleci/mysql:5.7-ram
+          command: |
+            mysqld --default-authentication-plugin=mysql_native_password
+          environment:
+            MYSQL_DATABASE: wp_test
+            MYSQL_HOST: 127.0.0.1
+            MYSQL_ALLOW_EMPTY_PASSWORD: yes
+        - image: redis
+
+jobs:
+  build:
+    <<: *container_config
+
+    working_directory: ~/repo
+
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - orbspace
+      - ruby/install-deps
+      - node/install:
+          node-version: 18.17.0
+          npm-version: 9.6.7
+          install-yarn: true
+      - node/install-packages:
+          pkg-manager: yarn
+      - run: |
+          set -eux
+          sudo apt-get update -qq
+          sudo apt-get install python2
+      - run: |
+          set -x
+          python2 --version
+          node --version
+      - browser-tools/install-browser-tools:
+          install-firefox: false
+          install-geckodriver: false
+
+      # Database setup
+      - run:
+          name: Database setup
+          command: |
+            bundle exec rails db:create
+            bundle exec rails db:schema:load
+          environment:
+            DATABASE_URL: postgres://root:password@localhost/freeconsultant_test
+            BLAZER_DATABASE_URL: postgres://root:password@localhost/freeconsultant_test
+
+      - run:
+          name: Wait for wordpress database
+          command: dockerize -wait tcp://127.0.0.1:3306 -timeout 120s
+
+      - run:
+          name: Setup dummy wordpress database
+          command: |
+            set -eux
+            sudo apt-get update --allow-releaseinfo-change
+            sudo apt install default-mysql-client
+            mysqldump $(bundle exec rails wordpress:credentials_args) --skip-column-statistics > tmp/wp.sql
+            mysql -h 127.0.0.1 -u root wp_test < tmp/wp.sql
+          environment:
+            BLAZER_DATABASE_URL: postgres://root:password@localhost/freeconsultant_test
+      - run:
+          name: Assets precompile
+          command: bundle exec rails assets:precompile
+
+      # run tests!
+      - run:
+          name: run tests
+          command: |
+            mkdir /tmp/test-results
+            TEST_FILES="$(circleci tests glob "spec/**/*_spec.rb" | \
+              circleci tests split --split-by=timings)"
+
+            bundle exec rspec \
+              --format progress \
+              --format RspecJunitFormatter \
+              --out /tmp/test-results/rspec/rspec.xml \
+              --format html \
+              --out /tmp/test-results/rspec/results.html \
+              --format json \
+              --out /tmp/test-results/rspec/results.json \
+              --format progress \
+              -t ~js \
+              $TEST_FILES
+          environment:
+            DATABASE_URL: postgres://root:password@localhost/freeconsultant_test
+            BLAZER_DATABASE_URL: postgres://root:password@localhost/freeconsultant_test
+
+      # collect reports
+      - store_test_results:
+          path: /tmp/test-results
+      - store_artifacts:
+          path: /tmp/test-results
+          destination: test-results
+      - store_artifacts:
+          name: 'Store coverage result'
+          path: coverage
+          destination: coverage
+
+      - run:
+          name: Install @octokit/auth-app
+          command: |
+            mkdir ./.orbspace/octokit -p
+            cd ./.orbspace/octokit
+            npm install @octokit/auth-app@4.0.11 @octokit/rest@19.0.13
+      - save_cache:
+          key: orbspace
+          paths:
+            - ./.orbspace
+      - octokit/script:
+          script: |
+            const fs = require('fs');
+            const { Octokit } = require('@octokit/rest');
+            const { createAppAuth } = require("@octokit/auth-app");
+            const appOctokit = new Octokit({
+              authStrategy: createAppAuth,
+              auth: {
+                appId: process.env.GITHUB_APP_ID,
+                privateKey: process.env.GITHUB_APP_PRIVATE_KEY.replace(/\\n/g, '\n'),
+                installationId: process.env.GITHUB_APP_INSTALLATION_ID,
+              }});
+            const { token } = await appOctokit.auth({
+              type: "installation",
+              installationId: process.env.GITHUB_APP_INSTALLATION_ID,
+            });
+            fs.appendFileSync(process.env.BASH_ENV, "export GITHUB_TOKEN=" + token + "\n");
+
+      - run:
+          name: 'Report to pull request'
+          command: bin/report_coverage
+      - run:
+          name: Run rubocop
+          command: bundle exec rubocop
+      - run:
+          name: Run erbcop
+          command: bundle exec erbcop app/**/*.erb
+      - run:
+          name: Run reek
+          command: |
+            git diff --name-only --diff-filter=d origin/master | xargs bundle exec reek
+      - persist_to_workspace:
+          root: .
+          paths:
+            - .
+
+workflows:
+  version: 2
+  build:
+    jobs:
+      - build:
+          context:
+            - 'Review Bot'

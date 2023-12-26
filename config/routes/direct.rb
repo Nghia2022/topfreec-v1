@@ -1,0 +1,111 @@
+# frozen_string_literal: true
+
+Rails.application.routes.draw do
+  direct(:mirai_works) { Settings.routes.mirai_works }
+  direct(:mirai_works_policy) { Settings.routes.mirai_works_policy }
+  direct(:mirai_works_privacy_entry) { Settings.routes.mirai_works_privacy_entry }
+  direct(:withdrawal) { Settings.routes.withdrawal }
+  direct(:campaign) { Settings.routes.campaign }
+  direct(:policy) { Settings.routes.policy }
+  direct(:company_info) { Settings.routes.company_info }
+  direct(:corporation_community_instructions_pdf) { Settings.routes.corporation_community_instructions_pdf }
+  direct(:corporation_contact) { Settings.routes.corporation_contact }
+  direct(:client) { Settings.routes.client }
+  direct(:client_business_column) { Settings.routes.client_business_column }
+  direct(:client_case) { Settings.routes.client_case }
+  direct(:client_statistics) { Settings.routes.client_statistics }
+  direct(:intern) { Settings.routes.intern }
+  direct(:skill_shift) { Settings.routes.skill_shift }
+  direct(:career) { Settings.routes.career }
+  direct(:jirei) { Settings.routes.jirei }
+  direct(:contact) { Settings.routes.contact }
+  direct(:contact_ja) { Settings.routes.contact_ja }
+  direct(:contact_ja_request) { Settings.routes.contact_ja_request }
+  direct(:contact_corp) { Settings.routes.contact_corp }
+  direct(:contact_business_pro) { Settings.routes.contact_business_pro }
+  direct(:contact_mypage_usage) { Settings.routes.contact_mypage_usage }
+  direct(:contact_mypage_guide) { Settings.routes.contact_mypage_guide }
+  direct(:commmune_signin) { Settings.routes.commmune_signin }
+  direct(:commmune_faq) { Settings.routes.commmune_faq }
+  direct(:commmune_what) { Settings.routes.commmune_what }
+  direct(:help_registration) { Settings.routes.help_registration }
+  direct(:help_registration_email) { Settings.routes.help_registration_email }
+  direct(:find_careers) { Settings.routes.find_careers }
+  direct(:career_knock) { Settings.routes.career_knock }
+  direct(:tenshoku_site) { Settings.routes.tenshoku_site }
+  direct(:tenshoku_twenty) { Settings.routes.tenshoku_twenty }
+  direct(:tenshoku_thirty) { Settings.routes.tenshoku_thirty }
+  direct(:tenshoku_forty) { Settings.routes.tenshoku_forty }
+  direct(:tenshoku_fifty) { Settings.routes.tenshoku_fifty }
+  direct(:tenshoku_women) { Settings.routes.tenshoku_women }
+  direct(:tenshoku_engineer) { Settings.routes.tenshoku_engineer }
+  direct(:tenshoku_consul) { Settings.routes.tenshoku_consul }
+  direct(:tenshoku_doctor) { Settings.routes.tenshoku_doctor }
+  direct(:tenshoku_nurse) { Settings.routes.tenshoku_nurse }
+  direct(:tenshoku_ix) { Settings.routes.tenshoku_ix }
+  direct(:tenshoku_daini) { Settings.routes.tenshoku_daini }
+  direct(:tenshoku_kotowarikata) { Settings.routes.tenshoku_kotowarikata }
+  direct(:tenshoku_urajijyo) { Settings.routes.tenshoku_urajijyo }
+  direct(:tenshoku_agent) { Settings.routes.tenshoku_agent }
+  direct(:tenshoku_agent_recommend) { Settings.routes.tenshoku_agent_recommend }
+  direct(:tenshoku_agent_twenty) { Settings.routes.tenshoku_agent_twenty }
+  direct(:tenshoku_agent_thirty) { Settings.routes.tenshoku_agent_thirty }
+  direct(:tenshoku_agent_women) { Settings.routes.tenshoku_agent_women }
+  direct(:resume_upload) { Settings.routes.resume_upload }
+  direct(:direction_fc_manual) { Settings.routes.direction_fc_manual }
+  direct(:direction_cl_manual) { Settings.routes.direction_cl_manual }
+  direct(:glocal_mission) { Settings.routes.glocal_mission }
+  direct(:glocal_times) { Settings.routes.glocal_times }
+  direct(:recruit_agent) { Settings.routes.recruit_agent }
+  direct(:recruit_direct_scout) { Settings.routes.recruit_direct_scout }
+  direct(:doda_agent) { Settings.routes.doda_agent }
+  direct(:mynavi_agent) { Settings.routes.mynavi_agent }
+  direct(:bizreach) { Settings.routes.bizreach }
+  direct(:pasonacareer) { Settings.routes.pasonacareer }
+  direct(:jac_recruitment) { Settings.routes.jac_recruitment }
+  direct(:nomura_ideco) { Settings.routes.nomura_ideco }
+  direct(:old_nomura_ideco) { Settings.routes.old_nomura_ideco }
+  direct(:tenshoku_agent_towa) { Settings.routes.tenshoku_agent_towa }
+  direct(:tenshoku_agent_reputation) { Settings.routes.tenshoku_agent_reputation }
+  direct(:tenshoku_agent_mikeiken) { Settings.routes.tenshoku_agent_mikeiken }
+  direct(:tenshoku_agent_demerit) { Settings.routes.tenshoku_agent_demerit }
+  direct(:tenshoku_agent_tokyo) { Settings.routes.tenshoku_agent_tokyo }
+  direct(:tenshoku_agent_osaka) { Settings.routes.tenshoku_agent_osaka }
+  direct(:tenshoku_agent_fukuoka) { Settings.routes.tenshoku_agent_fukuoka }
+  direct(:tenshoku_daini_shinsotsu) { Settings.routes.tenshoku_daini_shinsotsu }
+  direct(:tenshoku_daini_shinsotsu_oote) { Settings.routes.tenshoku_daini_shinsotsu_oote }
+  direct(:column_hataractive) { Settings.routes.column_hataractive }
+  direct(:column_levtech) { Settings.routes.column_levtech }
+  direct(:column_rikunabi_next) { Settings.routes.column_rikunabi_next }
+  direct(:column_mynavi) { Settings.routes.column_mynavi }
+  direct(:column_en) { Settings.routes.column_en }
+  direct(:column_ss_shop) { Settings.routes.column_ss_shop }
+  direct(:column_kango_roo) { Settings.routes.column_kango_roo }
+  direct(:column_kango_oshigoto) { Settings.routes.column_kango_oshigoto }
+  direct(:column_posiwill) { Settings.routes.column_posiwill }
+  direct(:column_careerdrive) { Settings.routes.column_careerdrive }
+  direct(:column_dym) { Settings.routes.column_dym }
+  direct(:column_from40) { Settings.routes.column_from40 }
+  direct(:column_mynavi_ms) { Settings.routes.column_mynavi_ms }
+  direct(:column_25tenshoku) { Settings.routes.column_25tenshoku }
+  direct(:column_30tenshoku) { Settings.routes.column_30tenshoku }
+  direct(:column_35tenshoku) { Settings.routes.column_35tenshoku }
+  direct(:column_40tenshoku) { Settings.routes.column_40tenshoku }
+  direct(:column_45tenshoku) { Settings.routes.column_45tenshoku }
+  direct(:column_50tenshoku) { Settings.routes.column_50tenshoku }
+  direct(:column_55tenshoku) { Settings.routes.column_55tenshoku }
+  direct(:column_career_coaching) { Settings.routes.column_career_coaching }
+  direct(:column_freelance) { Settings.routes.column_freelance }
+  direct(:column_freelance_consultant) { Settings.routes.column_freelance_consultant }
+  direct(:column_pmo) { Settings.routes.column_pmo }
+  direct(:column_fukugyo) { Settings.routes.column_fukugyo }
+  direct(:column_fukugyo_app) { Settings.routes.column_fukugyo_app }
+
+  if %w[staging review].include? Rails.env
+    mailtrap_companies = HTTParty.get("https://mailtrap.io/api/v1/companies.json?api_token=#{ENV.fetch('MAILTRAP_API_TOKEN', nil)}")
+
+    direct(:mailtrap_invite) do
+      mailtrap_companies[0]['share_link']
+    end
+  end
+end

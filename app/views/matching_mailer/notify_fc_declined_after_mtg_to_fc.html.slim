@@ -1,0 +1,13 @@
+= render 'header', presenter: presenter
+
+p
+  | ご応募をいただいていた案件の辞退のお手続きが完了いたしました。<br>
+
+p
+  | なお、ご状況の変化（ご参画プロジェクトが決まった等）がございましたら、<br>
+  | 設定情報ページよりご状況の更新をお願いいたします。<br>
+  | #{link_to mypage_fc_settings_url, mypage_fc_settings_url}<br>
+
+= render 'project', presenter: presenter
+
+= render 'footer', presenter: presenter

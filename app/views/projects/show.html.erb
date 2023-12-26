@@ -1,0 +1,35 @@
+<% content_for(:job_posting, true) %>
+    <div class="sec sec-full sec-pt-medium">
+      <div class="content-wrapper">
+        <%= cell(ProjectCell, project).call(:detail) %>
+        <%= cell('projects/related', related_projects).call(:detail) %>
+      </div>
+    </div>
+    <%= cell('projects/featured', featured_projects).call(:detail) %>
+
+    <div class="sec sec-full sec-pb-ex">
+      <div class="s-flex-center fullwidth">
+        <a href="javascript:void(0);" class="btn btn-theme-02 bs-normal jsSearchTableOpen">
+          <i class="bicon_plus"></i>
+          その他の条件で検索
+        </a>
+        <a href="javascript:void(0);" class="btn btn-theme-02 bs-normal jsSearchTableClose">
+          <i class="bicon_minus"></i>
+          検索画面を閉じる
+        </a>
+        <a href="<%= projects_path(request.query_parameters) %>" class="btn btn-theme-02-outline bs-normal">
+          検索一覧に戻る
+        </a>
+      </div>
+    </div>
+    <div class="sec-theme-03 js-fadein jsSearchTable">
+      <%= render 'projects/search_nav', form: search_form %>
+    </div>
+
+<% content_for :project_bottom do %>
+  <div class="btn-layout-fixed jsFixedBtn">
+    <div class="s-flex-center">
+      <%= cell(ProjectCell, project, entry_exists: entry_exists?, entry_stopped: entry_stopped?).call(:entry_button) %>
+    </div>
+  </div>
+<% end %>

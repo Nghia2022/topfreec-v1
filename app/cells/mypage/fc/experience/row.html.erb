@@ -1,0 +1,40 @@
+<%= testid('mypage/fc/experience/row') %>
+        <div class="s-txt-right s-mt-20">
+          <%= to_project_detail %>
+        </div>
+        <div class="workflow-dl">
+          <dl class="column-category">
+            <dt>カテゴリ</dt>
+            <dd>
+              <div><%= category %></div>
+            </dd>
+          </dl>
+          <dl class="column-period">
+            <dt>期間</dt>
+            <dd>
+              <div><%= joined %><span class="devider"></span><%= left %></div>
+            </dd>
+          </dl>
+          <dl>
+            <dt>職務内容</dt>
+            <dd data-toggle="display">
+              <div>
+                <p class="display-target s-d-hidden"><%= description %></p>
+                <a href="#" class="display-toggler-open">もっと見る<i class="feather icon-chevron-down"></i></a>
+                <a href="#" class="display-toggler-close s-d-hidden">閉じる<i class="feather icon-chevron-up"></i></a>
+              </div>
+            </dd>
+          </dl>
+          <dl class="column-scale">
+            <dt>規模</dt>
+            <dd>
+              <div><%= members_num.to_i %> 名</div>
+            </dd>
+          </dl>
+          <dl class="column-position">
+            <dt>役割</dt>
+            <dd>
+              <div><%= role %></div>
+            </dd>
+          </dl>
+        </div>

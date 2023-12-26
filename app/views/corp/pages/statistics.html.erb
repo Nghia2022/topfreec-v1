@@ -1,0 +1,309 @@
+<main>
+    <div class="g-width">
+        <%= render_breadcrumbs builder: Breadcrumbs::CustomBuilder %>
+        <div class="mt60 sp-mt40">
+            <h1 class="title mt55 fs-40-imp sp-mt65"><span class="c-red">Statistics</span></h1>
+            <div class="head-type02 mt20">
+                <p class="c-gray">登録者内訳</p>
+            </div>
+            <div class="statistics mt75 sp-mt40">
+                <!-- 1st box -->
+                <div class="statistics-box sp-mb0">
+                    <div class="statistics-box-l">
+                        <p class="statistics-box-l-title sp-lh-1-46">
+                            登録コンサルタントの約40%が<br class="pc-only" />
+                            大手コンサルティング会社・大手SI会社にてコンサルタントとして活躍していた人材
+                        </p>
+                        <p class="statistics-box-l-desc sp-mb0">
+                            大手戦略系ファーム、会計系ファーム出身者を中心に、大手Webサービス企業、ネット系ベンチャー、
+                            金融機関、国内大手メーカー・サービス業の情報システム・企画・新規事業部門などで活躍されていたプロフェッショナル人材にご登録いただいております。<br />
+                            コンサルタント紹介サービスとしては日本最大級の8,700名以上が登録しています。
+                        </p>
+                        <div class="statistics-box-r sp-only">
+                            <img src="images/statistics/statistics-1.png">
+                        </div>
+                        <p class="statistics-box-l-desc fs-16 noto-m mb10 mb15">
+                            戦略コンサル会社例
+                        </p>
+                        <p class="statistics-box-l-desc">
+                            ボストン・コンサルティング・グループ / マッキンゼー・アンド・カンパニー / ローランド・ベルガー / A.T.カーニー
+                            アクセンチュア（戦略） / コーポレイトディレクション
+                        </p>
+                        <p class="statistics-box-l-desc fs-16 noto-m mb10 mb15">
+                            総合コンサル会社例
+                        </p>
+                        <p class="statistics-box-l-desc">
+                            アクセンチュア / アビームコンサルティング / デロイト / トーマツコンサルティング / プライスウォーターハウスクーパース
+                            / シグマクシス / 日立コンサルティング
+                        </p>
+                        <p class="statistics-box-l-desc fs-16 noto-m mb10 mb15">
+                            SI 会社例（含ERP）
+                        </p>
+                        <p class="statistics-box-l-desc">
+                            NTTデータ/ 日本IBM / SAPジャパン/ 日本オラクル /
+                            伊藤忠テクノソリューションズ/ 電通国際情報サービス
+                        </p>
+                    </div>
+                    <div class="statistics-box-r pc-only">
+                        <img src="images/statistics/statistics-1.png">
+                    </div>
+                </div>
+                <!-- 2nd box -->
+                <div class="statistics-box alcenter sp-mb0">
+                    <div class="statistics-box-l">
+                        <p class="statistics-box-l-title sp-mt30-imp">30 代、40 代のコンサルタントが登録数の 60% を占めます。</p>
+                        <p class="statistics-box-l-desc">
+                            プロジェクトメンバーとして常駐型で業務を推進するケースが多いこともあり、実戦経験と推進力のバランスが
+                            良い30～40代のコンサルタントのニーズが高い傾向にあります。また最近では短期やスポットのコンサル案件
+                            も増えておりますので、より幅広い層のコンサルタントの方にご活躍いただけるよう努めております。
+                        </p>
+                    </div>
+                    <div class="statistics-box-r">
+                        <img src="images/statistics/statistics-2.png">
+                    </div>
+                </div>
+                <!-- 3rd box -->
+                <div class="statistics-box alcenter sp-mb0">
+                    <div class="statistics-box-l">
+                        <p class="statistics-box-l-title">英語を公用語とするプロジェクトに参画可能なコンサルタントが登録数の27%を占めます。</p>
+                        <p class="statistics-box-l-desc">
+                            また、一部ですが、英語以外に中国語・ドイツ語・フランス語・スペイン語に対応できるコンサルタントも登録しております。
+                            このように貴社のご希望にあったコンサルタントをご紹介いたしますので、下記よりお気軽にご相談ください。
+                            <br />
+                            <a href="<%= contact_url %>" class="c-red link-border-bottom" target="_blank">お問い合わせはこちら</a>
+                        </p>
+                    </div>
+                    <div class="statistics-box-r">
+                        <img src="images/statistics/statistics-3.png">
+                    </div>
+                </div>
+            </div>
+            <a name="anchor1"></a>
+            <div>
+                <p class="consultant-head sp-mb22">登録コンサルタント紹介</p>
+                <ul>
+                    <!-- 1st -->
+                    <li class="consultant-list">
+                        <div class="consultant-list-l">
+                            <img src="images/statistics/avatar_male.svg" />
+                        </div>
+                        <div class="consultant-list-r">
+                            <div class="consultant-title-container">
+                                <div class="consultant-list-r-image">
+                                    <img src="images/statistics/avatar_male.svg" />
+                                </div>
+                                <p class="consultant-list-r-title">Aさん <br class="sp-only" />(40代 男性 大手外資系メーカーCFO)</p>
+                            </div>
+                            <p class="consultant-list-r-desc">
+                                日系企業にて経理財務、経営企画、5年の海外勤務を経験した後、大手外資系メーカーにて、日系企業との合弁会社のCFOとして活躍した後、コンサルタントとして独立。<br />
+                                これまで、システム導入に伴う業務プロセス設計、財務データをSCMに活用した在庫削減、事業継続計画の立案などを実施。経理財務を中心としたバックオフィスの業務改革などの経験が豊富。
+                            </p>
+                        </div>
+                    </li>
+                    <!-- 2nd -->
+                    <li class="consultant-list">
+                        <div class="consultant-list-l">
+                            <img src="images/statistics/avatar_female.svg" />
+                        </div>
+                        <div class="consultant-list-r">
+                            <div class="consultant-title-container">
+                                <div class="consultant-list-r-image">
+                                    <img src="images/statistics/avatar_female.svg" />
+                                </div>
+                                <p class="consultant-list-r-title">Hさん <br class="sp-only" />(40代 女性 大手事業会社×社長管轄プロジェクト担当)</p>
+                            </div>
+                            <p class="consultant-list-r-desc">
+                                大手自動車メーカーにて、グローバル生産・販売戦略の中長期戦略策定や、新規海外工場立ち上げ、既存工場の新モデルチェンジの各種プロジェクトを各国にて展開するなど幅広く経験。その後、大手コンサル会社やマーケティング会社にて戦略策定、新規事業の立ち上げ支援、デューデリジェンス、マーケティング施策の立案などのプロジェクトを経験。
+                                ビジネスレベルの英語力があり、ネゴシエーションなども通訳なしで対応することが可能。
+                            </p>
+                        </div>
+                    </li>
+                    <!-- 3rd -->
+                    <li class="consultant-list">
+                        <div class="consultant-list-l">
+                            <img src="images/statistics/avatar_male.svg" />
+                        </div>
+                        <div class="consultant-list-r">
+                            <div class="consultant-title-container">
+                                <div class="consultant-list-r-image">
+                                    <img src="images/statistics/avatar_male.svg" />
+                                </div>
+                                <p class="consultant-list-r-title">Mさん <br class="sp-only" />(40代 男性 金融機関×ウェブ事業開発)</p>
+                            </div>
+                            <p class="consultant-list-r-desc">
+                                大手銀行にて支店毎の収益管理の仕組みの構築、導入、実際の管理までを一貫して実施。その後大手インターネット系企業に転職し、インターネットを活用した金融商品の販売モデルの構築・企画業務を立上げ責任者として参画し、事業企画、事業管理を経験。
+                                これまで、多くの事業企画、事業管理に携わり、特に金融系の事業、業界に精通。
+                            </p>
+                        </div>
+                    </li>
+                    <!-- 4th -->
+                    <li class="consultant-list">
+                        <div class="consultant-list-l">
+                            <img src="images/statistics/avatar_male.svg" />
+                        </div>
+                        <div class="consultant-list-r">
+                            <div class="consultant-title-container">
+                                <div class="consultant-list-r-image">
+                                    <img src="images/statistics/avatar_male.svg" />
+                                </div>
+                                <p class="consultant-list-r-title">Nさん <br class="sp-only" />(30代 男性 マルチメディア×ウェブマーケティング)</p>
+                            </div>
+                            <p class="consultant-list-r-desc sp-mb25">
+                                インターネット系ベンチャー企業にて、Webサイトの企画開発を経験後、大手出版のマルチメディア関連会社にてPC、スマフォ、タブレット、GPSデバイスなどのマルチデバイスのマーケティング業務を担当。また、事業企画、事業立ち上げにマネージャーとして参画。その後、大手コンサル会社の支援として独立行政法人のプロジェクトへ参画し、ネットプロモーションを担当。
+                                ネットマーケティングに精通しているだけでなく、実際の数字をロジカルに分析することが可能。
+                            </p>
+                        </div>
+                    </li>
+                </ul>
+                <a name="anchor2"></a>
+                <div class="showmore-box">
+                    <a class="btn btn-type03 bg-red c-white w-260 mt30 sp-mt0 showmore-head" id="showMore">もっと見る</a>
+                    <div class="showmore-content">
+                        <ul>
+                            <!-- 5th -->
+                            <li class="consultant-list">
+                                <div class="consultant-list-l">
+                                    <img src="images/statistics/avatar_female.svg" />
+                                </div>
+                                <div class="consultant-list-r">
+                                    <div class="consultant-title-container">
+                                        <div class="consultant-list-r-image">
+                                            <img src="images/statistics/avatar_female.svg" />
+                                        </div>
+                                        <p class="consultant-list-r-title">Tさん <br class="sp-only" />(40代 女性 外資系戦略コンサル会社×事業開発支援)</p>
+                                    </div>
+                                    <p class="consultant-list-r-desc">
+                                        エンジニアから外資系コンサルタンティングファーム、事業会社へと経歴を重ね、外資系コンサルタントとしては、戦略コンサルタントとして社内で表彰を受けるなど活躍。その後大手外資系企業のエグゼクティブとして、年10本以上の事業開発案件を成功に導く。
+                                        現在は独立を果たし、大手製薬メーカーの事業開発支援や、事業再生に携わるなど、事業推進、戦略立案が得意。
+                                    </p>
+                                </div>
+                            </li>
+                            <!-- 6th -->
+                            <li class="consultant-list">
+                                <div class="consultant-list-l">
+                                    <img src="images/statistics/avatar_male.svg" />
+                                </div>
+                                <div class="consultant-list-r">
+                                    <div class="consultant-title-container">
+                                        <div class="consultant-list-r-image">
+                                            <img src="images/statistics/avatar_male.svg" />
+                                        </div>
+                                        <p class="consultant-list-r-title">Kさん <br class="sp-only" />(20代 男性 若手戦略コンサル)</p>
+                                    </div>
+                                    <p class="consultant-list-r-desc">
+                                        大手シンクタンクの戦略コンサルティング部門にて、新規事業・新商品開発、マーケティング戦略立案などを実施。2年目の若手にも関らず、顧客対応を一人で行い、アイデアの競争優位性の検討、財務計画・実行計画などを経験。その後、大手小売業の長期市場予測、戦略立案にも携わる。
+                                        新規事業・新商品開発、マーケティング戦略立案、データマイニングを得意とし、英語もビジネスレベルで使用することが可能。
+                                    </p>
+                                </div>
+                            </li>
+                            <!-- 7th -->
+                            <li class="consultant-list">
+                                <div class="consultant-list-l">
+                                    <img src="images/statistics/avatar_male.svg" />
+                                </div>
+                                <div class="consultant-list-r">
+                                    <div class="consultant-title-container">
+                                        <div class="consultant-list-r-image">
+                                            <img src="images/statistics/avatar_male.svg" />
+                                        </div>
+                                        <p class="consultant-list-r-title">Nさん <br class="sp-only" />(20代 男性 ITコンサル)</p>
+                                    </div>
+                                    <p class="consultant-list-r-desc">
+                                        大手マルチメディア企業にて、情報システムの企画、開発、プロジェクトマネジメント、業務分析などを実施後、ERPベンダーに転職。IT導入ではユーザーとベンダーの両方の立場を経験するなど、幅広い分野に精通。その後は、大手ERPサービサーでの導入コンサルの組織立ち上げや、ダイレクトマーケティング会社の起業、外資企業の日本参入支援といったシステム導入に限らず幅広いキャリアを持つ。
+                                        プロジェクト管理やシステムで導入のみならず、新規事業の立ち上げ、事業支援など、様々な業務に対応可能。
+                                    </p>
+                                </div>
+                            </li>
+                            <!-- 8th -->
+                            <li class="consultant-list">
+                                <div class="consultant-list-l">
+                                    <img src="images/statistics/avatar_male.svg" />
+                                </div>
+                                <div class="consultant-list-r">
+                                    <div class="consultant-title-container">
+                                        <div class="consultant-list-r-image">
+                                            <img src="images/statistics/avatar_male.svg" />
+                                        </div>
+                                        <p class="consultant-list-r-title">Wさん <br class="sp-only" />(40代 男性 大手コンサル会社×PMOスペシャリスト)</p>
+                                    </div>
+                                    <p class="consultant-list-r-desc">
+                                        大手システム会社にてPMを務めた後、大手外資系コンサルティング会社へ転職。シニアエグゼクティブとして、旅客輸送業や通信業などの大規模な企業向けに、SAPなどのERP導入プロジェクトのプロジェクトマネージメントを実施。
+                                        <br />
+                                        PM分野を得意とし、メディアや講演活動の実績も多数。
+                                    </p>
+                                </div>
+                            </li>
+                            <!-- 9th -->
+                            <li class="consultant-list">
+                                <div class="consultant-list-l">
+                                    <img src="images/statistics/avatar_male.svg" />
+                                </div>
+                                <div class="consultant-list-r">
+                                    <div class="consultant-title-container">
+                                        <div class="consultant-list-r-image">
+                                            <img src="images/statistics/avatar_male.svg" />
+                                        </div>
+                                        <p class="consultant-list-r-title">Oさん <br class="sp-only" />(30代 男性 大手コンサル会社×グローバルプロジェクトPM)</p>
+                                    </div>
+                                    <p class="consultant-list-r-desc">
+                                        大手外資系コンサルティングファームにて、複数のグローバルプロジェクトに参画。米国大手製造業の世界標準業務導入の実現や、欧州製薬会社のグローバル会計財務、会計業務標準化を経験。
+                                        プロジェクトマネジメント（PMO）を得意とし、SAPのFI、CO、SD、MM、PPの導入、業務定着化、IFRS対応など、様々な業務に精通。さらに英語、中国語（北京語）をビジネスレベルで使用することが可能。
+                                    </p>
+                                </div>
+                            </li>
+                            <!-- 10th -->
+                            <li class="consultant-list">
+                                <div class="consultant-list-l">
+                                    <img src="images/statistics/avatar_male.svg" />
+                                </div>
+                                <div class="consultant-list-r">
+                                    <div class="consultant-title-container">
+                                        <div class="consultant-list-r-image">
+                                            <img src="images/statistics/avatar_male.svg" />
+                                        </div>
+                                        <p class="consultant-list-r-title">Hさん <br class="sp-only" />(20代 男性 公認会計士×大手監査法人財務アドバイザリー)</p>
+                                    </div>
+                                    <p class="consultant-list-r-desc">
+                                        公認会計士の資格を所持。大学卒業後大手監査法人勤務を経て、自らコンサルティング会社を立ち上げ。財務会計コンサルとして、一部上場企業を中心に、デューデデリジェンス、会計処理BPR、内部統制などに参画。
+                                        PMOなども経験しており、ポテンシャルが高く、また20代にもかかわらず、多数の企業の財務コンサルティングを経験。
+                                    </p>
+                                </div>
+                            </li>
+                            <!-- 11th -->
+                            <li class="consultant-list">
+                                <div class="consultant-list-l">
+                                    <img src="images/statistics/avatar_male.svg" />
+                                </div>
+                                <div class="consultant-list-r">
+                                    <div class="consultant-title-container">
+                                        <div class="consultant-list-r-image">
+                                            <img src="images/statistics/avatar_male.svg" />
+                                        </div>
+                                        <p class="consultant-list-r-title">Kさん <br class="sp-only" />(20代 男性 大手コンサル会社×ウェブ事業)</p>
+                                    </div>
+                                    <p class="consultant-list-r-desc">
+                                        大手外資コンサルファームにて、大手小売業向けマーケティング戦略立案を目的としたビジネスケース作成、導入時の効果検証実施。また、大手広告代理店向け新規事業立上のための事業展開シナリオ作成、ビジネスプラン詳細化などを経験。その後ベンチャー企業に転職し、社長直轄のポジションで、事業企画、立ち上げ、推進を事業責任者として担当。
+                                        マーケティング戦略および事業戦略、現場での実行支援が得意。また英語もビジネスレベルで使用することが可能。
+                                    </p>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="flex flex-j-center">
+                          <a class="btn btn-type03 bg-red c-white w-260 mt30 sp-mt0" id="showLess">閉じる</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</main>
+<script>
+    function scrollToAnchor(aid) {
+        var aTag = $("a[name='" + aid + "']");
+        $("html,body").animate({
+            scrollTop: aTag.offset().top - $('header').height()
+        }, 300);
+    }
+    $("#showLess").click(function() {
+        scrollToAnchor('anchor2');
+    });
+</script>

@@ -1,0 +1,7 @@
+<ul class="sidebar">
+  <li class="mt10 mb10"><%= link_to 'CMSトップ', :cms_root %></li>
+  <% if signed_in? :wp_user %>
+    <%= link_to 'Sign OUt', destroy_wp_user_session_path, method: :delete %>
+  <% end %>
+</ul>
+

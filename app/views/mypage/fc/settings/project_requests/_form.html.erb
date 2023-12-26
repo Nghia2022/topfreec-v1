@@ -1,0 +1,78 @@
+          <div class="modal-txt">
+            <div class="form-content form-modal">
+              <%= render 'error_messages', resource: form %>
+              <div class="form-group">
+                <div class="form-head">
+                  <span class="form-ttl">参画可能予定日</span>
+                  <span class="label label-required">必須</span>
+                </div>
+                <div class="form-row">
+                  <label class="label-input form-half">
+                    <%= f.text_field :start_timing, class: 'datepicker', placeholder: '選択してください',
+                      autocomplete: :off,
+                      data: {
+                        behavior: 'datepicker',
+                        datepicker: {
+                          navTitles: {
+                            days: '<strong>yyyy</strong> <i>MMMM</i>',
+                            months: '月を選択'
+                          },
+                          dateFormat: 'yyyy-MM-dd'
+                        }
+                      }
+                    %>
+                  </label>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="form-head">
+                  <span class="form-ttl">報酬金額</span>
+                </div>
+                <div class="form-row">
+                  <label><span class="form-sub-ttl">検討可能額</span></label>
+                  <label class="label-input form-min">
+                    <%= f.text_field :reward_min %>
+                  </label>
+                  <label>万円以上</label>
+                </div>
+                <div class="form-row">
+                  <label><span class="form-sub-ttl">希望額　　</span></label>
+                  <label class="label-input form-min">
+                    <%= f.text_field :reward_desired %>
+                  </label>
+                  <label>万円</label>
+                </div>
+                <div class="form-notice">
+                  ※週5日間勤務(稼働率100%)とした場合の月間報酬額をご入力ください。<br>※ご入力いただいた金額は、ご紹介する案件選定の参考にさせていただきます。<br>※報酬金額について詳しくは<a href="https://contact.freeconsultant.jp/hc/ja/articles/4470517674767" target="_blank" rel="noopener noreferrer">こちら</a>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="form-head">
+                  <span class="form-ttl">希望稼働日数(稼働率)</span> <span class="label label-required">必須</span>
+                </div>
+                <div class="form-row wrap">
+                  <input type="hidden" name="desired_condition[occupancy_rate]" value="">
+                  <%= f.collection_radio_buttons :occupancy_rate, DesiredCondition.occupancy_rate_options, :last, :first do |r| %>
+                  <label class="label-radio">
+                    <%= r.radio_button %><span><%= r.text %></span>
+                  </label>
+                  <% end %>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="form-head">
+                  <span class="form-ttl">その他希望事項（1200文字以内）</span>
+                </div>
+                <div class="form-row">
+                  <label class="label-input form-full">
+                    <%= f.text_area :requests, prompt: true %>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer s-flex-center">
+            <%= f.submit '保存する', class: 'btn btn-theme-02 bs-normal' %>
+          </div>
+        </div>
+      </form>

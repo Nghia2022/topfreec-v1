@@ -1,0 +1,27 @@
+<% selected_work_category_sub = form.object.new_record? ? nil : form.object.work_category_sub %>
+<% work_categories = form.object.new_record? ? WorkCategory.pluck(:sub_category).flatten : WorkCategory.find_by(main_category: form.object.work_category_main).sub_category %>
+
+<%= form.select field.method_name, work_categories, { selected: selected_work_category_sub, include_blank: true }, { class: 'form-control' } %>
+
+<script>
+  let work_categories = <%== WorkCategory.all.to_json %>
+
+  $('[name="project_category_metum[work_category_main]"]').change(function() {
+    let selected_work_category_main = $(this).val();
+    let work_category = work_categories.find((work_category) => work_category.experiencemaincatergory__c == selected_work_category_main)
+    let work_categorie_sub_field = $('#project_category_metum_work_category_sub');
+    work_categorie_sub_field.children().remove();
+    work_categorie_sub_field.append(build_select_options(work_category.experiencesubcatergory__c));
+  })
+
+  function build_select_options(sub_categories) {
+    let arr = ['<option></option>']
+    sub_categories.forEach(sub_category => {
+      arr.push($('<option></option>')
+        .attr('value', sub_category)
+        .text(sub_category)
+      )
+    })
+    return arr;
+  }
+</script>

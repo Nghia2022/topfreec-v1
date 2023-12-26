@@ -1,0 +1,16 @@
+ja:
+  activemodel:
+    models:
+      fc/edit_experience/experience_form: 稼働実績
+    attributes:
+      fc/edit_experience/experience_form:
+        name: 案件名
+        joined: 期間（開始）
+        left: 期間（終了）
+        description: 職務内容
+        members_num: 規模
+        role: 役割
+    errors:
+      models:
+        fc/edit_experience/experience_form:
+          start_end_date: "は%{start}以降で入力してください"

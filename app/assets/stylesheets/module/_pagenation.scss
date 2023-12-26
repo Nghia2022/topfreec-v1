@@ -1,0 +1,80 @@
+/* ========================================================
+pagenation.css - ページネーション関連スタイル
+======================================================== */
+/* pagenation - ページネーションパーツ設定
+-------------------------------------------------------- */
+.pagination-box{
+	position: relative;
+	box-sizing: border-box;
+  margin-bottom: 1em;
+	@include mq(){
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1em;
+	}
+}
+.page-count-box{
+  display: flex;
+  align-items: center;
+	@include mq(sp){
+		flex-wrap: wrap;
+		justify-content: center;
+		margin-bottom: 1em;
+	}
+	@include mq(){
+		margin-top: 1em;
+	}
+}
+.page-count{
+  padding: 0 .4em;
+	@include mq(){
+	  font-size: .9em;
+	}
+}
+.page-number{
+	@include m-font1;
+	@include m-font-bold;
+	color: $color01;
+  font-size: 1.5em;
+	@include mq(){
+	  font-size: 1.8em;
+	}
+}
+.pagination{
+	@include m-font1;
+	@include m-font-bold;
+	display: flex;
+	justify-content: center;
+	@include mq(sp){
+		margin-top: 1em;
+	}
+}
+.nav-link{
+	box-sizing: border-box;
+	display: flex;
+	text-align: center;
+	span,
+	a {
+		@include m-font-bold;
+		background: $white;
+		color: $black033;
+		display: block;
+		font-size: 1.2em;
+ 		margin: 0 .2em;
+		padding: .4em;
+		text-decoration: none;
+		transition: .4s background;
+  	&:not(.dot):hover,
+    &.current{
+      color: $color01;
+    }
+	}
+	.next,
+	.prev{
+		background: transparent;
+		color: $color01;
+		font-size: .9em;
+		padding: .75em .6em;
+	}
+}

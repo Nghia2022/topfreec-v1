@@ -1,0 +1,70 @@
+<%= testid('project/card') %>
+      <div class="js-fadein">
+        <div class="list-panel">
+          <h2 class="list-panel-ttl">
+            <% if new? %>
+            <span class="label label-new">NEW</span>
+            <% end %>
+            <span class="txt"><%= project_name %></span>
+            <%#
+            <input type="checkbox" name="" value="" class="list-check label-id">
+            <label class="label-for"></label>
+            %>
+          </h2>
+          <div class="list-dl">
+            <dl>
+              <dt>月間単価</dt>
+              <dd>
+                <div><%== compensations_for_abstract %> / 月<br class="s-sp"><span class="s-fs-12">（100%稼働時での計算）</span></div>
+                </dd>
+            </dl>
+            <dl class="half">
+              <dt><span>勤務地・<br class="s-sp">勤務形態</span></dt>
+              <dd>
+                <%= work_location %>
+              </dd>
+            </dl>
+            <dl class="half">
+              <dt><span>契約形態</span></dt>
+              <dd>
+                <%= contract_type %>
+              </dd>
+            </dl>
+            <dl class="half">
+              <dt><span>稼働率</span></dt>
+              <dd>
+                <%= operating_rates %>
+                <%= operating_rate_note %>
+              </dd>
+            </dl>
+            <% if participation_period? %>
+            <dl class="half">
+              <dt><span>参画開始日</span></dt>
+              <dd>
+                <div><%= participation_period_date %></div>
+                <div><%= participation_period_duration %></div>
+              </dd>
+            </dl>
+            <% end %>
+            <dl>
+              <dt><span>業務内容</span></dt>
+              <dd>
+                <%= description %>
+              </dd>
+            </dl>
+            <% if experience_categories.present? %>
+              <ul class="list-tag">
+                <% experience_categories.each do |experience_category| %>
+                  <li><%= experience_category %></li>
+                <% end %>
+              </ul>
+            <% end %>
+          </div>
+          <div class="s-flex-center s-mt-20 s-mb-20">
+            <a href="<%= project_path(model, request.query_parameters) %>" class="btn btn-theme-02 bs-long">
+              案件詳細を見る
+            </a>
+            <%= entry_button_for_index %>
+          </div>
+        </div>
+      </div>

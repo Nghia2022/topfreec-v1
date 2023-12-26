@@ -1,0 +1,11 @@
+.registration-flow-container {
+  border: 5px solid #232348;
+
+  .registration-flow-item {
+    width: 25%;
+
+    &:not(:last-child) {
+      border-right: 5px solid #232348;
+    }
+  }
+}

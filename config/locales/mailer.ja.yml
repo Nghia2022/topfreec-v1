@@ -1,0 +1,7 @@
+ja:
+  mailer:
+    entry:
+      completed:
+        subject: 案件応募受付完了
+      declined:
+        subject: 【みらいワークス】案件応募辞退手続完了のご連絡

@@ -1,0 +1,87 @@
+version: '4'
+
+compose:
+  files: docker-compose.yml
+
+interaction:
+  bash:
+    description: Open bash shell in app container
+    service: app
+    command: /bin/bash
+    compose:
+      method: exec
+
+  bash.worker:
+    description: Open bash shell in app container
+    service: worker
+    command: /bin/bash
+    compose:
+      method: exec
+
+  bundle:
+    description: Run bundle command
+    service: app
+    command: bundle
+    compose:
+      method: exec
+
+  rails:
+    description: Run rails command
+    service: app
+    command: ./bin/rails
+    compose:
+      method: exec
+
+  rspec:
+    description: Run rspec command
+    service: app
+    command: bin/rspec
+    compose:
+      method: exec
+
+  rubocop:
+    description: Run rubocop command
+    service: app
+    command: ./bin/rubocop
+    compose:
+      method: exec
+
+  reek:
+    description: Run reek command
+    service: app
+    command: bundle exec reek
+    compose:
+      method: exec
+
+  yarn:
+    description: Run yarn command
+    service: assets
+    command: yarn
+    compose:
+      method: exec
+
+  restart:
+    description: Restart server
+    service: app
+    command: touch tmp/restart.txt
+    compose_method: exec
+
+  lint:
+    description: Run all linters
+    service: app
+    compose_method: exec
+    command: |
+      bash -c "echo '≫ rubocop -a' &&
+      bundle exec rubocop -a &&
+      echo '
+      ≫ reek' &&
+      git diff --name-only --diff-filter=d origin/master | xargs bundle exec reek &&
+      echo '
+      ♥ All linters are green!!'"
+
+  mkcert:
+    compose_run_options: [no-deps, entrypoint=""]
+    command: bash -c "cd certs && make"
+
+provision:
+  - dip compose build

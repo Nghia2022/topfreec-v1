@@ -1,0 +1,74 @@
+ja:
+  enumerize:
+    desired_condition:
+      company_sizes:
+        major: 大手
+        sme: 中小
+        venture: ベンチャー
+        startup: スタートアップ
+      work_area:
+        kanto: "関東（一都三県）"
+        kita_kanto: "関東（一都三県以外）"
+        kinki: "近畿"
+        domestic: "その他（国内）"
+        overseas: "その他（海外）"
+      work_location:
+        hokkaido: 北海道・東北
+        kita_kanto: 北関東
+        tokyo_23wards: 東京都23区内
+        tokyo_others: 東京都23区外
+        capital_area: 首都圏（東京都以外）
+        chubu: 中部
+        kinki: 近畿
+        chugoku: 中国
+        shikoku: 四国
+        kyushu: 九州・沖縄
+        japan: 日本全国
+        overseas: 海外
+  activemodel:
+    attributes:
+      fc/edit_profile/desired_condition_form:
+        start_timing: 参画可能予定日
+        experienced_works: 得意領域
+        desired_works: 興味がある（今後経験したい）領域
+        company_sizes: 企業規模
+        work_location1: 第一希望
+        work_location2: 第二希望
+        work_location3: 第三希望
+        reward_min: 報酬金額
+        occupancy_rate: 希望稼働率
+        business_form: 可能な業務形態
+        no_participate_company_names: 参画（稼働）不可の企業名
+        requests: その他希望事項
+      fc/settings/desired_condition_form:
+        experienced_works: 得意領域
+        desired_works: 興味がある（今後経験したい）領域
+        company_sizes: 企業規模
+        work_location1: 第一希望
+        work_location2: 第二希望
+        work_location3: 第三希望
+        business_form: 可能な業務形態
+      fc/settings/project_request_form:
+        start_timing: 参画可能予定日
+        reward_min: 検討可能額
+        reward_desired: 希望額
+        occupancy_rate: 希望稼働率
+        requests: その他希望事項
+      fc/settings/experienced_work_category_form:
+        experienced_works_main: 大分類
+        experienced_works_sub: 中分類
+      fc/settings/desired_work_category_form:
+        desired_works_main: 大分類
+        desired_works_sub: 中分類
+    errors:
+      models: 
+        fc/settings/experienced_work_category_form:
+          format: "%{message}"
+          attributes:
+            experienced_works_sub:
+              too_long: "選択できる領域数は%{count}件を上限としております。"
+        fc/settings/desired_work_category_form:
+          format: "%{message}"
+          attributes:
+            desired_works_sub:
+              too_long: "選択できる領域数は%{count}件を上限としております。"

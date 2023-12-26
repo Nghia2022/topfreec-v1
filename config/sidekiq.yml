@@ -1,0 +1,49 @@
+---
+:verbose: false
+:concurrency: 5
+:timeout: 25
+
+:queues:
+  - default
+  - mailers
+
+:scheduler:
+  :schedule:
+    direction_auto_approve:
+      class: DirectionAutoApproveJob
+      # 毎日12時
+      cron: ['0 0 12 * * * Asia/Tokyo']
+
+    direction_status_check:
+      class: DirectionStatusCheckJob
+      every: '5m'
+
+    matching_status_check:
+      class: MatchingStatusCheckJob
+      every: '5m'
+
+    salesforce_api_record_api_limit:
+      class: Salesforce::RecordApiLimitJob
+      every: '1h'
+
+    aggregate_daily_page_views:
+      class: AggregatePageViewsJob
+      args: daily
+      # 毎日0時
+      cron: ['0 0 0 * * * Asia/Tokyo']
+
+    aggregate_weekly_page_views:
+      class: AggregatePageViewsJob
+      args: weekly
+      # 毎週月曜日の0時
+      cron: ['0 0 0 * * mon Asia/Tokyo']
+
+    aggregate_monthly_page_views:
+      class: AggregatePageViewsJob
+      args: monthly
+      # 毎月1日の0時
+      cron: ['0 0 0 1 * * Asia/Tokyo']
+
+    aggregate_monthly_page_views:
+      class: Salesforce::Picklists::ReloadJob
+      every: '2h'

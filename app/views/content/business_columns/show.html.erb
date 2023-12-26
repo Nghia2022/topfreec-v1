@@ -1,0 +1,16 @@
+<main>
+  <div class="g-width">
+    <%= render_breadcrumbs builder: Breadcrumbs::CustomBuilder %>
+    <div class="flex mt50 sp-mt27">
+      <div class="blog-content-details">
+        <%= cell(Content::BusinessColumnCell, column).call(:detail) %>
+        <%= cell(Content::ProjectsCell, recruiting_projects).call(:show) %>
+      </div>
+      <div class="blog-sidebar sp-mt0">
+        <%= cell(Content::BusinessColumnsCell, latest_contents).call(:latest_column) %>
+      </div>
+    </div>
+  </div>
+</main>
+
+<% content_for(:extra_css) { Settings.assets.wordpress_extra_css } %>

@@ -1,0 +1,16 @@
+    <section>
+      <div class="sec sec-full sec-pb-large">
+        <div class="pagination-box">
+          <div class="page-count-box">
+            <span class="page-count">全</span>
+            <span class="page-number"><%= total_count %></span><span class="page-count">件</span>
+          </div>
+        </div>
+        <%= yield %>
+        <nav class="navigation pagination">
+          <div class="nav-link">
+            <%= paginate model, theme: :default %>
+          </div>
+        </nav>
+      </div>
+    </section>

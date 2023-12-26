@@ -1,0 +1,12 @@
+    <nav class="header-slide-inner">
+      <ul class="global-nav">
+        <li>
+          <a href="<%= mypage_root_path %>">
+            <span class="main-ttl">マイページ</span>
+            <span class="sub-ttl">MY PAGE</span>
+          </a>
+        </li>
+        <%= cell(Header::ProjectsCell).call(:show_sp) %>
+        <%= menu_fc %>
+      </ul>
+    </nav>

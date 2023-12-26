@@ -1,0 +1,5 @@
+        <div class="sec-sub-ttl">最新のプロ人材<br>インタビュー記事</div>
+          <ul class="tile-list column3 sidebar">
+            <%= cell(Content::WorkstyleCell, collection: model.decorate).call(:latest_workstyle) %>
+          </ul>
+        </div>

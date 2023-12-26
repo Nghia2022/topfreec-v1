@@ -1,0 +1,23 @@
+<%= testid('header/show') %>
+  <!-- ===============  header ============== -->
+  <header class="header-theme js-fadein">
+    <div class="header-info">
+      <div class="header-flex">
+        <div class="header-logo">
+          <div class="site-logo">
+            <a href="<%= root_path %>"><span>フリーコンサルタント登録数日本最大級 Free Consultant.jp</span></a>
+          </div>
+          <div class="company-logo-header">
+            <a href="<%= mirai_works_url %>" target="_blank" rel="noopener noreferrer"><span>MIRAI WORKS</span></a>
+          </div>
+        </div>
+
+      </div>
+      <%= cell(Mypage::Fc::Profiles::HeaderCell, model).call(:show) %>
+    </div>
+  </header>
+  <!-- ./header -->
+  <!-- slide-menu -->
+  <div class="header-slide jsSlideMenuOpen s-sp">
+    <%= cell(Mypage::Fc::Profiles::HeaderCell, model).call(:show_sp) %>
+  </div>

@@ -1,0 +1,90 @@
+    <section>
+      <div class="sec sec-full sec-p-medium">
+        <div class="dashboard-block">
+          <a href="<%= mypage_fc_settings_path(anchor: 'requirement') %>" class="dashboard-block-item">
+            <dl>
+              <dt>
+                情報更新日
+                <span class="s-sp jsNolink" tooltip="「案件紹介リクエスト」の
+最終更新日が表示されます。
+弊社からの案件紹介時に
+参考にさせていただく情報
+ですので、適切なご紹介の
+ため都度更新いただくことを
+推奨いたします。" flow="up">
+                <i class="feather icon-help-circle"></i>
+                </span>
+                <span class="s-pc jsNolink" tooltip="「案件紹介リクエスト」の最終更新日が表示されます。
+弊社からの案件紹介時に参考にさせていただく情報ですので、
+適切なご紹介のため都度更新いただくことを推奨いたします。" flow="up">
+                <i class="feather icon-help-circle"></i>
+                </span>
+              </dt>
+              <dd><span class="number"><%= last_profile_updated_at %></span></dd>
+            </dl>
+          </a>
+          <div class="dashboard-block-item">
+            <dl>
+              <dt>
+                Web応募日
+                <span class="s-sp" tooltip="Web上から案件に応募した
+最新日が表示されます。
+※担当からのご紹介案件や
+Web以外からのご応募は
+日にちが更新されない場合が
+ございます。
+予めご了承ください。" flow="left">
+                <i class="feather icon-help-circle"></i>
+                </span>
+                <span  class="s-pc" tooltip="Web上から案件に応募した最新日が表示されます。
+※担当からのご紹介案件やWeb以外からのご応募は
+日にちが更新されない場合がございます。予めご了承ください。" flow="up">
+                <i class="feather icon-help-circle"></i>
+                </span>
+              </dt>
+              <dd><span class="number"><%= last_entry_at %></span></dd>
+            </dl>
+          </div>
+          <%#
+          <div class="dashboard-block-item">
+            <dl>
+              <dt>
+                お気に入り案件
+                <span class="s-sp jsNolink" tooltip="お気に入り案件数が表示されます。
+各案件の☆マークを
+クリックすると自動で
+お気に入り案件に追加
+されます。" flow="left">
+                <i class="feather icon-help-circle"></i>
+                </span>
+                <span class="s-pc jsNolink" tooltip="お気に入り案件数が表示されます。
+各案件の☆マークをクリックすると
+自動でお気に入り案件に追加されます。" flow="up">
+                <i class="feather icon-help-circle"></i>
+                </span>
+              </dt>
+              <dd><span class="number">999</span>件</dd>
+            </dl>
+          </div>
+          %>
+          <a href="<%= mypage_fc_entries_path %>" class="dashboard-block-item">
+            <dl>
+              <dt>
+                応募履歴
+                <span class="s-sp jsNolink" tooltip="応募中の案件数が表示されます。
+ご稼働かお見送りが確定すると、
+数が1件減ります。" flow="up">
+                <i class="feather icon-help-circle"></i>
+                </span>
+                <span class="s-pc jsNolink" tooltip="応募中の案件数が表示されます。
+ご稼働かお見送りが確定すると、
+数が1件減ります。" flow="left">
+                <i class="feather icon-help-circle"></i>
+                </span>
+              </dt>
+              <dd><span class="number"><%= entries_count %></span>件</dd>
+            </dl>
+          </a>
+        </div>
+      </div>
+    </section>

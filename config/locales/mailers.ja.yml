@@ -1,0 +1,52 @@
+---
+ja:
+  mailers:
+    fc_user_mailer:
+      activation_instructions:
+        subject: 【みらいワークス】会員登録手続き完了のご案内と会員情報入力のお願い(FreeConsultant.jp)
+      confirmation_instructions:
+        subject: 【みらいワークス】ご登録メールアドレスの変更のご確認(FreeConsultant.jp)
+      reset_password_instructions:
+        subject: 【みらいワークス】パスワード設定用URLのご送付(FreeConsultant.jp)
+      password_change:
+        subject: 【みらいワークス】パスワード設定完了・登録者限定コミュニティ「みらコミュ」のご案内(FreeConsultant.jp)
+    direction_mailer:
+      notify_confirmation_request_to_client:
+        subject: 【みらいワークス】業務指示内容確認のお願い
+      notify_reconfirmation_request_to_client:
+        subject: 【みらいワークス】業務指示内容確認のお願い（修正版)
+      notify_modification_request_to_client:
+        subject: 【みらいワークス】修正業務指示内容のご確認
+      notify_confirmation_completed_to_client:
+        subject: 【みらいワークス】業務指示内容確認完了案内
+      notify_auto_approved_by_client:
+        subject: 【みらいワークス】業務指示内容確認完了ご通知
+      notify_confirmation_request_to_fc:
+        subject: 【みらいワークス】業務指示内容確認のお願い
+      notify_confirmation_completed_to_fc:
+        subject: 【みらいワークス】業務指示内容確認完了案内
+      notify_modification_request_to_fc:
+        subject: 【みらいワークス】修正業務指示内容のご確認
+      notify_auto_approved_by_fc:
+        subject: 【みらいワークス】業務指示内容確認完了ご通知
+    matching_mailer:
+      notify_candidate_to_fc:
+        subject: 【みらいワークス】FreeConsultant.jpでのご応募ありがとうございました（%{project_id}）
+      notify_fc_declined_entry_to_fc:
+        subject: 【みらいワークス】FreeConsultant.jpでのご応募辞退について（%{project_id}）
+      notify_not_eligible_for_entry_to_fc:
+        subject: 【みらいワークス】FreeConsultant.jpでのご応募内容について（%{project_id}）
+      notify_client_ng_after_resume_submitted_to_fc:
+        subject: 【みらいワークス】FreeConsultant.jpでのご応募内容について（%{project_id}）
+      notify_fc_declining_to_fc:
+        subject: 【みらいワークス】FreeConsultant.jpでのお顔合わせ調整後ご応募辞退について（%{project_id}）
+      notify_fc_declined_after_mtg_to_fc:
+        subject: 【みらいワークス】FreeConsultant.jpでのお顔合わせ調整後ご応募辞退の手続き完了（%{project_id}）
+      notify_lost_candidate_to_fc:
+        subject: 【みらいワークス】FreeConsultant.jpでのご応募案件の募集終了について（%{project_id}）
+      notify_lost_entry_target_to_fc:
+        subject: 【みらいワークス】FreeConsultant.jpでのご応募案件の募集終了について（%{project_id}）
+      notify_lost_entry_completed_to_fc:
+        subject: 【みらいワークス】FreeConsultant.jpでのご応募案件の募集終了について（%{project_id}）
+      notify_lost_resume_submitted_to_fc:
+        subject: 【みらいワークス】FreeConsultant.jpでのご応募案件の募集終了について（%{project_id}）

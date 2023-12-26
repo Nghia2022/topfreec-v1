@@ -1,0 +1,233 @@
+<%= testid('project/detail') %>
+        <div class="content-main">
+          <section>
+            <div class="list-panel">
+              <% if current_user&.fc_company? || model.entry_closed? || entry_stopped? %>
+              <div class="alert danger">
+                <i class="feather icon-alert-triangle"></i>本案件の受付は終了しております。
+              </div>
+              <% end %>
+
+              <h1 class="list-panel-ttl">
+                <% if current_user&.fc_company? || model.entry_closed? || entry_stopped? %>
+                <span class="label label-normal">受付終了</span>
+                <% elsif new? %>
+                <span class="label label-new">NEW</span>
+                <% end %>
+                <span class="txt"><%= project_name %></span>
+              </h1>
+              <div class="list-meta">
+                <span><i class="feather icon-box"></i> 案件No. <%= project_id %></span>
+                <span><i class="feather icon-clock"></i> 公開日: <%= published_at %></span>
+              </div>
+              <div class="list-dl-intro column1-sp">
+                <dl class="half">
+                  <dt><i class="feather icon-database"></i>月間単価</dt>
+                  <dd>
+                    <span class='s-fc-01 s-f-strong'><%= compensations_for_abstract %></span> / 月
+                  </dd>
+                </dl>
+                <dl class="half">
+                  <dt><i class="feather icon-map-pin"></i><span>勤務地・<br class="s-pc">勤務形態</span></dt>
+                  <dd>
+                    <%= work_location %>
+                  </dd>
+                </dl>
+                <dl class="half">
+                  <dt><i class="feather icon-briefcase"></i><span>契約形態</span></dt>
+                  <dd>
+                    <%= contract_type %>
+                  </dd>
+                </dl>
+                <dl class="half">
+                  <dt><i class="feather icon-percent"></i><span>稼働率</span></dt>
+                  <dd>
+                    <%= operating_rates %>
+                    <%= operating_rate_note %>
+                  </dd>
+                </dl>
+                <% if participation_period? %>
+                <dl class="half">
+                  <dt><i class="feather icon-calendar"></i><span>参画開始日</span></dt>
+                  <dd>
+                    <div><%= participation_period_date %></div>
+                    <div><%= participation_period_duration %></div>
+                  </dd>
+                </dl>
+                <% end %>
+              </div>
+              <hr class="double">
+              <div class="list-dl column1-sp">
+                <dl>
+                  <dt><span>参画先企業/<br class="s-pc">クライアント</span></dt>
+                  <dd>
+                    <%= client_category_name %>
+                  </dd>
+                </dl>
+                <dl>
+                  <dt><span>業務領域</span></dt>
+                  <dd>
+                    <%= experience_categories_text %>
+                  </dd>
+                </dl>
+                <dl>
+                  <dt><span>業務内容</span></dt>
+                  <dd>
+                    <%= job_outline %>
+                  </dd>
+                </dl>
+                <dl>
+                  <dt><span>募集の背景</span></dt>
+                  <dd>
+                    <%= background %>
+                  </dd>
+                </dl>
+                <% if work_section.present? %>
+                <dl>
+                  <dt><span>配属部署名（予定）</span></dt>
+                  <dd>
+                    <%= work_section %>
+                  </dd>
+                </dl>
+                <% end %>
+                <% if work_environment.present? %>
+                <dl>
+                  <dt><span>配属部署の体制/特徴</span></dt>
+                  <dd>
+                    <%= work_environment %>
+                  </dd>
+                </dl>
+                <% end %>
+                <dl>
+                  <dt><span>求めるスキル/<br class="s-pc">経験</span></dt>
+                  <dd>
+                    <% if human_resources_sub.present? %>
+                    <div><strong>必須</strong></div>
+                    <% end %>
+                    <div><%= human_resources %></div>
+
+                    <% if human_resources_sub.present? %>
+                    <div class="s-mt-20"><strong>尚可</strong></div>
+                    <div><%= human_resources_sub %></div>
+                    <% end %>
+                  </dd>
+                </dl>
+                <dl>
+                  <dt><span>報酬金額</span></dt>
+                  <dd>
+                    <%= compensations_for_details %><br>※ 報酬金額は100%稼働に換算した金額です。<br><%= compensation_note %>
+                  </dd>
+                </dl>
+              </div>
+              <% if fc_user_signed_in? %>
+              <div class="limited-content is-member">
+                <div class="list-dl column1-sp">
+                  <dl>
+                    <dt><span>プロジェクト・<br class="s-pc">案件概要</span></dt>
+                    <dd>
+                      <%= description %>
+                    </dd>
+                  </dl>
+                  <dl>
+                    <dt><span>勤務形態</span></dt>
+                    <dd>
+                      <%= work_options %>
+                      <br />
+                      <%= place_note %>
+                    </dd>
+                  </dl>
+                  <dl>
+                    <dt><span>案件の関連タグ</span></dt>
+                    <dd>
+                      <ul class="list-tag">
+                        <% experience_categories.each do |item| %>
+                        <li><%= item %></li>
+                        <% end %>
+                      </ul>
+                    </dd>
+                  </dl>
+                </div>
+                <div class="list-caption">
+                  人気案件の為、既に募集が終了している場合がございます。<br>状況により、ご紹介に至らない場合もございます。予めご了承ください。<br>月額単価は100％稼働した場合の報酬額です。稼働率100％以下の月額単価詳細は別途ご登録後にお問合せください。
+                  <% if dispatch_contract? %>
+                    <br>※派遣契約の案件にご参画いただくためには、株式会社みらいワークスとの有期雇用契約の締結が必要です。
+                  <% end %>
+                </div>
+                <div class="list-profile">
+                  <div class="list-profile-img">
+                    <img src="<%= operator_image %>" alt="" class="img" width="90" height="90" loading="lazy">
+                  </div>
+                  <div class="list-profile-img">
+                    <div class="s-fw-b">案件担当者 <span class="s-fc-01"><%= operator_name %></span></div>
+                    <%= operator_comment %>
+                  </div>
+                </div>
+              </div>
+              <% else %>
+              <div class="limited-content is-non-member">
+                <div class="for-non-member">
+                  <div class="sec">
+                    <div class="s-txt-center">
+                      <div class="sec-sub-ttl s-mb-10 s-fc-white">案件詳細を確認したい方</div>
+                      <a href="<%= new_fc_user_registration_path %>" class="btn btn-theme-02 bs-long">
+                        会員登録フォームに進む
+                      </a>
+                    </div>
+                    <div class="s-txt-center">
+                      <div class="sec-sub-ttl s-mt-30 s-mb-10 s-fc-white">もっとサービスを知りたい方</div>
+                      <a href="<%= service_page_path %>" class="btn btn-theme-02-outline bs-long">
+                        サービス内容を確認
+                      </a>
+                    </div>
+                    <div class="s-txt-center">
+                      <div class="sec-sub-ttl s-mt-30 s-mb-10 s-fc-white">すでに会員の方</div>
+                      <a href="<%= new_fc_user_session_path %>" class="btn btn-theme-02-outline bs-long">
+                        ログインして確認
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="list-dl column1-sp">
+                  <dl>
+                    <dt><span>プロジェクト・<br class="s-pc">案件概要</span></dt>
+                    <dd>
+                      <%= description %>
+                    </dd>
+                  </dl>
+                  <dl>
+                    <dt><span>勤務形態</span></dt>
+                    <dd>
+                      <%= work_options %>
+                      <br />
+                      <%= place_note %>
+                    </dd>
+                  </dl>
+                  <dl>
+                    <dt><span>案件の関連タグ</span></dt>
+                    <dd>
+                      <ul class="list-tag">
+                        <% experience_categories.each do |item| %>
+                        <li><%= item %></li>
+                        <% end %>
+                      </ul>
+                    </dd>
+                  </dl>
+                </div>
+                <div class="list-caption">
+                  人気案件の為、既に募集が終了している場合がございます。<br>状況により、ご紹介に至らない場合もございます。予めご了承ください。<br>月額単価は100％稼働した場合の報酬額です。稼働率100％以下の月額単価詳細は別途ご登録後にお問合せください。
+                </div>
+                <div class="list-profile">
+                  <div class="list-profile-img">
+                    <img src="<%= operator_image %>" alt="" class="img" width="90"
+                      height="90" loading="lazy">
+                  </div>
+                  <div class="list-profile-img">
+                    <div class="s-fw-b">案件担当者 <span class="s-fc-01"><%= operator_name %></span></div>
+                    <%= operator_comment %>
+                  </div>
+                </div>
+              </div>
+              <% end %>
+            </div>
+          </section>
+        </div>

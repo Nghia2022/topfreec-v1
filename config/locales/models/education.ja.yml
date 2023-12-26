@@ -1,0 +1,14 @@
+ja:
+  activemodel:
+    models:
+      fc/edit_profile/education_form: 学歴
+    attributes:
+      fc/edit_profile/education_form:
+        school_name: 学校名
+        school_type: 学校タイプ
+        department: 学部・学科
+        degree: 学位
+        degree_name: 学位名
+        major: 専攻
+        joined: 入学年月
+        left: 卒業年月

@@ -1,0 +1,88 @@
+<%= testid('header/show') %>
+  <!-- ===============  header ============== -->
+  <header class="header-theme js-fadein">
+    <div class="header-info">
+      <div class="header-flex">
+        <div class="header-logo">
+          <div class="site-logo">
+            <a href="<%= root_path %>"><span>フリーコンサルタント登録数日本最大級 Free Consultant.jp</span></a>
+          </div>
+          <div class="company-logo-header">
+            <a href="<%= mirai_works_url %>" target="_blank" rel="noopener noreferrer"><span>MIRAI WORKS</span></a>
+          </div>
+        </div>
+
+      </div>
+      <nav class="header-flex">
+        <ul class="global-nav s-pc">
+          <li>
+            <a href="<%= client_case_url %>">
+              <span class="main-ttl">活用事例</span>
+              <span class="sub-ttl"></span>
+            </a>
+          </li>
+          <li>
+            <a href="<%= client_business_column_url %>">
+              <span class="main-ttl">ビジネスコラム</span>
+              <span class="sub-ttl"></span>
+            </a>
+          </li>
+          <li>
+            <a href="<%= client_statistics_url %>">
+              <span class="main-ttl">登録者内訳</span>
+              <span class="sub-ttl"></span>
+            </a>
+          </li>
+          <li>
+            <a href="<%= client_case_url %>">
+              <span class="main-ttl">取引実績</span>
+              <span class="sub-ttl"></span>
+            </a>
+          </li>
+        </ul>
+        <ul class="header-btn-block">
+          <li><a href="<%= new_client_user_session_path %>" class="login"><img src="/assets/images/icon/icon_lock.svg" class="img" alt="ログイン" width="30" height="30" loading="lazy"><span>企業ログイン</span></a></li>
+          <li><a href="<%= contact_business_pro_url %>" class="entry"><img src="/assets/images/icon/icon_user.svg" class="img" alt="お問い合わせ" width="30" height="30" loading="lazy"><span>お問い合わせ</span></a></li>
+        </ul>
+        <div class="s-sp menu-trigger-box jsSlideMenu">
+          <button class="menu-trigger" id="menu02">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <!-- /header -->
+  <!-- slide-menu -->
+  <div class="header-slide jsSlideMenuOpen s-sp">
+    <nav class="header-slide-inner">
+      <ul class="global-nav">
+        <li>
+          <a href="<%= client_case_url %>">
+            <span class="main-ttl">活用事例</span>
+            <span class="sub-ttl"></span>
+          </a>
+        </li>
+        <li>
+          <a href="<%= client_business_column_url %>">
+            <span class="main-ttl">ビジネスコラム</span>
+            <span class="sub-ttl"></span>
+          </a>
+        </li>
+        <li>
+          <a href="<%= client_statistics_url %>">
+            <span class="main-ttl">登録者内訳</span>
+            <span class="sub-ttl"></span>
+          </a>
+        </li>
+        <li>
+          <a href="<%= client_case_url %>">
+            <span class="main-ttl">取引実績</span>
+            <span class="sub-ttl"></span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>

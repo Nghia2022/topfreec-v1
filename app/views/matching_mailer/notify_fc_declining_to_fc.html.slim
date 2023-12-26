@@ -1,0 +1,18 @@
+= render 'header', presenter: presenter
+
+p
+  | ご応募をいただいていた案件の辞退のご依頼を受付いたしました。<br>
+
+p
+  | 今回の辞退のお手続きに際し、<br>
+  | 案件担当より具体的な理由や状況など詳細をお伺いする場合がございます。<br>
+  | ご協力いただけますよう何卒よろしくお願いいたします。<br>
+
+p
+  | なお、ご状況の変化（ご参画プロジェクトが決まった等）がございましたら、<br>
+  | 設定情報ページよりご状況の更新をお願いいたします。<br>
+  | #{link_to mypage_fc_settings_url, mypage_fc_settings_url}<br>
+
+= render 'project', presenter: presenter
+
+= render 'footer', presenter: presenter

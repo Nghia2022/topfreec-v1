@@ -1,0 +1,4 @@
+= form_with model: form, scope: :reload, url: admin_salesforce_picklists_reload_path, method: :put, local: true do |f|
+  .input-field
+    = f.select :sobject_name, form.class.sobject_names, include_blank: 'すべて'
+  = f.submit '更新'

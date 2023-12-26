@@ -1,0 +1,24 @@
+    <div class="sec-theme-03">
+      <div class="sec sec-full">
+        <%= form_with url: projects_path, method: :get, local: true, class: 'form-content top-search-box' do |f| %>
+          <div class="form-row">
+            <label class="label-input">
+              <%= text_field_tag :keyword, params[:keyword], placeholder: '検索キーワードを入力', class: 'f-input keyword i-search' %>
+            </label>
+            <label class="label-select">
+              <%= f.collection_select 'categories[]', Project::ExperienceCategory.all, :value, :value, { include_blank: '業務領域', selected: params[:categories] }, class: 'f-input select', id: 'categories' %>
+            </label>
+            <label class="label-select">
+              <%= f.select 'work_locations[]', DesiredCondition.work_location1.options, { include_blank: '勤務地', selected: params[:prefecture_id] }, class: 'f-input select', id: 'work_locations' %>
+            </label>
+            <label class="label-select">
+              <%= f.collection_select 'compensation_ids[]', Compensation.all, :id, :title, { include_blank: '報酬金額', selected: params[:compensation_ids] }, class: 'f-input select', id: 'compensation_ids' %>
+            </label>
+            <button class="btn btn-theme-02 bs-search">
+              <i class="bicon-search-2"></i>
+              検索する
+            </button>
+          </div>
+        <% end %>
+      </div>
+    </div>

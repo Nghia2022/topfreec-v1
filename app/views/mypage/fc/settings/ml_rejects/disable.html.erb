@@ -1,0 +1,26 @@
+<% content_for(:modal_content) do %>
+  <%= testid('mypage/fc/settings/ml_rejects') %>
+  <%= form_with model: person, url: mypage_fc_settings_ml_reject_path, method: :delete, local: true do |f| %>
+        <div class="modal-panel">
+          <a href="javascript:void(0)" class="modal-close-btn jsModalClose">
+            <i class="feather icon-x"></i>
+          </a>
+          <div class="modal-ttl">
+            メルマガの利用を停止する
+          </div>
+          <div class="modal-txt">
+            <div class="form-content form-modal">
+              <div class="form-txt s-txt-center">
+                メルマガの利用を停止する場合は、下記ボタンをクリックしてください。
+              </div>
+              <div class="form-notice s-txt-center">
+                ※利用開始希望から利用開始処理が完了するまで一定期間のタイムラグが生じる場合がございます。
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer s-flex-center">
+            <%= f.submit '利用停止', class: 'btn btn-theme-02 bs-normal' %>
+          </div>
+        </div>
+  <% end %>
+<% end %>

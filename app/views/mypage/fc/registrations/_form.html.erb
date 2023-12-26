@@ -1,0 +1,397 @@
+        <div class="dashboard-ttl">基本情報入力</div>
+        <div class="form-content s-mb-50">
+          <div class="general-table form-table full-sp">
+            <table>
+              <tr>
+                <th>住所 <span class="label label-required">必須</span></th>
+                <td>
+                  <div class="form-row bottom">
+                    <label class="label-input form-half">
+                      <span class="form-sub-ttl">郵便番号</span>
+                      <%= f.text_field :zipcode, placeholder: '1234567' %>
+                    </label>
+                    <label>
+                      　<a href="https://www.post.japanpost.jp/zipcode/" target="_blank" rel="noopener"
+                        class="txt-link s-fs-12 s-pt-10">郵便番号を調べる<br class="s-sp">(日本郵便)</a>
+                    </label>
+                  </div>
+                  <span class="form-sub-ttl">都道府県</span>
+                  <div class="form-row">
+                    <label class="label-select form-full">
+                      <%= f.collection_select :prefecture, JpPrefecture::Prefecture.all, :name, :name, { prompt: '選択してください' } %>
+                    </label>
+                  </div>
+                  <span class="form-sub-ttl">市区郡</span>
+                  <div class="form-row">
+                    <label class="label-input form-full">
+                      <%= f.text_field :city %>
+                    </label>
+                  </div>
+                  <span class="form-sub-ttl">町名以降のご住所(町村名・番地・建物名)</span>
+                  <div class="form-row">
+                    <label class="label-input form-full">
+                      <%= f.text_field :building %>
+                    </label>
+                  </div>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <div class="dashboard-ttl">
+          希望条件を選択
+          <span tooltip="ご紹介する案件について、
+ご希望条件を入力してください。" flow="up"><i class="feather icon-help-circle"></i>
+          </span>
+        </div>
+        <div class="form-content">
+          <div class="general-table form-table full-sp">
+            <table>
+              <tr>
+                <th>
+                  参画可能予定日
+                  <span class="s-sp" tooltip="案件に参画したい日にち
+を入力してください。
+即日でお探しの場合は
+当日の日にちを入力
+してください。" flow="up">
+                    <i class="feather icon-help-circle"></i>
+                  </span>
+                  <span class="s-pc" tooltip="案件に参画したい日にちを
+入力してください。即日でお探しの場合は
+当日の日にちを入力してください。" flow="up">
+                    <i class="feather icon-help-circle"></i>
+                  </span>
+                  <span class="label label-required">必須</span>
+                </th>
+                <td>
+                  <div class="form-row">
+                    <label class="label-input form-full">
+                      <%= f.text_field :start_timing, readonly: true, placeholder: '選択してください',
+                        data: {
+                          behavior: 'datepicker',
+                          datepicker: { 
+                            navTitles: {
+                              days: '<strong>yyyy</strong> <i>MMMM</i>',
+                              months: '月を選択'
+                            },
+                            dateFormat: 'yyyy-MM-dd'
+                          }
+                        } %>
+                    </label>
+                  </div>
+                </td>
+              </tr>
+              <%# TODO: #3353 分岐をなくして1つにする %>
+              <% if Flipper.enabled? :new_work_category %>
+              <%= testid('mypage/fc/registrations/show#new_work_category') %>
+              <tr>
+                <th>
+                  得意領域
+                  <span class="s-sp" tooltip="得意とされている
+業務領域を
+ご入力ください。" flow="up">
+                    <i class="feather icon-help-circle"></i>
+                  </span>
+                  <span class="s-pc" tooltip="得意とされている
+業務領域をご入力ください。" flow="up">
+                    <i class="feather icon-help-circle"></i>
+                  </span>
+                  <div class="s-mt-10 s-fs-12 s-lh-14">
+                    ※選択できる領域数は100件を上限としております。
+                  </div>
+                </th>
+                <td>
+                  <%= f.feedback(:experienced_works_sub) %>
+                  <%= cell(Mypage::Fc::WorkCategoryFormCell, nil, selected_main_categories: form.experienced_works_main).call(:show) do |work_category| %>
+                    <% f.collection_check_boxes :experienced_works_sub, work_category.sub_category, :itself, :itself do |c| %>
+                      <label class="label-check">
+                        <%= c.check_box %><span><%= c.text %></span>
+                      </label>
+                    <% end %>
+                  <% end %>
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  希望領域
+                  <span class="s-sp" tooltip="これからチャレンジ
+してみたい業務領域
+をご入力ください。" flow="up">
+                    <i class="feather icon-help-circle"></i>
+                  </span>
+                  <span class="s-pc" tooltip="これからチャレンジしてみたい
+業務領域をご入力ください。" flow="up">
+                    <i class="feather icon-help-circle"></i>
+                  </span>
+                  <div class="s-mt-10 s-fs-12 s-lh-14">
+                    ※選択できる領域数は100件を上限としております。
+                  </div>
+                </th>
+                <td>
+                  <%= f.feedback(:desired_works_sub) %>
+                  <%= cell(Mypage::Fc::WorkCategoryFormCell, nil, selected_main_categories: form.desired_works_main).call(:show) do |work_category| %>
+                    <% f.collection_check_boxes :desired_works_sub, work_category.sub_category, :itself, :itself do |c| %>
+                      <label class="label-check">
+                        <%= c.check_box %><span><%= c.text %></span>
+                      </label>
+                    <% end %>
+                  <% end %>
+                </td>
+              </tr>
+              <% else %>
+              <tr>
+                <th>
+                  得意領域
+                  <span class="s-sp" tooltip="得意とされている
+業務領域を
+ご入力ください。" flow="up">
+                    <i class="feather icon-help-circle"></i>
+                  </span>
+                  <span class="s-pc" tooltip="得意とされている
+業務領域をご入力ください。" flow="up">
+                    <i class="feather icon-help-circle"></i>
+                  </span>
+                  <div class="s-mt-10 s-fs-12 s-lh-14">
+                    ※複数選択可
+                  </div>
+                </th>
+                <td>
+                  <div class="form-row wrap monospace">
+                    <%= f.collection_check_boxes :experienced_works, DesiredCondition.experienced_works_options, :first, :first, include_hidden: false do |c| %>
+                    <label class="label-check">
+                      <%= c.check_box %><span><%= c.text %></span>
+                    </label>
+                    <% end %>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  興味がある（今後経験<br class="s-pc">したい）領域
+                  <span class="s-sp" tooltip="これからチャレンジ
+してみたい業務領域
+をご入力ください。" flow="up">
+                    <i class="feather icon-help-circle"></i>
+                  </span>
+                  <span class="s-pc" tooltip="これからチャレンジしてみたい
+業務領域をご入力ください。" flow="up">
+                    <i class="feather icon-help-circle"></i>
+                  </span>
+                  <div class="s-mt-10 s-fs-12 s-lh-14">
+                    ※複数選択可
+                  </div>
+                </th>
+                <td>
+                  <div class="form-row wrap monospace">
+                    <%= f.collection_check_boxes :desired_works, DesiredCondition.desired_works_options, :first, :first, include_hidden: false do |c| %>
+                    <label class="label-check">
+                      <%= c.check_box %><span><%= c.text %></span>
+                    </label>
+                    <% end %>
+                  </div>
+                </td>
+              </tr>
+              <% end %>
+              <tr>
+                <th>
+                  企業規模
+                  <span class="s-sp" tooltip="業務従事先の企業規模
+についてのご希望を
+ご入力ください。" flow="up">
+                    <i class="feather icon-help-circle"></i>
+                  </span>
+                  <span class="s-pc" tooltip="業務従事先の企業規模についての
+ご希望をご入力ください。" flow="up">
+                    <i class="feather icon-help-circle"></i>
+                  </span>
+                  <div class="s-mt-10 s-fs-12 s-lh-14">
+                    ※複数選択可
+                  </div>
+                </th>
+                <td>
+                  <div class="form-row wrap">
+                    <%= f.collection_check_boxes :company_sizes, DesiredCondition.company_sizes_options, :first, :first, include_hidden: false do |c| %>
+                    <label class="label-check">
+                      <%= c.check_box %><span><%= c.text %></span>
+                    </label>
+                    <% end %>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  希望稼働エリア
+                  <span class="s-sp" tooltip="ご希望の稼働エリアを
+ご入力ください。
+フルリモート以外の案件ご紹介の
+参考にさせていただきます。" flow="up">
+                    <i class="feather icon-help-circle"></i>
+                  </span>
+                  <span class="s-pc" tooltip="ご希望の稼働エリアをご入力ください。
+フルリモート以外の案件ご紹介の
+参考にさせていただきます。" flow="up">
+                    <i class="feather icon-help-circle"></i>
+                  </span>
+                </th>
+                <td>
+                  <div class="form-row wrap">
+                    <label class="label-select form-long">
+                      <span class="form-sub-ttl">第一希望 <span class="label label-required">必須</span></span>
+                      <%= f.select :work_location1, DesiredCondition.work_location_options, { placeholder: true, include_blank: '選択してください' } %>
+                    </label>
+                    <label class="label-select form-long">
+                      <span class="form-sub-ttl">第二希望</span>
+                      <%= f.select :work_location2, DesiredCondition.work_location_options, { placeholder: true, include_blank: '選択してください' }, data: { dependent: 'fc_user_work_location1' } %>
+                    </label>
+                    <label class="label-select form-long">
+                      <span class="form-sub-ttl">第三希望</span>
+                      <%= f.select :work_location3, DesiredCondition.work_location_options, { placeholder: true, include_blank: '選択してください' }, data: { dependent: 'fc_user_work_location2' } %>
+                    </label>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  報酬金額
+                  <span class="s-sp" tooltip="案件の月間報酬額
+について、ご検討可能
+な最低額とご希望額を
+入力してください。
+週5日(稼働率100%)
+とした際の額をご入力
+いただくとスムーズ
+です。" flow="up">
+                    <i class="feather icon-help-circle"></i>
+                  </span>
+                  <span class="s-pc" tooltip="案件の月間報酬額について、
+ご検討可能な最低額とご希望額を入力
+してください。週5日(稼働率100%)とした
+際の額をご入力いただくとスムーズです。" flow="up">
+                    <i class="feather icon-help-circle"></i>
+                  </span>
+                </th>
+                <td>
+                  <div class="form-row">
+                    <label><span class="form-sub-ttl">検討可能額
+                        <span class="s-sp" tooltip="週5日(稼働率100%)とした
+際の、検討可能な最低月間
+報酬額を入力してください。" flow="up">
+                          <i class="feather icon-help-circle"></i>
+                        </span>
+                        <span class="s-pc" tooltip="週5日(稼働率100%)とした際の、
+検討可能な最低月間報酬額を入力
+してください。" flow="up">
+                          <i class="feather icon-help-circle"></i>
+                        </span>
+                      </span></label>
+                    <label class="label-input form-min">
+                      <%= f.text_field :reward_min %>
+                    </label>
+                    <label>万円以上</label>
+                  </div>
+                  <div class="form-row">
+                    <label><span class="form-sub-ttl">希望額
+                        <span class="s-sp" tooltip="週5日(稼働率100%)とした
+際の、ご希望の月間報酬額
+を入力してください。" flow="up">
+                          <i class="feather icon-help-circle"></i>
+                        </span>
+                        <span class="s-pc" tooltip="週5日(稼働率100%)とした際の、
+ご希望の月間報酬額を入力してください。" flow="up">
+                          <i class="feather icon-help-circle"></i>
+                        </span>
+                      </span></label>
+                    <label class="label-input form-min">
+                      <%= f.text_field :reward_desired %>
+                    </label>
+                    <label>万円</label>
+                  </div>
+                  <div class="form-notice">
+                    ※週5日間勤務(稼働率100%)とした場合の月間報酬額をご入力ください。<br>※ご入力いただいた金額は、ご紹介する案件選定の参考にさせていただきます。<br>※報酬金額について詳しくは<a
+                      href="https://contact.freeconsultant.jp/hc/ja/articles/4470517674767" target="_blank"
+                      rel="noopener noreferrer">こちら</a>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  希望稼働日数(稼働率)
+                  <span class="s-sp" tooltip="週5日間勤務を稼働率100%
+とした際のご希望の稼働日数
+を入力してください。
+詳しいご希望があれば設定情報
+ページ「その他希望事項」で
+補足いただくことが可能です。" flow="up">
+                    <i class="feather icon-help-circle"></i>
+                  </span>
+                  <span class="s-pc" tooltip="週5日間勤務を稼働率100%とした際の
+ご希望の稼働日数を入力してください。
+詳しいご希望があれば設定情報ページ「その他希望事項」
+で補足いただくことが可能です。" flow="up">
+                    <i class="feather icon-help-circle"></i>
+                  </span>
+                  <span class="label label-required">必須</span>
+                </th>
+                <td>
+                  <div class="form-row wrap">
+                    <%= f.collection_radio_buttons :occupancy_rate, DesiredCondition.occupancy_rate_options, :last, :first do |r| %>
+                    <label class="label-radio">
+                      <%= r.radio_button %><span><%= r.text %>(<%= r.value %>%)</span>
+                    </label>
+                    <% end %>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  可能な就業形態
+                  <span tooltip="ご希望の働き方をご入力ください。
+（リモート可否や出張可否など。)" flow="up"><i class="feather icon-help-circle"></i></span>
+                  <div class="s-mt-10 s-fs-12 s-lh-14">
+                    ※複数選択可
+                  </div>
+                </th>
+                <td>
+                  <div class="form-row wrap">
+                    <%= f.collection_check_boxes :business_form, DesiredCondition.business_form_options, :first, :first, include_hidden: false do |c| %>
+                    <label class="label-check">
+                      <%= c.check_box %><span><%= c.text %></span>
+                    </label>
+                    <% end %>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  その他希望事項
+                  <span class="s-sp" tooltip="詳しいご希望事項や
+働き方等をご記入ください。
+記載例1：
+1日4時間週4日ほど
+稼働可能です。
+記載例2：
+3月までは稼働率30％程度
+ですが、4月から100％に
+なります。" flow="up">
+                    <i class="feather icon-help-circle"></i>
+                  </span>
+                  <span class="s-pc" tooltip="詳しいご希望事項や働き方等をご記入ください。
+記載例1：1日4時間 週4日ほど稼働可能です。
+記載例2：3月までは稼働率30％程度ですが、
+4月から100％になります。" flow="up">
+                    <i class="feather icon-help-circle"></i>
+                  </span>
+                  <br>（1200文字以内）
+                </th>
+                <td>
+                  <div class="form-row">
+                    <label class="label-input form-full">
+                      <%= f.text_area :requests, prompt: true %>
+                    </label>
+                  </div>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>

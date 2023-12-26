@@ -1,0 +1,343 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+create_table "_hcmeta", id: :serial, force: :cascade do |t|
+  t.text "details"
+  t.integer "hcver"
+  t.string "org_id", limit: 50
+end
+
+create_table "_sf_event_log", id: :serial, force: :cascade do |t|
+  t.string "action", limit: 7
+  t.boolean "processed"
+  t.text "record"
+  t.datetime "sf_timestamp"
+  t.string "sfid", limit: 20
+  t.index ["sfid"], name: "idx__sf_event_log_sfid"
+  t.datetime "synced_at", default: -> { "now()" }
+  t.string "table_name", limit: 128
+  t.index ["table_name", "synced_at"], name: "idx__sf_event_log_comp_key"
+end
+
+create_table "_trigger_log", id: :serial, force: :cascade do |t|
+  t.string "action", limit: 7
+  t.datetime "created_at", default: -> { "now()" }
+  t.index ["created_at"], name: "_trigger_log_idx_created_at"
+  t.text "old"
+  t.datetime "processed_at"
+  t.bigint "processed_tx"
+  t.integer "record_id"
+  t.text "sf_message"
+  t.integer "sf_result"
+  t.string "sfid", limit: 18
+  t.string "state", limit: 8
+  t.index ["state", "id"], name: "_trigger_log_idx_state_id"
+  t.index ["state", "table_name"], name: "_trigger_log_idx_state_table_name", where: "(((state)::text = 'NEW'::text) OR ((state)::text = 'PENDING'::text))"
+  t.string "table_name", limit: 128
+  t.bigint "txid"
+  t.datetime "updated_at", default: -> { "now()" }
+  t.text "values"
+end
+
+create_table "_trigger_log_archive", id: :integer, default: nil, force: :cascade do |t|
+  t.string "action", limit: 7
+  t.datetime "created_at"
+  t.index ["created_at"], name: "_trigger_log_archive_idx_created_at"
+  t.text "old"
+  t.datetime "processed_at"
+  t.bigint "processed_tx"
+  t.integer "record_id"
+  t.index ["record_id"], name: "_trigger_log_archive_idx_record_id"
+  t.text "sf_message"
+  t.integer "sf_result"
+  t.string "sfid", limit: 18
+  t.string "state", limit: 8
+  t.index ["state", "table_name"], name: "_trigger_log_archive_idx_state_table_name", where: "((state)::text = 'FAILED'::text)"
+  t.string "table_name", limit: 128
+  t.bigint "txid"
+  t.datetime "updated_at"
+  t.text "values"
+end
+
+create_table "account", id: :serial, force: :cascade do |t|
+  t.text "_hc_err"
+  t.string "_hc_lastop", limit: 32
+  t.string "client_category__c", limit: 255
+  t.string "clientcompanyname__c", limit: 1300
+  t.string "clientname__c", limit: 1300
+  t.string "consulmasterid__c", limit: 255
+  t.datetime "createddate"
+  t.datetime "fcweb_newentrydatetime__c"
+  t.boolean "fcweb_release__c"
+  t.boolean "isdeleted"
+  t.boolean "ispersonaccount"
+  t.index ["ispersonaccount"], name: "hc_idx_account_ispersonaccount"
+  t.float "kado_ritsu__c"
+  t.date "kakunin_bi__c"
+  t.float "kibo_hosyu__c"
+  t.text "ng_company__c"
+  t.string "personcontactid", limit: 18
+  t.index ["personcontactid"], name: "hc_idx_account_personcontactid"
+  t.string "personemail", limit: 80
+  t.string "recordtypeid", limit: 18
+  t.index ["recordtypeid"], name: "hc_idx_account_recordtypeid"
+  t.text "refusecompany__c"
+  t.date "release_yotei__c"
+  t.string "release_yotei_kakudo__c", limit: 255
+  t.float "saitei_hosyu__c"
+  t.string "sfid", limit: 18, collation: "ucs_basic"
+  t.index ["sfid"], name: "hcu_idx_account_sfid", unique: true
+  t.datetime "systemmodstamp"
+  t.index ["systemmodstamp"], name: "hc_idx_account_systemmodstamp"
+  t.datetime "web_fcweb_available__c"
+end
+
+create_table "contact", id: :serial, force: :cascade do |t|
+  t.text "_hc_err"
+  t.string "_hc_lastop", limit: 32
+  t.string "accountid", limit: 18
+  t.index ["accountid"], name: "hc_idx_contact_accountid"
+  t.datetime "commmune_firstlogindatetime__c"
+  t.datetime "commmune_lastlogindatetime__c"
+  t.datetime "createddate"
+  t.string "desired_works__c", limit: 4099
+  t.string "desired_works_main__c", limit: 4099
+  t.string "desired_works_sub__c", limit: 4099
+  t.string "email", limit: 80
+  t.boolean "existsinheroku__c"
+  t.string "experienced_company_size__c", limit: 4099
+  t.string "experienced_works__c", limit: 4099
+  t.string "experienced_works_main__c", limit: 4099
+  t.string "experienced_works_sub__c", limit: 4099
+  t.string "fcweb_kibou_memo__c", limit: 1200
+  t.datetime "fcweb_logindatetime__c"
+  t.boolean "isdeleted"
+  t.string "license__c", limit: 500
+  t.boolean "ml_reject__c"
+  t.string "recordtypename__c", limit: 1300
+  t.string "sfid", limit: 18, collation: "ucs_basic"
+  t.index ["sfid"], name: "hcu_idx_contact_sfid", unique: true
+  t.datetime "systemmodstamp"
+  t.index ["systemmodstamp"], name: "hc_idx_contact_systemmodstamp"
+  t.string "web_loginemail__c", limit: 80
+  t.index ["web_loginemail__c"], name: "hc_idx_contact_web_loginemail__c"
+  t.string "work_options__c", limit: 4099
+  t.string "work_prefecture1__c", limit: 255
+  t.string "work_prefecture2__c", limit: 255
+  t.string "work_prefecture3__c", limit: 255
+end
+
+create_table "direction__c", id: :serial, force: :cascade do |t|
+  t.text "_hc_err"
+  t.string "_hc_lastop", limit: 32
+  t.datetime "approveddatebycl__c"
+  t.datetime "approveddatebyfc__c"
+  t.string "approverofcl__c", limit: 255
+  t.string "approveroffc__c", limit: 255
+  t.float "autoapprinterval_cl__c"
+  t.float "autoapprinterval_fc__c"
+  t.datetime "autoapproveddatetime_cl__c"
+  t.datetime "autoapproveddatetime_fc__c"
+  t.date "autoapprschedule_cl__c"
+  t.date "autoapprschedule_fc__c"
+  t.text "changedhistories__c"
+  t.text "commentfromfc__c"
+  t.datetime "createddate"
+  t.text "directiondetail__c"
+  t.string "directionmonth__c", limit: 255
+  t.date "directionmonthdate__c"
+  t.string "fc__c", limit: 18
+  t.datetime "firstcheckdatebycl__c"
+  t.datetime "firstcheckdatebyfc__c"
+  t.boolean "isapprovedbycl__c"
+  t.boolean "isapprovedbyfc__c"
+  t.boolean "isdeleted"
+  t.boolean "ismailqueue__c"
+  t.string "name", limit: 80
+  t.text "newdirectiondetail__c"
+  t.string "opportunity__c", limit: 18
+  t.datetime "requestdatetime__c"
+  t.string "sfid", limit: 18, collation: "ucs_basic"
+  t.index ["sfid"], name: "hcu_idx_direction__c_sfid", unique: true
+  t.string "status__c", limit: 255
+  t.datetime "systemmodstamp"
+  t.index ["systemmodstamp"], name: "hc_idx_direction__c_systemmodstamp"
+end
+
+create_table "experience__c", id: :serial, force: :cascade do |t|
+  t.text "_hc_err"
+  t.string "_hc_lastop", limit: 32
+  t.boolean "activeflag__c"
+  t.datetime "createddate"
+  t.string "detail_mws__c", limit: 5000
+  t.string "details_self__c", limit: 5000
+  t.date "end_date__c"
+  t.boolean "isdeleted"
+  t.float "member_amount__c"
+  t.string "name", limit: 80
+  t.boolean "openflag__c"
+  t.string "opportunity__c", limit: 18
+  t.string "organization__c", limit: 255
+  t.string "position__c", limit: 255
+  t.string "recordtypeid", limit: 18
+  t.string "sfid", limit: 18, collation: "ucs_basic"
+  t.index ["sfid"], name: "hcu_idx_experience__c_sfid", unique: true
+  t.date "start_date__c"
+  t.datetime "systemmodstamp"
+  t.index ["systemmodstamp"], name: "hc_idx_experience__c_systemmodstamp"
+  t.string "who__c", limit: 18
+end
+
+create_table "experiencesubcatergory__c", id: :serial, force: :cascade do |t|
+  t.text "_hc_err"
+  t.string "_hc_lastop", limit: 32
+  t.datetime "createddate"
+  t.string "experiencemaincatergory__c", limit: 255
+  t.string "experiencesubcatergory__c", limit: 4099
+  t.boolean "isdeleted"
+  t.string "name", limit: 80
+  t.string "sfid", limit: 18, collation: "ucs_basic"
+  t.index ["sfid"], name: "hcu_idx_experiencesubcatergory__c_sfid", unique: true
+  t.datetime "systemmodstamp"
+  t.index ["systemmodstamp"], name: "hc_idx_experiencesubcatergory__c_systemmodstamp"
+end
+
+create_table "matching__c", id: :serial, force: :cascade do |t|
+  t.text "_hc_err"
+  t.string "_hc_lastop", limit: 32
+  t.date "client_mtg_date__c"
+  t.string "createdbyid", limit: 18
+  t.datetime "createddate"
+  t.date "datelog_clfcmtg__c"
+  t.date "datelog_entryoffer__c"
+  t.date "datelog_resumeapply__c"
+  t.string "fc__c", limit: 18
+  t.index ["fc__c"], name: "hc_idx_matching__c_fc__c"
+  t.boolean "isactivewebentry__c"
+  t.index ["isactivewebentry__c"], name: "hc_idx_matching__c_isactivewebentry__c"
+  t.boolean "isdeleted"
+  t.boolean "isstopstatuschangemail__c"
+  t.string "komento__c", limit: 255
+  t.string "matching_status__c", limit: 255
+  t.string "matchingkeyid__c", limit: 15
+  t.index ["matchingkeyid__c"], name: "hcu_idx_matching__c_matchingkeyid__c", unique: true
+  t.string "name", limit: 80
+  t.string "ng_reoson_text__c", limit: 255
+  t.string "opportunity__c", limit: 18
+  t.index ["opportunity__c"], name: "hc_idx_matching__c_opportunity__c"
+  t.string "recordtypeid", limit: 18
+  t.index ["recordtypeid"], name: "hc_idx_matching__c_recordtypeid"
+  t.date "referfromentrydate__c"
+  t.string "referfrommatching__c", limit: 18
+  t.string "referfrommatchingstatus__c", limit: 128
+  t.string "referfrommodifier__c", limit: 18
+  t.date "referfromrejumesentdate__c"
+  t.string "referfromroot__c", limit: 128
+  t.string "refertomatching__c", limit: 18
+  t.index ["refertomatching__c"], name: "hc_idx_matching__c_refertomatching__c"
+  t.string "refertomatching__r__matchingkeyid__c", limit: 15
+  t.string "root__c", limit: 255
+  t.string "sfid", limit: 18, collation: "ucs_basic"
+  t.index ["sfid"], name: "hcu_idx_matching__c_sfid", unique: true
+  t.datetime "systemmodstamp"
+  t.index ["systemmodstamp"], name: "hc_idx_matching__c_systemmodstamp"
+end
+
+create_table "opportunity", id: :serial, force: :cascade do |t|
+  t.text "_hc_err"
+  t.string "_hc_lastop", limit: 32
+  t.string "accountid", limit: 18
+  t.index ["accountid"], name: "hc_idx_opportunity_accountid"
+  t.string "ankenid2__c", limit: 255
+  t.index ["ankenid2__c"], name: "hcu_idx_opportunity_ankenid2__c", unique: true
+  t.string "cl_gyomusekinin_main_c__c", limit: 18
+  t.string "cl_gyomusekinin_sub_c__c", limit: 18
+  t.datetime "createddate"
+  t.string "experiencecatergory__c", limit: 4099
+  t.index ["experiencecatergory__c"], name: "hc_idx_opportunity_experiencecatergory__c"
+  t.string "experiencesubcatergory__c", limit: 4099
+  t.index ["experiencesubcatergory__c"], name: "hc_idx_opportunity_experiencesubcatergory__c"
+  t.string "fc__c", limit: 18
+  t.string "fc_gyomusekinin_main_new__c", limit: 18
+  t.string "fc_gyomusekinin_sub_new__c", limit: 18
+  t.string "fcweb_pic__c", limit: 255
+  t.string "gyomu_tytle__c", limit: 255
+  t.boolean "isclosedwebreception__c"
+  t.index ["isclosedwebreception__c"], name: "hc_idx_opportunity_isclosedwebreception__c"
+  t.boolean "isdeleted"
+  t.boolean "jobposting_isactive__c"
+  t.boolean "jobposting_joblocationtype__c"
+  t.date "kaishiyoteibi_input__c"
+  t.datetime "lastmodifieddate"
+  t.index ["lastmodifieddate"], name: "hc_idx_opportunity_lastmodifieddate"
+  t.string "mws_gyomusekinin_main_c__c", limit: 18
+  t.string "mws_gyomusekinin_sub_c__c", limit: 18
+  t.string "name", limit: 120
+  t.string "owner__user_name__c", limit: 255
+  t.string "ownerid", limit: 18
+  t.index ["ownerid"], name: "hc_idx_opportunity_ownerid"
+  t.string "recordtypeid", limit: 18
+  t.float "reward__c"
+  t.string "sfid", limit: 18, collation: "ucs_basic"
+  t.index ["sfid"], name: "hcu_idx_opportunity_sfid", unique: true
+  t.string "shouryuu__c", limit: 255
+  t.datetime "systemmodstamp"
+  t.index ["systemmodstamp"], name: "hc_idx_opportunity_systemmodstamp"
+  t.string "type", limit: 255
+  t.string "web_background__c", limit: 500
+  t.string "web_clientname__c", limit: 255
+  t.string "web_comment__c", limit: 500
+  t.datetime "web_expiredatetime__c"
+  t.string "web_human_resource_main__c", limit: 500
+  t.string "web_human_resource_sub__c", limit: 500
+  t.string "web_joboutline__c", limit: 500
+  t.string "web_kado_max__c", limit: 255
+  t.string "web_kado_min__c", limit: 255
+  t.string "web_kado_note__c", limit: 128
+  t.boolean "web_openflag__c"
+  t.index ["web_openflag__c"], name: "hc_idx_opportunity_web_openflag__c"
+  t.boolean "web_owner_pictureflag__c"
+  t.string "web_period__c", limit: 128
+  t.date "web_period_from__c"
+  t.date "web_period_to__c"
+  t.string "web_photo__c", limit: 255
+  t.string "web_picture__c", limit: 1300
+  t.string "web_place_note__c", limit: 128
+  t.string "web_projectname__c", limit: 255
+  t.string "web_projectoutline__c", limit: 2000
+  t.datetime "web_publishdatetime__c"
+  t.float "web_reward_max__c"
+  t.float "web_reward_min__c"
+  t.index ["web_reward_min__c"], name: "hc_idx_opportunity_web_reward_min__c"
+  t.string "web_reward_note__c", limit: 128
+  t.float "web_schema_basesalary_max__c"
+  t.float "web_schema_basesalary_min__c"
+  t.string "web_schema_description__c", limit: 1500
+  t.string "web_schema_emptype__c", limit: 255
+  t.string "web_schema_region__c", limit: 255
+  t.string "web_schema_title__c", limit: 255
+  t.string "web_schemaquantitativeunittext__c", limit: 255
+  t.string "web_status__c", limit: 255
+  t.string "web_workenvironment__c", limit: 255
+  t.string "web_worksection__c", limit: 255
+  t.string "work_options__c", limit: 4099
+  t.string "work_prefectures__c", limit: 4099
+end
+
+create_table "work_history__c", id: :serial, force: :cascade do |t|
+  t.text "_hc_err"
+  t.string "_hc_lastop", limit: 32
+  t.string "company_name__c", limit: 255
+  t.datetime "createddate"
+  t.date "end_date__c"
+  t.boolean "isdeleted"
+  t.string "name", limit: 80
+  t.string "person__c", limit: 18
+  t.string "position__c", limit: 255
+  t.string "sfid", limit: 18, collation: "ucs_basic"
+  t.index ["sfid"], name: "hcu_idx_work_history__c_sfid", unique: true
+  t.date "start_date__c"
+  t.index ["start_date__c"], name: "hc_idx_work_history__c_start_date__c"
+  t.string "status__c", limit: 255
+  t.datetime "systemmodstamp"
+  t.index ["systemmodstamp"], name: "hc_idx_work_history__c_systemmodstamp"
+end

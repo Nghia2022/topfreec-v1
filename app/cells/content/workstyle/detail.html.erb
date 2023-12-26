@@ -1,0 +1,84 @@
+          <article>
+            <div class="article-content">
+              <div class="list-panel">
+                <div class="article-ttl">
+                  <h1><%= post_title %></h1>
+                </div>
+                <div class="list-meta">
+                  <span><i class="feather icon-clock"></i>作成日：<%= workstyle_date %></span><br class="s-sp">
+                  <span><i class="feather icon-rotate-cw"></i>更新日：<%= workstyle_modified %></span>
+                </div>
+
+                <section class="dynamic-article-content">
+                  <div class="mt0">
+                    <p class="blog-body"><%= excerpt %><br>
+                    </p>
+                  </div>
+                  <div class="mt60 w-100per">
+                    <div class="content-box-gray">
+                      <div class="content-prof-wrapper">
+                        <img src="<%= consultant_image %>" class="prof-circle">
+                        <div class="sp-only sp-prof-info">
+                          <p class="fs-14">
+                            <span class="c-red"><%= consultant_name %></span> <label class="fs-12 noto-l c-gray">（<%= consultant_kana %>）</label>
+                            <label class="fs-12 noto-l c-gray"><%= consultant_meta %></label>
+                          </p>
+                        </div>
+                      </div>
+                      <div class="content-text-wrapper sp-mt15">
+                        <p class="content-text bold-text">今回のインタビューにご協力いただいたプロフェッショナル人材・コンサルタント</p>
+                        <p class="content-text">
+                          <span style="font-weight: 400;"><%= consultant_description %></span>
+                        </p>
+                        <div class="mt15 pc-only">
+                          <p class="fs-14">
+                            <span class="c-red"><%= consultant_name %></span> <label class="fs-12 noto-l c-gray">（<%= consultant_kana %>）</label>
+                            <label class="fs-12 noto-l c-gray"><%= consultant_meta %></label>
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+
+                  <% 1.upto(5).each do |i| %>
+                  <% section(i) do %>
+                  <div class="blog-body mt60 sp-mt40">
+                    <p class="blog-header-body"><%= subtitle(i) %></p>
+                    <img src="<%= paragraph_image(i) %>" class="blog-image mt20">
+                    <div class="mt40 wp-content">
+                      <%= auto_paragraph(paragraph_body(i)) %>
+                    </div>
+                  </div>
+                  <% end %>
+                  <% end %>
+                </section>
+                <hr>
+                <div class="btn-list sec-pt-medium sec-mb-40">
+                  <a href="<%= service_page_path %>" class="btn btn-theme-02 bs-full">
+                    <span>フリーコンサルタント.jpを詳しく知る</span>
+                  </a>
+                  <a href="<%= projects_path %>" class="btn btn-theme-02 bs-full">
+                    <span>高品質のコンサルタント案件を探す</span>
+                  </a>
+                </div>
+                <div class="btn-list btn-list-sns s-mt-20 s-mb-40">
+                  <a href="<%= facebook_share_url %>" class="btn btn-sns-facebook" target="_blank" rel="noopener noreferrer">
+                    <img src="/assets/images/icon/icon_facebook.svg" class="img" alt="" width="60" height="60" loading="lazy">
+                    <span>シェアする</span>
+                  </a>
+                  <a href="<%= twitter_share_url %>" class="btn btn-sns-twitter" target="_blank" rel="noopener noreferrer">
+                    <img src="/assets/images/icon/icon_twitter.svg" class="img" alt="" width="60" height="60" loading="lazy">
+                    <span>ツイートする</span>
+                  </a>
+                  <a href="<%= hatena_share_url %>" class="btn btn-sns-hatebu" target="_blank" rel="noopener noreferrer">
+                    <img src="/assets/images/icon/icon_hatebu2.svg" class="img" alt="" width="60" height="60" loading="lazy">
+                    <span>はてブする</span>
+                  </a>
+                </div>
+                <nav class="nav-link">
+                  <%= cell(Content::ListCell, model).call(:show) %>
+                </nav>
+              </div>
+            </div>
+          </article>

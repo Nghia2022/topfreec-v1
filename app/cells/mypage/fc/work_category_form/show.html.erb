@@ -1,0 +1,20 @@
+<%= testid('mypage/fc/work_category_form/show') %>
+<div class="form-row wrap monospace">
+  <ul>
+    <% work_categories.each do |work_category| %>
+    <li class="jsToggleBox">
+      <%= link_to 'javascript:void(0);', class: 'form-sub-ttl jsToggleBtn' do %>
+        <i class="<%= class_names(
+          'feather',
+          main_category_include?(work_category.main_category) ? 'icon-minus-circle' : 'icon-plus-circle'
+        ) %>"></i><%= work_category.main_category %>
+      <% end %>
+      <div class="<%= class_names('jsToggleContent', 's-d-hidden': !main_category_include?(work_category.main_category)) %>">
+        <div class="form-row wrap monospace">
+          <%= yield work_category %>
+        </div>
+      </div>
+    </li>
+    <% end %>
+  </ul>
+</div>

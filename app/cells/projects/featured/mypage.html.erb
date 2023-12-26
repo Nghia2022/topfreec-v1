@@ -1,0 +1,20 @@
+  <section class="sec-content featured-projects sp-bg-white ">
+    <div class="g-width sp-mb30-border-white">
+      <h2 class="title"><span class="c-red">Featured</span> projects</h2>
+      <div class="flex head-type01 mt10 sp-mt20">
+        <p class="light-black">注目案件</p>
+        <a href="<%= featured_projects_path %>" class="link-type01 pc-link">もっと見る</a>
+      </div>
+      <div class="slick-wrapper mt40">
+        <ul class="slick-type01">
+          <li>
+            <%= render_projects %>
+          </li>
+        </ul>
+      </div>
+      <div class="flex head-type01 mt10 sp-mt20 sp-mb30">
+        <p class="light-black"></p>
+        <a href="<%= featured_projects_path %>" class="link-type01 sp-link">もっと見る</a>
+      </div>
+    </div>
+  </section>

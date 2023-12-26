@@ -1,0 +1,133 @@
+/* ========================================================
+modal.css
+======================================================== */
+/* modal settings
+= sample =
+btn:
+<a href="javascript:void(0)" class="jsModalOpen" data-target="modal01">open modal</a>
+modal:
+<div id="modal01" class="modal jsModal">
+    <div class="modal-bg jsModalClose"></div>
+    <div class="modal-content">
+        content sample content sample content sample
+        <a href="javascript:void(0)" class="jsModalClose">close</a>
+    </div>
+</div>
+-------------------------------------------------------- */
+body{
+  &.modal-active{
+    position: fixed;
+    width:100%;
+  }
+}
+.modal {
+  display: none;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2000;
+}
+.modal-bg {
+  background: rgba(0, 0, 0, .8);
+  height: 100vh;
+  position: absolute;
+  width: 100%;
+}
+.modal-content {
+  @include m-centering;
+  background: transparent;
+  width: 100%;
+  @include mq(sp){
+    top: 0;
+    left: 0;
+    transform: translate(0,0);
+  }
+  iframe {
+    width: 100%;
+    height: 20rem;
+    @include mq() {
+      width: 100%;
+      height: 60rem;
+    }
+  }
+}
+.modal-close-btn {
+  @include m-absolute($top: .5em, $right: .5em);
+  i{
+    color: $black;
+    font-size: 2em;
+  }
+  @include mq(){
+    top: 1em;
+    right: 1em;
+  }
+}
+.modal-panel{
+  @include m-centering;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  background: $white;
+  border-radius: 4px;
+  overflow-y: auto;
+  width: 90vw;
+  height: 65vh;
+  @include mq(sp){
+    display: block;
+    top: 0;
+    left: 0;
+    transform: translate(0,0);
+    justify-content: space-between;
+    border-radius: 0;
+    width: 100vw;
+  }
+  @include mq(laptop_sp){
+  }
+  @include mq(laptop_pc){
+    overflow: hidden;
+    width: 944px;
+    height: 574px!important;
+  }
+}
+.modal-ttl{
+  @include m-font-bold;
+  font-size: 1.2em;
+  line-height: 1.5;
+  text-align: center;
+  @include mq(sp){
+    background: $black246;
+    padding: .5em;
+    text-align: left;
+  }
+  @include mq() {
+    border-bottom: 2px solid $color01;
+    padding: 0.6em 0;
+    font-size: 1.5em;
+  }
+}
+.modal-txt{
+  font-size: 1em;
+  line-height: 1.6;
+  @include mq(sp){
+    height: 85%;
+  }
+  @include mq(){
+    font-size: 1.1em;
+    margin: 1em 0;
+    padding: 1em 0;
+  }
+}
+.modal-footer{
+  border-top: 1px solid $black221;
+  padding: 1em 0;
+  @include mq(sp){
+    position: fixed;
+    bottom: 0;
+    background: $white;
+    height: 10vh;
+    max-height: 7rem;
+    width: 100%;
+  }
+}

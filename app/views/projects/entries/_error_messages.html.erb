@@ -1,0 +1,9 @@
+<% if resource.errors.key? :base %>
+  <div class="card form-errors red lighten-1">
+    <div class="card-content">
+      <div class="card-title mt20 mb20">
+        <%= safe_join(resource.errors.full_messages_for(:base), '<br>') %>
+      </div>
+    </div>
+  </div>
+<% end %>

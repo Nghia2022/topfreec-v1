@@ -1,0 +1,108 @@
+          <%= testid('mypage/fc/settings/desired_condition/new_show') %>
+          <h2 class="dashboard-ttl" id="requirement">
+            <span class="main-ttl">
+              希望条件
+              <span tooltip="ご紹介する案件について、
+ご希望条件を入力してください。" flow="up"><i class="feather icon-help-circle"></i>
+              </span>
+            </span>
+          </h2>
+          <div class="dashboard-panel">
+            <div class="list-dl column1-sp">
+              <dl>
+                <dt>
+                  可能な就業形態
+                  <span tooltip="ご希望の働き方をご入力ください。
+（リモート可否や出張可否など。)" flow="up"><i class="feather icon-help-circle"></i></span>
+                </dt>
+                <dd>
+                  <div><%= business_form %></div>
+                </dd>
+                <div class="list-edit-btn">
+                  <a href="<%= edit_mypage_fc_settings_desired_condition_path %>" class="btn btn-theme-02 bs-small jsModalOpen" data-target="form-requirement">
+                    編集する
+                  </a>
+                </div>
+              </dl>
+            </div>
+            <div class="list-dl column1-sp">
+              <dl>
+                <dt>
+                  得意領域
+                  <span tooltip="得意とされている
+業務領域をご入力ください。" flow="up"><i class="feather icon-help-circle"></i></span>
+                </dt>
+                <dd>
+                  <div><%= experienced_new_works %></div>
+                </dd>
+                <div class="list-edit-btn">
+                  <a href="<%= edit_mypage_fc_settings_experienced_work_category_path %>" class="btn btn-theme-02 bs-small jsModalOpen" data-target="form-requirement">
+                    編集する
+                  </a>
+                </div>
+              </dl>
+            </div>
+            <div class="list-dl column1-sp">
+              <dl>
+                <dt>
+                  希望領域
+                  <span tooltip="これからチャレンジしてみたい
+業務領域をご入力ください。" flow="up"><i class="feather icon-help-circle"></i></span>
+                </dt>
+                <dd>
+                  <div><%= desired_new_works %></div>
+                </dd>
+                <div class="list-edit-btn">
+                  <a href="<%= edit_mypage_fc_settings_desired_work_category_path %>" class="btn btn-theme-02 bs-small jsModalOpen" data-target="form-requirement">
+                    編集する
+                  </a>
+                </div>
+              </dl>
+            </div>
+            <div class="list-dl column1-sp">
+              <dl>
+                <dt>
+                  企業規模
+                  <span tooltip="業務従事先の企業規模についての
+ご希望をご入力ください。" flow="up"><i class="feather icon-help-circle"></i></span>
+                </dt>
+                <dd>
+                  <div><%= company_sizes %></div>
+                </dd>
+                <div class="list-edit-btn">
+                  <a href="<%= edit_mypage_fc_settings_desired_condition_path %>" class="btn btn-theme-02 bs-small jsModalOpen" data-target="form-requirement">
+                    編集する
+                  </a>
+                </div>
+              </dl>
+            </div>
+            <div class="list-dl column1-sp">
+              <dl>
+                <dt>
+                  希望稼働エリア
+                  <span class="s-sp" tooltip="ご希望の稼働エリアを
+ご入力ください。
+フルリモート以外の案件ご紹介の
+参考にさせていただきます。" flow="up">
+                  <i class="feather icon-help-circle"></i>
+                  </span>
+                  <span class="s-pc" tooltip="ご希望の稼働エリアをご入力ください。
+フルリモート以外の案件ご紹介の参考にさせていただきます。" flow="up">
+                  <i class="feather icon-help-circle"></i>
+                  </span>
+                </dt>
+                <dd>
+                  <div>
+                    <p><%= work_location1 %></p>
+                    <p><%= work_location2 %></p>
+                    <p><%= work_location3 %></p>
+                  </div>
+                </dd>
+                <div class="list-edit-btn">
+                  <a href="<%= edit_mypage_fc_settings_desired_condition_path %>" class="btn btn-theme-02 bs-small jsModalOpen" data-target="form-requirement">
+                    編集する
+                  </a>
+                </div>
+              </dl>
+            </div>
+          </div>

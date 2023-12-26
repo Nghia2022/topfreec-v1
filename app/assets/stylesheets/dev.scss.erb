@@ -1,0 +1,68 @@
+<% unless Rails.env.production? %>
+$niy-color: rgba(255, 0, 0, 0.5) !default;
+$niy-border: #f00 !default;
+$devtools-link-color: #5b7e91 !default;
+
+.niy {
+  border: 2px dashed $niy-border;
+  position: relative;
+
+  &::before {
+    color: $niy-color;
+    content: '.niy';
+    font-size: 1.5em;
+    font-weight: bold;
+    position: absolute;
+    bottom: -0.5em;
+    right: 0;
+    z-index: 9999;
+  }
+}
+
+.slim {
+  .breadcrumbs li {
+    display:inline;
+
+    &:not(:last-child) {
+      &::after {
+        content: " > ";
+      }
+    }
+  }
+}
+
+.devtools-collapse {
+  margin-bottom: 1em;
+
+  .hide {
+    display: none;
+  }
+
+  .-title {
+    margin-bottom: .5em;
+    cursor: pointer;
+
+    &::after {
+      content: '▼';
+      padding-left: .5em;
+      font-size: .7em;
+    }
+
+    &.open::after {
+      content: '▲';
+    }
+  }
+
+  .-list {
+    margin-left: .5em;
+  }
+
+  a {
+    color: $devtools-link-color;
+  }
+
+  li {
+    line-height: 1.5em;
+  }
+}
+<% end %>

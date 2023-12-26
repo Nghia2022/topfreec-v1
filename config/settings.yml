@@ -1,0 +1,114 @@
+entry_limit: 7
+routes:
+  mirai_works: 'https://www.mirai-works.co.jp/'
+  mirai_works_policy: 'https://www.mirai-works.co.jp/policy'
+  mirai_works_privacy_entry: 'https://mirai-works.co.jp/privacy-entry/'
+  withdrawal: 'https://freeconsultant.jp/withdrawal'
+  campaign: 'https://cp.freeconsultant.jp/'
+  client: 'https://mirai-works.co.jp/business-pro/'
+  client_business_column: 'https://mirai-works.co.jp/business-pro/business-column/'
+  client_case: 'https://mirai-works.co.jp/business-pro/case/'
+  client_statistics: 'https://mirai-works.co.jp/business-pro/statistics/'
+  company_info: 'https://mirai-works.co.jp/'
+  corporation: 'https://freeconsultant.jp/corp/'
+  corporation_community_instructions_pdf: 'https://freeconsultant.jp/corp/document/community-instructions.pdf'
+  corporation_contact: 'https://freeconsultant.jp/contact'
+  intern: 'https://otona-no-intern.jp/'
+  skill_shift: 'https://www.skill-shift.com/'
+  career: 'https://professional-career.jp/'
+  jirei: 'https://info.mirai-works.co.jp/lpwp/jirei'
+  contact: https://contact.freeconsultant.jp/hc
+  contact_ja: https://contact.freeconsultant.jp/hc/ja
+  contact_ja_request: https://contact.freeconsultant.jp/hc/ja/requests/new
+  contact_corp: https://contact.freeconsultant.jp/hc/ja/
+  contact_business_pro: https://mirai-works.co.jp/business-pro/contact/
+  contact_mypage_usage: 'https://contact.freeconsultant.jp/hc/ja/articles/5693608034063'
+  contact_mypage_guide: 'https://contact.freeconsultant.jp/hc/ja/articles/4404313313551'
+  commmune_signin: 'https://mirai-works.commmune.com/view/signin/'
+  commmune_faq: 'https://mirai-works.commmune.com/view/knowledgebase/1827'
+  commmune_what: 'https://mirai-works.commmune.com/view/knowledgebase/post/7907'
+  help_registration: https://contact.freeconsultant.jp/hc/ja/articles/4404301478031
+  help_registration_email: https://contact.freeconsultant.jp/hc/ja/articles/4406127654927
+  find_careers: https://www.findcareers.jp/
+  career_knock: https://www.mirai-works.co.jp/media-career
+  tenshoku_site: https://mirai-works.co.jp/media-career/column/tenshoku-site/
+  tenshoku_twenty: https://mirai-works.co.jp/media-career/column/tenshoku20/
+  tenshoku_thirty: https://mirai-works.co.jp/media-career/column/tenshoku30/
+  tenshoku_forty: https://mirai-works.co.jp/media-career/column/tenshoku40/
+  tenshoku_fifty: https://mirai-works.co.jp/media-career/column/tenshoku50/
+  tenshoku_women: https://mirai-works.co.jp/media-career/column/tenshoku-women/
+  tenshoku_engineer: https://mirai-works.co.jp/media-career/column/engineer/
+  tenshoku_consul: https://mirai-works.co.jp/media-career/column/consul-tenshoku/
+  tenshoku_doctor: https://mirai-works.co.jp/media-career/column/tenshoku-doctor/
+  tenshoku_nurse: https://mirai-works.co.jp/media-career/column/tenshoku-nurse/
+  tenshoku_ix: 'https://mirai-works.co.jp/media-career/column/ix/'
+  tenshoku_daini: 'https://mirai-works.co.jp/media-career/column/tenshoku-daini/'
+  tenshoku_kotowarikata: 'https://mirai-works.co.jp/media-career/column/kotowarikata/'
+  tenshoku_urajijyo: 'https://mirai-works.co.jp/media-career/column/urajijyo/'
+  tenshoku_agent: https://www.findcareers.jp/tenshoku-agent/
+  tenshoku_agent_recommend: https://mirai-works.co.jp/media-career/column/tenshoku-agent/
+  tenshoku_agent_twenty: https://mirai-works.co.jp/media-career/column/tenshokuagent20/
+  tenshoku_agent_thirty: https://mirai-works.co.jp/media-career/column/tenshokuagent30/
+  tenshoku_agent_women: https://mirai-works.co.jp/media-career/column/tenshokuagent-women/
+  resume_upload: https://freeconsultant.secure.force.com/ResumeUploadPageFCWeb
+  direction_fc_manual: 'https://freeconsultant.jp/corp/document/gyoumusiji_FCmanual.pdf'
+  direction_cl_manual: 'https://freeconsultant.jp/corp/document/gyoumusiji_CLmanual.pdf'
+  glocal_mission: 'https://glocalmissionjobs.jp'
+  glocal_times: 'https://www.glocaltimes.jp'
+  recruit_agent: 'https://mirai-works.co.jp/media-career/column/recruit-agent/'
+  recruit_direct_scout: 'https://mirai-works.co.jp/media-career/column/recruit-direct-scout/'
+  doda_agent: 'https://mirai-works.co.jp/media-career/column/doda-agent/'
+  mynavi_agent: 'https://mirai-works.co.jp/media-career/column/mynavi-agent/'
+  bizreach: 'https://mirai-works.co.jp/media-career/column/bizreach/'
+  pasonacareer: 'https://mirai-works.co.jp/media-career/column/pasonacareer/'
+  jac_recruitment: 'https://mirai-works.co.jp/media-career/column/jac-recruitment/'
+  nomura_ideco: 'https://401k.nomura.co.jp/api/capa0000?contractCd=9'
+  old_nomura_ideco: 'https://401k.nomura.co.jp/dc/auth/main?_ControlID=WebReceptControl&ContractCd=9'
+  tenshoku_agent_towa: https://mirai-works.co.jp/media-career/column/agent-towa/
+  tenshoku_agent_reputation: https://mirai-works.co.jp/media-career/column/agent-reputation/
+  tenshoku_agent_mikeiken: https://mirai-works.co.jp/media-career/column/agent-mikeiken/
+  tenshoku_agent_demerit: https://mirai-works.co.jp/media-career/column/agent-demerit/
+  tenshoku_agent_tokyo: https://mirai-works.co.jp/media-career/column/agent-tokyo/
+  tenshoku_agent_osaka: https://mirai-works.co.jp/media-career/column/agent-osaka/
+  tenshoku_agent_fukuoka: https://mirai-works.co.jp/media-career/column/agent-fukuoka/
+  tenshoku_daini_shinsotsu: https://mirai-works.co.jp/media-career/column/daini-shinsotsu/
+  tenshoku_daini_shinsotsu_oote: https://mirai-works.co.jp/media-career/column/daini-shinsotsu-oote/
+  column_hataractive: https://mirai-works.co.jp/media-career/column/hataractive/
+  column_levtech: https://mirai-works.co.jp/media-career/column/levtech/
+  column_rikunabi_next: https://mirai-works.co.jp/media-career/column/rikunabi-next/
+  column_mynavi: https://mirai-works.co.jp/media-career/column/mynavi/
+  column_en: https://mirai-works.co.jp/media-career/column/en/
+  column_ss_shop: https://mirai-works.co.jp/media-career/column/ss-shop/
+  column_kango_roo: https://mirai-works.co.jp/media-career/column/kango-roo/
+  column_kango_oshigoto: https://mirai-works.co.jp/media-career/column/kango-oshigoto/
+  column_posiwill: https://mirai-works.co.jp/media-career/column/posiwill/
+  column_careerdrive: https://mirai-works.co.jp/media-career/column/careerdrive/
+  column_dym: https://mirai-works.co.jp/media-career/column/dym/
+  column_from40: https://mirai-works.co.jp/media-career/column/from40/
+  column_mynavi_ms: https://mirai-works.co.jp/media-career/column/mynavi-ms/
+  column_25tenshoku: https://mirai-works.co.jp/media-career/column/25tenshoku/
+  column_30tenshoku: https://mirai-works.co.jp/media-career/column/30tenshoku/
+  column_35tenshoku: https://mirai-works.co.jp/media-career/column/35tenshoku/
+  column_40tenshoku: https://mirai-works.co.jp/media-career/column/40tenshoku/
+  column_45tenshoku: https://mirai-works.co.jp/media-career/column/45tenshoku/
+  column_50tenshoku: https://mirai-works.co.jp/media-career/column/50tenshoku/
+  column_55tenshoku: https://mirai-works.co.jp/media-career/column/55tenshoku/
+  column_career_coaching: https://mirai-works.co.jp/media-career/column/career-coaching/
+  column_freelance: https://mirai-works.co.jp/media-career/column/freelance/
+  column_freelance_consultant: https://mirai-works.co.jp/media-career/column/freelance-consultant/
+  column_pmo: https://mirai-works.co.jp/media-career/column/pmo/
+  column_fukugyo: https://mirai-works.co.jp/media-career/column/fukugyo/
+  column_fukugyo_app: https://mirai-works.co.jp/media-career/column/fukugyo-app/
+
+assets:
+  wordpress_extra_css: 'https://file.freeconsultant.jp/common/css/extra.css'
+
+mailer:
+  from: "株式会社みらいワークス <noreply@mirai-works.co.jp>"
+  direction:
+    bcc:
+      - business-officer@mirai-works.co.jp
+      - cons@mirai-works.co.jp
+  matching:
+    cc:
+      - cons@mirai-works.co.jp

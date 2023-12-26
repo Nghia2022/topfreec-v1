@@ -1,0 +1,17 @@
+<ul class="sidebar">
+  <li class="mt10 mb10"><%= link_to '管理画面トップ', :admin_root %></li>
+  <% if admin_signed_in? %>
+  <li class="mt10 mb10"><%= link_to 'アクティベーション', :admin_activations %></li>
+  <li class="mt10 mb10"><%= link_to '案件画像', :admin_projects_experience_categories %></li>
+  <li class="mt10 mb10"><%= link_to '選択リスト', :admin_salesforce_picklists_reload %></li>
+  <li class="mt10 mb10"><%= link_to 'Blazer', :blazer %></li>
+  <li class="mt10 mb10"><%= link_to 'OAuth Applications', :oauth_applications %></li>
+  <% FeatureSwitch.enabled? :admin_advanced, :user_import do %>
+    <li class="mt10 mb10"><%= link_to '旧サイトのユーザーをCSVインポート', :new_admin_import %></li>
+  <% end %>
+  <li class="mt10 mb10"><%= link_to 'ログアウト', :oauth_session, method: :delete %></li>
+  <% else %>
+  <li class="mt10 mb10"><%= link_to 'ログイン', '/auth/salesforce', method: :post %></li>
+  <% end %>
+</ul>
+

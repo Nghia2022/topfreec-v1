@@ -1,0 +1,6 @@
+        <label class="fs-16 noto-m">最新のビジネスコラム記事</label>
+        <div class="widget-body mt10 sp-mt5">
+          <ul class="widget-list">
+            <%= cell(Content::BusinessColumnCell, collection: model.decorate).call(:latest_column) %>
+          </ul>
+        </div>

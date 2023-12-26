@@ -1,0 +1,20 @@
+ja:
+  activerecord:
+    attributes:
+      fc/manage_direction/direction:
+        comment_from_fc: '修正申請の理由'
+      client/manage_direction/direction:
+        new_direction_detail: '修正申請の理由'
+  enumerize:
+    fc/manage_direction/direction:
+      tabs:
+        all: 'すべて'
+        waiting_for_fc: '未回答'
+        completed:          '回答済み'
+        rejected:           '差し戻し'
+    client/manage_direction/direction:
+      tabs:
+        all: 'すべて'
+        waiting_for_client: '未回答'
+        completed:          '回答済み'
+        rejected:           '差し戻し'

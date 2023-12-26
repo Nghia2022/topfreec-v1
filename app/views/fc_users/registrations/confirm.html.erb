@@ -1,0 +1,23 @@
+<%= testid('fc_users/registrations') %>
+  <main class="content">
+    <%= render_breadcrumbs builder: Breadcrumbs::CustomBuilder %>
+    <h1 class="page-ttl">
+      <span class="main-ttl">会員情報確認</span>
+    </h1>
+    <div class="sec sec-full sec-pb-large">
+      <%= form_with model: @fc_user, scope: resource_name, url: registration_path(resource_name), local: true do |f| %>
+      <%= f.hidden_field :confirming %>
+        <%= render 'confirm', f:, fc_user: @fc_user %>
+        <div class="s-txt-center s-mt-30 s-mb-30">
+          入力した内容で間違いなければ<br class="s-sp">「送信」ボタンを押してください。
+        </div>
+        <div class="btn-list s-mb-20">
+          <%= f.button '戻る', name: :back, class: 'btn bs-normal btn-theme-02-outline' %>
+          <%= f.submit '送信', class: 'btn bs-normal btn-theme-02' %>
+        </div>
+      <% end %>
+    </div>
+  </main>
+  <a href="#page-top" class="pagetop jsPageTop">
+    <i class="bicon-chevron-t"></i>
+  </a>

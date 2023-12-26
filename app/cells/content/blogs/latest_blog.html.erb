@@ -1,0 +1,5 @@
+         <div class="sec-sub-ttl">最新の代表ブログ記事</div>
+          <ul class="tile-list column3 sidebar">
+            <%= cell(Content::BlogCell, collection: model.decorate).call(:latest_blog) %>
+          </ul>
+        </div>

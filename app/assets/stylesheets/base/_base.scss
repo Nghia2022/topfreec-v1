@@ -1,0 +1,242 @@
+/* ========================================================
+base.css
+======================================================== */
+/* reset
+-------------------------------------------------------- */
+#{$v-img},
+a,
+abbr,
+acronym,
+address,
+applet,
+article,
+aside,
+audio,
+b,
+big,
+blockquote,
+body,
+canvas,
+caption,
+center,
+cite,
+code,
+dd,
+del,
+details,
+dfn,
+div,
+dl,
+dt,
+em,
+embed,
+fieldset,
+figcaption,
+figure,
+footer,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+header,
+hgroup,
+hr,
+html,
+i,
+iframe,
+ins,
+kbd,
+label,
+legend,
+li,
+mark,
+menu,
+nav,
+object,
+ol,
+output,
+p,
+pre,
+q,
+ruby,
+s,
+samp,
+section,
+small,
+span,
+strike,
+strong,
+sub,
+summary,
+sup,
+table,
+tbody,
+td,
+tfoot,
+th,
+thead,
+time,
+tr,
+tt,
+u,
+ul,
+var,
+video {
+  border: 0;
+  box-sizing: border-box;
+  font-size: inherit;
+  margin: 0;
+  padding: 0;
+}
+ol,
+ul {
+  list-style: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* root
+-------------------------------------------------------- */
+html {
+  font-size: 7.5pt; // 10px
+}
+body {
+  @include m-font();
+  color: $black033;
+  line-height: 1;
+  word-break: break-all;
+  * {
+    box-sizing: border-box;
+  }
+}
+#{$v-img}{
+  pointer-events: none;
+}
+#{$v-img}:not([width]):not([class]){
+  vertical-align: middle;
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+}
+#{$v-img}[src$=".svg"]:not([class]) {
+  width: 100%;
+  height: auto;
+}
+/* sp */
+@include mq(sp) {
+  html {
+    overflow-x: hidden;
+    // SafeArea  settings for iOS11.1
+    padding-top: constant(safe-area-inset-top);
+    padding-bottom: constant(safe-area-inset-bottom);
+    padding-left: constant(safe-area-inset-left);
+    padding-right: constant(safe-area-inset-right);
+    // SafeArea  settings for iOS11.2
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+  }
+  body {
+    font-size: 1.4em;
+    overflow-x: hidden;
+    text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -webkit-overflow-scrolling: touch;
+    min-width: initial;
+   }
+  /* Safari */
+  _::-webkit-full-page-media, _:future, :root body {
+      font-size: 1.5em;
+  }
+}
+/* tab */
+@include mq(tab) {
+  body {
+    font-size: 1.6em;
+  }
+  /* Safari */
+  _::-webkit-full-page-media, _:future, :root body {
+    font-size: 1.65em;
+  }
+}
+/* laptop */
+@include mq(laptop) {
+  body {
+    font-size: 1.6em;
+  }
+}
+/* pc */
+@include mq(desktop) {
+  body {
+    font-size: 1.6em;
+    min-width: 120rem;
+  }
+}
+/* link
+-------------------------------------------------------- */
+a {
+  color: $color02;
+  text-decoration: none;
+  transition: .4s color ease-in-out, .4s background ease-in-out;
+}
+a:not([class]) {
+  color: $color02;
+  text-decoration: underline;
+  transition: .4s color ease-in-out, .4s background ease-in-out;
+}
+a:active,
+a:focus,
+a:hover {
+  text-decoration: none;
+}
+/* loading
+-------------------------------------------------------- */
+.loading-block{
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $black085;
+  top: 0;
+  left: 0;
+  transition: all 1s;
+  z-index: 9999;
+  width: 100vw;
+  height: 100vh;
+  &.onload {
+    display: none;
+  }
+}
+.loader {
+  position: relative;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  animation: rotate 1s linear infinite;
+  &::before {
+    position: absolute;
+    box-sizing: border-box;
+    content: "";
+    border-radius: 50%;
+    border: 5px solid $white;
+    inset: 0;
+    animation: prixClipFix 2s linear infinite;
+  }
+}
+@keyframes rotate {
+  100%   {transform: rotate(360deg)}
+}
+@keyframes prixClipFix {
+    0%   {clip-path:polygon(50% 50%,0 0,0 0,0 0,0 0,0 0)}
+    25%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 0,100% 0,100% 0)}
+    50%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,100% 100%,100% 100%)}
+    75%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,0 100%,0 100%)}
+    100% {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,0 100%,0 0)}
+}

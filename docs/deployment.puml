@@ -1,0 +1,32 @@
+@startuml
+
+title "配置図（本番環境）"
+
+actor Actor
+
+folder AWS {
+	folder VPC {
+		folder Wordpress {
+			database "Wordpress DB" <<RDS>> as WP_RDS
+			storage "Wordpress Files" as WP_Files
+		}
+	}
+
+	Web -- WP_RDS
+}
+
+PrivateSpace -- VPC : <<Peering>>
+
+folder External {
+	cloud Salesforce {
+	}
+
+	cloud SendGrid {
+	}
+}
+
+Actor == Web
+Actor <== WP_Files : 画像
+Actor <== SendGrid : mail
+
+@enduml

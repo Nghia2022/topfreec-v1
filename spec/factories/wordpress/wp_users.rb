@@ -1,0 +1,35 @@
+# frozen_string_literal: true
+
+FactoryBot.define do
+  factory :wp_user, class: 'Wordpress::WpUser' do
+    transient do
+      password { Faker::Internet.password }
+    end
+
+    user_login { Faker::Internet.user_name }
+    user_pass { Phpass.new(10).hash(password) }
+    display_name { Faker::Name.name }
+  end
+end
+
+# == Schema Information
+#
+# Table name: wp_users
+#
+#  ID                  :bigint           unsigned, not null, primary key
+#  display_name        :string(250)      default(""), not null
+#  user_activation_key :string(255)      default(""), not null
+#  user_email          :string(100)      default(""), not null
+#  user_login          :string(60)       default(""), not null
+#  user_nicename       :string(50)       default(""), not null
+#  user_pass           :string(255)      default(""), not null
+#  user_registered     :datetime         default(NULL), not null
+#  user_status         :integer          default(0), not null
+#  user_url            :string(100)      default(""), not null
+#
+# Indexes
+#
+#  user_email      (user_email)
+#  user_login_key  (user_login)
+#  user_nicename   (user_nicename)
+#

@@ -1,0 +1,373 @@
+/* ========================================================
+form.css
+======================================================== */
+/* form
+-------------------------------------------------------- */
+.form-content {
+  * {
+    box-sizing: border-box;
+    -webkit-appearance: none;
+  }
+  input[type="text"],
+  input[type="date"],
+  input[type="tel"],
+  input[type="number"],
+  input[type="password"],
+  input[type="email"],
+  select,
+  textarea {
+    position: relative;
+    @include m-font();
+    background-color: $white;
+    border: 1px solid $black221;
+    border-radius: 3px;
+    font-size: 1.6rem;
+    padding: 0 1rem;
+    width: 100%;
+    height: 4rem;
+    @include mq{
+      height: 5rem;
+    }
+    &::placeholder{
+      color: $black133;
+    }
+    &:disabled{
+      background: $black250;
+      border: 1px solid $black229;
+    }
+  }
+  .label-file {
+    display: inline-block;
+    border: 1px solid $black139;
+    border-radius: 3px;
+    color: $black133;
+    cursor: pointer;
+    margin: 0 1em 0 0;
+    padding: .5em;
+    text-align: center;
+    width: 14rem;
+  }
+  input[type="file"] {
+    position: absolute;
+    // border: 1px solid $black221;
+    // font-size: 1.6rem;
+    // padding: 1rem;
+    opacity: 0;
+    visibility: hidden;
+  }
+  .form-file-txt{
+    @include m-ellipsis();
+    max-width: 50%;
+  }
+  input[type="checkbox"] {
+    position: relative;
+    background: $white;
+    border: 1px solid $black221;
+    border-radius: 4px;
+    margin: 0 .4em 0 0;
+    width: 2.2rem;
+    height: 2.2rem;
+    &:checked {
+      background: url("#{$v-img-path}form/check.svg") no-repeat center center;
+      background-size: 100%;
+    }
+  }
+  input[type="radio"]{
+    position: relative;
+    background: $white;
+    border: 1px solid $black221;
+    border-radius: 50px;
+    margin: 0 .4em 0 0;
+    width: 2.2rem;
+    height: 2.2rem;
+    &:checked {
+      background: url("#{$v-img-path}form/radio.svg") no-repeat center center;
+      background-size: 100%;
+    }
+  }
+  textarea {
+    height: 10em;
+    @include mq() {
+      height: 8em;
+    }
+  }
+  select{
+    background-image: url("#{$v-img-path}form/select_down.svg");
+    background-position: right center;
+    background-repeat: no-repeat;
+    background-size: 1.4rem;
+    @include mq() {
+      background-size: contain;
+    }
+  }
+  .form-item{
+    margin-bottom: 2em;
+    &.hidden{
+      display: none;
+    }
+  }
+}
+.form-group{
+  margin-bottom: 1em;
+}
+
+/* form-parts
+-------------------------------------------------------- */
+.form-row{
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 2em;
+  label{
+    position: relative;
+  }
+  &.wrap{
+    flex-wrap: wrap;
+    label{
+      margin-bottom: 1em;
+    }
+    &.monospace{
+      @include mq(sp){
+        label{
+          width: 100%;
+        }
+      }
+      @include mq(){
+        label{
+          width: 30%;
+        }
+      }
+    }
+
+    &.fullwidth{
+      label{
+        margin-right: 0;
+        width: 100%;
+      }
+      span{
+        width: 90%;
+      }
+    }
+    > .form-row{
+      margin-bottom: 0;
+    }
+  }
+  &.top{
+    align-items: flex-start;
+  }
+  &.bottom{
+    align-items: flex-end;
+    .txt-link{
+      padding: 0;
+    }
+  }
+  label{
+    &:not(:last-of-type){
+      margin-right: 1em;
+    }
+  }
+  &.form-btn-set{
+    label{
+      margin-right: 1em;
+      width: 80%;
+    }
+    .btn{
+      height: 4rem;
+      @include mq{
+        padding: 0.75em 0;
+        height: 5rem;
+      }
+    }
+  }
+}
+.form-head{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 1em;
+}
+.form-ttl{
+  @include m-font-bold;
+  font-size: 1em;
+  line-height: 1.5;
+  margin-right: .5em;
+  @include mq() {
+    font-size: 1.4em;
+  }
+}
+.form-sub-ttl{
+  display: block;
+  @include m-font-bold;
+  font-size: .9em;
+  line-height: 1.5;
+  margin-bottom: .4em;
+  text-align: left;
+  @include mq() {
+    font-size: .9em;
+  }
+}
+.form-txt{
+  color: $black;
+  font-size: .9em;
+  line-height: 1.6;
+  margin-bottom: 1em;
+  @include mq() {
+    font-size: 1em;
+  }
+}
+.form-notice{
+  color: $black;
+  font-size: .7em;
+  line-height: 1.6;
+  margin-bottom: 1em;
+  width: 100%;
+  @include mq() {
+    font-size: .8em;
+  }
+}
+.form-rule{
+  background: $white;
+  border: 1px solid $black238;
+  border-radius: 6px;
+  font-size: .9em;
+  line-height: 1.4;
+  padding: 1.5em;
+  overflow-y: auto;
+  white-space: pre-wrap;
+  height: 15em;
+}
+.form-full{
+  width: 100%;
+}
+.form-large{
+  width: 100%;
+  @include mq() {
+    width: 49.5rem;
+  }
+}
+.form-long{
+  width: 22rem;
+  @include mq() {
+    width: 24rem;
+  }
+}
+.form-half{
+  width: 50%;
+  @include mq() {
+    width: 24rem;
+  }
+}
+.form-third{
+  width: 27vw;
+  @include mq() {
+    width: 24rem;
+  }
+}
+.form-min{
+  width: 14vw;
+  @include mq() {
+    width: 8rem;
+  }
+}
+.label-radio,
+.label-check{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 1.6rem;
+  margin-right: 1em;
+  &.label-center{
+    justify-content: center;
+    span{
+      max-width: 100%;
+    }
+  }
+  span{
+    font-size: 1.4rem;
+    line-height: 1.4;
+    max-width: 88%;
+  }
+}
+.label-select{
+  position: relative;
+}
+/* form-error
+-------------------------------------------------------- */
+.form-error {
+  @include m-font-bold;
+  display: inline-block;
+  background: transparent;
+  color: $color01;
+  margin-top: .2em;
+  font-size: .9em;
+  @include mq(){
+  }
+  i {
+    padding-right: .25em;
+  }
+  span{
+    line-height: 1.2;
+  }
+}
+input[type="checkbox"],
+input[type="radio"]{
+  &.error{
+    outline: solid 2px $color01;
+    outline-offset: 0;
+  }
+}
+input[type="text"],
+input[type="password"],
+textarea,
+select{
+  &.error{
+    border: 2px solid $color01;
+    background-color: $color07;
+  }
+}
+/* form parts formodal
+-------------------------------------------------------- */
+.form-content{
+  &.form-modal{
+    &::-webkit-scrollbar {
+      /* スクロールバー本体 */
+      width: 4px;
+      background: $black242;
+    }
+    &::-webkit-scrollbar-thumb {
+      /* スクロールバーの動く部分 */
+      background: $black192;
+      border-radius: 0;
+    }
+    @include mq(sp){
+      padding: 1em;
+      overflow-y: auto;
+      height: 100%;
+    }
+    @include mq(tab){
+      padding: 0 1em;
+      overflow-y: auto;
+      height: auto;
+      max-height: 40vh;
+    }
+    @include mq(laptop_pc){
+      padding: 0 2em;
+      overflow-y: auto;
+      height: 100%;
+      max-height: 350px;
+    }
+    .form-head{
+      border-bottom: 2px solid $black238;
+      padding-bottom: .4em;
+    }
+    .form-ttl{
+      font-size: 1.1em;
+      min-width: max-content;
+    }
+    .label-file {
+      @include mq(){
+        width: 16rem;
+      }
+    }
+  }
+}

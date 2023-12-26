@@ -1,0 +1,8 @@
+p
+  = t('greeting', scope: @i18n_scope, recipient: @email)
+- if @resource.try(:unconfirmed_email?)
+  p
+    = t('message', scope: @i18n_scope, email: @resource.unconfirmed_email)
+- else
+  p
+    = t('message', scope: @i18n_scope, email: @resource.email)

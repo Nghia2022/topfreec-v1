@@ -1,0 +1,17 @@
+<%= testid('content/workstyles/index')%>
+<%= content_for(:related_content) do %>
+  <%= cell(Content::MenuCell,
+           :workstyle,
+           title:       'INTERVIEW',
+           subtitle:    'プロ人材インタビュー',
+           description: 'フリーランスで活躍する独立コンサルタントやプロフェッショナル人材へのインタビュー。<br>独立コンサルやプロ人材としての働き方や、今まで如何なるライフステージを歩み、<br>これからどのようなビジョンを描いてみらいを切り開いて行かれるのかをインタビュー形式でお届けします。'
+          ).call(:show) %>
+<% end %>
+    <section>
+      <div class="sec sec-full s-pt-10 sec-pb-large">
+        <ul class="tile-list column3">
+          <%= cell(Content::WorkstylesCell, workstyles).call(:show) %>
+        </ul>
+        <%= cell(PaginatorCell, workstyles, html_class_pc: 'mt45', html_class_sp: 'mt40').call(:show) %>
+      </div>
+    </section>

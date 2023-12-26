@@ -1,0 +1,6 @@
+version: '4'
+
+compose:
+  files:
+    - docker-compose.yml
+    - docker-compose.arm64.yml

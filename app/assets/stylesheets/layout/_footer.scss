@@ -1,0 +1,207 @@
+/* ========================================================
+footer.css
+======================================================== */
+.footer-theme {
+  background: $black024;
+  color: $white;
+  .site-logo {
+    span {
+      width: 13.8rem;
+      height: 1.7rem;
+      @include mq() {
+        width: 16.8rem;
+        height: 1.7rem;
+      }
+    }
+  }
+  .site-logo,
+  .company-logo {
+    margin: auto .8em;
+    text-align: center;
+    transition: .4s ease-in-out;
+    span {
+      display: inline-block;
+    }
+    &:hover{
+      opacity: .7;
+    }
+  }
+  hr {
+    border-top: 1px solid $black071;
+    margin: 0 0 1.5em 0;
+    @include mq(sp) {
+      margin: 0 0 .5em 0;
+    }
+  }
+}
+.footer-nav {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  padding: 2em 0 1.5em;
+  @include mq() {
+    padding: 3em 0;
+    justify-content: center;
+  }
+  a {
+    display: block;
+    color: $white;
+    font-size: 1em;
+    padding: 0;
+    text-decoration: none;
+    white-space: nowrap;
+    @include mq() {
+      font-size: .9em;
+    }
+    @include mq(sp){
+      margin: 0 1em 1.5em;
+    }
+    @include mq(tab){
+      margin: 0 1em 1em;
+    }
+    @include mq(laptop){
+      margin: 0 1em 1em;
+    }
+    @include mq(desktop){
+      margin: 0 1.5em;
+    }
+  }
+  &.service{
+    @include mq() {
+      flex-wrap: nowrap;
+      align-items: flex-start;
+      justify-content: flex-start;
+    }
+    .service-ttl{
+      font-size: 1.2em;
+      @include mq(sp){
+        display: block;
+        margin-left: .7em;
+        margin-bottom: 1em;
+        width: 100%;
+      }
+      @include mq() {
+        border-right: 1px solid $black071;
+        padding-right: 1rem;
+        margin-right: 1rem;
+        font-size: 2rem;
+        white-space: nowrap;
+        width: 15.6rem;
+      }
+      @include mq(tab){
+        margin: 0 1rem 1rem;
+      }
+      @include mq(laptop){
+        margin: 0 1rem 1rem;
+      }
+      @include mq(laptop){
+        margin: 0 1rem 1rem;
+      }
+    }
+  }
+}
+.footer-copyright{
+  @include m-font1();
+  background: $white;
+  color: $black;
+  font-size: .7em;
+  padding: 1.2em 1em;
+  text-align: center;
+  @include mq(){
+    .sec{
+      @include m-flex($justify: space-between);
+    }
+  }
+  .copyright-logo{
+    @include m-flex();
+    @include mq(sp){
+     align-items: center;
+     justify-content: center;
+     margin-bottom: 1em;
+    }
+  }
+}
+.pagetop {
+  position: fixed;
+  text-align: right;
+  background: $white;
+  border-radius: 50%;
+  color: $color01;
+  font-family: "#{$icomoon-font-family}";
+  font-size: 1.2rem;
+  margin-bottom: 1em;
+  padding: 1em;
+  opacity: 1;
+  filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.16));
+  z-index: 111;
+  i {
+    font-size: 1em;
+  }
+  @include mq(sp){
+    bottom: 1rem;
+    right: 1rem;
+  }
+  @include mq(){
+    bottom: 2rem;
+    right: 2rem;
+    padding: 1rem;
+  }
+}
+.footer-info{
+  padding: 1em .5em;
+  @include mq() {
+    padding: 1em 0;
+  }
+  a {
+    display: inline-block;
+    color: $black153;
+    font-size: .8em;
+    padding: .5em 0;
+    text-decoration: none;
+    &:hover{
+      text-decoration: underline;
+    }
+  }
+}
+.footer-search{
+  dt{
+    @include m-font-bold;
+    padding: 1.5em 0 .8em;
+    @include mq() {
+      font-size: 1.1em;
+      padding: 2em 0 1em;
+    }
+  }
+}
+.footer-nav-link{
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  @include mq() {
+    justify-content: flex-start;
+    width: 100%;
+  }
+  a {
+    display: inline-block;
+    font-size: .9em;
+    margin: 0 1em;
+    text-decoration: none;
+    @include mq(sp) {
+      margin: 0 1em 1.2em;
+    }
+    @include mq() {
+      font-size: .8em;
+    }
+    @include mq(tab){
+      margin: .4em 1em;
+    }
+    @include mq(laptop){
+      margin: .4em 1em;
+    }
+    @include mq(desktop){
+      margin: .4em 1em;
+    }
+  }
+}

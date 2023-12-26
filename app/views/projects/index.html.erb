@@ -1,0 +1,35 @@
+    <!-- search box -->
+    <div class="sec-theme-03">
+      <%= render 'projects/search_nav', form: search_form %>
+    </div>
+    <div class="sec sec-full sec-pt-medium">
+      <h1 class="sec-ttl js-fadein">
+        <span class="main-ttl"><%= project_category_metum&.category_name %> 案件検索結果</span>
+        <span class="sub-ttl">PROJECT RESULT</span>
+      </h1>
+      <div class="pagination-box">
+        <%= cell(Projects::StatsCell, projects, form: search_form).call(:show) %>
+        <%= cell(Projects::SortButtonCell, projects, search_params:).call(:show) %>
+      </div>
+    </div>
+    <div class="sec sec-full">
+      <%= cell(Projects::ListCell, projects).call(:show) %>
+    </div>
+    <%= cell(PaginatorCell, projects).call(:show) %>
+<% content_for(:project_bottom) do %>
+  <div class="btn-layout-fixed jsFixedBtn">
+    <div class="s-txt-center s-sp">
+      <a href="#searchbox-sp" class="btn btn-theme-04 bs-normal jsSearchTableOpen" onclick="serachBoxViewChange(0);">
+        検索条件を変更する
+      </a>
+      <a href="javascript:void(0)" class="btn btn-theme-04 bs-normal jsSearchTableClose" onclick="serachBoxViewChange(1);">
+        検索画面を閉じる
+      </a>
+    </div>
+    <div class="s-txt-center s-pc">
+      <a href="#searchbox-pc" class="btn btn-theme-04 bs-long">
+        検索条件を変更する
+      </a>
+    </div>
+  </div>
+<% end %>

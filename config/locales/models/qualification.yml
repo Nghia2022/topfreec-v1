@@ -1,0 +1,12 @@
+ja:
+  helpers:
+    label:
+      qualification:
+        description: 保有資格
+    placeholder:
+      qualification:
+        description: '例）情報処理技術者、PMP、簿記2級、TOEICスコア800点…など'
+  activemodel:
+    attributes:
+      fc/edit_profile/qualification_form:
+        license: 保有資格

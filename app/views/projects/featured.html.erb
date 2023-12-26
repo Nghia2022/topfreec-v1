@@ -1,0 +1,10 @@
+    <div class="sec sec-full sec-pt-medium">
+      <h1 class="sec-ttl js-fadein">
+        <span class="main-ttl">注目案件一覧</span>
+        <span class="sub-ttl">FEATURED PROJECTS</span>
+      </h1>
+    </div>
+    <div class="sec sec-full">
+      <%= cell(Projects::ListCell, projects).call(:show) %>
+    </div>
+    <%= cell(PaginatorCell, projects).call(:show) %>

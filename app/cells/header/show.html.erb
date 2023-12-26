@@ -1,0 +1,156 @@
+<%= testid('header/show') %>
+  <!-- ===============  header ============== -->
+  <header class="header-theme js-fadein">
+    <div class="header-info">
+      <div class="header-flex">
+        <div class="header-logo">
+          <div class="site-logo">
+            <a href="<%= root_path %>"><span>フリーコンサルタント登録数日本最大級 Free Consultant.jp</span></a>
+          </div>
+          <div class="company-logo-header">
+            <a href="<%= mirai_works_url %>" target="_blank" rel="noopener noreferrer"><span>MIRAI WORKS</span></a>
+          </div>
+        </div>
+
+      </div>
+      <nav class="header-flex">
+        <ul class="global-nav s-pc">
+          <li>
+            <a href="<%= service_page_path %>">
+              <span class="main-ttl">はじめての方へ</span>
+              <span class="sub-ttl">GUIDE</span>
+            </a>
+          </li>
+          <li>
+            <a href="<%= service_flow_page_path %>">
+              <span class="main-ttl">ご利用の流れ</span>
+              <span class="sub-ttl">FLOW</span>
+            </a>
+          </li>
+          <%= cell(Header::ProjectsCell).call(:show) %>
+          <li class="is-sub jsSubNav">
+            <a href="javascript:void(0)">
+              <span class="main-ttl">お役立ち情報</span>
+              <span class="sub-ttl">INFORMATION</span>
+            </a>
+            <div class="global-nav-sub jsSubNavOpen">
+              <ul>
+                <li><a href="<%= support_page_path %>">プロ人材サポート</a></li>
+                <li><a href="<%= content_columns_path %>">プロ人材向けコラム</a></li>
+                <li><a href="<%= content_workstyles_path %>">プロ人材インタビュー</a></li>
+                <li><a href="<%= content_blogs_path %>">代表ブログ</a></li>
+                <li><a href="<%= content_topics_path %>">ニュース</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="no-line">
+            <a href="<%= contact_ja_url %>" target="_blank" rel="noopener noreferrer">
+              <span class="main-ttl">よくある質問</span>
+              <span class="sub-ttl">FAQ</span>
+            </a>
+          </li>
+          <li class="is-pro no-line">
+            <a href="<%= client_url %>" target="_blank" rel="noopener noreferrer">
+              <span class="main-ttl">プロ人材をお探しの<br>法人様はこちら</span>
+            </a>
+          </li>
+        </ul>
+        <ul class="header-btn-block">
+          <li><a href="<%= new_fc_user_session_path %>" class="login"><img src="/assets/images/icon/icon_lock.svg" class="img" alt="ログイン" width="30" height="30" loading="lazy"><span>ログイン</span></a></li>
+          <li><a href="<%= new_fc_user_registration_path %>" class="entry"><img src="/assets/images/icon/icon_user.svg" class="img" alt="会員登録" width="30" height="30" loading="lazy"><span>会員登録</span></a></li>
+        </ul>
+        <div class="s-sp menu-trigger-box jsSlideMenu">
+          <button class="menu-trigger" id="menu02">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <!-- /header -->
+  <!-- slide-menu -->
+  <div class="header-slide jsSlideMenuOpen s-sp">
+    <nav class="header-slide-inner">
+      <ul class="global-nav">
+        <li>
+          <a href="<%= service_page_path %>">
+            <span class="main-ttl">はじめての方へ</span>
+            <span class="sub-ttl">GUIDE</span>
+          </a>
+        </li>
+        <li>
+          <a href="<%= service_flow_page_path %>">
+            <span class="main-ttl">ご利用の流れ</span>
+            <span class="sub-ttl">FLOW</span>
+          </a>
+        </li>
+        <li class="is-sub jsSubNavSp">
+          <a href="javascript:void(0)">
+            <span class="main-ttl">案件を見つける</span>
+            <span class="sub-ttl">SEARCH</span>
+          </a>
+          <div class="global-nav-sub wide jsSubNavSpOpen">
+            <div class="s-flex-between">
+              <div class="sub-group">
+                <span class="sub-group-ttl">人気業種から見つける</span>
+                <ul class="bordered">
+                  <%# TODO: #3440 FeatureSwitchの分岐を削除 %>
+                  <% if FeatureSwitch.enabled?(:new_project_category_meta) %>
+                  <li><a href="<%= slug_projects_path('it-project-management') %>">IT PM/PMO</a></li>
+                  <li><a href="<%= slug_projects_path('project-management') %>">PM/PMO</a></li>
+                  <li><a href="<%= slug_projects_path('business-improvement') %>">BPR/RPA/BPO</a></li>
+                  <li><a href="<%= slug_projects_path('system-design-system') %>">システム設計/開発/導入</a></li>
+                  <li><a href="<%= slug_projects_path('sap') %>">SAP</a></li>
+                  <% else %>
+                  <li><a href="<%= projects_path(categories: ['ITプロジェクト管理']) %>">IT PM/PMO</a></li>
+                  <li><a href="<%= projects_path(categories: ['プロジェクト管理']) %>">PM/PMO</a></li>
+                  <li><a href="<%= projects_path(categories: ['業務改善(BPR/RPA/BPO)']) %>">BPR/RPA/BPO</a></li>
+                  <li><a href="<%= projects_path(categories: ['システム設計・開発・導入（システム）', 'システム設計・開発・導入（工程・手法）']) %>">システム設計/開発/導入</a></li>
+                  <% end %>
+                </ul>
+              </div>
+              <div class="sub-group">
+                <span class="sub-group-ttl">注目条件から見つける</span>
+                <ul>
+                  <li><a href="<%= projects_url(compensation_ids: [5]) %>">高単価案件</a></li>
+                  <li><a href="<%= projects_url(work_options: ['完全リモート', '原則/基本リモート']) %>">リモート案件</a></li>
+                  <li><a href="<%= projects_url(occupancy_rate_mins: [100]) %>">100%稼働案件</a></li>
+                  <li><a href="<%= projects_url(occupancy_rate_maxs: [50]) %>">低稼働案件</a></li>
+                  <li><a href="<%= projects_url(sort: :createddate) %>">新着案件</a></li>
+                </ul>
+              </div>
+            </div>
+            <a href="<%= projects_path %>" class="btn btn-theme-01">すべての案件から探す</a>
+          </div>
+        </li>
+        <li class="is-sub jsSubNavSp">
+          <a href="javascript:void(0)">
+            <span class="main-ttl">お役立ち情報</span>
+            <span class="sub-ttl">INFORMATION</span>
+          </a>
+          <div class="global-nav-sub jsSubNavSpOpen">
+            <ul>
+              <li><a href="<%= support_page_path %>">プロ人材サポート</a></li>
+              <li><a href="<%= content_columns_path %>">プロ人材向けコラム</a></li>
+              <li><a href="<%= content_workstyles_path %>">プロ人材インタビュー</a></li>
+              <li><a href="<%= content_blogs_path %>">代表ブログ</a></li>
+              <li><a href="<%= content_topics_path %>">ニュース</a></li>
+            </ul>
+          </div>
+        </li>
+        <li class="no-line">
+          <a href="<%= contact_ja_url %>" target="_blank" rel="noopener noreferrer">
+            <span class="main-ttl">よくある質問</span>
+            <span class="sub-ttl">FAQ</span>
+          </a>
+        </li>
+        <li class="is-pro no-line">
+          <a href="<%= client_url %>" target="_blank" rel="noopener noreferrer">
+            <span class="main-ttl">プロ人材をお探しの法人様はこちら</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>

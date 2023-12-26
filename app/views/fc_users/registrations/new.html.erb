@@ -1,0 +1,55 @@
+<%= testid('fc_users/registrations') %>
+  <main class="content">
+    <%= render_breadcrumbs builder: Breadcrumbs::CustomBuilder %>
+    <h1 class="page-ttl">
+      <span class="main-ttl">会員情報入力</span>
+    </h1>
+    <div class="sec sec-full sec-pb-large">
+      <nav class="form-nav">
+        <ul class="form-nav-list">
+          <li class="active">
+            <span class="form-nav-step">STEP1</span>
+            <span class="form-nav-ttl">ご登録</span>
+          </li>
+          <li>
+            <span class="form-nav-step">STEP2</span>
+            <span class="form-nav-ttl">レジュメの<br class="s-sp">ご提出</span>
+          </li>
+          <li>
+            <span class="form-nav-step">STEP3</span>
+            <span class="form-nav-ttl">専門コーディ<br class="s-sp">ネーター<br>との面談</span>
+          </li>
+          <li>
+            <span class="form-nav-step">STEP4</span>
+            <span class="form-nav-ttl">コンサル<br class="s-sp">案件の<br>ご案内</span>
+          </li>
+        </ul>
+      </nav>
+      <div class="sec-txt">
+        コンサル登録後はレジュメをご提出いただき、専門コーディネーターより面談の日程調整についてご連絡をさせていただきます。まずは下記のフォームからご登録ください。<br>
+        <div class="s-fc-01 s-mt-20">
+          ※マイページへのログインは、弊社担当者とのご面談（本登録）を完了された方を対象とさせていただいております。<br>
+          ※案件の状況により、すべての方と面談をさせていただくわけではございません。予めご了承ください。<br>
+          ※本登録は、弊社案件にご参画頂ける個人事業主の方、または会社経営者・会社所属の方を対象としており、法人営業を目的でのご登録はご遠慮願います。
+        </div>
+        <div class="s-mt-20">
+          登録がお済みの方は<a href="<%= new_fc_user_session_path %>"><span class="s-fc-01">こちら</span></a>
+        </div>
+      </div>
+      <%= form_with model: @fc_user, scope: resource_name, url: registration_path(resource_name), local: true, builder: AppFormBuilder do |f| %>
+      <%= f.hidden_field :confirming %>
+        <div class="form-content">
+          <%= render 'form', f:, fc_user: @fc_user %>
+          <div class="dashboard-ttl">サービス利用規約</div>
+          <div class="form-rule s-mb-30"><%= render 'terms_and_policy_text' %></div>
+          <div class="s-txt-center s-lh-14 s-mb-20">
+            上記サービス利用規約と<br class="s-sp">『<%= link_to '個人情報の取り扱い', mirai_works_privacy_entry_url, target: :_blank, rel: 'noopener noreferrer' %>』 に<br>
+            <%= f.submit '同意して会員登録する', class: 'btn bs-long btn-theme-02 s-mt-30' %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </main>
+  <a href="#page-top" class="pagetop jsPageTop">
+    <i class="bicon-chevron-t"></i>
+  </a>

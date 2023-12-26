@@ -1,0 +1,3 @@
+- if content_for?(:job_posting) && project.jobposting_active?
+  script(type='application/ld+json')
+    == Projects::JobPostingPrinter.new(project).render

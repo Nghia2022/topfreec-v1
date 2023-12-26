@@ -1,0 +1,7 @@
+<script>
+  var recaptchaCredentials = {
+    site_key: '<%= Rails.application.credentials.dig(:recaptcha, :site_key) %>',
+  };
+</script>
+<div id="recaptcha_v3"></div>
+<script src="https://www.google.com/recaptcha/api.js?onload=onRecaptchaLoadCallback&render=explicit&hl=ja" async defer></script>

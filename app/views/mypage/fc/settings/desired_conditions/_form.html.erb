@@ -1,0 +1,80 @@
+          <div class="modal-txt">
+            <div class="form-content form-modal">
+              <%= render 'error_messages', resource: form %>
+              <div class="form-group">
+                <div class="form-head">
+                  <span class="form-ttl">可能な就業形態</span><span class="s-fs-12">※複数選択可</span>
+                </div>
+                <div class="form-row wrap">
+                  <%= f.collection_check_boxes :business_form, DesiredCondition.business_form_options, :first, :first do |c| %>
+                  <label class="label-check">
+                    <%= c.check_box %><span><%= c.text %></span>
+                  </label>
+                  <% end %>
+                </div>
+              </div>
+              <%# TODO: #3353 丸ごと削除 %>
+              <% unless Flipper.enabled? :new_work_category %>
+              <div class="form-group">
+                <div class="form-head">
+                  <span class="form-ttl">得意領域</span><span class="s-fs-12">※複数選択可</span>
+                </div>
+                <div class="form-row wrap monospace">
+                  <%= f.collection_check_boxes :experienced_works, DesiredCondition.experienced_works_options, :first, :first do |c| %>
+                  <label class="label-check">
+                    <%= c.check_box %><span><%= c.text %></span>
+                  </label>
+                  <% end %>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="form-head">
+                  <span class="form-ttl">興味がある<br class="s-sp">（今後経験したい）領域</span><span class="s-fs-12">※複数選択可</span>
+                </div>
+                <div class="form-row wrap monospace">
+                  <%= f.collection_check_boxes :desired_works, DesiredCondition.desired_works_options, :first, :first do |c| %>
+                  <label class="label-check">
+                    <%= c.check_box %><span><%= c.text %></span>
+                  </label>
+                  <% end %>
+                </div>
+              </div>
+              <% end %>
+              <div class="form-group">
+                <div class="form-head">
+                  <span class="form-ttl">企業規模</span><span class="s-fs-12">※複数選択可</span>
+                </div>
+                <div class="form-row wrap">
+                  <%= f.collection_check_boxes :company_sizes, DesiredCondition.company_sizes_options, :first, :first do |c| %>
+                  <label class="label-check">
+                    <%= c.check_box %><span><%= c.text %></span>
+                  </label>
+                  <% end %>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="form-head">
+                  <span class="form-ttl">希望稼働エリア</span>
+                </div>
+                <div class="form-row wrap">
+                  <label class="label-select form-long">
+                    <span class="form-sub-ttl">第一希望 <span class="label label-required">必須</span></span>
+                    <%= f.select :work_location1, DesiredCondition.work_location_options, { placeholder: true, include_blank: '選択してください' } %>
+                  </label>
+                  <label class="label-select form-long">
+                    <span class="form-sub-ttl">第二希望</span>
+                    <%= f.select :work_location2, DesiredCondition.work_location_options, { placeholder: true, include_blank: '選択してください' }, data: { dependent: 'desired_condition_work_location1' } %>
+                  </label>
+                  <label class="label-select form-long">
+                    <span class="form-sub-ttl">第三希望</span>
+                    <%= f.select :work_location3, DesiredCondition.work_location_options, { placeholder: true, include_blank: '選択してください' }, data: { dependent: 'desired_condition_work_location2' } %>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer s-flex-center">
+            <%= f.submit '保存する', class: 'btn btn-theme-02 bs-normal' %>
+          </div>
+        </div>
+      </form>

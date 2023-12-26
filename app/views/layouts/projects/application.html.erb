@@ -1,0 +1,14 @@
+<% content_for(:body_class, 'page-search-result') %>
+<% content_for(:content) do %>
+  <!-- ===============  main content ============== -->
+  <main class="content">
+    <%= render_breadcrumbs builder: Breadcrumbs::CustomBuilder %>
+    <%= yield %>
+  </main>
+  <!-- =============== footer ============== -->
+  <%= content_for(:project_bottom) %>
+  <a href="#page-top" class="pagetop jsPageTop">
+    <i class="bicon-chevron-t"></i>
+  </a>
+<% end %>
+<%= render template: 'layouts/application' %>

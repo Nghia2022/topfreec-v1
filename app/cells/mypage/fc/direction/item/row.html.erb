@@ -1,0 +1,33 @@
+        <div class="work-flow-ttl s-flex-between only-pc" data-testid='fc/direction/item'>
+          <a href="#" class="txt-link sec-sub-ttl"><%= name %></a>
+        </div>
+        <div class="workflow-dl">
+          <dl class="column-status">
+            <dt>ステータス</dt>
+            <dd>
+              <div>
+                <span class="<%= status_colour %> s-fw-b"><%= status %></span>
+              </div>
+            </dd>
+          </dl>
+          <dl class="column-category">
+            <dt>参画FC</dt>
+            <dd>
+              <div><%= fc_name %></div>
+            </dd>
+          </dl>
+          <dl class="column-description">
+            <dt>業務指示<br class="s-sp">内容</dt>
+            <dd class="txt-left">
+            <div><%= direction_detail %> </div>
+            </dd>
+          </dl>
+          <dl class="column-btn">
+            <dt>確認完了 / <br class="s-sp">修正申請</dt>
+            <dd>
+              <div>
+                <%= buttons %>
+              </div>
+            </dd>
+          </dl>
+        </div>

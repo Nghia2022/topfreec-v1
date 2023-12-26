@@ -1,0 +1,509 @@
+{
+  "contact_users-registrations#create": [
+    {
+      "verb": "POST",
+      "path": "/contact",
+      "versions": [
+
+      ],
+      "query": null,
+      "request_data": "contact_user[confirming]=&contact_user[last_name]=%E5%BD%A9%E4%B9%83&contact_user[first_name]=%E5%B2%A1%E6%9C%AC&contact_user[email]=clelia%40cormier.name&contact_user[password]=password&contact_user[password_confirmation]=password",
+      "response_data": "<!DOCTYPE html><html><head><title>App</title><link rel=\"stylesheet\" media=\"all\" href=\"/assets/application-3fc9684003898f661f07f10e6c55d144b7205450191e19e8ec713cbb594ab801.css\" data-turbolinks-track=\"reload\" /><script src=\"/packs-test/js/application-281b81f1650693c72c93.js\" data-turbolinks-track=\"reload\"></script></head><body><nav><div class=\"nav-wrapper\"><a class=\"brand-logo\" href=\"/\">Home</a><ul class=\"right\"><li><a href=\"/contact/sign_up\"> 登録（担当者）</a></li><li><a href=\"/contact/sign_in\"> ログイン（担当者）</a></li><li><a href=\"/register\"> 登録（FC）</a></li><li><a href=\"/user/sign_in\"> ログイン（FC）</a></li></ul></div></nav><main><div class=\"row login-form\"><div class=\"col s12 m6 offset-m3\"><div class=\"card hoverable\"><div class=\"card-content\"><div class=\"card-content\"><span class=\"card-title center\">Sign Up</span><div class=\"divider\"></div><form action=\"/contact\" accept-charset=\"UTF-8\" method=\"post\"><input type=\"hidden\" value=\"1\" name=\"contact_user[confirming]\" id=\"contact_user_confirming\" />1<div class=\"row\"><i class=\"material-icons prefix\">person</i>氏名<p>彩乃 岡本</p></div><div class=\"row\"><div class=\"input-fields col s12\"></div><i class=\"material-icons prefix\">email</i>Email<p>clelia@cormier.name</p></div><div class=\"form-actions center\"><input type=\"hidden\" value=\"彩乃\" name=\"contact_user[last_name]\" id=\"contact_user_last_name\" /><input type=\"hidden\" value=\"岡本\" name=\"contact_user[first_name]\" id=\"contact_user_first_name\" /><input type=\"hidden\" value=\"clelia@cormier.name\" name=\"contact_user[email]\" id=\"contact_user_email\" /><input type=\"hidden\" value=\"password\" name=\"contact_user[password]\" id=\"contact_user_password\" /><input type=\"hidden\" value=\"password\" name=\"contact_user[password_confirmation]\" id=\"contact_user_password_confirmation\" /><input type=\"submit\" name=\"back\" value=\"Back\" class=\"btn waves-effect\" data-disable-with=\"Back\" /><input type=\"submit\" name=\"commit\" value=\"Sign Up\" class=\"btn waves-effect\" data-disable-with=\"Sign Up\" /></div></form></div><div class=\"card-action\"><div class=\"devise-links\"><a href=\"/contact/sign_in\"><span class=\"translation_missing\" title=\"translation missing: ja.contact_users.shared.links.sign_in\">Sign In</span></a><br /><a href=\"/contact/confirmation/new\"><span class=\"translation_missing\" title=\"translation missing: ja.contact_users.shared.links.didn_t_receive_confirmation_instructions\">Didn T Receive Confirmation Instructions</span></a><br /></div></div></div></div></div></div></main><footer class=\"page-footer\"><div class=\"container\"><div class=\"row\"><div class=\"col l6 s12\"><ul><li><a class=\"grey-text text-lighten-3\" href=\"/\">ホーム</a></li><li><a class=\"grey-text text-lighten-3\" href=\"/service\">初めての方へ</a></li><li><a class=\"grey-text text-lighten-3\" href=\"/support\">サポートメニュー</a></li><li><a class=\"grey-text text-lighten-3\" href=\"/satisfaction\">満足度調査</a></li></ul></div></div><div class=\"row\"><div class=\"col l6 s12\"><h6>開発用ツール</h6><ul><li><a class=\"grey-text text-lighten-3\" target=\"_new\" href=\"/dev-tools/letter_opener\">メール（開発用）</a></li><li><p class=\"grey-text text-lighten-4\">ユーザー切替</p><select name=\"switch_user_identifier\" id=\"switch_user_identifier\" onchange=\"location.href = &#39;/switch_user?scope_identifier=&#39; + encodeURIComponent(this.options[this.selectedIndex].value)\" class=\"browser-default\"><optgroup label=\"Guest\"><option value=\"\">Guest</option></optgroup><optgroup label=\"Contact_user\"><option value=\"contact_user_1\">hayasaka+test1@ruffnote.com</option></optgroup></select>\n</li></ul></div></div></div><div class=\"footer-copyright\"></div></footer><div data-flash=\"{}\" id=\"flash\"></div></body></html>",
+      "code": 200,
+      "show_in_doc": 0,
+      "recorded": true
+    },
+    {
+      "verb": "POST",
+      "path": "/contact",
+      "versions": [
+
+      ],
+      "query": null,
+      "request_data": "contact_user[confirming]=1&contact_user[last_name]=%E5%A4%AA%E9%83%8E&contact_user[first_name]=%E5%B1%B1%E5%8F%A3&contact_user[email]=jim.rowe%40flatley.io&contact_user[password]=password&contact_user[password_confirmation]=password",
+      "response_data": "<html><body>You are being <a href=\"http://www.example.com/contact/sign_up/thanks\">redirected</a>.</body></html>",
+      "code": 302,
+      "show_in_doc": 0,
+      "recorded": true
+    },
+    {
+      "verb": "POST",
+      "path": "/contact",
+      "versions": [
+
+      ],
+      "query": null,
+      "request_data": "contact_user[confirming]=1&contact_user[last_name]=%E9%A2%AF&contact_user[first_name]=%E5%B0%8F%E5%B7%9D&contact_user[email]=jesica%40strosin.io&contact_user[password]=password&contact_user[password_confirmation]=password",
+      "response_data": "<html><body>You are being <a href=\"http://www.example.com/contact/sign_up/thanks\">redirected</a>.</body></html>",
+      "code": 302,
+      "show_in_doc": 0,
+      "recorded": true
+    }
+  ],
+  "contact_users-registrations#new": [
+    {
+      "verb": "GET",
+      "path": "/contact/sign_up",
+      "versions": [
+
+      ],
+      "query": null,
+      "request_data": null,
+      "response_data": "<!DOCTYPE html><html><head><title>App</title><link rel=\"stylesheet\" media=\"all\" href=\"/assets/application-3fc9684003898f661f07f10e6c55d144b7205450191e19e8ec713cbb594ab801.css\" data-turbolinks-track=\"reload\" /><script src=\"/packs-test/js/application-281b81f1650693c72c93.js\" data-turbolinks-track=\"reload\"></script></head><body><nav><div class=\"nav-wrapper\"><a class=\"brand-logo\" href=\"/\">Home</a><ul class=\"right\"><li><a href=\"/contact/sign_up\"> 登録（担当者）</a></li><li><a href=\"/contact/sign_in\"> ログイン（担当者）</a></li><li><a href=\"/register\"> 登録（FC）</a></li><li><a href=\"/user/sign_in\"> ログイン（FC）</a></li></ul></div></nav><main><div class=\"row login-form\"><div class=\"col s12 m6 offset-m3\"><div class=\"card hoverable\"><div class=\"card-content\"><div class=\"card-content\"><span class=\"card-title center\">Sign Up</span><div class=\"divider\"></div><form action=\"/contact\" accept-charset=\"UTF-8\" method=\"post\"><input type=\"hidden\" name=\"contact_user[confirming]\" id=\"contact_user_confirming\" /><div class=\"form-inputs row\"><div class=\"input-field col s6\"><i class=\"material-icons prefix\">person</i><input autofocus=\"autofocus\" required=\"required\" type=\"text\" name=\"contact_user[last_name]\" id=\"contact_user_last_name\" /><label for=\"contact_user_last_name\">お名前（姓）</label></div><div class=\"input-field col s6\"><input type=\"text\" name=\"contact_user[first_name]\" id=\"contact_user_first_name\" /><label for=\"contact_user_first_name\">お名前（姓）</label></div></div><div class=\"form-inputs row\"><div class=\"input-field col s12\"><i class=\"material-icons prefix\">email</i><input required=\"required\" type=\"email\" value=\"\" name=\"contact_user[email]\" id=\"contact_user_email\" /><label for=\"contact_user_email\">Email</label></div><div class=\"input-field col s12\"><i class=\"material-icons prefix\">lock</i><input autocomplete=\"off\" required=\"required\" type=\"password\" name=\"contact_user[password]\" id=\"contact_user_password\" /><label for=\"contact_user_password\">Password</label><span class=\"hint-text\">6Characters Minimum</span></div><div class=\"input-field col s12\"><i class=\"material-icons prefix\">lock</i><input autocomplete=\"off\" required=\"required\" type=\"password\" name=\"contact_user[password_confirmation]\" id=\"contact_user_password_confirmation\" /><label for=\"contact_user_password_confirmation\">Password confirmation</label></div></div><div class=\"form-actions center\"><input type=\"submit\" name=\"commit\" value=\"Sign Up\" class=\"btn waves-effect\" data-disable-with=\"Sign Up\" /></div></form></div><div class=\"card-action\"><div class=\"devise-links\"><a href=\"/contact/sign_in\"><span class=\"translation_missing\" title=\"translation missing: ja.contact_users.shared.links.sign_in\">Sign In</span></a><br /><a href=\"/contact/confirmation/new\"><span class=\"translation_missing\" title=\"translation missing: ja.contact_users.shared.links.didn_t_receive_confirmation_instructions\">Didn T Receive Confirmation Instructions</span></a><br /></div></div></div></div></div></div></main><footer class=\"page-footer\"><div class=\"container\"><div class=\"row\"><div class=\"col l6 s12\"><ul><li><a class=\"grey-text text-lighten-3\" href=\"/\">ホーム</a></li><li><a class=\"grey-text text-lighten-3\" href=\"/service\">初めての方へ</a></li><li><a class=\"grey-text text-lighten-3\" href=\"/support\">サポートメニュー</a></li><li><a class=\"grey-text text-lighten-3\" href=\"/satisfaction\">満足度調査</a></li></ul></div></div><div class=\"row\"><div class=\"col l6 s12\"><h6>開発用ツール</h6><ul><li><a class=\"grey-text text-lighten-3\" target=\"_new\" href=\"/dev-tools/letter_opener\">メール（開発用）</a></li><li><p class=\"grey-text text-lighten-4\">ユーザー切替</p><select name=\"switch_user_identifier\" id=\"switch_user_identifier\" onchange=\"location.href = &#39;/switch_user?scope_identifier=&#39; + encodeURIComponent(this.options[this.selectedIndex].value)\" class=\"browser-default\"><optgroup label=\"Guest\"><option value=\"\">Guest</option></optgroup><optgroup label=\"Contact_user\"><option value=\"contact_user_1\">hayasaka+test1@ruffnote.com</option></optgroup></select>\n</li></ul></div></div></div><div class=\"footer-copyright\"></div></footer><div data-flash=\"{}\" id=\"flash\"></div></body></html>",
+      "code": 200,
+      "show_in_doc": 0,
+      "recorded": true
+    }
+  ],
+  "contact_users-sessions#create": [
+    {
+      "verb": "POST",
+      "path": "/contact/sign_in",
+      "versions": [
+
+      ],
+      "query": null,
+      "request_data": "contact_user[email]=korey_quitzon%40mosciskistark.co&contact_user[password]=password",
+      "response_data": "<html><body>You are being <a href=\"http://www.example.com/mypage\">redirected</a>.</body></html>",
+      "code": 302,
+      "show_in_doc": 0,
+      "recorded": true
+    },
+    {
+      "verb": "POST",
+      "path": "/contact/sign_in",
+      "versions": [
+
+      ],
+      "query": null,
+      "request_data": "contact_user[email]=tommie%40littel.info&contact_user[password]=password",
+      "response_data": "<html><body>You are being <a href=\"http://www.example.com/mypage\">redirected</a>.</body></html>",
+      "code": 302,
+      "show_in_doc": 0,
+      "recorded": true
+    }
+  ],
+  "contact_users-sessions#new": [
+    {
+      "verb": "GET",
+      "path": "/contact/sign_in",
+      "versions": [
+
+      ],
+      "query": null,
+      "request_data": null,
+      "response_data": "<!DOCTYPE html><html><head><title>App</title><link rel=\"stylesheet\" media=\"all\" href=\"/assets/application-3fc9684003898f661f07f10e6c55d144b7205450191e19e8ec713cbb594ab801.css\" data-turbolinks-track=\"reload\" /><script src=\"/packs-test/js/application-281b81f1650693c72c93.js\" data-turbolinks-track=\"reload\"></script></head><body><nav><div class=\"nav-wrapper\"><a class=\"brand-logo\" href=\"/\">Home</a><ul class=\"right\"><li><a href=\"/contact/sign_up\"> 登録（担当者）</a></li><li><a href=\"/contact/sign_in\"> ログイン（担当者）</a></li><li><a href=\"/register\"> 登録（FC）</a></li><li><a href=\"/user/sign_in\"> ログイン（FC）</a></li></ul></div></nav><main><div class=\"row login-form\"><div class=\"col s12 m6 offset-m3\"><div class=\"card hoverable\"><div class=\"card-content\"><div class=\"card-content\"><span class=\"card-title center\">ログイン</span><div class=\"divider\"></div><form action=\"/contact/sign_in\" accept-charset=\"UTF-8\" method=\"post\"><div class=\"form-inputs row\"><div class=\"input-field col s12\"><i class=\"material-icons prefix\">email</i><input autofocus=\"autofocus\" autocomplete=\"email\" type=\"email\" value=\"\" name=\"contact_user[email]\" id=\"contact_user_email\" /><label for=\"contact_user_email\">Email</label></div></div><div class=\"form-inputs row\"><div class=\"input-field col s12\"><i class=\"material-icons prefix\">lock</i><input autocomplete=\"current-password\" type=\"password\" name=\"contact_user[password]\" id=\"contact_user_password\" /><label for=\"contact_user_password\">Password</label></div></div><div class=\"form-input row\"><div class=\"input-field col s12\"><input type=\"hidden\" name=\"g-recaptcha-response[login]\" id=\"g-recaptcha-response-login\" class=\"g-recaptcha g-recaptcha-response \" ajax=\"true\"/>\n</div></div><div class=\"form-actions center\"><input type=\"submit\" name=\"commit\" value=\"ログイン\" class=\"btn waves-effect\" data-disable-with=\"ログイン\" /></div></form></div><div class=\"card-action\"><a href=\"/contact/sign_up\"><span class=\"translation_missing\" title=\"translation missing: ja.contact_users.shared.links.sign_up\">Sign Up</span></a><br /><a href=\"/contact/password/new\"><span class=\"translation_missing\" title=\"translation missing: ja.contact_users.shared.links.forgot_your_password\">Forgot Your Password</span></a><br /><a href=\"/contact/confirmation/new\"><span class=\"translation_missing\" title=\"translation missing: ja.contact_users.shared.links.didn_t_receive_confirmation_instructions\">Didn T Receive Confirmation Instructions</span></a><br /></div></div></div></div></div></main><footer class=\"page-footer\"><div class=\"container\"><div class=\"row\"><div class=\"col l6 s12\"><ul><li><a class=\"grey-text text-lighten-3\" href=\"/\">ホーム</a></li><li><a class=\"grey-text text-lighten-3\" href=\"/service\">初めての方へ</a></li><li><a class=\"grey-text text-lighten-3\" href=\"/support\">サポートメニュー</a></li><li><a class=\"grey-text text-lighten-3\" href=\"/satisfaction\">満足度調査</a></li></ul></div></div><div class=\"row\"><div class=\"col l6 s12\"><h6>開発用ツール</h6><ul><li><a class=\"grey-text text-lighten-3\" target=\"_new\" href=\"/dev-tools/letter_opener\">メール（開発用）</a></li><li><p class=\"grey-text text-lighten-4\">ユーザー切替</p><select name=\"switch_user_identifier\" id=\"switch_user_identifier\" onchange=\"location.href = &#39;/switch_user?scope_identifier=&#39; + encodeURIComponent(this.options[this.selectedIndex].value)\" class=\"browser-default\"><optgroup label=\"Guest\"><option value=\"\">Guest</option></optgroup><optgroup label=\"Contact_user\"><option value=\"contact_user_1\">hayasaka+test1@ruffnote.com</option></optgroup></select>\n</li></ul></div></div></div><div class=\"footer-copyright\"></div></footer><div data-flash=\"{}\" id=\"flash\"></div></body></html>",
+      "code": 200,
+      "show_in_doc": 0,
+      "recorded": true
+    }
+  ],
+  "mypage-fc-bookmarks#index": [
+    {
+      "verb": "GET",
+      "path": "/mypage/fc/bookmarks",
+      "versions": [
+
+      ],
+      "query": null,
+      "request_data": null,
+      "response_data": "<!DOCTYPE html><html><head><title>App</title><link rel=\"stylesheet\" media=\"all\" href=\"/assets/application-3fc9684003898f661f07f10e6c55d144b7205450191e19e8ec713cbb594ab801.css\" data-turbolinks-track=\"reload\" /><script src=\"/packs-test/js/application-281b81f1650693c72c93.js\" data-turbolinks-track=\"reload\"></script></head><body class=\"mypage\"><nav><div class=\"nav-wrapper\"><a class=\"brand-logo\" href=\"/\">Home</a><ul class=\"right\"><li><a href=\"/contact/sign_up\"> 登録（担当者）</a></li><li><a href=\"/contact/sign_in\"> ログイン（担当者）</a></li><li><a href=\"/register\"> 登録（FC）</a></li><li><a href=\"/user/sign_in\"> ログイン（FC）</a></li></ul></div><div class=\"sidenav sidenav-fixed\"><ul><li><div class=\"logo\">Logo</div></li><li><a href=\"/mypage/fc/settings\">各種設定</a></li><li><a href=\"/mypage/fc/profile\">プロフィール</a></li><li><a href=\"/mypage/fc/bookmarks\">お気に入り</a></li><li><a href=\"/mypage/fc/histories\">閲覧履歴</a></li><li><a href=\"#\">エントリー履歴</a></li><li><a href=\"#\">稼働実績</a></li><li><ul class=\"collapsible collapsible-acordion\"><li><div class=\"collapsible-header\"><a class=\"black-text\" href=\"#directions\">業務責任者活動</a></div><div class=\"collapsible-body\"><ul><li><a href=\"#untreated\">未処理の業務指示</a></li><li><a href=\"#hisories\">業務指示履歴</a></li></ul></div></li></ul></li></ul></div></nav><main><div class=\"container\"><div class=\"row\"><h1>お気に入り</h1><p>Find me in app/views/mypage/fc/bookmarks/index.html.slim</p></div><div class=\"row\"><ul><li><a href=\"#\">Fake Project 1</a></li><li><a href=\"#\">Fake Project 2</a></li><li><a href=\"#\">Fake Project 3</a></li><li><a href=\"#\">Fake Project 4</a></li><li><a href=\"#\">Fake Project 5</a></li><li><a href=\"#\">Fake Project 6</a></li><li><a href=\"#\">Fake Project 7</a></li><li><a href=\"#\">Fake Project 8</a></li><li><a href=\"#\">Fake Project 9</a></li><li><a href=\"#\">Fake Project 10</a></li><li><a href=\"#\">Fake Project 11</a></li><li><a href=\"#\">Fake Project 12</a></li><li><a href=\"#\">Fake Project 13</a></li><li><a href=\"#\">Fake Project 14</a></li><li><a href=\"#\">Fake Project 15</a></li><li><a href=\"#\">Fake Project 16</a></li><li><a href=\"#\">Fake Project 17</a></li><li><a href=\"#\">Fake Project 18</a></li><li><a href=\"#\">Fake Project 19</a></li><li><a href=\"#\">Fake Project 20</a></li><li><a href=\"#\">Fake Project 21</a></li><li><a href=\"#\">Fake Project 22</a></li><li><a href=\"#\">Fake Project 23</a></li><li><a href=\"#\">Fake Project 24</a></li><li><a href=\"#\">Fake Project 25</a></li></ul><ul class=\"pagination\"><li class=\"disabled\"><a><i class=\"material-icons\">chevron_left</i></a></li><li class=\"active\"><a>1</a></li><li class=\"waves-effect\"><a rel=\"next\" href=\"/mypage/fc/bookmarks?page=2\">2</a></li><li class=\"waves-effect\"><a rel=\"next\" href=\"/mypage/fc/bookmarks?page=2\"><i class=\"material-icons\">chevron_right</i></a></li></ul></div></div></main><footer class=\"page-footer\"><div class=\"container\"><div class=\"row\"><div class=\"col l6 s12\"><ul><li><a class=\"grey-text text-lighten-3\" href=\"/\">ホーム</a></li><li><a class=\"grey-text text-lighten-3\" href=\"/service\">初めての方へ</a></li><li><a class=\"grey-text text-lighten-3\" href=\"/support\">サポートメニュー</a></li><li><a class=\"grey-text text-lighten-3\" href=\"/satisfaction\">満足度調査</a></li></ul></div></div><div class=\"row\"><div class=\"col l6 s12\"><h6>開発用ツール</h6><ul><li><a class=\"grey-text text-lighten-3\" target=\"_new\" href=\"/dev-tools/letter_opener\">メール（開発用）</a></li><li><p class=\"grey-text text-lighten-4\">ユーザー切替</p><select name=\"switch_user_identifier\" id=\"switch_user_identifier\" onchange=\"location.href = &#39;/switch_user?scope_identifier=&#39; + encodeURIComponent(this.options[this.selectedIndex].value)\" class=\"browser-default\"><optgroup label=\"Guest\"><option value=\"\">Guest</option></optgroup><optgroup label=\"Contact_user\"><option value=\"contact_user_1\">hayasaka+test1@ruffnote.com</option></optgroup></select>\n</li></ul></div></div></div><div class=\"footer-copyright\"></div></footer><div data-flash=\"{}\" id=\"flash\"></div></body></html>",
+      "code": 200,
+      "show_in_doc": 0,
+      "recorded": true
+    }
+  ],
+  "mypage-fc-histories#index": [
+    {
+      "verb": "GET",
+      "path": "/mypage/fc/histories",
+      "versions": [
+
+      ],
+      "query": null,
+      "request_data": null,
+      "response_data": "<!DOCTYPE html><html><head><title>App</title><link rel=\"stylesheet\" media=\"all\" href=\"/assets/application-3fc9684003898f661f07f10e6c55d144b7205450191e19e8ec713cbb594ab801.css\" data-turbolinks-track=\"reload\" /><script src=\"/packs-test/js/application-281b81f1650693c72c93.js\" data-turbolinks-track=\"reload\"></script></head><body class=\"mypage\"><nav><div class=\"nav-wrapper\"><a class=\"brand-logo\" href=\"/\">Home</a><ul class=\"right\"><li><a href=\"/contact/sign_up\"> 登録（担当者）</a></li><li><a href=\"/contact/sign_in\"> ログイン（担当者）</a></li><li><a href=\"/register\"> 登録（FC）</a></li><li><a href=\"/user/sign_in\"> ログイン（FC）</a></li></ul></div><div class=\"sidenav sidenav-fixed\"><ul><li><div class=\"logo\">Logo</div></li><li><a href=\"/mypage/fc/settings\">各種設定</a></li><li><a href=\"/mypage/fc/profile\">プロフィール</a></li><li><a href=\"/mypage/fc/bookmarks\">お気に入り</a></li><li><a href=\"/mypage/fc/histories\">閲覧履歴</a></li><li><a href=\"#\">エントリー履歴</a></li><li><a href=\"#\">稼働実績</a></li><li><ul class=\"collapsible collapsible-acordion\"><li><div class=\"collapsible-header\"><a class=\"black-text\" href=\"#directions\">業務責任者活動</a></div><div class=\"collapsible-body\"><ul><li><a href=\"#untreated\">未処理の業務指示</a></li><li><a href=\"#hisories\">業務指示履歴</a></li></ul></div></li></ul></li></ul></div></nav><main><div class=\"container\"><div class=\"row\"><h1>閲覧履歴</h1><p>Find me in app/views/mypage/fc/histories/index.html.slim</p></div><div class=\"row\"><table><thead><th>案件名</th><th>閲覧日時</th></thead><tr><td><a href=\"#\">Fake Project 1</a></td><td>2020-01-03 15:36:47 UTC</td></tr><tr><td><a href=\"#\">Fake Project 2</a></td><td>2020-01-03 15:36:47 UTC</td></tr><tr><td><a href=\"#\">Fake Project 3</a></td><td>2020-01-03 15:36:47 UTC</td></tr><tr><td><a href=\"#\">Fake Project 4</a></td><td>2020-01-03 15:36:47 UTC</td></tr><tr><td><a href=\"#\">Fake Project 5</a></td><td>2020-01-03 15:36:47 UTC</td></tr><tr><td><a href=\"#\">Fake Project 6</a></td><td>2020-01-03 15:36:47 UTC</td></tr><tr><td><a href=\"#\">Fake Project 7</a></td><td>2020-01-03 15:36:47 UTC</td></tr><tr><td><a href=\"#\">Fake Project 8</a></td><td>2020-01-03 15:36:47 UTC</td></tr><tr><td><a href=\"#\">Fake Project 9</a></td><td>2020-01-03 15:36:47 UTC</td></tr><tr><td><a href=\"#\">Fake Project 10</a></td><td>2020-01-03 15:36:47 UTC</td></tr><tr><td><a href=\"#\">Fake Project 11</a></td><td>2020-01-03 15:36:47 UTC</td></tr><tr><td><a href=\"#\">Fake Project 12</a></td><td>2020-01-03 15:36:47 UTC</td></tr><tr><td><a href=\"#\">Fake Project 13</a></td><td>2020-01-03 15:36:47 UTC</td></tr><tr><td><a href=\"#\">Fake Project 14</a></td><td>2020-01-03 15:36:47 UTC</td></tr><tr><td><a href=\"#\">Fake Project 15</a></td><td>2020-01-03 15:36:47 UTC</td></tr><tr><td><a href=\"#\">Fake Project 16</a></td><td>2020-01-03 15:36:47 UTC</td></tr><tr><td><a href=\"#\">Fake Project 17</a></td><td>2020-01-03 15:36:47 UTC</td></tr><tr><td><a href=\"#\">Fake Project 18</a></td><td>2020-01-03 15:36:47 UTC</td></tr><tr><td><a href=\"#\">Fake Project 19</a></td><td>2020-01-03 15:36:47 UTC</td></tr><tr><td><a href=\"#\">Fake Project 20</a></td><td>2020-01-03 15:36:47 UTC</td></tr><tr><td><a href=\"#\">Fake Project 21</a></td><td>2020-01-03 15:36:47 UTC</td></tr><tr><td><a href=\"#\">Fake Project 22</a></td><td>2020-01-03 15:36:47 UTC</td></tr><tr><td><a href=\"#\">Fake Project 23</a></td><td>2020-01-03 15:36:47 UTC</td></tr><tr><td><a href=\"#\">Fake Project 24</a></td><td>2020-01-03 15:36:47 UTC</td></tr><tr><td><a href=\"#\">Fake Project 25</a></td><td>2020-01-03 15:36:47 UTC</td></tr></table><ul class=\"pagination\"><li class=\"disabled\"><a><i class=\"material-icons\">chevron_left</i></a></li><li class=\"active\"><a>1</a></li><li class=\"waves-effect\"><a rel=\"next\" href=\"/mypage/fc/histories?page=2\">2</a></li><li class=\"waves-effect\"><a rel=\"next\" href=\"/mypage/fc/histories?page=2\"><i class=\"material-icons\">chevron_right</i></a></li></ul></div></div></main><footer class=\"page-footer\"><div class=\"container\"><div class=\"row\"><div class=\"col l6 s12\"><ul><li><a class=\"grey-text text-lighten-3\" href=\"/\">ホーム</a></li><li><a class=\"grey-text text-lighten-3\" href=\"/service\">初めての方へ</a></li><li><a class=\"grey-text text-lighten-3\" href=\"/support\">サポートメニュー</a></li><li><a class=\"grey-text text-lighten-3\" href=\"/satisfaction\">満足度調査</a></li></ul></div></div><div class=\"row\"><div class=\"col l6 s12\"><h6>開発用ツール</h6><ul><li><a class=\"grey-text text-lighten-3\" target=\"_new\" href=\"/dev-tools/letter_opener\">メール（開発用）</a></li><li><p class=\"grey-text text-lighten-4\">ユーザー切替</p><select name=\"switch_user_identifier\" id=\"switch_user_identifier\" onchange=\"location.href = &#39;/switch_user?scope_identifier=&#39; + encodeURIComponent(this.options[this.selectedIndex].value)\" class=\"browser-default\"><optgroup label=\"Guest\"><option value=\"\">Guest</option></optgroup><optgroup label=\"Contact_user\"><option value=\"contact_user_1\">hayasaka+test1@ruffnote.com</option></optgroup></select>\n</li></ul></div></div></div><div class=\"footer-copyright\"></div></footer><div data-flash=\"{}\" id=\"flash\"></div></body></html>",
+      "code": 200,
+      "show_in_doc": 0,
+      "recorded": true
+    }
+  ],
+  "mypage-fc-profiles#edit": [
+    {
+      "verb": "GET",
+      "path": "/mypage/fc/profile/edit",
+      "versions": [
+
+      ],
+      "query": null,
+      "request_data": null,
+      "response_data": "<!DOCTYPE html><html><head><title>App</title><link rel=\"stylesheet\" media=\"all\" href=\"/assets/application-3fc9684003898f661f07f10e6c55d144b7205450191e19e8ec713cbb594ab801.css\" data-turbolinks-track=\"reload\" /><script src=\"/packs-test/js/application-281b81f1650693c72c93.js\" data-turbolinks-track=\"reload\"></script></head><body class=\"mypage\"><nav><div class=\"nav-wrapper\"><a class=\"brand-logo\" href=\"/\">Home</a><ul class=\"right\"><li><a href=\"/contact/sign_up\"> 登録（担当者）</a></li><li><a href=\"/contact/sign_in\"> ログイン（担当者）</a></li><li><a href=\"/register\"> 登録（FC）</a></li><li><a href=\"/user/sign_in\"> ログイン（FC）</a></li></ul></div><div class=\"sidenav sidenav-fixed\"><ul><li><div class=\"logo\">Logo</div></li><li><a href=\"/mypage/fc/settings\">各種設定</a></li><li><a href=\"/mypage/fc/profile\">プロフィール</a></li><li><a href=\"/mypage/fc/bookmarks\">お気に入り</a></li><li><a href=\"/mypage/fc/histories\">閲覧履歴</a></li><li><a href=\"#\">エントリー履歴</a></li><li><a href=\"#\">稼働実績</a></li><li><ul class=\"collapsible collapsible-acordion\"><li><div class=\"collapsible-header\"><a class=\"black-text\" href=\"#directions\">業務責任者活動</a></div><div class=\"collapsible-body\"><ul><li><a href=\"#untreated\">未処理の業務指示</a></li><li><a href=\"#hisories\">業務指示履歴</a></li></ul></div></li></ul></li></ul></div></nav><main><div class=\"container\"><div class=\"row\"><h1>プロフィール編集</h1><p>Find me in app/views/mypage/fc/profiles/edit.html.slim</p><form action=\"/mypage/fc/profile\" accept-charset=\"UTF-8\" method=\"post\"><input type=\"hidden\" name=\"_method\" value=\"patch\" /><div class=\"form-actions center\"><input type=\"submit\" name=\"commit\" value=\"確認\" class=\"btn waves-effect\" data-disable-with=\"確認\" /></div></form></div></div></main><footer class=\"page-footer\"><div class=\"container\"><div class=\"row\"><div class=\"col l6 s12\"><ul><li><a class=\"grey-text text-lighten-3\" href=\"/\">ホーム</a></li><li><a class=\"grey-text text-lighten-3\" href=\"/service\">初めての方へ</a></li><li><a class=\"grey-text text-lighten-3\" href=\"/support\">サポートメニュー</a></li><li><a class=\"grey-text text-lighten-3\" href=\"/satisfaction\">満足度調査</a></li></ul></div></div><div class=\"row\"><div class=\"col l6 s12\"><h6>開発用ツール</h6><ul><li><a class=\"grey-text text-lighten-3\" target=\"_new\" href=\"/dev-tools/letter_opener\">メール（開発用）</a></li><li><p class=\"grey-text text-lighten-4\">ユーザー切替</p><select name=\"switch_user_identifier\" id=\"switch_user_identifier\" onchange=\"location.href = &#39;/switch_user?scope_identifier=&#39; + encodeURIComponent(this.options[this.selectedIndex].value)\" class=\"browser-default\"><optgroup label=\"Guest\"><option value=\"\">Guest</option></optgroup><optgroup label=\"Contact_user\"><option value=\"contact_user_1\">hayasaka+test1@ruffnote.com</option></optgroup></select>\n</li></ul></div></div></div><div class=\"footer-copyright\"></div></footer><div data-flash=\"{}\" id=\"flash\"></div></body></html>",
+      "code": 200,
+      "show_in_doc": 0,
+      "recorded": true
+    }
+  ],
+  "mypage-fc-profiles#show": [
+    {
+      "verb": "GET",
+      "path": "/mypage/fc/profile",
+      "versions": [
+
+      ],
+      "query": null,
+      "request_data": null,
+      "response_data": "<!DOCTYPE html><html><head><title>App</title><link rel=\"stylesheet\" media=\"all\" href=\"/assets/application-3fc9684003898f661f07f10e6c55d144b7205450191e19e8ec713cbb594ab801.css\" data-turbolinks-track=\"reload\" /><script src=\"/packs-test/js/application-281b81f1650693c72c93.js\" data-turbolinks-track=\"reload\"></script></head><body class=\"mypage\"><nav><div class=\"nav-wrapper\"><a class=\"brand-logo\" href=\"/\">Home</a><ul class=\"right\"><li><a href=\"/contact/sign_up\"> 登録（担当者）</a></li><li><a href=\"/contact/sign_in\"> ログイン（担当者）</a></li><li><a href=\"/register\"> 登録（FC）</a></li><li><a href=\"/user/sign_in\"> ログイン（FC）</a></li></ul></div><div class=\"sidenav sidenav-fixed\"><ul><li><div class=\"logo\">Logo</div></li><li><a href=\"/mypage/fc/settings\">各種設定</a></li><li><a href=\"/mypage/fc/profile\">プロフィール</a></li><li><a href=\"/mypage/fc/bookmarks\">お気に入り</a></li><li><a href=\"/mypage/fc/histories\">閲覧履歴</a></li><li><a href=\"#\">エントリー履歴</a></li><li><a href=\"#\">稼働実績</a></li><li><ul class=\"collapsible collapsible-acordion\"><li><div class=\"collapsible-header\"><a class=\"black-text\" href=\"#directions\">業務責任者活動</a></div><div class=\"collapsible-body\"><ul><li><a href=\"#untreated\">未処理の業務指示</a></li><li><a href=\"#hisories\">業務指示履歴</a></li></ul></div></li></ul></li></ul></div></nav><main><div class=\"container\"><div class=\"row\"><h1>プロフィール</h1><p>Find me in app/views/mypage/fc/profiles/show.html.slim</p><a class=\"btn\" href=\"/mypage/fc/profile/edit\">編集</a></div></div></main><footer class=\"page-footer\"><div class=\"container\"><div class=\"row\"><div class=\"col l6 s12\"><ul><li><a class=\"grey-text text-lighten-3\" href=\"/\">ホーム</a></li><li><a class=\"grey-text text-lighten-3\" href=\"/service\">初めての方へ</a></li><li><a class=\"grey-text text-lighten-3\" href=\"/support\">サポートメニュー</a></li><li><a class=\"grey-text text-lighten-3\" href=\"/satisfaction\">満足度調査</a></li></ul></div></div><div class=\"row\"><div class=\"col l6 s12\"><h6>開発用ツール</h6><ul><li><a class=\"grey-text text-lighten-3\" target=\"_new\" href=\"/dev-tools/letter_opener\">メール（開発用）</a></li><li><p class=\"grey-text text-lighten-4\">ユーザー切替</p><select name=\"switch_user_identifier\" id=\"switch_user_identifier\" onchange=\"location.href = &#39;/switch_user?scope_identifier=&#39; + encodeURIComponent(this.options[this.selectedIndex].value)\" class=\"browser-default\"><optgroup label=\"Guest\"><option value=\"\">Guest</option></optgroup><optgroup label=\"Contact_user\"><option value=\"contact_user_1\">hayasaka+test1@ruffnote.com</option></optgroup></select>\n</li></ul></div></div></div><div class=\"footer-copyright\"></div></footer><div data-flash=\"{}\" id=\"flash\"></div></body></html>",
+      "code": 200,
+      "show_in_doc": 0,
+      "recorded": true
+    }
+  ],
+  "mypage-fc-profiles#update": [
+    {
+      "verb": "PATCH",
+      "path": "/mypage/fc/profile",
+      "versions": [
+
+      ],
+      "query": null,
+      "request_data": null,
+      "response_data": "<html><body>You are being <a href=\"http://www.example.com/mypage/fc/profile\">redirected</a>.</body></html>",
+      "code": 302,
+      "show_in_doc": 0,
+      "recorded": true
+    },
+    {
+      "verb": "PATCH",
+      "path": "/mypage/fc/profile",
+      "versions": [
+
+      ],
+      "query": null,
+      "request_data": null,
+      "response_data": "<html><body>You are being <a href=\"http://www.example.com/mypage/fc/profile\">redirected</a>.</body></html>",
+      "code": 302,
+      "show_in_doc": 0,
+      "recorded": true
+    }
+  ],
+  "mypage-fc-settings#index": [
+    {
+      "verb": "GET",
+      "path": "/mypage/fc/settings",
+      "versions": [
+
+      ],
+      "query": null,
+      "request_data": null,
+      "response_data": "<!DOCTYPE html><html><head><title>App</title><link rel=\"stylesheet\" media=\"all\" href=\"/assets/application-3fc9684003898f661f07f10e6c55d144b7205450191e19e8ec713cbb594ab801.css\" data-turbolinks-track=\"reload\" /><script src=\"/packs-test/js/application-281b81f1650693c72c93.js\" data-turbolinks-track=\"reload\"></script></head><body class=\"mypage\"><nav><div class=\"nav-wrapper\"><a class=\"brand-logo\" href=\"/\">Home</a><ul class=\"right\"><li><a href=\"/contact/sign_up\"> 登録（担当者）</a></li><li><a href=\"/contact/sign_in\"> ログイン（担当者）</a></li><li><a href=\"/register\"> 登録（FC）</a></li><li><a href=\"/user/sign_in\"> ログイン（FC）</a></li></ul></div><div class=\"sidenav sidenav-fixed\"><ul><li><div class=\"logo\">Logo</div></li><li><a href=\"/mypage/fc/settings\">各種設定</a></li><li><a href=\"/mypage/fc/profile\">プロフィール</a></li><li><a href=\"/mypage/fc/bookmarks\">お気に入り</a></li><li><a href=\"/mypage/fc/histories\">閲覧履歴</a></li><li><a href=\"#\">エントリー履歴</a></li><li><a href=\"#\">稼働実績</a></li><li><ul class=\"collapsible collapsible-acordion\"><li><div class=\"collapsible-header\"><a class=\"black-text\" href=\"#directions\">業務責任者活動</a></div><div class=\"collapsible-body\"><ul><li><a href=\"#untreated\">未処理の業務指示</a></li><li><a href=\"#hisories\">業務指示履歴</a></li></ul></div></li></ul></li></ul></div></nav><main><div class=\"container\"><div class=\"row\"><h1> 各種設定</h1><p>Find me in app/views/mypage/fc/settings/index.html.slim</p></div></div></main><footer class=\"page-footer\"><div class=\"container\"><div class=\"row\"><div class=\"col l6 s12\"><ul><li><a class=\"grey-text text-lighten-3\" href=\"/\">ホーム</a></li><li><a class=\"grey-text text-lighten-3\" href=\"/service\">初めての方へ</a></li><li><a class=\"grey-text text-lighten-3\" href=\"/support\">サポートメニュー</a></li><li><a class=\"grey-text text-lighten-3\" href=\"/satisfaction\">満足度調査</a></li></ul></div></div><div class=\"row\"><div class=\"col l6 s12\"><h6>開発用ツール</h6><ul><li><a class=\"grey-text text-lighten-3\" target=\"_new\" href=\"/dev-tools/letter_opener\">メール（開発用）</a></li><li><p class=\"grey-text text-lighten-4\">ユーザー切替</p><select name=\"switch_user_identifier\" id=\"switch_user_identifier\" onchange=\"location.href = &#39;/switch_user?scope_identifier=&#39; + encodeURIComponent(this.options[this.selectedIndex].value)\" class=\"browser-default\"><optgroup label=\"Guest\"><option value=\"\">Guest</option></optgroup><optgroup label=\"Contact_user\"><option value=\"contact_user_1\">hayasaka+test1@ruffnote.com</option></optgroup></select>\n</li></ul></div></div></div><div class=\"footer-copyright\"></div></footer><div data-flash=\"{}\" id=\"flash\"></div></body></html>",
+      "code": 200,
+      "show_in_doc": 0,
+      "recorded": true
+    }
+  ],
+  "users#activate": [
+    {
+      "verb": "PUT",
+      "path": "/api/v1/users/0016F0000A682bae3d/activate",
+      "versions": [
+        "v1"
+      ],
+      "query": null,
+      "request_data": "lead_no=1234567",
+      "response_data": {
+        "id": 2,
+        "account_sfid": "0016F0000A682bae3d",
+        "lead_no": "1234567",
+        "lead_sfid": null,
+        "confirmed": true,
+        "activated": true
+      },
+      "code": 200,
+      "show_in_doc": 1,
+      "recorded": true
+    },
+    {
+      "verb": "PUT",
+      "path": "/api/v1/users/0016F0000Ab51fa027/activate",
+      "versions": [
+        "v1"
+      ],
+      "query": null,
+      "request_data": "lead_no=1234567",
+      "response_data": {
+        "id": 3,
+        "account_sfid": "0016F0000Ab51fa027",
+        "lead_no": "1234567",
+        "lead_sfid": null,
+        "confirmed": true,
+        "activated": true
+      },
+      "code": 200,
+      "show_in_doc": 0,
+      "recorded": true
+    },
+    {
+      "verb": "PUT",
+      "path": "/api/v1/users/0016F0000Ad46ab3cc/activate",
+      "versions": [
+        "v1"
+      ],
+      "query": null,
+      "request_data": "lead_no=1234567",
+      "response_data": {
+        "id": 4,
+        "account_sfid": "0016F0000Ad46ab3cc",
+        "lead_no": "1234567",
+        "lead_sfid": null,
+        "confirmed": true,
+        "activated": true
+      },
+      "code": 200,
+      "show_in_doc": 0,
+      "recorded": true
+    },
+    {
+      "verb": "PUT",
+      "path": "/api/v1/users/0016F0000A36fd123c/activate",
+      "versions": [
+        "v1"
+      ],
+      "query": null,
+      "request_data": "lead_no=1234567",
+      "response_data": {
+        "errors": {
+          "base": [
+            "ユーザはアクティーベーション済です。"
+          ]
+        }
+      },
+      "code": 422,
+      "show_in_doc": 0,
+      "recorded": true
+    },
+    {
+      "verb": "PUT",
+      "path": "/api/v1/users/0016F0000Add2dce40/activate",
+      "versions": [
+        "v1"
+      ],
+      "query": null,
+      "request_data": "lead_no=1234567",
+      "response_data": {
+        "errors": {
+          "base": [
+            "ユーザはアクティーベーション済です。"
+          ]
+        }
+      },
+      "code": 422,
+      "show_in_doc": 0,
+      "recorded": true
+    }
+  ],
+  "users-registrations#create": [
+    {
+      "verb": "POST",
+      "path": "/register",
+      "versions": [
+
+      ],
+      "query": null,
+      "request_data": "user[confirming]=&user[last_name]=%E5%85%89&user[first_name]=%E5%AE%AE%E5%B4%8E&user[email]=monet_mills%40moore.com&user[phone]=01234567890&user[password]=password&user[password_confirmation]=password",
+      "response_data": "<!DOCTYPE html><html><head><title>App</title><link rel=\"stylesheet\" media=\"all\" href=\"/assets/application-3fc9684003898f661f07f10e6c55d144b7205450191e19e8ec713cbb594ab801.css\" data-turbolinks-track=\"reload\" /><script src=\"/packs-test/js/application-281b81f1650693c72c93.js\" data-turbolinks-track=\"reload\"></script></head><body><nav><div class=\"nav-wrapper\"><a class=\"brand-logo\" href=\"/\">Home</a><ul class=\"right\"><li><a href=\"/contact/sign_up\"> 登録（担当者）</a></li><li><a href=\"/contact/sign_in\"> ログイン（担当者）</a></li><li><a href=\"/register\"> 登録（FC）</a></li><li><a href=\"/user/sign_in\"> ログイン（FC）</a></li></ul></div></nav><main><div class=\"row login-form\"><div class=\"col s12 m6 offset-m3\"><div class=\"card hoverable\"><div class=\"card-content\"><div class=\"card-content\"><span class=\"card-title center\">Sign Up</span><div class=\"divider\"></div><form action=\"/register\" accept-charset=\"UTF-8\" method=\"post\"><input type=\"hidden\" value=\"1\" name=\"user[confirming]\" id=\"user_confirming\" />1<div class=\"row\"><i class=\"material-icons prefix\">person</i>氏名<p>光 宮崎</p></div><div class=\"row\"><div class=\"input-fields col s12\"></div><i class=\"material-icons prefix\">email</i>Email<p>monet_mills@moore.com</p></div><div class=\"row\"><div class=\"input-fields col s12\"></div><i class=\"material-icons prefix\">phone</i>Phone<p>01234567890</p></div><div class=\"form-actions center\"><input type=\"hidden\" value=\"光\" name=\"user[last_name]\" id=\"user_last_name\" /><input type=\"hidden\" value=\"宮崎\" name=\"user[first_name]\" id=\"user_first_name\" /><input type=\"hidden\" value=\"monet_mills@moore.com\" name=\"user[email]\" id=\"user_email\" /><input type=\"hidden\" value=\"01234567890\" name=\"user[phone]\" id=\"user_phone\" /><input type=\"hidden\" value=\"password\" name=\"user[password]\" id=\"user_password\" /><input type=\"hidden\" value=\"password\" name=\"user[password_confirmation]\" id=\"user_password_confirmation\" /><input type=\"submit\" name=\"back\" value=\"Back\" class=\"btn waves-effect\" data-disable-with=\"Back\" /><input type=\"submit\" name=\"commit\" value=\"Sign Up\" class=\"btn waves-effect\" data-disable-with=\"Sign Up\" /></div></form></div><div class=\"card-action\"><div class=\"devise-links\"><a href=\"/user/sign_in\">Log in</a><br /><a href=\"/confirmation/new\">Didn&#39;t receive confirmation instructions?</a><br /></div></div></div></div></div></div></main><footer class=\"page-footer\"><div class=\"container\"><div class=\"row\"><div class=\"col l6 s12\"><ul><li><a class=\"grey-text text-lighten-3\" href=\"/\">ホーム</a></li><li><a class=\"grey-text text-lighten-3\" href=\"/service\">初めての方へ</a></li><li><a class=\"grey-text text-lighten-3\" href=\"/support\">サポートメニュー</a></li><li><a class=\"grey-text text-lighten-3\" href=\"/satisfaction\">満足度調査</a></li></ul></div></div><div class=\"row\"><div class=\"col l6 s12\"><h6>開発用ツール</h6><ul><li><a class=\"grey-text text-lighten-3\" target=\"_new\" href=\"/dev-tools/letter_opener\">メール（開発用）</a></li><li><p class=\"grey-text text-lighten-4\">ユーザー切替</p><select name=\"switch_user_identifier\" id=\"switch_user_identifier\" onchange=\"location.href = &#39;/switch_user?scope_identifier=&#39; + encodeURIComponent(this.options[this.selectedIndex].value)\" class=\"browser-default\"><optgroup label=\"Guest\"><option value=\"\">Guest</option></optgroup><optgroup label=\"Contact_user\"><option value=\"contact_user_1\">hayasaka+test1@ruffnote.com</option></optgroup></select>\n</li></ul></div></div></div><div class=\"footer-copyright\"></div></footer><div data-flash=\"{}\" id=\"flash\"></div></body></html>",
+      "code": 200,
+      "show_in_doc": 0,
+      "recorded": true
+    },
+    {
+      "verb": "POST",
+      "path": "/register",
+      "versions": [
+
+      ],
+      "query": null,
+      "request_data": "user[confirming]=1&user[last_name]=%E4%BA%AE%E5%A4%AA&user[first_name]=%E6%A8%AA%E5%B1%B1&user[email]=keri%40runolfsdottir.org&user[phone]=01234567890&user[password]=password&user[password_confirmation]=password",
+      "response_data": "<html><body>You are being <a href=\"http://www.example.com/register/thanks\">redirected</a>.</body></html>",
+      "code": 302,
+      "show_in_doc": 0,
+      "recorded": true
+    },
+    {
+      "verb": "POST",
+      "path": "/register",
+      "versions": [
+
+      ],
+      "query": null,
+      "request_data": "user[confirming]=1&user[last_name]=%E5%84%AA%E8%8A%B1&user[first_name]=%E6%9C%A8%E6%9D%91&user[email]=willard%40westoreilly.co&user[phone]=01234567890&user[password]=password&user[password_confirmation]=password",
+      "response_data": "<html><body>You are being <a href=\"http://www.example.com/register/thanks\">redirected</a>.</body></html>",
+      "code": 302,
+      "show_in_doc": 0,
+      "recorded": true
+    }
+  ],
+  "users-registrations#new": [
+    {
+      "verb": "GET",
+      "path": "/register",
+      "versions": [
+
+      ],
+      "query": null,
+      "request_data": null,
+      "response_data": "<!DOCTYPE html><html><head><title>App</title><link rel=\"stylesheet\" media=\"all\" href=\"/assets/application-3fc9684003898f661f07f10e6c55d144b7205450191e19e8ec713cbb594ab801.css\" data-turbolinks-track=\"reload\" /><script src=\"/packs-test/js/application-281b81f1650693c72c93.js\" data-turbolinks-track=\"reload\"></script></head><body><nav><div class=\"nav-wrapper\"><a class=\"brand-logo\" href=\"/\">Home</a><ul class=\"right\"><li><a href=\"/contact/sign_up\"> 登録（担当者）</a></li><li><a href=\"/contact/sign_in\"> ログイン（担当者）</a></li><li><a href=\"/register\"> 登録（FC）</a></li><li><a href=\"/user/sign_in\"> ログイン（FC）</a></li></ul></div></nav><main><div class=\"row login-form\"><div class=\"col s12 m6 offset-m3\"><div class=\"card hoverable\"><div class=\"card-content\"><div class=\"card-content\"><span class=\"card-title center\">Sign Up</span><div class=\"divider\"></div><form action=\"/register\" accept-charset=\"UTF-8\" method=\"post\"><input type=\"hidden\" name=\"user[confirming]\" id=\"user_confirming\" /><div class=\"form-inputs row\"><div class=\"input-field col s6\"><i class=\"material-icons prefix\">person</i><input autofocus=\"autofocus\" required=\"required\" type=\"text\" name=\"user[last_name]\" id=\"user_last_name\" /><label for=\"user_last_name\">お名前（姓）</label></div><div class=\"input-field col s6\"><input type=\"text\" name=\"user[first_name]\" id=\"user_first_name\" /><label for=\"user_first_name\">お名前（姓）</label></div></div><div class=\"form-inputs row\"><div class=\"input-field col s12\"><i class=\"material-icons prefix\">email</i><input required=\"required\" type=\"email\" value=\"\" name=\"user[email]\" id=\"user_email\" /><label for=\"user_email\">Eメール</label></div><div class=\"input-field col s12\"><i class=\"material-icons prefix\">phone</i><input required=\"required\" type=\"text\" name=\"user[phone]\" id=\"user_phone\" /><label for=\"user_phone\">Phone</label></div><div class=\"input-field col s12\"><i class=\"material-icons prefix\">lock</i><input autocomplete=\"off\" required=\"required\" type=\"password\" name=\"user[password]\" id=\"user_password\" /><label for=\"user_password\">パスワード</label><span class=\"hint-text\">6Characters Minimum</span></div><div class=\"input-field col s12\"><i class=\"material-icons prefix\">lock</i><input autocomplete=\"off\" required=\"required\" type=\"password\" name=\"user[password_confirmation]\" id=\"user_password_confirmation\" /><label for=\"user_password_confirmation\">パスワード（確認用）</label></div></div><div class=\"form-actions center\"><input type=\"submit\" name=\"commit\" value=\"Sign Up\" class=\"btn waves-effect\" data-disable-with=\"Sign Up\" /></div></form></div><div class=\"card-action\"><div class=\"devise-links\"><a href=\"/user/sign_in\">Log in</a><br /><a href=\"/confirmation/new\">Didn&#39;t receive confirmation instructions?</a><br /></div></div></div></div></div></div></main><footer class=\"page-footer\"><div class=\"container\"><div class=\"row\"><div class=\"col l6 s12\"><ul><li><a class=\"grey-text text-lighten-3\" href=\"/\">ホーム</a></li><li><a class=\"grey-text text-lighten-3\" href=\"/service\">初めての方へ</a></li><li><a class=\"grey-text text-lighten-3\" href=\"/support\">サポートメニュー</a></li><li><a class=\"grey-text text-lighten-3\" href=\"/satisfaction\">満足度調査</a></li></ul></div></div><div class=\"row\"><div class=\"col l6 s12\"><h6>開発用ツール</h6><ul><li><a class=\"grey-text text-lighten-3\" target=\"_new\" href=\"/dev-tools/letter_opener\">メール（開発用）</a></li><li><p class=\"grey-text text-lighten-4\">ユーザー切替</p><select name=\"switch_user_identifier\" id=\"switch_user_identifier\" onchange=\"location.href = &#39;/switch_user?scope_identifier=&#39; + encodeURIComponent(this.options[this.selectedIndex].value)\" class=\"browser-default\"><optgroup label=\"Guest\"><option value=\"\">Guest</option></optgroup><optgroup label=\"Contact_user\"><option value=\"contact_user_1\">hayasaka+test1@ruffnote.com</option></optgroup></select>\n</li></ul></div></div></div><div class=\"footer-copyright\"></div></footer><div data-flash=\"{}\" id=\"flash\"></div></body></html>",
+      "code": 200,
+      "show_in_doc": 0,
+      "recorded": true
+    }
+  ],
+  "users-sessions#create": [
+    {
+      "verb": "POST",
+      "path": "/user/sign_in",
+      "versions": [
+
+      ],
+      "query": null,
+      "request_data": "user[email]=esperanza.hettinger%40cruickshank.com&user[password]=password",
+      "response_data": "<html><body>You are being <a href=\"http://www.example.com/mypage\">redirected</a>.</body></html>",
+      "code": 302,
+      "show_in_doc": 0,
+      "recorded": true
+    },
+    {
+      "verb": "POST",
+      "path": "/user/sign_in",
+      "versions": [
+
+      ],
+      "query": null,
+      "request_data": "user[email]=estella.hansen%40oharalubowitz.io&user[password]=password",
+      "response_data": "<html><body>You are being <a href=\"http://www.example.com/mypage\">redirected</a>.</body></html>",
+      "code": 302,
+      "show_in_doc": 0,
+      "recorded": true
+    }
+  ],
+  "users-sessions#new": [
+    {
+      "verb": "GET",
+      "path": "/user/sign_in",
+      "versions": [
+
+      ],
+      "query": null,
+      "request_data": null,
+      "response_data": "<!DOCTYPE html><html><head><title>App</title><link rel=\"stylesheet\" media=\"all\" href=\"/assets/application-3fc9684003898f661f07f10e6c55d144b7205450191e19e8ec713cbb594ab801.css\" data-turbolinks-track=\"reload\" /><script src=\"/packs-test/js/application-281b81f1650693c72c93.js\" data-turbolinks-track=\"reload\"></script></head><body><nav><div class=\"nav-wrapper\"><a class=\"brand-logo\" href=\"/\">Home</a><ul class=\"right\"><li><a href=\"/contact/sign_up\"> 登録（担当者）</a></li><li><a href=\"/contact/sign_in\"> ログイン（担当者）</a></li><li><a href=\"/register\"> 登録（FC）</a></li><li><a href=\"/user/sign_in\"> ログイン（FC）</a></li></ul></div></nav><main><div class=\"row login-form\"><div class=\"col s12 m6 offset-m3\"><div class=\"card hoverable\"><div class=\"card-content\"><div class=\"card-content\"><span class=\"card-title center\">ログイン</span><div class=\"divider\"></div><form action=\"/user/sign_in\" accept-charset=\"UTF-8\" method=\"post\"><div class=\"form-inputs row\"><div class=\"input-field col s12\"><i class=\"material-icons prefix\">email</i><input autofocus=\"autofocus\" autocomplete=\"email\" type=\"email\" value=\"\" name=\"user[email]\" id=\"user_email\" /><label for=\"user_email\">Eメール</label></div></div><div class=\"form-inputs row\"><div class=\"input-field col s12\"><i class=\"material-icons prefix\">lock</i><input autocomplete=\"current-password\" type=\"password\" name=\"user[password]\" id=\"user_password\" /><label for=\"user_password\">パスワード</label></div></div><div class=\"form-input row\"><div class=\"input-field col s12\"><input type=\"hidden\" name=\"g-recaptcha-response[login]\" id=\"g-recaptcha-response-login\" class=\"g-recaptcha g-recaptcha-response \" ajax=\"true\"/>\n</div></div><div class=\"form-actions center\"><input type=\"submit\" name=\"commit\" value=\"ログイン\" class=\"btn waves-effect\" data-disable-with=\"ログイン\" /></div></form></div><div class=\"card-action\"></div><a href=\"/register\">Sign up</a><br /><a href=\"/password/new\">Forgot your password?</a><br /><a href=\"/confirmation/new\">Didn&#39;t receive confirmation instructions?</a><br /></div></div></div></div></main><footer class=\"page-footer\"><div class=\"container\"><div class=\"row\"><div class=\"col l6 s12\"><ul><li><a class=\"grey-text text-lighten-3\" href=\"/\">ホーム</a></li><li><a class=\"grey-text text-lighten-3\" href=\"/service\">初めての方へ</a></li><li><a class=\"grey-text text-lighten-3\" href=\"/support\">サポートメニュー</a></li><li><a class=\"grey-text text-lighten-3\" href=\"/satisfaction\">満足度調査</a></li></ul></div></div><div class=\"row\"><div class=\"col l6 s12\"><h6>開発用ツール</h6><ul><li><a class=\"grey-text text-lighten-3\" target=\"_new\" href=\"/dev-tools/letter_opener\">メール（開発用）</a></li><li><p class=\"grey-text text-lighten-4\">ユーザー切替</p><select name=\"switch_user_identifier\" id=\"switch_user_identifier\" onchange=\"location.href = &#39;/switch_user?scope_identifier=&#39; + encodeURIComponent(this.options[this.selectedIndex].value)\" class=\"browser-default\"><optgroup label=\"Guest\"><option value=\"\">Guest</option></optgroup><optgroup label=\"Contact_user\"><option value=\"contact_user_1\">hayasaka+test1@ruffnote.com</option></optgroup></select>\n</li></ul></div></div></div><div class=\"footer-copyright\"></div></footer><div data-flash=\"{}\" id=\"flash\"></div></body></html>",
+      "code": 200,
+      "show_in_doc": 0,
+      "recorded": true
+    }
+  ],
+  "wordpress-pages#show": [
+    {
+      "verb": "GET",
+      "path": "/service",
+      "versions": [
+
+      ],
+      "query": null,
+      "request_data": null,
+      "response_data": "<!DOCTYPE html><html><head><title>App</title><link rel=\"stylesheet\" media=\"all\" href=\"/assets/application-3fc9684003898f661f07f10e6c55d144b7205450191e19e8ec713cbb594ab801.css\" data-turbolinks-track=\"reload\" /><script src=\"/packs-test/js/application-281b81f1650693c72c93.js\" data-turbolinks-track=\"reload\"></script></head><body><nav><div class=\"nav-wrapper\"><a class=\"brand-logo\" href=\"/\">Home</a><ul class=\"right\"><li><a href=\"/contact/sign_up\"> 登録（担当者）</a></li><li><a href=\"/contact/sign_in\"> ログイン（担当者）</a></li><li><a href=\"/register\"> 登録（FC）</a></li><li><a href=\"/user/sign_in\"> ログイン（FC）</a></li></ul></div></nav><main><div class=\"container\"><div class=\"row\"><h1>初めての方へ</h1></div><div class=\"row\"><hr />\r\n\r\nAtque illo nostrum enim eligendi. Eaque fugiat voluptas qui necessitatibus repellat fugit. Fuga hic odit quis esse.\r\n<h1>Eos velit omnis itaque magni id autem vitae aperiam. Illo dolorem molestiae quia magni dolor. Labore est vel consequatur modi eum non</h1>\r\n<ol>\r\n \t<li>Accusamus architecto natus assumenda</li>\r\n \t<li>Doloribus ut illo dolorem et</li>\r\n \t<li>Voluptatum</li>\r\n \t<li>Sit sed quas minus omnis neque</li>\r\n</ol>\r\n<h2>Voluptatibus omnis aut id culpa. Et ullam sunt in. Ut et similique qui aut. Odit ipsa et dolore</h2>\r\n<img src=\"https://fcjp-wordpress-mock.herokuapp.com/app/uploads/2019/12/22b33962-9d97-3abe-a730-6c6e32d7f220.png\" alt=\"Quis totam ipsum temporibus dolor dolor et et\" /></div></div></main><footer class=\"page-footer\"><div class=\"container\"><div class=\"row\"><div class=\"col l6 s12\"><ul><li><a class=\"grey-text text-lighten-3\" href=\"/\">ホーム</a></li><li><a class=\"grey-text text-lighten-3\" href=\"/service\">初めての方へ</a></li><li><a class=\"grey-text text-lighten-3\" href=\"/support\">サポートメニュー</a></li><li><a class=\"grey-text text-lighten-3\" href=\"/satisfaction\">満足度調査</a></li></ul></div></div><div class=\"row\"><div class=\"col l6 s12\"><h6>開発用ツール</h6><ul><li><a class=\"grey-text text-lighten-3\" target=\"_new\" href=\"/dev-tools/letter_opener\">メール（開発用）</a></li><li><p class=\"grey-text text-lighten-4\">ユーザー切替</p><select name=\"switch_user_identifier\" id=\"switch_user_identifier\" onchange=\"location.href = &#39;/switch_user?scope_identifier=&#39; + encodeURIComponent(this.options[this.selectedIndex].value)\" class=\"browser-default\"><optgroup label=\"Guest\"><option value=\"\">Guest</option></optgroup><optgroup label=\"Contact_user\"><option value=\"contact_user_1\">hayasaka+test1@ruffnote.com</option></optgroup></select>\n</li></ul></div></div></div><div class=\"footer-copyright\"></div></footer><div data-flash=\"{}\" id=\"flash\"></div></body></html>",
+      "code": 200,
+      "show_in_doc": 0,
+      "recorded": true
+    },
+    {
+      "verb": "GET",
+      "path": "/company",
+      "versions": [
+
+      ],
+      "query": null,
+      "request_data": null,
+      "response_data": "<!DOCTYPE html><html><head><title>App</title><link rel=\"stylesheet\" media=\"all\" href=\"/assets/application-3fc9684003898f661f07f10e6c55d144b7205450191e19e8ec713cbb594ab801.css\" data-turbolinks-track=\"reload\" /><script src=\"/packs-test/js/application-281b81f1650693c72c93.js\" data-turbolinks-track=\"reload\"></script></head><body><nav><div class=\"nav-wrapper\"><a class=\"brand-logo\" href=\"/\">Home</a><ul class=\"right\"><li><a href=\"/contact/sign_up\"> 登録（担当者）</a></li><li><a href=\"/contact/sign_in\"> ログイン（担当者）</a></li><li><a href=\"/register\"> 登録（FC）</a></li><li><a href=\"/user/sign_in\"> ログイン（FC）</a></li></ul></div></nav><main><div class=\"container\"><div class=\"row\"><h1>運営会社のご紹介</h1></div><div class=\"row\"><h2>Facere facere ut facilis optio cum delectus quia. Non dolore soluta repudiandae voluptatibus perspiciatis sit. Molestias labore eveniet at</h2>\n<img src=\"https://fcjp-wordpress-mock.herokuapp.com/app/uploads/2019/12/82314c49-1887-339e-8d6f-b10cd82d02da.png\">\n<!--more-->\n<ol><li>Aliquid et amet</li><li>Exercitationem natus dolor et et provident</li><li>Sit libero iure quia id numquam</li><li>Consequuntur numquam est itaque</li></ol>\n<p>Saepe impedit ipsam enim architecto recusandae odio. illo consequatur laudantium voluptas corrupti in veniam. Esse quia dolor <a title=\"Dolorum nihil architecto nihil illo.\" href=\"http://www.zhu.org/velit-ipsam-animi-praesentium-aliquid-maxime-similique-doloremque\">voluptatem. Odio voluptas commodi maxime</a> <a title=\"Officia et voluptas.\" href=\"https://yiteng.com/ut-omnis-fuga-doloremque-ad.html\">Facere error provident</a> ut exercitationem nostrum. Quo expedita voluptatem Aut maiores <a title=\"Et vero quis dolorem veritatis est.\" href=\"http://www.jitian.net/\">aliquid</a> at blanditiis Reprehenderit id et et. qui alias molestiae quam facere. Aspernatur ad unde. Tempora nihil eum <a title=\"Natus ad rerum cumque.\" href=\"http://cunshan.com/\">earum numquam. Nesciunt perferendis possimus repudiandae qui minima</a> Facere illum dolorem <a title=\"Veritatis enim.\" href=\"https://jiateng.com/voluptatibus-quia-qui-et-necessitatibus-quam-et-et.html\">ea</a> libero sapiente. Sunt quisquam porro qui. Sed consequatur sed eum ea ea. <a title=\"Ut et.\" href=\"https://ruosong.info/unde-non-veritatis-placeat-sapiente.html\">voluptate voluptatem</a> autem Quia consequatur rerum repellat. At voluptatem blanditiis et sit perferendis explicabo. At earum et voluptatum. Facere doloremque harum fugit dolorem <a title=\"Repudiandae voluptatem deserunt veritatis neque odit et.\" href=\"http://www.shanben.com/consequatur-et-ullam-veniam-sed-ut-nam-recusandae\">aut.</a></p>\n<ol><li>Non nemo non qui</li><li>Voluptatum mollitia impedit voluptatem veritatis</li></ol></div></div></main><footer class=\"page-footer\"><div class=\"container\"><div class=\"row\"><div class=\"col l6 s12\"><ul><li><a class=\"grey-text text-lighten-3\" href=\"/\">ホーム</a></li><li><a class=\"grey-text text-lighten-3\" href=\"/service\">初めての方へ</a></li><li><a class=\"grey-text text-lighten-3\" href=\"/support\">サポートメニュー</a></li><li><a class=\"grey-text text-lighten-3\" href=\"/satisfaction\">満足度調査</a></li></ul></div></div><div class=\"row\"><div class=\"col l6 s12\"><h6>開発用ツール</h6><ul><li><a class=\"grey-text text-lighten-3\" target=\"_new\" href=\"/dev-tools/letter_opener\">メール（開発用）</a></li><li><p class=\"grey-text text-lighten-4\">ユーザー切替</p><select name=\"switch_user_identifier\" id=\"switch_user_identifier\" onchange=\"location.href = &#39;/switch_user?scope_identifier=&#39; + encodeURIComponent(this.options[this.selectedIndex].value)\" class=\"browser-default\"><optgroup label=\"Guest\"><option value=\"\">Guest</option></optgroup><optgroup label=\"Contact_user\"><option value=\"contact_user_1\">hayasaka+test1@ruffnote.com</option></optgroup></select>\n</li></ul></div></div></div><div class=\"footer-copyright\"></div></footer><div data-flash=\"{}\" id=\"flash\"></div></body></html>",
+      "code": 200,
+      "show_in_doc": 0,
+      "recorded": true
+    },
+    {
+      "verb": "GET",
+      "path": "/support",
+      "versions": [
+
+      ],
+      "query": null,
+      "request_data": null,
+      "response_data": "<!DOCTYPE html><html><head><title>App</title><link rel=\"stylesheet\" media=\"all\" href=\"/assets/application-3fc9684003898f661f07f10e6c55d144b7205450191e19e8ec713cbb594ab801.css\" data-turbolinks-track=\"reload\" /><script src=\"/packs-test/js/application-281b81f1650693c72c93.js\" data-turbolinks-track=\"reload\"></script></head><body><nav><div class=\"nav-wrapper\"><a class=\"brand-logo\" href=\"/\">Home</a><ul class=\"right\"><li><a href=\"/contact/sign_up\"> 登録（担当者）</a></li><li><a href=\"/contact/sign_in\"> ログイン（担当者）</a></li><li><a href=\"/register\"> 登録（FC）</a></li><li><a href=\"/user/sign_in\"> ログイン（FC）</a></li></ul></div></nav><main><div class=\"container\"><div class=\"row\"><h1>サポートメニュー</h1></div><div class=\"row\"><ul><li>Quis et dolores deserunt blanditiis</li><li>Placeat eos assumenda maxime</li><li>Est aperiam quis enim a eos explicabo</li></ul>\n<h4>Vitae aperiam qui earum odit. Sunt rerum reprehenderit quos impedit praesentium quod</h4>\n<blockquote>Tenetur hic accusamus id ipsa. Sed aut saepe corporis. Inventore et rem consequuntur sunt Odit eos a assumenda repudiandae facilis. Dicta asperiores quia et placeat sed. Molestiae laudantium inventore sit ipsa accusamus consequatur. Autem voluptates quisquam nobis sint. Delectus rerum aut ullam reprehenderit Vero molestias consequatur doloribus aut nihil. sequi blanditiis deserunt occaecati reprehenderit. Incidunt quos blanditiis eos quis et et nesciunt. Tempora quia blanditiis aut hic. Dolore voluptatem sunt rem nisi <a title=\"Aut nobis tempora sequi numquam.\" href=\"http://www.jintian.org/quae-eaque-doloremque-minus-repellat-et-architecto-ad-omnis\">qui. Dolor aut voluptatum quas</a> ducimus. qui ut cum placeat. pariatur officiis aut qui. Id vel ea architecto qui earum. Itaque aliquid voluptatem possimus nesciunt. Quos libero iure. Illum occaecati ducimus sapiente. omnis placeat ipsum. sit eos temporibus molestiae atque. Exercitationem in repudiandae et. Sint id sed esse Consequatur temporibus quas omnis deserunt laudantium. Vel dolorem rem est blanditiis reiciendis. Sed consequuntur expedita adipisci exercitationem Ullam occaecati iure in quae. Earum nobis dolor. Cum reprehenderit cumque esse fugit veniam. Eaque quisquam quod libero id Et magni velit et consectetur recusandae molestias. ut qui voluptas consequatur rem. <a title=\"Voluptatem nihil explicabo aut quisquam eos et ut.\" href=\"https://yuye.com/praesentium-vero-aut-explicabo-rerum-est-id-aliquam-iste.html\">recusandae maxime blanditiis quia et a provident</a> Ea voluptas non vel. Amet quaerat facere. et voluptate et nam dolores tempora. qui impedit voluptatem cum.</blockquote>\n<h1>Laborum aperiam sit natus saepe et. Harum exercitationem delectus magnam blanditiis quaerat nobis</h1>\n<p>Et sapiente iusto minima occaecati excepturi sunt iste. Et sint recusandae animi nostrum officiis. Voluptatibus ut nihil provident molestiae quam nobis voluptatibus qui. Qui sed dolore quisquam ea eos est. Expedita quo qui et aperiam et asperiores. Dolores aut occaecati voluptas odit quia. Assumenda facere veritatis voluptate omnis sed. Suscipit voluptates eos reiciendis minima sint culpa. Provident nemo adipisci nihil vitae odit aut. Cumque voluptates id quibusdam dolores placeat dicta. Expedita excepturi et error qui voluptatem consequatur consequatur. Et et consequatur sed ut architecto qui sunt. Omnis cum odio aliquam eos ullam. Repudiandae dolores iusto odio et et sint. Explicabo consequatur suscipit est aliquid. Dolor possimus laboriosam id dolor natus. Delectus quo numquam rerum suscipit est sit explicabo. Dolorem expedita asperiores sit omnis perferendis aut odit. Quos labore veniam dolor aut maiores veniam. Quis necessitatibus rerum sit molestias quia sunt. Odio blanditiis ut sed vel. Soluta excepturi aspernatur rerum iste totam voluptatem eligendi perferendis. Repellendus perspiciatis quos sequi praesentium rerum sapiente debitis. Reprehenderit dolore rerum enim ullam laboriosam non. Qui odit dolore dicta. Nulla sint totam at autem aut quis doloribus. Fuga aut voluptatem tempore dolor. Dolor vitae facilis odit temporibus sint aut quia. Placeat labore et fugit rerum veritatis. Officia corrupti esse vero repudiandae id omnis explicabo sunt. Consequatur ipsam suscipit expedita molestiae vel nam. Fugiat facere quod perspiciatis et. Asperiores dolorem nihil consequatur laudantium dolore et harum. Et excepturi eos dolorem odit voluptatem. Et molestiae maiores praesentium voluptas eligendi. Totam in voluptates maiores harum quos omnis. Ab adipisci sint qui corporis et. Dolorem labore officiis tempora consequatur neque. Et dolore quod iusto rerum et. Laudantium odio sed perferendis. Qui iste eos dolore eos qui. Fugit et ut rerum dicta. Dolores et atque officia exercitationem beatae eius molestiae. Officiis qui et aliquid.</p>\n<p>Culpa corporis aut quasi. ut ex dolores sed eos et. Consectetur nemo animi perferendis <a title=\"Corporis adipisci minus quibusdam.\" href=\"https://yuantian.net/et-et-vel-omnis-consectetur-magni-deleniti.html\">eius. Atque</a> ut sit quia. Ipsam voluptatem atque tempore. eum rem officiis veniam eum. eveniet eaque amet tempore eum. Non qui maiores odit quae ab. ab <a title=\"Dolorum et.\" href=\"http://www.guangchuan.com/\">dolorem et quos. Commodi et dolorem voluptatibus minus.</a> sint quod error. Nulla dolores est cum molestiae velit. Dolorum iure et dignissimos recusandae. Et nobis explicabo rerum qui at Qui placeat voluptatum eligendi illum rerum quisquam. earum laudantium voluptatem non Est explicabo ut neque consequatur a. Ut neque ipsa et eos et Eos perferendis molestiae provident. Mollitia perferendis nihil necessitatibus atque dolor.</p>\n<h5>Sapiente officia est voluptatem consequuntur molestias</h5>\n<!--more-->\n<p>Nihil doloremque deserunt est aut. error hic <a title=\"Quas dolores perferendis animi soluta.\" href=\"http://www.gongteng.org/dolores-est-esse-similique-sit-sunt-quam.html\">quaerat id et autem. Et</a> ducimus doloribus explicabo officia aut. suscipit consequuntur ullam. Odit debitis et. Dolor est culpa quis Est aut minima aut dolores. Unde voluptatibus id libero asperiores accusamus. Modi ea vitae pariatur architecto sint. Dicta repellat cumque in voluptatem magnam. Aut neque eius debitis. deleniti quia velit. Nihil dolorem sint Repudiandae dolorem aspernatur atque nihil Earum asperiores necessitatibus qui sint magnam sequi amet. Sed numquam qui eveniet eum. Suscipit repellendus rerum expedita libero ut. Consequuntur magni deleniti numquam est aliquam omnis nulla. <a title=\"Quia nihil cum est enim nihil.\" href=\"https://songben.net/illum-quia-veniam-ut-earum-esse.html\">consequuntur asperiores id est natus</a> ea reiciendis. Sit omnis aut provident consequatur est.</p>\n<hr>\n<h2>A aliquid reprehenderit aspernatur tempora. Non eius ea vel. Quo ad optio rerum velit consequatur</h2>\n<ol><li>Nihil id id quos harum</li><li>Expedita labore</li><li>Officiis et qui ut earum modi</li><li>Laudantium doloremque iure officiis sed et</li></ol>\n<h5>Veritatis modi dolore illum veritatis. Ut amet qui quidem. Voluptatem rerum sunt ut qui ut incidunt reprehenderit</h5>\n<ol><li>Qui soluta</li><li>Ullam qui cumque aut porro nisi</li><li>Laborum libero eum</li><li>Officiis reiciendis</li><li>Vero aut fugiat doloribus</li><li>Sed sint sequi numquam sed</li></ol></div></div></main><footer class=\"page-footer\"><div class=\"container\"><div class=\"row\"><div class=\"col l6 s12\"><ul><li><a class=\"grey-text text-lighten-3\" href=\"/\">ホーム</a></li><li><a class=\"grey-text text-lighten-3\" href=\"/service\">初めての方へ</a></li><li><a class=\"grey-text text-lighten-3\" href=\"/support\">サポートメニュー</a></li><li><a class=\"grey-text text-lighten-3\" href=\"/satisfaction\">満足度調査</a></li></ul></div></div><div class=\"row\"><div class=\"col l6 s12\"><h6>開発用ツール</h6><ul><li><a class=\"grey-text text-lighten-3\" target=\"_new\" href=\"/dev-tools/letter_opener\">メール（開発用）</a></li><li><p class=\"grey-text text-lighten-4\">ユーザー切替</p><select name=\"switch_user_identifier\" id=\"switch_user_identifier\" onchange=\"location.href = &#39;/switch_user?scope_identifier=&#39; + encodeURIComponent(this.options[this.selectedIndex].value)\" class=\"browser-default\"><optgroup label=\"Guest\"><option value=\"\">Guest</option></optgroup><optgroup label=\"Contact_user\"><option value=\"contact_user_1\">hayasaka+test1@ruffnote.com</option></optgroup></select>\n</li></ul></div></div></div><div class=\"footer-copyright\"></div></footer><div data-flash=\"{}\" id=\"flash\"></div></body></html>",
+      "code": 200,
+      "show_in_doc": 0,
+      "recorded": true
+    },
+    {
+      "verb": "GET",
+      "path": "/terms",
+      "versions": [
+
+      ],
+      "query": null,
+      "request_data": null,
+      "response_data": "<!DOCTYPE html><html><head><title>App</title><link rel=\"stylesheet\" media=\"all\" href=\"/assets/application-3fc9684003898f661f07f10e6c55d144b7205450191e19e8ec713cbb594ab801.css\" data-turbolinks-track=\"reload\" /><script src=\"/packs-test/js/application-281b81f1650693c72c93.js\" data-turbolinks-track=\"reload\"></script></head><body><nav><div class=\"nav-wrapper\"><a class=\"brand-logo\" href=\"/\">Home</a><ul class=\"right\"><li><a href=\"/contact/sign_up\"> 登録（担当者）</a></li><li><a href=\"/contact/sign_in\"> ログイン（担当者）</a></li><li><a href=\"/register\"> 登録（FC）</a></li><li><a href=\"/user/sign_in\"> ログイン（FC）</a></li></ul></div></nav><main><div class=\"container\"><div class=\"row\"><h1>サービス利用規約と免責事項について</h1></div><div class=\"row\"><h4>Praesentium tempora laboriosam iste fugiat accusamus quia. Et illo ratione itaque nisi adipisci alias. Praesentium vel impedit amet dolorem et asperiores</h4>\n<img src=\"https://fcjp-wordpress-mock.herokuapp.com/app/uploads/2019/12/bb226307-48ad-3f78-ae87-a217faab5473.png\">\n<h3>Voluptatem autem natus asperiores id. Et inventore velit autem blanditiis sed aut. Rerum qui repudiandae est ut tenetur quia recusandae provident</h3>\n<ol><li>Vel in adipisci</li><li>Omnis hic vitae aut quod</li><li>Ea ducimus facilis ipsam</li></ol>\n<!--more-->\n<p>Similique repudiandae ut illo reprehenderit quaerat qui ut et. Ipsum doloribus est suscipit sit.</p>\n<img src=\"https://fcjp-wordpress-mock.herokuapp.com/app/uploads/2019/12/e4b99ee6-d1d4-3c6c-a20f-25c35de1f518.png\">\n<h1>Veniam consequatur et mollitia. Ab unde laboriosam illum exercitationem commodi temporibus</h1>\n<ol><li>Maiores sint qui id ipsa</li></ol>\n<h6>Quo eos qui occaecati aut</h6>\n<p>Eveniet et sed incidunt quidem dolor sit dolore. Non quia dolore quibusdam libero et quo. Ad voluptatem aut voluptates aliquam et vitae pariatur. Non distinctio unde qui et voluptatibus beatae. Ullam rem hic tempore ut velit saepe. Aliquid aut error expedita numquam blanditiis nobis odit est. Quo labore enim est sit ipsum dolor. Enim et ut sunt id iste quia deserunt. Labore vitae est aut quis ab est deleniti. Delectus sit dolor vitae maiores illo tempore. Voluptatem error sed error perferendis. Nemo vel explicabo autem in maxime cupiditate perferendis. Eveniet animi accusantium magni eligendi. Error veritatis eveniet eligendi est et. Molestias occaecati laudantium minus corrupti recusandae sunt animi. Voluptas illo quod illo impedit et. Maxime sit tempora id enim. Aliquam et quis fugit eaque esse et. Vel voluptatem iste cumque culpa placeat ipsam. Id unde qui eum odio. Culpa ipsum magni cupiditate eius. Harum quisquam quia odit similique est molestiae. Natus architecto suscipit ea enim at earum cumque.</p></div></div></main><footer class=\"page-footer\"><div class=\"container\"><div class=\"row\"><div class=\"col l6 s12\"><ul><li><a class=\"grey-text text-lighten-3\" href=\"/\">ホーム</a></li><li><a class=\"grey-text text-lighten-3\" href=\"/service\">初めての方へ</a></li><li><a class=\"grey-text text-lighten-3\" href=\"/support\">サポートメニュー</a></li><li><a class=\"grey-text text-lighten-3\" href=\"/satisfaction\">満足度調査</a></li></ul></div></div><div class=\"row\"><div class=\"col l6 s12\"><h6>開発用ツール</h6><ul><li><a class=\"grey-text text-lighten-3\" target=\"_new\" href=\"/dev-tools/letter_opener\">メール（開発用）</a></li><li><p class=\"grey-text text-lighten-4\">ユーザー切替</p><select name=\"switch_user_identifier\" id=\"switch_user_identifier\" onchange=\"location.href = &#39;/switch_user?scope_identifier=&#39; + encodeURIComponent(this.options[this.selectedIndex].value)\" class=\"browser-default\"><optgroup label=\"Guest\"><option value=\"\">Guest</option></optgroup><optgroup label=\"Contact_user\"><option value=\"contact_user_1\">hayasaka+test1@ruffnote.com</option></optgroup></select>\n</li></ul></div></div></div><div class=\"footer-copyright\"></div></footer><div data-flash=\"{}\" id=\"flash\"></div></body></html>",
+      "code": 200,
+      "show_in_doc": 0,
+      "recorded": true
+    },
+    {
+      "verb": "GET",
+      "path": "/select-register",
+      "versions": [
+
+      ],
+      "query": null,
+      "request_data": null,
+      "response_data": "<!DOCTYPE html><html><head><title>App</title><link rel=\"stylesheet\" media=\"all\" href=\"/assets/application-3fc9684003898f661f07f10e6c55d144b7205450191e19e8ec713cbb594ab801.css\" data-turbolinks-track=\"reload\" /><script src=\"/packs-test/js/application-281b81f1650693c72c93.js\" data-turbolinks-track=\"reload\"></script></head><body><nav><div class=\"nav-wrapper\"><a class=\"brand-logo\" href=\"/\">Home</a><ul class=\"right\"><li><a href=\"/contact/sign_up\"> 登録（担当者）</a></li><li><a href=\"/contact/sign_in\"> ログイン（担当者）</a></li><li><a href=\"/register\"> 登録（FC）</a></li><li><a href=\"/user/sign_in\"> ログイン（FC）</a></li></ul></div></nav><main><div class=\"container\"><div class=\"row\"><h1>独立・企業・転職のご相談</h1></div><div class=\"row\"><hr>\n<h2>Et voluptas sed tempore libero ea laboriosam</h2>\n<!--more-->\n<ul><li>Est quos voluptatem nulla sit</li><li>Exercitationem sint</li><li>Maxime dolore</li><li>Tempore ut sunt explicabo ut debitis hic</li><li>Minima officiis velit architecto</li></ul>\n<blockquote>Id dolore sed soluta quaerat ipsa. Rerum quaerat est aut ut. Animi iste sint voluptatem sint consequatur. Dolore omnis neque ut omnis porro vel vitae aut. Assumenda id explicabo minus nulla aut. Aut non cupiditate enim vel. Ut et rerum aliquid facere. Id distinctio accusantium voluptatum architecto inventore. Aut laboriosam eius sunt in nihil. Et explicabo incidunt culpa amet autem. Magnam dolor distinctio nam itaque dignissimos facere. Id quo quia itaque voluptates aspernatur modi quae. Nostrum nulla est perspiciatis. Eius voluptatibus est pariatur impedit cumque cum. Perferendis atque aut eum excepturi est possimus consequatur in. Corporis quos et aut aut. Ratione repudiandae ratione unde unde consectetur quis.</blockquote>\n<h6>Vel atque possimus quia qui quo. Et est ut amet quia</h6>\n<blockquote>Voluptatem voluptatibus quam et molestias. eum aut ullam aut sint illo. Aut repellendus eius exercitationem facilis. rerum exercitationem assumenda necessitatibus consequatur. Pariatur ducimus blanditiis maxime omnis accusamus quas. Earum tempora qui non maxime sit itaque Repellat ab quisquam nesciunt voluptatem sint magni esse. Recusandae error adipisci dolorem voluptatibus. Ea et mollitia libero delectus ut vel. Quo minima repellat placeat nemo et <a title=\"Quo voluptas.\" href=\"http://shitian.com/\">aut</a> Perferendis eos exercitationem suscipit. laborum sed a odio. Non doloribus excepturi et officia nostrum. Dignissimos et consequatur consequatur maxime. rerum tenetur dolorem. Omnis hic consequuntur atque quibusdam nobis perferendis. Sunt blanditiis voluptas. Voluptatem voluptatem aperiam omnis Similique aliquam repellat hic. Id aut vero quis placeat et ea. Aut quia et necessitatibus. Quas magni reprehenderit dolor. tenetur tenetur numquam modi. Voluptas quae et numquam Vel harum earum quos exercitationem Numquam sed est voluptatibus odit Aut quia fuga velit tempora sequi. Et explicabo quas consequatur non. Velit est <a title=\"Consequuntur modi.\" href=\"http://qingshan.com/\">id minima voluptatem dolorem eum ullam. Aut</a> facere quam sunt quo id. Ut asperiores magni maiores quasi in modi. Est quam maiores quasi enim <a title=\"Molestiae eveniet id.\" href=\"http://www.xiaoquan.org/veniam-voluptatibus-odit-sit\">aut. Aut officia eos omnis sit placeat. Magnam magni</a> veritatis architecto autem Quisquam autem quas saepe Quia voluptates esse quo Aut praesentium optio consequatur sit. Rerum enim ipsa eos. Maxime et odio nam est iste. Hic sed laudantium. Perferendis perferendis ab Omnis vel ipsum atque ut officiis. voluptatem ea sint autem fugit. Veritatis ipsam Veritatis omnis dicta optio odit quibusdam hic magnam.</blockquote>\n<h5>Ut sunt ullam et ut dolores. Labore et unde nostrum quaerat et. Et ut voluptatem quibusdam vero illo alias cumque</h5>\n<ul><li>Eum quam laudantium vel fugit</li><li>Non deleniti modi non dolorem ut enim est</li><li>Voluptas voluptatum magni est iste laborum</li><li>Et veniam cum similique qui</li><li>Aut sed veritatis qui</li><li>Provident sed harum mollitia eum</li><li>Ex tempore sed</li><li>Doloremque vitae officia praesentium animi</li></ul>\n<h5>Explicabo odio aut qui consectetur. Voluptatem id quasi id velit quia. Nobis et eum numquam modi sapiente ex</h5>\n<blockquote>Et itaque dicta ut dolores vitae iste. cum dolores sint qui dolorem. reprehenderit est hic eius et autem. expedita quibusdam aut sed modi molestiae. Enim <a title=\"Esse.\" href=\"https://www.gongze.biz/occaecati-voluptas-illo-in-ipsa-odio-itaque-deleniti\">eum ipsum facilis aut aut. Delectus</a> cumque mollitia pariatur esse. Et illum ut eum pariatur dolores mollitia. Est sunt libero <a title=\"In perferendis.\" href=\"http://zhu.com/\">rem.</a> recusandae voluptatem est provident autem. <a title=\"Ducimus autem quaerat et.\" href=\"https://xiaoquan.net/quasi-qui-quia-enim-facere-qui.html\">et</a> quia fugiat doloremque. Vero occaecati doloribus velit sed magnam. sequi esse eos Doloremque corrupti sed maiores laudantium dolores molestias.</blockquote>\n<hr>\n<h3>Consequatur quasi possimus ipsa veniam dolorem. Totam iure voluptas laudantium qui sint. Fugiat explicabo nemo facilis ut vero ea non animi</h3>\n<ol><li>Quod nulla</li><li>Quasi laboriosam</li><li>Sequi magnam quae quae fugit</li><li>Omnis in quis qui dolor et</li></ol>\n<ol><li>Nulla molestiae dolore est debitis</li><li>Repudiandae at et sequi</li></ol></div></div></main><footer class=\"page-footer\"><div class=\"container\"><div class=\"row\"><div class=\"col l6 s12\"><ul><li><a class=\"grey-text text-lighten-3\" href=\"/\">ホーム</a></li><li><a class=\"grey-text text-lighten-3\" href=\"/service\">初めての方へ</a></li><li><a class=\"grey-text text-lighten-3\" href=\"/support\">サポートメニュー</a></li><li><a class=\"grey-text text-lighten-3\" href=\"/satisfaction\">満足度調査</a></li></ul></div></div><div class=\"row\"><div class=\"col l6 s12\"><h6>開発用ツール</h6><ul><li><a class=\"grey-text text-lighten-3\" target=\"_new\" href=\"/dev-tools/letter_opener\">メール（開発用）</a></li><li><p class=\"grey-text text-lighten-4\">ユーザー切替</p><select name=\"switch_user_identifier\" id=\"switch_user_identifier\" onchange=\"location.href = &#39;/switch_user?scope_identifier=&#39; + encodeURIComponent(this.options[this.selectedIndex].value)\" class=\"browser-default\"><optgroup label=\"Guest\"><option value=\"\">Guest</option></optgroup><optgroup label=\"Contact_user\"><option value=\"contact_user_1\">hayasaka+test1@ruffnote.com</option></optgroup></select>\n</li></ul></div></div></div><div class=\"footer-copyright\"></div></footer><div data-flash=\"{}\" id=\"flash\"></div></body></html>",
+      "code": 200,
+      "show_in_doc": 0,
+      "recorded": true
+    },
+    {
+      "verb": "GET",
+      "path": "/policy",
+      "versions": [
+
+      ],
+      "query": null,
+      "request_data": null,
+      "response_data": "<!DOCTYPE html><html><head><title>App</title><link rel=\"stylesheet\" media=\"all\" href=\"/assets/application-3fc9684003898f661f07f10e6c55d144b7205450191e19e8ec713cbb594ab801.css\" data-turbolinks-track=\"reload\" /><script src=\"/packs-test/js/application-281b81f1650693c72c93.js\" data-turbolinks-track=\"reload\"></script></head><body><nav><div class=\"nav-wrapper\"><a class=\"brand-logo\" href=\"/\">Home</a><ul class=\"right\"><li><a href=\"/contact/sign_up\"> 登録（担当者）</a></li><li><a href=\"/contact/sign_in\"> ログイン（担当者）</a></li><li><a href=\"/register\"> 登録（FC）</a></li><li><a href=\"/user/sign_in\"> ログイン（FC）</a></li></ul></div></nav><main><div class=\"container\"><div class=\"row\"><h1>各種基本方針について</h1></div><div class=\"row\"><h6>Aut quam asperiores ullam eaque possimus consequatur</h6>\n<ol><li>Optio</li><li>Et alias enim</li><li>Aut in molestias</li></ol>\n<p>Voluptatum omnis et explicabo unde eligendi. laudantium aut incidunt. Magnam iste dolores aliquam Suscipit magnam impedit ipsa quam hic. Voluptatem <a title=\"Magnam est.\" href=\"http://jintian.biz/earum-tenetur-ipsam-quis-ipsa-consequatur\">eum quo</a> molestiae at. Ut deserunt illum harum perspiciatis. In necessitatibus soluta error quis Quis rem sunt optio sapiente inventore qui. velit molestiae perferendis culpa. Perspiciatis amet minus voluptas labore aliquid aliquam. Reprehenderit ex ipsam laborum Aut qui impedit ut. Accusamus deserunt dignissimos autem Esse illum impedit. Rerum consequatur neque est necessitatibus. Consequatur similique ut enim id suscipit consequuntur. Vitae odit in Architecto doloribus ut enim blanditiis. Occaecati <a title=\"Quia velit et.\" href=\"http://dubian.org/nobis-et-minima-eos-atque-qui-repellendus\">illo sunt harum exercitationem</a> voluptatem officia. deserunt aut fugit ratione omnis</p>\n<h3>Quo et commodi repellendus quae et quisquam. Harum et dolor neque nihil. Consequatur ullam explicabo rem corporis qui ut sit doloremque</h3>\n<ol><li>Numquam magni non tempore sed</li><li>Esse porro id</li><li>Iusto et</li><li>Aliquam impedit ut</li><li>Quia inventore laudantium voluptates ullam</li><li>Voluptas vitae atque enim</li></ol>\n<blockquote>Molestiae eius nihil quidem assumenda minus. Excepturi est atque sunt eos veritatis eum beatae quisquam. Odio maiores asperiores ab aut distinctio ad. Magni autem voluptatem sint rerum ab quas dolor. Consequuntur non et beatae illum. Sit iste voluptas dolorem pariatur dolor perferendis. Mollitia esse enim nisi. Quaerat earum laboriosam quos ea. Nihil illum sint rerum consequatur. Quo adipisci sed nihil repellendus deserunt. Harum et veniam perspiciatis voluptatibus molestiae molestiae. Repellendus nisi eligendi ut. Rerum voluptatem ipsum doloremque vel aperiam et sunt. Ullam occaecati itaque perferendis sint fuga qui. Distinctio non sed quasi nihil ut vel qui illum.</blockquote>\n<img alt=\"Assumenda amet rerum\" src=\"https://fcjp-wordpress-mock.herokuapp.com/app/uploads/2019/12/e4b99ee6-d1d4-3c6c-a20f-25c35de1f518.png\">\n<p>Molestiae iste placeat aperiam fugit. Fugit laboriosam dicta rerum excepturi. Placeat sit aut ut ad cupiditate voluptas reprehenderit ipsa. Aut sed dolorem voluptate. Molestias qui et itaque mollitia. Esse quas tempora quae numquam. Maxime animi ut aut rerum facere harum.</p>\n<!--more-->\n<img class=\"alignright\" src=\"https://fcjp-wordpress-mock.herokuapp.com/app/uploads/2019/12/197934e1-0012-34ff-8bc9-ac64db716949.png\">\n<h2>Laborum sunt deleniti dicta vitae aspernatur. Quasi non quod maxime tempora tempora</h2>\n<blockquote>Ut ab aperiam doloremque eaque quam libero dolorem. Commodi dolore quia architecto voluptatibus voluptatem sed. Atque rerum non Officia quas dolores autem. Perferendis eius illum rerum. nobis deleniti ratione dignissimos repellendus Doloremque voluptatem nostrum quae. Excepturi aut <a title=\"Fuga est et consequatur est.\" href=\"https://www.shanan.com/aut-perferendis-beatae-velit-eum\">rerum. Earum eos sunt doloremque</a> Consequatur eligendi ut beatae aut. et provident dolorem. Dignissimos velit esse quis <a title=\"In ad atque.\" href=\"http://gongze.com/occaecati-fugiat-mollitia-autem-aut-perspiciatis-tenetur\">Laboriosam qui</a> odio exercitationem rerum. Officiis quisquam rerum corrupti porro qui sapiente. sit esse unde est. voluptatum earum enim hic voluptas est consequuntur. Blanditiis et rerum <a title=\"Voluptatum tempore assumenda velit et.\" href=\"http://www.zuoteng.biz/\">alias est</a> quidem ut. Nulla vitae laudantium dolores rerum reiciendis. Rerum quia sed fuga velit reprehenderit. Magnam odit fugiat sed temporibus. Aut est et. Voluptatem magnam possimus eligendi maxime eos. consequatur quae itaque dolores eos. Corporis quo accusantium consequatur sit consequatur sit. Ut qui voluptates neque velit et.</blockquote>\n<h1>Corporis dolorem hic cum repellendus blanditiis repellat eveniet. Dicta explicabo perspiciatis aliquid sit a est et</h1>\n<ul><li>Suscipit aliquid dolor nulla nam ipsum aut odio</li><li>Laboriosam quibusdam ut et veritatis quia</li><li>Iure blanditiis illum quo saepe</li><li>Est quia nam delectus sunt</li><li>Et in sit at</li><li>Nihil ipsa ea tenetur provident</li></ul></div></div></main><footer class=\"page-footer\"><div class=\"container\"><div class=\"row\"><div class=\"col l6 s12\"><ul><li><a class=\"grey-text text-lighten-3\" href=\"/\">ホーム</a></li><li><a class=\"grey-text text-lighten-3\" href=\"/service\">初めての方へ</a></li><li><a class=\"grey-text text-lighten-3\" href=\"/support\">サポートメニュー</a></li><li><a class=\"grey-text text-lighten-3\" href=\"/satisfaction\">満足度調査</a></li></ul></div></div><div class=\"row\"><div class=\"col l6 s12\"><h6>開発用ツール</h6><ul><li><a class=\"grey-text text-lighten-3\" target=\"_new\" href=\"/dev-tools/letter_opener\">メール（開発用）</a></li><li><p class=\"grey-text text-lighten-4\">ユーザー切替</p><select name=\"switch_user_identifier\" id=\"switch_user_identifier\" onchange=\"location.href = &#39;/switch_user?scope_identifier=&#39; + encodeURIComponent(this.options[this.selectedIndex].value)\" class=\"browser-default\"><optgroup label=\"Guest\"><option value=\"\">Guest</option></optgroup><optgroup label=\"Contact_user\"><option value=\"contact_user_1\">hayasaka+test1@ruffnote.com</option></optgroup></select>\n</li></ul></div></div></div><div class=\"footer-copyright\"></div></footer><div data-flash=\"{}\" id=\"flash\"></div></body></html>",
+      "code": 200,
+      "show_in_doc": 0,
+      "recorded": true
+    },
+    {
+      "verb": "GET",
+      "path": "/satisfaction",
+      "versions": [
+
+      ],
+      "query": null,
+      "request_data": null,
+      "response_data": "<!DOCTYPE html><html><head><title>App</title><link rel=\"stylesheet\" media=\"all\" href=\"/assets/application-3fc9684003898f661f07f10e6c55d144b7205450191e19e8ec713cbb594ab801.css\" data-turbolinks-track=\"reload\" /><script src=\"/packs-test/js/application-281b81f1650693c72c93.js\" data-turbolinks-track=\"reload\"></script></head><body><nav><div class=\"nav-wrapper\"><a class=\"brand-logo\" href=\"/\">Home</a><ul class=\"right\"><li><a href=\"/contact/sign_up\"> 登録（担当者）</a></li><li><a href=\"/contact/sign_in\"> ログイン（担当者）</a></li><li><a href=\"/register\"> 登録（FC）</a></li><li><a href=\"/user/sign_in\"> ログイン（FC）</a></li></ul></div></nav><main><div class=\"container\"><div class=\"row\"><h1>登録コンサルタント満足度調査</h1></div><div class=\"row\"><img src=\"https://fcjp-wordpress-mock.herokuapp.com/app/uploads/2019/12/1e052737-d2de-3469-b74f-bf060b806211.png\">\n<ol><li>Nulla aut nobis sapiente</li></ol>\n<h5>Eaque mollitia et omnis rerum ea culpa non. Assumenda in vero est non doloribus facilis laudantium. Quia rerum molestiae aut qui sed beatae</h5>\n<img class=\"aligncenter\" src=\"https://fcjp-wordpress-mock.herokuapp.com/app/uploads/2019/12/10210511-72a9-36da-836e-4c8093d8b726.jpg\">\n<h4>Et sint soluta qui sint est. Odio ratione omnis aut. Et ea possimus autem consequuntur voluptas voluptas neque</h4>\n<blockquote>Voluptate nobis ea quis quasi. Voluptatibus quia atque ullam dolorem. vero quia quia consectetur vero sunt fugit. tempore reiciendis recusandae totam sed excepturi dolore. nihil nobis sit adipisci Quis <a title=\"Non.\" href=\"https://xiaoquan.com/quis-ut-perferendis-et-nemo-consequuntur.html\">voluptatem vitae voluptatem adipisci. Et cupiditate</a> consequatur. aliquid a nostrum voluptas magni. Odit incidunt dolor fugit cumque Nam illo ea Dolorem soluta maiores repellendus molestiae esse corrupti. Autem id qui numquam quis quam. <a title=\"Ut omnis dolor minima sunt.\" href=\"http://www.dubian.biz/\">repellat enim quasi</a> consequatur libero. Qui libero accusamus qui Pariatur assumenda labore esse natus id. Voluptatem explicabo sunt autem. Nemo sint aut consectetur illo quod rerum. Fuga et id Ipsam in et minus assumenda omnis <a title=\"Magnam soluta exercitationem ut facere voluptates laborum.\" href=\"http://www.zhongdao.com/repellat-hic-quo-qui-et-sit-optio-et\">nesciunt. Illum voluptatem</a> harum et. Voluptatem qui facilis aut eum sit. nihil quidem delectus ipsa facere. Iure et aut quia. Aliquid quas saepe et id. Deserunt voluptas dolorum nulla. Maxime optio eaque laudantium. Eius aut fugit eius Delectus harum ut nisi dolorum. maiores minus <a title=\"Qui.\" href=\"http://www.jianggutian.com/sint-ullam-sunt-error-nemo-odit-aperiam-earum\">necessitatibus quisquam. Reiciendis</a> perferendis vero qui inventore maiores. aut laudantium mollitia esse totam. veritatis incidunt perferendis. quis libero unde blanditiis. Magni reiciendis temporibus. Cupiditate quibusdam tenetur maiores ratione. Id non laboriosam natus eum est vero. voluptate quo temporibus numquam molestiae suscipit. Doloremque dolorum velit voluptate. Praesentium dolorem eum quaerat.</blockquote>\n<!--more-->\n<h3>Distinctio consequatur quia facilis saepe ullam modi aut. Ut in quibusdam suscipit perspiciatis non cum ut. Ea asperiores dolor quis vel quia</h3>\n<img src=\"https://fcjp-wordpress-mock.herokuapp.com/app/uploads/2019/12/464b5942-4b62-38ab-82fb-8f8a7cad3b48.png\">\n<h3>Consectetur nobis rerum odio ut quia qui ut porro. Dolor molestias dolore esse tempora. Asperiores qui pariatur est omnis facere</h3>\n<ol><li>Voluptatem et eius eum</li><li>Nostrum nihil ex</li><li>Alias adipisci ut pariatur et aliquam</li><li>Vel sit quae illo non a perferendis</li></ol>\n<blockquote>Aliquid nam ad consectetur nemo mollitia. id sequi et sed rerum. quia sequi nam. Atque et dolor aut architecto architecto atque. Quisquam ducimus repudiandae ut nostrum Assumenda voluptatem in qui sunt ratione consequatur. Laboriosam ducimus aut repudiandae porro dolores id. Est porro neque unde eos ut. Sapiente veniam culpa et. Repellat officiis culpa natus est rerum eos. Fuga quia a quo <a title=\"Qui.\" href=\"http://yiteng.com/vero-asperiores-ut-dolore-est-suscipit-rem-ut-quo.html\">aliquid velit maiores. Ipsum</a> quia nihil. Vel pariatur facilis et. qui enim. Qui ipsum officiis qui. Dolores molestiae voluptates eum facilis Voluptas qui maxime provident est fugiat corporis. nemo totam quam modi Ut maiores nemo officiis. a quos accusamus voluptas necessitatibus modi. Ipsum neque magni omnis.</blockquote>\n<h2>At quidem molestiae molestias nostrum. Eum perferendis dolores perferendis</h2>\n<ol><li>Repellat neque aut deleniti est</li><li>Illo ut et at cum</li><li>Aliquid pariatur sapiente maxime aliquam</li><li>Deleniti est et totam fuga</li><li>Possimus temporibus</li></ol>\n<p>Aspernatur modi dolores eius <a title=\"Laborum cum voluptatem ab reiciendis incidunt ut.\" href=\"https://www.zhongjinchuan.com/mollitia-omnis-doloribus-ab-aut\">quidem repudiandae nesciunt.</a> provident nobis autem. Ut at sequi ex voluptate tempora. Qui incidunt dolorem qui nihil eum vitae. libero in sed numquam natus neque. Voluptas consequatur cum est esse similique quod. Quasi nulla sapiente cum et Maiores soluta accusantium consequatur beatae. est ut quos molestiae. Dolor repudiandae aliquid magni voluptas. Magni architecto harum reiciendis. Eaque et eius ut a Ea labore at est veritatis. Non debitis distinctio libero iusto ut. Rerum voluptates sint voluptatibus eum facilis. Veniam nulla dolore accusantium minima aut quia. Mollitia iusto excepturi quam optio. Illum nobis iusto officia. Aut totam aliquam cupiditate repellendus et culpa. ut enim et facere eum. Dolores harum quo quaerat. Accusantium sed aut dignissimos qui commodi. Harum quibusdam quas quod accusamus facere. Sit dolores molestiae qui dolores. Quos et labore sint culpa non. Illum distinctio amet similique id</p></div></div></main><footer class=\"page-footer\"><div class=\"container\"><div class=\"row\"><div class=\"col l6 s12\"><ul><li><a class=\"grey-text text-lighten-3\" href=\"/\">ホーム</a></li><li><a class=\"grey-text text-lighten-3\" href=\"/service\">初めての方へ</a></li><li><a class=\"grey-text text-lighten-3\" href=\"/support\">サポートメニュー</a></li><li><a class=\"grey-text text-lighten-3\" href=\"/satisfaction\">満足度調査</a></li></ul></div></div><div class=\"row\"><div class=\"col l6 s12\"><h6>開発用ツール</h6><ul><li><a class=\"grey-text text-lighten-3\" target=\"_new\" href=\"/dev-tools/letter_opener\">メール（開発用）</a></li><li><p class=\"grey-text text-lighten-4\">ユーザー切替</p><select name=\"switch_user_identifier\" id=\"switch_user_identifier\" onchange=\"location.href = &#39;/switch_user?scope_identifier=&#39; + encodeURIComponent(this.options[this.selectedIndex].value)\" class=\"browser-default\"><optgroup label=\"Guest\"><option value=\"\">Guest</option></optgroup><optgroup label=\"Contact_user\"><option value=\"contact_user_1\">hayasaka+test1@ruffnote.com</option></optgroup></select>\n</li></ul></div></div></div><div class=\"footer-copyright\"></div></footer><div data-flash=\"{}\" id=\"flash\"></div></body></html>",
+      "code": 200,
+      "show_in_doc": 0,
+      "recorded": true
+    },
+    {
+      "verb": "GET",
+      "path": "/contact",
+      "versions": [
+
+      ],
+      "query": null,
+      "request_data": null,
+      "response_data": "<!DOCTYPE html><html><head><title>App</title><link rel=\"stylesheet\" media=\"all\" href=\"/assets/application-3fc9684003898f661f07f10e6c55d144b7205450191e19e8ec713cbb594ab801.css\" data-turbolinks-track=\"reload\" /><script src=\"/packs-test/js/application-281b81f1650693c72c93.js\" data-turbolinks-track=\"reload\"></script></head><body><nav><div class=\"nav-wrapper\"><a class=\"brand-logo\" href=\"/\">Home</a><ul class=\"right\"><li><a href=\"/contact/sign_up\"> 登録（担当者）</a></li><li><a href=\"/contact/sign_in\"> ログイン（担当者）</a></li><li><a href=\"/register\"> 登録（FC）</a></li><li><a href=\"/user/sign_in\"> ログイン（FC）</a></li></ul></div></nav><main><div class=\"container\"><div class=\"row\"><h1>人材の調達のご依頼</h1></div><div class=\"row\"><p>Facilis impedit ut enim dolore fugit ad. Aut numquam ea dolorum est consequuntur qui magnam. Impedit delectus quaerat ut autem sit ea. Aut qui illo aliquid quos temporibus et quis. Libero et molestiae est vel voluptatem sed. Cum molestias illum maiores odio cum unde et aut. Excepturi quisquam aut velit eum. Dolorem praesentium autem sit debitis. Necessitatibus aut tenetur eveniet aut. Aut et enim enim repellat dolores quis dolorem. Aut quasi explicabo in et laborum. Iste ex id qui veritatis veritatis saepe nemo. Odit corporis optio quasi dolorem. Mollitia ut omnis corporis excepturi ut deleniti vero. Repudiandae quasi asperiores odit aut reprehenderit. Quia consequatur quam laboriosam veniam et numquam. Nam incidunt et dolorem atque consectetur quia sequi fuga. Quia reiciendis at eveniet in et dicta. Placeat dicta nemo beatae praesentium. Vel alias provident fugiat temporibus aut provident. A voluptatibus dolorem non porro pariatur beatae. Assumenda et facilis expedita eum tempore nam. Alias quod voluptatem voluptatem esse earum dolores accusamus aliquam. Earum ut itaque architecto. Soluta non nostrum voluptatem enim veniam. Et nesciunt odit accusamus. Reprehenderit temporibus error quo qui explicabo.</p>\n<hr>\n<ol><li>Cupiditate</li></ol>\n<img alt=\"Ducimus quo commodi odit impedit unde voluptatum\" src=\"https://fcjp-wordpress-mock.herokuapp.com/app/uploads/2019/12/d42f1870-4b31-3b2e-8efb-3318c6cab482.png\">\n<h5>Dolore quibusdam vitae cum vitae pariatur asperiores</h5>\n<ol><li>Est optio id autem enim</li><li>Consequatur vero inventore natus</li><li>Repellendus nobis</li><li>Enim eos</li><li>Quam sit quisquam officia qui eligendi</li></ol>\n<h6>Facere aspernatur aperiam et non facilis eveniet adipisci facilis. Aut nihil quo velit assumenda deserunt</h6>\n<hr>\n<h2>Sint sunt et sapiente et. Suscipit voluptas aut adipisci et. Sint consequatur omnis quis qui harum</h2>\n<hr>\n<img alt=\"Officia incidunt id sed quasi doloribus quidem excepturi adipisci\" src=\"https://fcjp-wordpress-mock.herokuapp.com/app/uploads/2019/12/22b33962-9d97-3abe-a730-6c6e32d7f220.png\">\n<img alt=\"Veniam sint neque\" src=\"https://fcjp-wordpress-mock.herokuapp.com/app/uploads/2019/12/10210511-72a9-36da-836e-4c8093d8b726.jpg\">\n<img src=\"https://fcjp-wordpress-mock.herokuapp.com/app/uploads/2019/12/167c1893-36b5-3297-894a-83eb5ce20a08.png\"></div></div></main><footer class=\"page-footer\"><div class=\"container\"><div class=\"row\"><div class=\"col l6 s12\"><ul><li><a class=\"grey-text text-lighten-3\" href=\"/\">ホーム</a></li><li><a class=\"grey-text text-lighten-3\" href=\"/service\">初めての方へ</a></li><li><a class=\"grey-text text-lighten-3\" href=\"/support\">サポートメニュー</a></li><li><a class=\"grey-text text-lighten-3\" href=\"/satisfaction\">満足度調査</a></li></ul></div></div><div class=\"row\"><div class=\"col l6 s12\"><h6>開発用ツール</h6><ul><li><a class=\"grey-text text-lighten-3\" target=\"_new\" href=\"/dev-tools/letter_opener\">メール（開発用）</a></li><li><p class=\"grey-text text-lighten-4\">ユーザー切替</p><select name=\"switch_user_identifier\" id=\"switch_user_identifier\" onchange=\"location.href = &#39;/switch_user?scope_identifier=&#39; + encodeURIComponent(this.options[this.selectedIndex].value)\" class=\"browser-default\"><optgroup label=\"Guest\"><option value=\"\">Guest</option></optgroup><optgroup label=\"Contact_user\"><option value=\"contact_user_1\">hayasaka+test1@ruffnote.com</option></optgroup></select>\n</li></ul></div></div></div><div class=\"footer-copyright\"></div></footer><div data-flash=\"{}\" id=\"flash\"></div></body></html>",
+      "code": 200,
+      "show_in_doc": 0,
+      "recorded": true
+    }
+  ]
+}

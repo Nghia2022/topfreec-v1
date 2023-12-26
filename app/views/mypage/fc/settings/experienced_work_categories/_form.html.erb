@@ -1,0 +1,21 @@
+          <div class="modal-txt">
+            <div class="form-content form-modal">
+              <%= f.feedback(:experienced_works_sub) %>
+              <div class="form-group">
+                <div class="form-head">
+                  <span class="form-ttl">得意領域</span><span class="s-fs-12">※選択できる領域数は100件を上限としております。</span>
+                </div>
+                <%= cell(Mypage::Fc::WorkCategoryFormCell, nil, selected_main_categories: form.experienced_works_main).call(:show) do |work_category| %>
+                  <% f.collection_check_boxes :experienced_works_sub, work_category.sub_category, :itself, :itself do |c| %>
+                    <label class="label-check">
+                      <%= c.check_box %><span><%= c.text %></span>
+                    </label>
+                  <% end %>
+                <% end %>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer s-flex-center">
+            <%= f.submit '保存する', class: 'btn btn-theme-02 bs-normal' %>
+          </div>
+        </div>

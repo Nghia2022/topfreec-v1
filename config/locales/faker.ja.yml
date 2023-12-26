@@ -1,0 +1,13 @@
+ja:
+  faker:
+    educator:
+      prefix: ["北海道", "東北", "関東", "中部", "近畿", "中国", "四国", "九州"]
+      suffix: ["大学", "医科大学", "芸術大学", "音楽大学", "工業大学"]
+      name:
+      university: 
+        - "#{Name.last_name}#{University.suffix}"
+        - "#{University.prefix}#{University.suffix}"
+      secondary:
+        - "高等学校"
+      secondary_school:
+        - "#{Name.last_name}#{secondary}"

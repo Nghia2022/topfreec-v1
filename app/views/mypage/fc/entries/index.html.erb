@@ -1,0 +1,6 @@
+  <%= testid('mypage/fc/entries') %>
+    <h1 class="page-ttl">
+      <span class="sub-ttl">HISTORY</span>
+      <span class="main-ttl">応募履歴</span>
+    </h1>
+    <%= cell(Mypage::Fc::EntryCell, @matchings).call(:show) %>

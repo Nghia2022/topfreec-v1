@@ -1,0 +1,64 @@
+          <%= form_with model: form, scope: :project_request, url: mypage_fc_project_request_path, method: :put, local: true, class: 'form-content s-pt-30' do |f| %>
+            <%= render 'error_messages', resource: form %>
+            <div class="requirement-panel">
+              <div class="requirement-panel-item">
+                <div class="requirement-panel-ttl">
+                  <span>
+                    参画可能予定日
+                    <span class="s-sp" tooltip="案件に参画したい
+日にちを入力してください。
+即日でお探しの場合は当日
+の日にちを入力してください。" flow="up">
+                    <i class="feather icon-help-circle"></i>
+                    </span>
+                    <span class="s-pc" tooltip="案件に参画したい日にちを入力してください。
+即日でお探しの場合は当日の日にちを入力してください。" flow="up">
+                    <i class="feather icon-help-circle"></i>
+                    </span>
+                  </span>
+                </div>
+                <div class="requirement-panel-txt">
+                  <%= f.text_field :start_timing, class: 'datepicker', placeholder: '選択してください',
+                    autocomplete: :off,
+                    data: {
+                      behavior: 'datepicker',
+                      datepicker: {
+                        navTitles: {
+                          days: '<strong>yyyy</strong> <i>MMMM</i>',
+                          months: '月を選択'
+                        },
+                        dateFormat: 'yyyy-MM-dd'
+                      }
+                    }
+                  %>
+                </div>
+              </div>
+              <div class="requirement-panel-item">
+                <div class="requirement-panel-ttl">
+                  <span>
+                    希望稼働日数(稼働率)
+                    <span class="s-sp" tooltip="週5日間勤務を稼働率100%
+とした際のご希望の稼働日数
+を入力してください。
+詳しいご希望があれば設定情報
+ページ「その他希望事項」で
+補足いただくことが可能です。" flow="up">
+                    <i class="feather icon-help-circle"></i>
+                    </span>
+                    <span class="s-pc" tooltip="週5日間勤務を稼働率100%とした際のご希望の稼働日数を入力してください。
+詳しいご希望があれば設定情報ページ「その他希望事項」で補足いただくことが可能です。" flow="up">
+                    <i class="feather icon-help-circle"></i>
+                    </span>
+                  </span>
+                </div>
+                <div class="requirement-panel-txt">
+                  <label class="label-select form-long">
+                    <%= f.collection_select :occupancy_rate, DesiredCondition.occupancy_rate_options, :last, :first %>
+                  </label>
+                </div>
+              </div>
+              <div class="requirement-panel-item s-txt-center">
+                <%= f.submit '保存する', class: 'btn btn-theme-02 bs-normal' %>
+              </div>
+            </div>
+          <% end %>
