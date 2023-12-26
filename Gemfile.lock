@@ -176,11 +176,11 @@ GEM
     bindex (0.8.1)
     binding_of_caller (1.0.0)
       debug_inspector (>= 0.0.1)
-    blazer (2.6.5)
-      activerecord (>= 5)
-      chartkick (>= 3.2)
-      railties (>= 5)
-      safely_block (>= 0.1.1)
+    blazer (3.0.2)
+      activerecord (>= 6.1)
+      chartkick (>= 5)
+      railties (>= 6.1)
+      safely_block (>= 0.4)
     blueprinter (0.25.3)
     bootsnap (1.16.0)
       msgpack (~> 1.2)
@@ -211,7 +211,7 @@ GEM
     cells-slim (0.1.1)
       cells (>= 4.0.1, < 6.0.0)
       slim (>= 3.0)
-    chartkick (5.0.1)
+    chartkick (5.0.5)
     cloudinary (1.26.0)
       aws_cf_signer
       rest-client (>= 2.0.0)
@@ -303,7 +303,6 @@ GEM
       templatecop
     erbse (0.1.4)
       temple
-    errbase (0.2.2)
     erubi (1.12.0)
     et-orbi (1.2.4)
       tzinfo
@@ -678,8 +677,7 @@ GEM
     rubyzip (2.3.2)
     rufus-scheduler (3.6.0)
       fugit (~> 1.1, >= 1.1.6)
-    safely_block (0.3.0)
-      errbase (>= 0.1.1)
+    safely_block (0.4.0)
     sanitize (6.0.2)
       crass (~> 1.0.2)
       nokogiri (>= 1.12.0)
