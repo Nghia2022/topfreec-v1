@@ -1,17 +1,6 @@
 <%= testid('footer/show') %>
   <footer class="footer-theme js-fadein jsFooter">
     <div class="sec sec-full">
-      <nav class="footer-nav">
-        <a href="<%= terms_page_path %>">サービス利用規約</a>
-        <a href="<%= terms_page_path(anchor: 'disclaimer') %>">免責事項</a>
-        <a href="<%= mirai_works_privacy_entry_url %>">個人情報の取扱いについて</a>
-        <a href="https://www.mirai-works.co.jp/policy" target="_blank" rel="noopener noreferrer">各種基本方針</a>
-        <a href="https://www.mirai-works.co.jp/corporate/overview" target="_blank" rel="noopener noreferrer">運営会社</a>
-        <a href="https://contact.freeconsultant.jp/hc/ja/requests/new" target="_blank" rel="noopener noreferrer">お問い合わせ</a>
-        <a href="<%= contact_ja_url %>">よくある質問</a>
-        <a href="<%= sitemap_page_path %>">サイトマップ</a>
-      </nav>
-      <%# TODO: #3440 FeatureSwitchの分岐を削除 %>
       <% if FeatureSwitch.enabled?(:new_project_category_meta) %>
       <nav class="footer-nav service">
         <a href="<%= projects_path %>" target="_blank" rel="noopener noreferrer">案件一覧</a>
@@ -43,97 +32,19 @@
       </nav>
       <% end %>
       <hr>
-      <nav class="footer-nav service">
-        <div class="service-ttl">関連サービス</div>
-        <div class="footer-nav-link">
-          <a href="<%= intern_url %>" target="_blank" rel="noopener noreferrer">大人のインターン</a>
-          <a href="<%= skill_shift_url %>" target="_blank" rel="noopener noreferrer">Skill Shift</a>
-          <a href="<%= career_url %>" target="_blank" rel="noopener noreferrer">プロフェッショナルキャリア</a>
-          <a href="<%= find_careers_url %>" target="_blank" rel="noopener noreferrer">FIND CAREERS</a>
-          <a href="https://glocalmissionjobs.jp/" target="_blank" rel="noopener noreferrer">Glocal Mission Jobs</a>
-          <a href="https://www.glocaltimes.jp/" target="_blank" rel="noopener noreferrer">Glocal Mission Times</a>
-        </div>
-      </nav>
-      <nav class="footer-nav service">
-        <a href="<%= career_knock_url %>" target="_blank" rel="noopener noreferrer">CAREER Knock</a>
-        <div class="footer-nav-link s-txt-underline">
-          <a href="<%= tenshoku_site_url %>" target="_blank" rel="noopener noreferrer">おすすめ転職サイト</a>
-          <a href="<%= tenshoku_twenty_url %>" target="_blank" rel="noopener noreferrer">20代転職サイト</a>
-          <a href="<%= tenshoku_thirty_url %>" target="_blank" rel="noopener noreferrer">30代転職サイト</a>
-          <a href="<%= tenshoku_forty_url %>" target="_blank" rel="noopener noreferrer">40代転職サイト</a>
-          <a href="<%= tenshoku_fifty_url %>" target="_blank" rel="noopener noreferrer">50代転職サイト</a>
-          <a href="<%= tenshoku_women_url %>" target="_blank" rel="noopener noreferrer">女性転職サイト</a>
-          <a href="<%= tenshoku_engineer_url %>" target="_blank" rel="noopener noreferrer">エンジニア転職</a>
-          <a href="<%= tenshoku_consul_url %>" target="_blank" rel="noopener noreferrer">コンサル転職</a>
-          <a href="<%= tenshoku_doctor_url %>" target="_blank" rel="noopener noreferrer">医師転職サイト</a>
-          <a href="<%= tenshoku_nurse_url %>" target="_blank" rel="noopener noreferrer">看護師転職サイト</a>
-          <a href="<%= tenshoku_agent_url %>" target="_blank" rel="noopener noreferrer">転職エージェント</a>
-          <a href="<%= tenshoku_agent_recommend_url %>" target="_blank" rel="noopener noreferrer">おすすめ転職エージェント</a>
-          <a href="<%= tenshoku_agent_twenty_url %>" target="_blank" rel="noopener noreferrer">20代転職エージェント</a>
-          <a href="<%= tenshoku_agent_thirty_url %>" target="_blank" rel="noopener noreferrer">30代転職エージェント</a>
-          <a href="<%= tenshoku_agent_women_url %>" target="_blank" rel="noopener noreferrer">女性転職エージェント</a>
-          <a href="<%= tenshoku_agent_towa_url %>" target="_blank" rel="noopener noreferrer">転職エージェントとは</a>
-          <a href="<%= tenshoku_agent_reputation_url %>" target="_blank" rel="noopener noreferrer">転職エージェント評判</a>
-          <a href="<%= tenshoku_agent_mikeiken_url %>" target="_blank" rel="noopener noreferrer">転職エージェント未経験</a>
-          <a href="<%= tenshoku_urajijyo_url %>" target="_blank" rel="noopener noreferrer">転職エージェント裏事情</a>
-          <a href="<%= tenshoku_kotowarikata_url %>" target="_blank" rel="noopener noreferrer">転職エージェント断り方</a>
-          <a href="<%= tenshoku_agent_demerit_url %>" target="_blank" rel="noopener noreferrer">転職エージェントデメリット</a>
-          <a href="<%= tenshoku_agent_tokyo_url %>" target="_blank" rel="noopener noreferrer">転職エージェント東京</a>
-          <a href="<%= tenshoku_agent_osaka_url %>" target="_blank" rel="noopener noreferrer">転職エージェント大阪</a>
-          <a href="<%= tenshoku_agent_fukuoka_url %>" target="_blank" rel="noopener noreferrer">転職エージェント福岡</a>
-          <a href="<%= tenshoku_daini_url %>" target="_blank" rel="noopener noreferrer">第二新卒転職</a>
-          <a href="<%= tenshoku_daini_shinsotsu_url %>" target="_blank" rel="noopener noreferrer">第二新卒とは</a>
-          <a href="<%= tenshoku_daini_shinsotsu_oote_url %>" target="_blank" rel="noopener noreferrer">第二新卒大手</a>
-          <a href="<%= recruit_agent_url %>" target="_blank" rel="noopener noreferrer">リクルートエージェント</a>
-          <a href="<%= recruit_direct_scout_url%>" target="_blank" rel="noopener noreferrer">リクルートダイレクトスカウト</a>
-          <a href="<%= doda_agent_url %>" target="_blank" rel="noopener noreferrer">dodaエージェント</a>
-          <a href="<%= mynavi_agent_url %>" target="_blank" rel="noopener noreferrer">マイナビエージェント</a>
-          <a href="<%= bizreach_url %>" target="_blank" rel="noopener noreferrer">ビズリーチ</a>
-          <a href="<%= pasonacareer_url %>" target="_blank" rel="noopener noreferrer">パソナキャリア</a>
-          <a href="<%= jac_recruitment_url %>" target="_blank" rel="noopener noreferrer">JACリクルートメント</a>
-          <a href="<%= tenshoku_ix_url %>" target="_blank" rel="noopener noreferrer">doda X</a>
-          <a href="<%= column_hataractive_url %>" target="_blank" rel="noopener noreferrer">ハタラクティブ</a>
-          <a href="<%= column_levtech_url %>" target="_blank" rel="noopener noreferrer">レバテックキャリア</a>
-          <a href="<%= column_rikunabi_next_url %>" target="_blank" rel="noopener noreferrer">リクナビネクスト</a>
-          <a href="<%= column_mynavi_url %>" target="_blank" rel="noopener noreferrer">マイナビ転職</a>
-          <a href="<%= column_en_url %>" target="_blank" rel="noopener noreferrer">エン転職</a>
-          <a href="<%= column_ss_shop_url %>" target="_blank" rel="noopener noreferrer">就職SHOP</a>
-          <a href="<%= column_kango_roo_url %>" target="_blank" rel="noopener noreferrer">看護ルー</a>
-          <a href="<%= column_kango_oshigoto_url %>" target="_blank" rel="noopener noreferrer">レバウェル看護</a>
-          <a href="<%= column_posiwill_url %>" target="_blank" rel="noopener noreferrer">ポジウィルキャリア</a>
-          <a href="<%= column_careerdrive_url %>" target="_blank" rel="noopener noreferrer">キャリドラ</a>
-          <a href="<%= column_dym_url %>" target="_blank" rel="noopener noreferrer">DYM就職</a>
-          <a href="<%= column_from40_url %>" target="_blank" rel="noopener noreferrer">FROM40</a>
-          <a href="<%= column_mynavi_ms_url %>" target="_blank" rel="noopener noreferrer">マイナビミドルシニア</a>
-          <a href="<%= column_25tenshoku_url %>" target="_blank" rel="noopener noreferrer">25歳転職</a>
-          <a href="<%= column_30tenshoku_url %>" target="_blank" rel="noopener noreferrer">30歳転職</a>
-          <a href="<%= column_35tenshoku_url %>" target="_blank" rel="noopener noreferrer">35歳転職</a>
-          <a href="<%= column_40tenshoku_url %>" target="_blank" rel="noopener noreferrer">40歳転職</a>
-          <a href="<%= column_45tenshoku_url %>" target="_blank" rel="noopener noreferrer">45歳転職</a>
-          <a href="<%= column_50tenshoku_url %>" target="_blank" rel="noopener noreferrer">50歳転職</a>
-          <a href="<%= column_55tenshoku_url %>" target="_blank" rel="noopener noreferrer">55歳転職</a>
-          <a href="<%= column_career_coaching_url %>" target="_blank" rel="noopener noreferrer">キャリアコーチング</a>
-          <a href="<%= column_freelance_url %>" target="_blank" rel="noopener noreferrer">フリーランス</a>
-          <a href="<%= column_freelance_consultant_url %>" target="_blank" rel="noopener noreferrer">フリーランスコンサルタント</a>
-          <a href="<%= column_pmo_url %>" target="_blank" rel="noopener noreferrer">PMO</a>
-          <a href="<%= column_fukugyo_url %>" target="_blank" rel="noopener noreferrer">副業</a>
-          <a href="<%= column_fukugyo_app_url %>" target="_blank" rel="noopener noreferrer">副業アプリ</a>
-        </div>
-      </nav>
     </div>
     <div class="footer-copyright">
       <div class="sec sec-full">
         <div class="copyright-logo">
           <div class="site-logo">
-            <a href="<%= root_path %>"><span></span></a>
+           
           </div>
           <div class="company-logo">
-            <a href="<%= mirai_works_url %>" target="_blank" rel="noopener noreferrer"><span></span></a>
+           
           </div>
         </div>
-        <%= render 'devtools' unless %w[production test].include? Rails.env %>
         <div class="copyright-txt">
-          &copy; Mirai Works Inc. All Rights Reserved.
+          &copy; Công ty TNHH Leon II. All Rights Reserved.
         </div>
       </div>
     </div>
