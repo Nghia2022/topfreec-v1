@@ -296,7 +296,7 @@ GEM
       launchy (~> 2.1)
       mail (~> 2.7)
     encryptor (3.0.0)
-    enumerize (2.6.0)
+    enumerize (2.7.0)
       activesupport (>= 3.2)
     erbcop (0.4.0)
       better_html
